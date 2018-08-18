@@ -1,0 +1,70 @@
+body {font-size: 14px;}
+
+#wpbody-content {background: #FFFFFF;}
+
+#add-modal-dialog {width: 800px;margin: 33px auto;}
+
+#recover-modal-dialog, #upload-modal-dialog {width: 730px;margin: 100px auto;}
+
+#delete-modal-dialog {margin: 180px auto;}
+
+#look-modal-dialog{width:85%; margin-left: 200px;}
+
+#logs-modal-dialog{width:780px; margin: 100px auto;}
+
+.code { padding: 2px 4px; color: #d14; white-space: nowrap; background-color: #f7f7f9; border: 1px solid #e1e1e8; font-family: Monaco, Menlo, Consolas, "Courier New", monospace; border-radius: 3px; }
+
+.nowrap { white-space: nowrap; display: inline-block;}
+
+.input-group-addon {background-color: #f7f7f9;}
+
+.valid_log{ color: #d44950;}
+
+span.character_entity_tip{ font-size: 13px; float: right;}
+
+code{ font-family: Monaco, Menlo, Consolas, Courier New, monospace; background: #eee; color: #d14; border: 1px solid #d6d6d6; padding: 0 5px !important; margin: 0 2px; font-size: 100% !important; white-space: nowrap; text-shadow: 0 1px #fff; -webkit-border-radius: 0.25em; border-radius: 0.25em;}
+
+code.form_code_1{padding: 3px 5px 1px 5px !important;}
+
+code.form_code_2{font-size: 16px !important;}
+
+table.table{table-layout: fixed;}
+
+.container-fluid .row{margin:0;}
+
+#form_add .form-group{ margin-top: 3px; }
+
+.glyphicon-red{color:red;}
+.glyphicon-green{color: green;}
+.glyphicon-blue{color:#428bca;}
+
+.logs {
+	background: #282923;
+	color: #fff;
+	padding: 5px;
+	border-radius: 2px;
+	height: 400px;
+	overflow: hidden;
+	width:100%;
+	position: relative;
+} 
+.logs-body{
+	position:absolute; height:400px; overflow:auto
+}
+.logsnum {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	padding: 2px;
+	line-height: 14px;
+	margin-right: 5px;
+}
+
+table.dataTable th{overflow: hidden; word-wrap :break-word}
+
+
+@-moz-document url-prefix() {
+    table.table{
+        table-layout : auto;
+    }
+}

@@ -1,0 +1,15 @@
+[ 2018-08-18 06:20:13 ]	The Excel _cs_lenti_collection.xlsx was deleted successfully. 
+[ 2018-08-18 06:35:36 ]	huimingdeng disables the operation management plug-in. 
+[ 2018-08-18 06:35:52 ]	huimingdeng allows action management plug-ins. 
+[ 2018-08-18 06:49:38 ]	'AA01-ProdId-AD01-3-200' was successfully backed up to `_cs_lenti_collection_delete_back`! 'AA01-ProdId-AD01-3-200' was successfully deleted from `_cs_lenti_collection`!
+[ 2018-08-18 06:49:41 ]	'AA01-ProdId-AD01-3-400' was successfully backed up to `_cs_lenti_collection_delete_back`! 'AA01-ProdId-AD01-3-400' was successfully deleted from `_cs_lenti_collection`!
+[ 2018-08-18 06:50:13 ]	Data was successfully restored from the recycle bin. Data was successfully deleted from the recycle bin.
+[ 2018-08-18 07:00:34 ]	The Excel template-2018-08-18-14-59.xlsx was deleted successfully. 
+[ 2018-08-18 07:00:37 ]	The Excel template-2018-08-18-14-58.xlsx was deleted successfully. 
+[ 2018-08-18 15:07:29 ]	Sorry, the Excel data in the file template-2018-08-18-15-07.xlsx you uploaded is empty, please upload again.
+[ 2018-08-18 07:08:50 ]	The Excel template-2018-08-18-15-01.xlsx was deleted successfully. 
+[ 2018-08-18 07:08:52 ]	The Excel template-2018-08-18-15-02.xlsx was deleted successfully. 
+[ 2018-08-18 07:08:57 ]	The Excel template-2018-08-18-15-04.xlsx was deleted successfully. 
+[ 2018-08-18 07:09:01 ]	The Excel template-2018-08-18-15-07.xlsx was deleted successfully. 
+[ 2018-08-18 07:09:06 ]	The Excel template-2018-08-18-15-06.xlsx was deleted successfully. 
+[ 2018-08-18 07:09:12 ]	The Excel template-2018-08-18-15-05.xlsx was deleted successfully. 
