@@ -32,7 +32,7 @@
 <div class="wrap">
 	<div class="row">
 		<div class="col-md-12">
-			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;Lentivirus Management &nbsp; &nbsp; &nbsp; <a href="javascript:void(0);" onclick="addLentil()" data-toggle="modal" data-target="#addModal" class="btn btn-primary">Add</a> &nbsp; <a href="javascript:void(0);" onclick="uploadLentiviurs();" class="btn btn-success">uploads</a> &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/template.xlsx'; ?>" data-toggle="tooltip" data-placement="right" title="For bulk import data, refer to the template." id="template" class="btn btn-warning">template</a>
+			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;Lentivirus Management &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/help%20manual.docx'; ?>" data-toggle="tooltip" data-placement="top" title="Instructions document."><span class="glyphicon glyphicon-question-sign"></span></a> &nbsp; &nbsp; &nbsp; <a href="javascript:void(0);" onclick="addLentil()" data-toggle="modal" data-target="#addModal" class="btn btn-primary">Add</a> &nbsp; <a href="javascript:void(0);" onclick="uploadLentiviurs();" class="btn btn-success">uploads</a> &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/template.xlsx'; ?>" data-toggle="tooltip" data-placement="right" title="For bulk import data, refer to the template." id="template" class="btn btn-warning">template</a> 
 			</h2> 
 		</div>
 		<div class="col-md-12">
