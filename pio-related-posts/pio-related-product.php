@@ -3,7 +3,7 @@
 Plugin Name: PIO Related Posts
 Plugin URI: http: #
 Description: 从PIO中获取并展示相关产品的链接（相关产品文章推荐）
-Version: 1.0
+Version: 2.0
 Author: dhm
 Author URI: #
 License: GPL2
@@ -11,7 +11,6 @@ License: GPL2
 
 /* == 插件结构=================================================
  * pio-related-product.php：主文件，注册菜单，加载JS，显示浮动窗
- * pio-related-manager.php：前端，管理配置的页面
  * pio-related-ajax.php：后台，处理manager页面发出的ajax请求
  * ============================================================ */
 
@@ -49,12 +48,8 @@ function testRelatedCurl() {
 //通过JS获取Item
 function getItemFromCheckboxs(){
 	if(is_single()){
-		$status = testRelatedCurl();//先判断pio服务器是否有响应
-		// $status=true;
-		if($status){//有响应才加载js
-			wp_register_style('pio-related-css',plugins_url('pio-related-posts/css/pio-related-css.css')); 
-			wp_register_script('pio-related-posts',plugins_url('pio-related-posts/js/pio-related-posts.js'));
-		}
+		wp_register_style('pio-related-css',plugins_url('pio-related-posts/css/pio-related-css.css')); 
+		wp_register_script('pio-related-posts',plugins_url('pio-related-posts/js/pio-related-posts.js'));
 		wp_enqueue_style('pio-related-css');
 		wp_enqueue_script('pio-related-posts');
 	}
@@ -63,42 +58,20 @@ function getItemFromCheckboxs(){
 //加载JS
 add_action('wp_enqueue_scripts', 'getItemFromCheckboxs');
 
-//配置菜单
-function pio_add_menu_items1(){
-	add_menu_page(
-		'PIO Related Url',//页面标题
-		'PIO Related Url',//菜单标题
-		'manage_options',//所需权限
-		'PIO Related',//页面别名
-		'pio_related_manager'//回调函数
-	);
-}
-
-//注册菜单
-add_action('admin_menu', 'pio_add_menu_items1');
-
-//引入菜单界面
-function pio_related_manager(){
-	include_once('pio-related-manager.php');
-}
-
 //加载显示无序列表，显示相关连接
 function getRelatedProductUrl(){
-	$status = testRelatedCurl();//先判断pio服务器是否有响应
-	if($status){
-		$display_num = get_option('pio_related_product_display_num',4);
-		$pioContent = "\r\n";
-		$pioContent.= '<div id="related_posts" class="pioRelatedUrl" style="display:none">'."\r\n";
-		$pioContent.= '     <h2>Related products</h2>'."\r\n";
-		$pioContent.= '     <ul id="product-related-url">'."\r\n";
+	$postid = get_the_ID();
+	
 		
-		$pioContent.= '     </ul>'."\r\n";
-		$pioContent.= '</div>'."\r\n";
+		$pioContent = "\r\n";
+		$pioContent.= '<script type="text/javascript">'."\r\n";
+		$pioContent.= 'var postId='.$postid."\r\n";
+		$pioContent.= '</script>'."\r\n";
 		if(is_single()){
 			echo $pioContent;
 		}
-	}
+	
 }
-	// add_action('wp_footer','getRelatedProductUrl');
+add_action('wp_head','getRelatedProductUrl');
 
 ?>
