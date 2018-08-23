@@ -23,6 +23,16 @@ if($action=="pio") {
 			echo json_encode(array());
 		}
 	}
+}elseif("pioID"==$action){
+	if($type=="get_url"){
+		if(isset($item)){
+			$postid = trim($item);
+			$Output = getRelatePostsByPostId($postid);
+			echo json_encode($Output);
+		}else{
+			echo json_encode(array());
+		}
+	}
 }
 
 // 根据item的url获取别名
@@ -77,11 +87,34 @@ function getRelatedURLByAllItem($AllArr){
 			if($postid){
 				$post=get_post($postid,'ARRAY_A');
 				$tmp['post_title']=$post['post_title'];
-				$tmp['url']=$value;
-				$relateUrl[]=$tmp;
+				$tmp['url']=$value.'?utm_source=genecopoeia.com&utm_medium=display&utm_campaign=also_viewed';
+				if(!empty($tmp['post_title']))
+					$relateUrl[]=$tmp;
 			}
 		}
 	}
-	// print_r($relateUrl);
+	return $relateUrl;
+}
+
+
+function getRelatePostsByPostId($postid){
+	global $wpdb;
+	if(!$num){
+		$num = get_option('pio_related_product_per_num',4);
+	}
+	$sql = sprintf("SELECT * from wp_posts_similarity WHERE post_id = %s ORDER BY similarity DESC limit %s",$postid,$display_num = get_option('pio_related_product_display_num',4));
+	$results = $wpdb->get_results($sql,ARRAY_A);
+	$showPost = array();
+	$relateUrl = array();
+	foreach($results AS $row){
+		if(count($relateUrl)<$num){
+			$post=get_post($row['sim_post_id'],'ARRAY_A');
+			$tmp['post_title']=$post['post_title'];
+			$tmp['url']='/?p='.$post['ID'].'&utm_source=genecopoeia.com&utm_medium=display&utm_campaign=also_viewed';
+			if(!empty($tmp['post_title']))
+				$relateUrl[]=$tmp;
+		}
+	}
+
 	return $relateUrl;
 }
