@@ -1,0 +1,11 @@
+
+.pioRelatedUrl{
+    margin: 5px 13px 10px 8px; border:1px solid #20497F; border-radius: 12px; clear: both; }
+/*.pioRelatedUrl h2{ border-bottom: 1px solid #ccc; padding-bottom: 5px;}*/
+#content .pioRelatedUrl h2{background-color: #20497F; margin: 0px;padding: 10px 10px; font-size:14px; border-top-left-radius: 10px;border-top-right-radius: 10px;color: #fff;}
+.pioRelatedUrl ul{ background-color: #fff; border-bottom-right-radius: 12px; border-bottom-left-radius: 12px; list-style-position: inside; padding: 10px;}
+.pioRelatedUrl ul li{ display: block; height: 1.2rem; line-height: 1.2rem; }
+.pioRelatedUrl a{ display: inline-block; width:100%; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; line-height: 1.2rem; color:#000;}
+.pioRelatedUrl a:hover{ color:orange; font-size:100%; }
+
+

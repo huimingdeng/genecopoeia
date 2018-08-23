@@ -1,0 +1,87 @@
+<?php
+//引入该核心文件才能使用wpdb类
+require_once(dirname(__FILE__)."/../../../wp-config.php");
+// wp中直接引入核心文件会提示404，需要此语句来强制标记提示200才能成功引入
+header('HTTP/1.1 200 OK');
+
+global $wpdb;
+$action = $_REQUEST['action'];
+$per_num = $_REQUEST['per_num'];//表单值
+$display_num = $_REQUEST['display_num'];//表单值
+$type 	= $_REQUEST['type'];//获取AJAX提交的type
+$item = $_REQUEST['item'];//获取AJAX提交的Items
+
+if($action=="pio") {
+	if($type=="get_url"){
+		if(isset($item)){
+			$arr = getRelatedURLBySingleItem($item);
+			if($arr){
+				$Output = getRelatedURLByAllItem($arr);
+				echo json_encode($Output);
+			}
+		}else{
+			echo json_encode(array());
+		}
+	}
+}
+
+// 根据item的url获取别名
+function getRelatedURLBySingleItem($item,$num=''){
+	if(!$num){
+		$num = get_option('pio_related_product_per_num',4);
+	}
+	// $uri = "http://localhost:8000/queries.json";
+	$uri = "http://192.168.8.4:8003/queries.json";
+	if(preg_match("/genecopoeia.com/",$_SERVER['SERVER_NAME'])) {
+		$uri = "http://othello.genecopoeia.com:8003/queries.json";
+	}
+	$header = "Content-Type: application/json";
+	if(preg_match("/".$_SERVER['HTTP_HOST']."/",$item)){
+		$item = preg_replace("/^[https:\/\/]+|^[http:\/\/]+|".$_SERVER['HTTP_HOST']."/", '', $item);
+	}
+	$data = '{ "item": "'. $item .'", "itembias": '. $num .',"num": '.$num.' }';//itembias:系统
+	$ch = curl_init ();
+	curl_setopt ( $ch, CURLOPT_URL, $uri );
+	curl_setopt ( $ch, CURLOPT_POST, 1 );
+	curl_setopt ( $ch, CURLOPT_HEADER, $header );
+	curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
+	curl_setopt ( $ch, CURLOPT_POSTFIELDS, $data );
+	$return = curl_exec ( $ch );
+	curl_close ( $ch );
+	$output = json_decode($return,true);
+	$output = $output["itemScores"];//提取item和score
+	return $output;
+}
+
+// 或取当前产品的相关产品推荐
+function getRelatedURLByAllItem($AllArr){
+	// global $wpdb;
+	$i = 0;
+	$DisplayArr = array();
+	$relateUrl = array();
+	$display_num = get_option('pio_related_product_display_num',4);
+	foreach ($AllArr as $value) {
+		$item = $value['item'];
+		$score = $value['score'];
+		if($score>0){
+			$DisplayArr[$item] = $score;
+		}
+	}
+	array_unique($DisplayArr);//去掉重复值
+	
+	$DisplayArr = array_keys($DisplayArr);//只输出item
+	rsort($DisplayArr);//排序
+	if(!empty($DisplayArr)){
+		foreach ($DisplayArr as $value) {
+			$postid=url_to_postid($value);
+			if($postid){
+				$post=get_post($postid,'ARRAY_A');
+				$tmp['post_title']=$post['post_title'];
+				$tmp['url']=$value;
+				$relateUrl[]=$tmp;
+			}
+		}
+	}
+	// print_r($relateUrl);
+	return $relateUrl;
+}
