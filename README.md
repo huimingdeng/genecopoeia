@@ -13,3 +13,5 @@ WordPress plugin development by genecopoeia
 
 20180823 pio-related-posts 文本相似度插件，第二版的数据源同时由两位同事提供，danhuang 和 junfangzhang 。
 
+### [BmnarsAudit](https://github.com/huimingdeng/genecopoeia/tree/master/BmnarsAudit) 《[生命的奥秘](http://www.lifeomics.com/)》爬虫管理插件
+添加插件入口，设置入口管理列表。
