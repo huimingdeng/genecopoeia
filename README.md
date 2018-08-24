@@ -1,7 +1,7 @@
 # genecopoeia
 WordPress plugin development by genecopoeia
 
-为 Genecopoeia 公司开发的插件。
+为 [Genecopoeia](https://www.genecopoeia.com/) 公司开发的插件。
 
 ### [lentiManager](https://github.com/huimingdeng/genecopoeia/tree/master/LentiManager) 慢病毒 _cs_lenti_collection 数据表管理插件
 
