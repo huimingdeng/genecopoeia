@@ -139,7 +139,16 @@
                 	},
                 	"width":"10%"
 		    	},
-		        {	"data" : "source_url"},
+		        {	"data" : "source_url",
+		        	"render": function ( data, type, full, meta ){
+	                    if(data!=null){
+	                        return '<a href="'+data+'" target="_blank">'+data+'</a>'; 
+	                    }else{
+	                        return '';
+	                    }
+                	},
+                	"width":"8%"
+		    	},
 		        {
 		        	"data": "id",
 	            //将catalog渲染成两个按钮，点击按钮时将dt单元格的catalog作为参数调用对应的方法
