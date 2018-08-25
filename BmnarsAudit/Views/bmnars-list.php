@@ -37,7 +37,13 @@
 			<table class="table table-striped table-bordered table-hover"  id="bmnars-list">
 				<thead>
 					<tr>
-						<th>Catalog</th>
+						<th>Title</th>
+						<th>Author</th>
+						<th>Source</th>
+						<!-- <th>Content(html)</th> -->
+						<th>Content(text)</th>
+						<th>Source Url</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -47,3 +53,104 @@
 		</div>
 	</div>	
 </div>
+
+<script type="text/javascript">
+	var table;
+	jQuery(document).ready(function($) {
+        loadBmnars();
+        $('[data-toggle="tooltip"]').tooltip();
+	});
+	function loadBmnars(){
+		table = $('#bmnars-list').DataTable({
+            // responsive: true,
+            "dom": '<"container-fluid"<"row"<"col-md-2"l><"col-md-6"B><"col-md-2"f>>rt<"rol-md-2"><"col-md-2"i>p>',
+            "stateSave": true,
+            "buttons": [
+	            {
+	                text:'Reload',
+	                action: function( e, dt, node, config ) {
+	                   table.ajax.reload();
+	                }
+	            },
+	            {
+	                extend:'excel',
+	                exportOptions:{columns: ':visible'}
+	            },
+	            {
+	                extend:'pdf',
+	                exportOptions:{columns: ':visible'}
+	            },
+	            {   
+	                extend: 'colvis',
+	                className: 'colvisButton',
+	                columns: ':gt(0)'
+	            }
+        	],
+        	"order": [[ 0, 'asc' ]],
+        	"destroy": true,//销毁上一个实例
+	        "autoWidth": false,//关闭自动列宽
+	        "processing": true,//处理中的提示
+	        "serverSide": false,//客户端处理
+	        "language": {
+	            "sProcessing": "Processing...",
+	            "sLengthMenu": "Show _MENU_ entires",
+	            "sZeroRecords": "No matching records found.",
+	            "sInfo": "Showing _START_ to _END_ of _TOTAL_ entires",
+	            "sInfoEmpty": "Showing 0 to 0 of 0 entires",
+	            "sInfoFiltered": "(filtered from _MAX_ total entries)",
+	            "sSearch": "Search",
+	            "sEmptyTable": "No data was found",
+	            "sLoadingRecords": "loading...",
+	            "sInfoThousands": ",",
+	            "oPaginate": {
+	                "sPrevious": "Previous",
+	                "sNext": "Next"
+	            }
+	        },
+	        "ajax": {//发送ajax请求
+	            "url": "<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/bmnars-ajax.php'; ?>",
+	            "type": "GET",
+	            "data": { action: "listAll"},
+	        },
+	        "columns": [
+		        { 
+		            "data": "title",
+		            "width": "15%"
+		        },
+		        {	"data" : "author" },
+		        {	"data" : "source" },
+		        /*{	"data" : "content_html",
+		        	"render": function ( data, type, full, meta ){
+	                    if(data!=null){
+	                        return '<div style="overflow: hidden;text-overflow: ellipsis; white-space: nowrap; height: 20px; width:120px; cursor: pointer;" title="'+data+'">'+data+'</div>'; 
+	                    }else{
+	                        return '';
+	                    }
+                	},
+                	"width": "120"
+		    	},*/
+		    	{	"data" : "content_text",
+		        	"render": function ( data, type, full, meta ){
+	                    if(data!=null){
+	                        return '<div style="overflow: hidden; width:300px; height:80px; overflow:auto;">'+data+'</div>'; 
+	                    }else{
+	                        return '';
+	                    }
+                	},
+                	"width":"10%"
+		    	},
+		        {	"data" : "source_url"},
+		        {
+		        	"data": "id",
+	            //将catalog渲染成两个按钮，点击按钮时将dt单元格的catalog作为参数调用对应的方法
+	                "render": function ( data, type, full, meta ){
+	                    return '<a class="btn btn-primary btn-xs edit" onclick="editLentil(\''+data+'\',this)"><span class="glyphicon glyphicon-edit"></span></a>'
+	                    +'&nbsp'+
+	                    '<a data-toggle="modal" data-target="#deleteModal" class="btn btn-danger btn-xs delete" onclick="deleteLentil(\''+data+'\')"><span class="glyphicon glyphicon-trash"></span></a>';
+	                },"orderable": false
+		        }
+	        ]
+        });
+	}
+</script>
+
