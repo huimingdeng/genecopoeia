@@ -10,3 +10,5 @@
 添加爬虫项目 ioz_ac_spider ，获取网站资源。
 
 添加爬虫项目 kepu_net_spider ，获取网站资源。
+
+添加爬虫项目 sciencenet_spider ，获取网站资源。
