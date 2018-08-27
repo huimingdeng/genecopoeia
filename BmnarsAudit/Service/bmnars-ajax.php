@@ -1,4 +1,4 @@
-<?php 
+<?php error_reporting(255);
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__)))))."/wp-config.php");
 global $wpdb;
 global $user_login;
@@ -75,5 +75,17 @@ if($user_login){
 				
 				break;
 		}
+	}
+
+	if ('savedraft' == $action) {
+		$post_id = trim($_REQUEST['id']);
+		$imgSrc = WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__)));
+		$sql = sprintf("SELECT id,title,author,source,source_url,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html,content_text FROM _cs_bmnars_contents WHERE id = %s",$imgSrc,$post_id);
+			
+		$query = $wpdb->get_row($sql);
+		
+		include('../Views/template.php');
+		
+			// echo json_encode($query);
 	}
 }
