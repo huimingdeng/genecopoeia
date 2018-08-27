@@ -38,12 +38,42 @@ if($user_login){
 
 	if ('listAll' == $action) 
 	{
-		$sql = "SELECT * FROM _cs_bmnars_contents";
+		$imgSrc = WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__)));
+		$sql = sprintf("SELECT id,title,author,source,source_url,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html,content_text FROM _cs_bmnars_contents",$imgSrc);
 		$results = $wpdb->get_results($sql);
 		$response = array(
 			// 'sql'=>$sql,
 			'data' => $results
 			);
 		echo json_encode($response);
+	}
+
+	if ('listOne' == $action || 'queryRep' == $action) 
+	{
+		$post_id = trim($_REQUEST['id']);
+		$imgSrc = WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__)));
+		$sql = sprintf("SELECT id,title,author,source,source_url,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html,content_text FROM _cs_bmnars_contents WHERE id = %s",$imgSrc,$post_id);
+			switch ($action) {
+				case 'listOne':
+				$query = $wpdb->get_row($sql);
+				break;
+				case 'queryRep':
+				$query = $wpdb->query($sql);
+				break;
+			}
+			echo json_encode($query);
+	}
+
+	if ('allowed' == $action || 'disallowed' == $action) 
+	{
+		switch ($action) {
+			case 'allowed':
+				$sql = sprintf("");
+				break;
+			
+			case 'disallowed':
+				
+				break;
+		}
 	}
 }

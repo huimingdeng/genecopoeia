@@ -1,0 +1,14 @@
+
+#bmnars-list .btn-xs { margin-right: 5px;}
+
+#preview-modal-dialog{ margin:100px auto; width: 800px;} 
+
+#previewModalLabel span{  display: inline-block; padding: 2px 4px; border: 1px solid #fff; overflow: hidden;}
+
+#preview_title{display: inline-block; *display: inline; zoom: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width:80%;}
+
+.code { padding: 2px 4px; color: #d14; white-space: nowrap; background-color: #f7f7f9; border: 1px solid #e1e1e8; font-family: Monaco, Menlo, Consolas, "Courier New", monospace; border-radius: 3px; }
+
+#previewbody {height:380px; overflow:auto;}
+
+#bmnars-list a{white-space:normal;word-break:break-all;}

@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/css/dataTables.bootstrap.css">
 <link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/lib/Buttons-1.1.2/css/buttons.bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/lib/Responsive-2.1.0/css/responsive.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/css/bmnars.css">
 
 <script type="text/javascript" language="javascript" src="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/js/jquery-1.12.3.min.js"></script>
 <script type="text/javascript" language="javascript" src="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/js/jquery.dataTables.min.js"></script>
@@ -40,7 +41,6 @@
 						<th>Title</th>
 						<th>Author</th>
 						<th>Source</th>
-						<!-- <th>Content(html)</th> -->
 						<th>Content(text)</th>
 						<th>Source Url</th>
 						<th>Action</th>
@@ -52,6 +52,33 @@
 			</table>
 		</div>
 	</div>	
+</div>
+
+<div class="modal fade" id="previewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" id="preview-modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="previewModalLabel">
+                    <span>预览</span><span id="preview_title" class="code"></span>
+                </h4>
+            </div>
+            <!-- /.modal-header -->
+            <div class="modal-body">
+                <div id="previewbody"></div>
+            </div>
+            <!-- /.modal-body -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="preview_button">Preview</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"> Cancel </button>
+            </div>
+            <!-- /.modal-footer -->
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-fade -->
 </div>
 
 <script type="text/javascript">
@@ -119,47 +146,69 @@
 		        },
 		        {	"data" : "author" },
 		        {	"data" : "source" },
-		        /*{	"data" : "content_html",
+		    	{	"data" : "content_text",
 		        	"render": function ( data, type, full, meta ){
 	                    if(data!=null){
-	                        return '<div style="overflow: hidden;text-overflow: ellipsis; white-space: nowrap; height: 20px; width:120px; cursor: pointer;" title="'+data+'">'+data+'</div>'; 
+	                        return '<div style="overflow: hidden; width:300px; height:80px; overflow-y:auto;">'+data+'</div>'; 
 	                    }else{
 	                        return '';
 	                    }
                 	},
-                	"width": "120"
-		    	},*/
-		    	{	"data" : "content_text",
+                	"width":"15%"
+		    	},
+		        {	"data" : "source_url",
 		        	"render": function ( data, type, full, meta ){
 	                    if(data!=null){
-	                        return '<div style="overflow: hidden; width:300px; height:80px; overflow:auto;">'+data+'</div>'; 
+	                        return '<div style="width:250px;"><a href="'+data+'" target="_blank">'+data+'</a></div>'; 
 	                    }else{
 	                        return '';
 	                    }
                 	},
                 	"width":"10%"
 		    	},
-		        {	"data" : "source_url",
-		        	"render": function ( data, type, full, meta ){
-	                    if(data!=null){
-	                        return '<a href="'+data+'" target="_blank">'+data+'</a>'; 
-	                    }else{
-	                        return '';
-	                    }
-                	},
-                	"width":"8%"
-		    	},
 		        {
 		        	"data": "id",
 	            //将catalog渲染成两个按钮，点击按钮时将dt单元格的catalog作为参数调用对应的方法
 	                "render": function ( data, type, full, meta ){
-	                    return '<a class="btn btn-primary btn-xs edit" onclick="editLentil(\''+data+'\',this)"><span class="glyphicon glyphicon-edit"></span></a>'
+	                    return '<a class="btn btn-primary btn-xs edit" onclick="previewCrawler(\''+data+'\',this)" title="预览"><span class="glyphicon glyphicon-eye-open"></span></a>'
 	                    +'&nbsp'+
-	                    '<a data-toggle="modal" data-target="#deleteModal" class="btn btn-danger btn-xs delete" onclick="deleteLentil(\''+data+'\')"><span class="glyphicon glyphicon-trash"></span></a>';
-	                },"orderable": false
+	                    '<a data-toggle="modal" title="通过" class="btn btn-success btn-xs delete" onclick="allowed(\''+data+'\')"><span class="glyphicon glyphicon-ok"></span></a>'
+	                    +'&nbsp'+
+	                    '<a title="不通过" class="btn btn-danger btn-xs delete" onclick="disallowed(\''+data+'\')"><span class="glyphicon glyphicon-remove"></span></a>';
+	                },"orderable": false,"width":"15%"
 		        }
 	        ]
         });
+	}
+	function previewCrawler(postid,object){
+		$.ajax({
+			"url": "<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/bmnars-ajax.php';?>",
+			"type": 'GET',
+			"dataType": 'json',
+			"data": {action:"listOne",id: postid},
+		})
+		.done(function(json) {
+			$("#previewModal").modal().find('#preview_title').text(json.title);
+			$("#previewbody").html(json.content_html);
+		})
+		.fail(function() {
+			
+		})
+		.always(function() {
+			
+		});
+		$("#preview_button").unbind('click').click(function(){
+			layer.msg('同步到WordPress草稿箱，请查看!', {
+	                            icon: 0,
+	                            time: 3000
+	                        });
+		});
+	}
+	function allowed(postid){
+
+	}
+	function disallowed(postid){
+
 	}
 </script>
 

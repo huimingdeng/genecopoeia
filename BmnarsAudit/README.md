@@ -7,3 +7,7 @@ v0.0.2 修复插件地址（Plugin URI）错误
 v0.0.3 bmnars-list.php 文件引入 bootstrap 样式和脚本，引入 bootstrap.dataTable 表格.
 
 v0.0.4 创建 bmnars-ajax.php 做为数据库操作的异步访问程序。添加查询爬虫数据的SQL查询。
+
+v0.0.5 添加预览按钮，同步到WordPress草稿箱，预览效果。
+
+v0.0.6 取消上一版本的发布到WordPress草稿箱的功能；实现审核功能，通过，则发布到 WordPress 草稿箱。不通过，则不实习效果。
