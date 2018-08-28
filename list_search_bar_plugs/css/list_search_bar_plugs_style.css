@@ -1,0 +1,11 @@
+
+.container{width: 100%;}
+.offset-position{ position: absolute; right: 0; bottom: 0; }
+.offset-position button,.offset-position input{float: right; margin-right: 5px;}
+#panelshow{display: none;}
+.fR{float: right;}
+.glyphicon-size-18{font-size: 18px;}
+.glyphicon-size-24{font-size: 24px;}
+.glyphicon-size-32{font-size: 32px;}
+#opertion a.btn{margin-right: 10px; margin-bottom: 10px;}
+.SeachNotice input{width: 250px; display: inline-block; margin-right: 10px;}
