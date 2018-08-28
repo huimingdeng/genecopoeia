@@ -22,8 +22,18 @@ LentiManager.zip 慢病毒管理插件的压缩包，用于WordPress下载安装
 ## spider_porject 生命的奥秘网站爬虫项目脚本 ##
 BmnarsAudit 插件的数据源获取工具 Python爬虫获取目标网站数据。
 
-## list_search_bar_plugs 插件 ##
+## [list_search_bar_plugs](https://github.com/huimingdeng/genecopoeia/tree/master/list_search_bar_plugs) 插件 ##
 为 genecopoeia 公司的search3查询开发的一个小工具插件，利用短代码，在文章内容中设置特定的查询条件。<br>
 由 [hello-world.git](https://github.com/huimingdeng/hello-world) 仓库迁移而来。
 
 插件设置短代码应用于post中 [list_search_bar_plugs class="postid-number"] eg.[list_search_bar_plugs class="120-2"] ; 插件内附使用说明文档。
+
+## [WP2WPQAQ](https://github.com/huimingdeng/genecopoeia/tree/master/WP2WPQAQ) WordPress同步插件 ##
+利用WordPress自身 xmlrpc.php 工具实现两个WordPress站点之间同步的功能。 改插件没有实现上传到非媒体库位置的上传功能。
+
+从 [hello-world.git](https://github.com/huimingdeng/hello-world) 仓库迁移而来。-- Aug 28,2018
+
+## [searchBar](https://github.com/huimingdeng/genecopoeia/tree/master/searchBar) 插件 ##
+为 genecopoeia 公司开发的search3查询工具，利用短代码在文章页中设置特定的查询条件，一篇文章中只能设置一个；修改能在一篇文章中设置多个查询后则命名为 list_search_bar_plugs。
+
+从 [hello-world.git](https://github.com/huimingdeng/hello-world) 仓库迁移而来。-- Aug 28,2018
