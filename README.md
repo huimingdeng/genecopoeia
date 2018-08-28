@@ -18,7 +18,12 @@ LentiManager.zip 慢病毒管理插件的压缩包，用于WordPress下载安装
 添加插件入口，设置入口管理列表。
 
 ## list_search_bar_plugs.zip genecopoeia 文章添加search3自定义查询插件 ##
-插件设置短代码应用于post中 [list_search_bar_plugs class="postid-number"] eg.[list_search_bar_plugs class="120-2"] ; 插件内附使用说明文档。
+插件设置短代码应用于post中 [list_search_bar_plugs class="postid-number"] eg.[list_search_bar_plugs class="120-2"] ; 插件内附使用说明文档。-- 删除该压缩文件，以后下载请到 [list_search_bar_plugs](https://github.com/huimingdeng/genecopoeia/tree/master/list_search_bar_plugs) 目录
 ## spider_porject 生命的奥秘网站爬虫项目脚本 ##
 BmnarsAudit 插件的数据源获取工具 Python爬虫获取目标网站数据。
 
+## list_search_bar_plugs 插件 ##
+为 genecopoeia 公司的search3查询开发的一个小工具插件，利用短代码，在文章内容中设置特定的查询条件。<br>
+由 [hello-world.git](https://github.com/huimingdeng/hello-world) 仓库迁移而来。
+
+插件设置短代码应用于post中 [list_search_bar_plugs class="postid-number"] eg.[list_search_bar_plugs class="120-2"] ; 插件内附使用说明文档。
