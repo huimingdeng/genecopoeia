@@ -1,0 +1,11 @@
+/home/gcdev3/httpdocs/wp-content/uploads/2013/09/Illustration-of-CRISPR_Cas9-mediated-genome-editing.jpg
+/home/fldev/httpdocs/product/crispr-cas9/images/Illustration-of-CRISPR_Cas9-mediated-genome-editing.jpg
+/home/gcdev2/httpdocs/wp-content/uploads/2013/09/Illustration-of-CRISPR_Cas9-mediated-genome-editing.jpg
+/home/gcdev3/httpdocs/wp-content/uploads/2013/09/pCRISPR-CG01.jpg
+/home/fldev/httpdocs/product/crispr-cas9/images/pCRISPR-CG01.jpg
+/home/gcdev2/httpdocs/wp-content/uploads/2013/09/pCRISPR-CG01.jpg
+/home/fldev2/httpdocs/wp-content/uploads/2013/11/pCRISPR-CG01.jpg
+/home/fldev2/httpdocs/wp-content/uploads/2013/09/pCRISPR-CG01.jpg
+/home/fldev2/httpdocs/wp-content/uploads/2014/06/pCRISPR-CG01.jpg
+/home/fldev3/httpdocs/wp-content/uploads/2013/11/pCRISPR-CG01.jpg
+/home/fldev3/httpdocs/wp-content/uploads/2014/06/pCRISPR-CG01.jpg
