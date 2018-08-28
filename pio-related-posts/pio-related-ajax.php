@@ -107,7 +107,7 @@ function getRelatePostsByPostId($postid){
 	$showPost = array();
 	$relateUrl = array();
 	foreach($results AS $row){
-		if(count($relateUrl)<$num+2&&($num+2)<10){
+		if(count($relateUrl)<($num+2)&&($num+2)<10){
 			$post=get_post($row['sim_post_id'],'ARRAY_A');
 			$tmp['post_title']=$post['post_title'];
 			$tmp['url']='/?p='.$post['ID'].'&utm_source=genecopoeia.com&utm_medium=display&utm_campaign=also_viewed';
