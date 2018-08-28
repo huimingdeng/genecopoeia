@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+#wp2wp_view{border:1px solid #4accf6;}
+.sync-span-body{padding: 3px;}
+.sync-success{display: inline-block; *display: inline; *zoom:1; padding: 2px;}
+.sync-error{color: red;}
+.error-msg{padding: 3px; color: red; font-weight: bold;}
+.sync-loading{display: inline-block; padding: 2px 3px 5px 3px; font-weight: bold; color: red;}
+
+.dashicons-no:before{  content: "\f158";}
+.dashicons-yes:before{ color: green; content:"\f147";}
