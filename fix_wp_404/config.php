@@ -1,8 +1,8 @@
 <?php
 // //数据库链接
-// define('DB_NAME', 'genec1');
-// define('DB_USER', 'genec1');
-// define('DB_PASSWORD', 'k0nob1');
+// define('DB_NAME', 'yourdbname');
+// define('DB_USER', 'yourusername');
+// define('DB_PASSWORD', 'yourpassword');
 // define('DB_HOST', 'localhost');
 // define('DB_CHARSET', 'utf8');
 
@@ -15,9 +15,9 @@
 
 return array(
 	//数据库链接
-	'DB_NAME'=>'genec1',
-	'DB_USER'=>'genec1',
-	'DB_PASSWORD'=>'k0nob1',
+	'DB_NAME'=>'yourdbname',
+	'DB_USER'=>'yourusername',
+	'DB_PASSWORD'=>'yourpassword',
 	'DB_HOST'=>'localhost',
 	'DB_CHARSET'=>'utf8',
 	//域名设置
