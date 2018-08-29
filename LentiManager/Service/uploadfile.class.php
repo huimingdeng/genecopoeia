@@ -36,6 +36,9 @@
 			$this->allowedMime=$allowedMime;
 			$this->allowedExt=$allowedExt;//扩展名
 			$this->uploadPath=$uploadPath;//上传保存路径
+			if(!file_exists($this->uploadPath)){
+				mkdir($this->uploadPath,0755,true);
+			}
 			$this->imgflag=$imgflag;
 			$this->imgMime=array('image/jpeg','image/png','image/gif');
 			$this->fileInfo=$_FILES[$this->fileName];
@@ -96,6 +99,11 @@
 			$this->ext=strtolower( pathinfo($this->fileInfo['name'],PATHINFO_EXTENSION) );
 			if(!in_array($this->ext,$this->allowedExt)){
 				$this->error=$this->fileInfo['name']."不允许的扩展名";
+				$errormsg = "[ ".date("Y-m-d H:i:s",time())." ]\t".$this->error."\n";
+				if(!is_dir("logs")){
+					makdir("logs",0754,true);
+				}
+				file_put_contents(".".DIRECTORY_SEPARATOR."logs".DIRECTORY_SEPARATOR."error_logs.txt", $errormsg, FILE_APPEND);
 				return false;
 			}
 			return true;
@@ -107,6 +115,11 @@
 		protected function checkMime(){
 			if(!in_array($this->fileInfo['type'],$this->allowedMime)){
 				$this->error=$this->fileInfo['name']."文件类型错误";
+				$errormsg = "[ ".date("Y-m-d H:i:s",time())." ]\t".$this->error."\n";
+				if(!is_dir("logs")){
+					makdir("logs",0754,true);
+				}
+				file_put_contents(".".DIRECTORY_SEPARATOR."logs".DIRECTORY_SEPARATOR."error_logs.txt", $errormsg, FILE_APPEND);
 				return false;
 			}
 			return true;
@@ -119,6 +132,11 @@
 			if($this->imgflag){
 				if(!@getimagesize($this->fileInfo['tmp_name'])){
 					$this->error=$this->fileInfo['name']."文件真实类型不是图片";
+					$errormsg = "[ ".date("Y-m-d H:i:s",time())." ]\t".$this->error."\n";
+					if(!is_dir("logs")){
+						makdir("logs",0754,true);
+					}
+					file_put_contents(".".DIRECTORY_SEPARATOR."logs".DIRECTORY_SEPARATOR."error_logs.txt", $errormsg, FILE_APPEND);
 					return false;
 				}
 			}
@@ -130,7 +148,12 @@
 		 */
 		protected function checkHTTPPost(){
 			if(!is_uploaded_file($this->fileInfo['tmp_name'])){
-				$this->error=$this->fileInfo['name']."文件不是通过HTTP POST上传的<br>\r\n";
+				$this->error=$this->fileInfo['name']."文件不是通过HTTP POST上传的\r\n";
+				$errormsg = "[ ".date("Y-m-d H:i:s",time())." ]\t".$this->error."\n";
+				if(!is_dir("logs")){
+					makdir("logs",0754,true);
+				}
+				file_put_contents(".".DIRECTORY_SEPARATOR."logs".DIRECTORY_SEPARATOR."error_logs.txt", $errormsg, FILE_APPEND);
 				return false;
 			}
 			return true;
@@ -141,6 +164,11 @@
 		protected function showError(){
 			$this->errMsg = '<span style="color:red">'.$this->error.'</span>';
 			$this->errNo = 400;
+			$errormsg = "[ ".date("Y-m-d H:i:s",time())." ]\t".$this->error."\n";
+			if(!is_dir("logs")){
+				makdir("logs",0754,true);
+			}
+			file_put_contents(".".DIRECTORY_SEPARATOR."logs".DIRECTORY_SEPARATOR."error_logs.txt", $errormsg, FILE_APPEND);
 			// exit;
 			return json_encode(array('No'=>$this->errNo,'Msg'=>$this->errMsg));
 		}
@@ -149,7 +177,7 @@
 		 */
 		protected function checkUploadPath(){
 			if(!file_exists($this->uploadPath)){
-				mkdir($this->uploadPath,0755,true);
+				mkdir($this->uploadPath,0777,true);
 			}
 		}
 		/**
@@ -201,7 +229,7 @@
 						// 检查错误信息
 						if($this->checkError()&&$this->checkSize()&&$this->checkExt()&&$this->checkMime()&&$this->checkTrueImage()&&$this->checkHTTPPost()){
 							$this->uniName=$this->getUniName();
-							$this->destination=$this->uploadPath.'/'.$this->uniName.'.'.$this->ext;
+							$this->destination=$this->uploadPath.DIRECTORY_SEPARATOR.$this->uniName.'.'.$this->ext;
 							if(@move_uploaded_file($this->fileInfo['tmp_name'],$this->destination)){
 								$msg[]=$this->fileInfo['name']."成功上传到".$this->destination."\r\n";
 							}else{
@@ -227,12 +255,12 @@
 				if($this->checkError()&&$this->checkSize()&&$this->checkExt()&&$this->checkMime()&&$this->checkTrueImage()&&$this->checkHTTPPost()){
 					
 					$this->uniName=$this->getUniName();
-					$this->destination=$this->uploadPath.'/'.$this->uniName.'.'.$this->ext;
+					$this->destination=$this->uploadPath.DIRECTORY_SEPARATOR.$this->uniName.'.'.$this->ext;
 					
 					if( @move_uploaded_file( $this->fileInfo['tmp_name'],$this->destination ) ){
 						return json_encode(array("No"=>200,"Msg"=>$this->destination));
 					}else{
-						$this->error="文件移动失败";
+						$this->error=$this->fileInfo['tmp_name'].",文件移动到 ".$this->destination." 失败";
 						$this->showError();
 					}
 				}else{

@@ -49,7 +49,7 @@ table.table{table-layout: fixed;}
 	position: relative;
 } 
 .logs-body{
-	position:absolute; height:400px; overflow:auto
+	position:absolute; height:400px; overflow:auto; width: 100%;
 }
 .logsnum {
 	display: inline-block;

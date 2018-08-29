@@ -606,8 +606,10 @@ if($user_login){
 	{
 		require_once 'uploadfile.class.php';
 		$file = $_FILES['file'];
-		$upload = new uploadfile();
+		$path = dirname(__FILE__).DIRECTORY_SEPARATOR."uploads";
+		$upload = new uploadfile('file',$path);
 		$msg = $upload->uploadFile();
+		// print_r();
 		$obj = json_decode($msg);
 		if($obj->No==200){
 			$filePath = $obj->Msg;//如果上传成功，则返回文件路径

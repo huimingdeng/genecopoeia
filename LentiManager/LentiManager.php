@@ -3,7 +3,7 @@
  Plugin Name: lentiManager
  Plugin URI: https://github.com/huimingdeng/genecopoeia/tree/master/LentiManager
  Description: _cs_lenti_collection table management, If you have changed the price, please test and inform the IT department if there are any bugs.
- Version: 0.5.9
+ Version: 0.5.10
  Author: DHM
  Author URI: #
  License: none

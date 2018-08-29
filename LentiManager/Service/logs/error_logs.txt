@@ -1,1 +1,10 @@
-[ 2018-08-18 15:07:29 ]	Sorry, the Excel data in the file template-2018-08-18-15-07.xlsx you uploaded is empty, please upload again.
+[ 2018-08-29 15:02:42 ]	文件移动失败
+[ 2018-08-29 15:06:26 ]	test.xlsx|application/vnd.openxmlformats-officedocument.spreadsheetml.sheet|/tmp/phpdEVfe7|0|9018,文件移动失败
+[ 2018-08-29 15:44:29 ]	/tmp/phpcZGjHW,文件移动到 ./uploads/test-2018-08-29-15-44.xlsx 失败
+[ 2018-08-29 15:46:16 ]	/tmp/phpaoMQHo,文件移动到 /uploads/test-2018-08-29-15-46.xlsx 失败
+[ 2018-08-29 15:51:08 ]	/tmp/phpswvNOt,文件移动到 /uploads/test-2018-08-29-15-51.xlsx 失败
+[ 2018-08-29 15:53:15 ]	/tmp/phpNSEmKK,文件移动到 /uploads/test-2018-08-29-15-53.xlsx 失败
+[ 2018-08-29 15:55:14 ]	/tmp/phpNz2nSO,文件移动到 /uploads/test-2018-08-29-15-55.xlsx 失败
+[ 2018-08-29 15:56:16 ]	/tmp/phpVHIljZ,文件移动到 /uploads/test-2018-08-29-15-56.xlsx 失败
+[ 2018-08-29 15:57:06 ]	/tmp/php61wW4x,文件移动到 /uploads/test-2018-08-29-15-57.xlsx 失败
+[ 2018-08-29 16:02:14 ]	/tmp/phpZJvZvZ,文件移动到 uploads/test-2018-08-29-16-02.xlsx 失败
