@@ -1,24 +1,11 @@
 <?php
-// //数据库链接
-// define('DB_NAME', 'yourdbname');
-// define('DB_USER', 'yourusername');
-// define('DB_PASSWORD', 'yourpassword');
-// define('DB_HOST', 'localhost');
-// define('DB_CHARSET', 'utf8');
-
-// //域名设置
-// // define('DOMAIN' , 'gcdev.fulengen.cn');
-// define('DOMAIN' , 'genecopoeia.com');
-
-// //调试
-// define('DEBUG' , true);
-
+require_once '../wp-config.php';
 return array(
 	//数据库链接
-	'DB_NAME'=>'yourdbname',
-	'DB_USER'=>'yourusername',
-	'DB_PASSWORD'=>'yourpassword',
-	'DB_HOST'=>'localhost',
+	'DB_NAME'=>DB_NAME,
+	'DB_USER'=>DB_USER,
+	'DB_PASSWORD'=>DB_PASSWORD,
+	'DB_HOST'=>DB_HOST,
 	'DB_CHARSET'=>'utf8',
 	//域名设置
 	'DOMAIN'=>'genecopoeia.com',
