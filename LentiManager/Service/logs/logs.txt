@@ -48,3 +48,5 @@
 [ 2018-08-29 06:15:07 ]	'AA09-ProdId-AV20-3-200' was successfully backed up to `_cs_lenti_collection_delete_back`! 'AA09-ProdId-AV20-3-200' was successfully deleted from `_cs_lenti_collection`!
 [ 2018-08-29 06:15:14 ]	'AA08-ProdId-AV20-3-400' was successfully backed up to `_cs_lenti_collection_delete_back`! 'AA08-ProdId-AV20-3-400' was successfully deleted from `_cs_lenti_collection`!
 [ 2018-08-29 06:15:20 ]	'AA08-ProdId-AV20-3-A00' was successfully backed up to `_cs_lenti_collection_delete_back`! 'AA08-ProdId-AV20-3-A00' was successfully deleted from `_cs_lenti_collection`!
+[ 2018-08-29 16:18:10 ]	AAa01-ProdId-AV20-3-200 update successfully
+[ 2018-08-29 08:19:30 ]	'AAa01-ProdId-AV20-3-200' was successfully backed up to `_cs_lenti_collection_delete_back`! 'AAa01-ProdId-AV20-3-200' was successfully deleted from `_cs_lenti_collection`!

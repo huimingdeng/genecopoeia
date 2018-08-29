@@ -3,7 +3,7 @@
  Plugin Name: lentiManager
  Plugin URI: https://github.com/huimingdeng/genecopoeia/tree/master/LentiManager
  Description: _cs_lenti_collection table management, If you have changed the price, please test and inform the IT department if there are any bugs.
- Version: 0.5.10
+ Version: 0.5.12
  Author: DHM
  Author URI: #
  License: none
@@ -39,12 +39,12 @@ function add_lenti_menu(){
       'render_log_manager_page'
     );
   }
-  if($user_login=='admin'){
+  // if('admin'==$user_login||'huimingdeng'==$user_login){
     add_submenu_page(
       'lentiManager',
       'lentiAssign',
       'lenti Assign',
-      'edit_pages',
+      'manage_options',
       'lentiAssign',
       'render_lenti_assign_page'
     );
@@ -52,11 +52,11 @@ function add_lenti_menu(){
       'lentiManager',
       'FilesManager',
       'Files Manager',
-      'edit_pages',
+      'manage_options',
       'filesManager',
       'render_files_manager_page'
     );
-  }
+  // }
 }
 // 慢病毒管理页
 function render_lenti_list_page(){

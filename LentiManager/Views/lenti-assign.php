@@ -4,9 +4,9 @@ global $user_login;
 $allowed_user = get_option('lenti_manager_permission');
 $allowed_user_options = json_decode($allowed_user,true);
 // if($user_login=='admin'||$user_login=='huimingdeng')
-if($user_login=='admin')
+// if($user_login=='admin')
 // if(in_array($user_login, $allowed_user_options))
-	{?>
+	//{?>
 	<link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/css/dataTables.bootstrap.css">
 	<link rel="stylesheet" href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__)));?>/css/lenti.css">
@@ -113,6 +113,7 @@ if($user_login=='admin')
 		}
 	</script>
 <?php 
-}else{
+/*}else{
 	die("Sorry, you don't have access to the current page.");
-}?>
+}*/
+?>

@@ -31,3 +31,5 @@ Version Description
 0.5.8 插件添加日志查看菜单。 
 0.5.9 添加操作说明文档。
 0.5.10 修复文件上传在Linux上的路径权限问题，必须设置和 /tmp 的权限一样，uploads 必须是 777
+0.5.11 修改 add_submenu_page() 函数的权限，设置分配页面权限和管理Excel页面的权限为 manage_options
+0.5.12 修改 lenti-assign.php 默认时区为上海。

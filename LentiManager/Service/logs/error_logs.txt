@@ -8,3 +8,5 @@
 [ 2018-08-29 15:56:16 ]	/tmp/phpVHIljZ,文件移动到 /uploads/test-2018-08-29-15-56.xlsx 失败
 [ 2018-08-29 15:57:06 ]	/tmp/php61wW4x,文件移动到 /uploads/test-2018-08-29-15-57.xlsx 失败
 [ 2018-08-29 16:02:14 ]	/tmp/phpZJvZvZ,文件移动到 uploads/test-2018-08-29-16-02.xlsx 失败
+[ 2018-08-29 16:14:09 ]	/tmp/phpXkRBOl,文件移动到 /home/gcdev2/httpdocs/wp-content/plugins/LentiManager/Service/uploads/test-2018-08-29-16-14.xlsx 失败
+[ 2018-08-29 16:17:16 ]	/tmp/phpQzCbDm,文件移动到 /home/gcdev2/httpdocs/wp-content/plugins/LentiManager/Service/uploads/test-2018-08-29-16-17.xlsx 失败

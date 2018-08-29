@@ -1,4 +1,4 @@
-<?php 
+<?php date_default_timezone_set("Asia/Shanghai");
 require_once(dirname(dirname(dirname(dirname(dirname(__FILE__)))))."/wp-config.php");
 global $wpdb;
 global $user_login;
