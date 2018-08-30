@@ -4,8 +4,10 @@ genecopoeia 网站搜索页面的克隆产品筛选菜单管理插件。（尝�
 version description：
 
 v0.0.1 设计版本：设计页面结构，1.直接管理数据表 or 2.界面化操作按产品种类划分。
+v0.0.2 完成插件入口类设计，加载插件激活钩子等操作，定义公用方法。
 
 
+----------
 
 Digital dictionary description（管理表的数字字典）：
 <table class="table table-hover table-striped table-condensed" cellpadding="0" cellspacing="0" >
