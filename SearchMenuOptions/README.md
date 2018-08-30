@@ -8,7 +8,6 @@ v0.0.1 设计版本：设计页面结构，1.直接管理数据表 or 2.界面�
 
 
 Digital dictionary description（管理表的数字字典）：
-<link href="https://github.com/twbs/bootstrap/tree/v4-dev/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 <table class="table table-hover table-striped table-condensed" cellpadding="0" cellspacing="0" >
 <thead>
 <tr><th>编号</th><th>字段</th><th>类型长度</th><th>说明</th></tr>
