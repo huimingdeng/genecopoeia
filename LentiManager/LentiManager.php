@@ -149,9 +149,9 @@ CREATE TABLE `_cs_lenti_collection_back` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 EOF; version 0.5.6 above*/
     // 备份数据
-    $sql.= <<<EOF
+   /* $sql.= <<<EOF
 INSERT INTO _cs_lenti_collection_back SELECT * FROM _cs_lenti_collection;
-EOF;
+EOF;*/
 
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
     dbDelta( $sql ,true);
