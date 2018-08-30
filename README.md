@@ -40,3 +40,7 @@ BmnarsAudit 插件的数据源获取工具 Python爬虫获取目标网站数据�
 
 ## [fix_wp_404](https://github.com/huimingdeng/genecopoeia/tree/master/fix_wp_404) 工具 ##
 脚本运行，查询检查 WordPress 文章中的 404 链接，修复文章中的 404 链接。
+
+## [SearchMenuOptions](https://github.com/huimingdeng/genecopoeia/tree/master/SearchMenuOptions) 插件 ##
+genecopoeia 网站搜索页面的克隆产品筛选菜单管理插件。（尝试插件开发使用面向对象，摈弃前面list_search_bar_plugs等面向过程的形式）
+
