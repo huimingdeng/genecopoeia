@@ -3,7 +3,7 @@
  * Plugin Name: Search Menu Options
  * Plugin URI: https://github.com/huimingdeng/genecopoeia/tree/master/SearchMenuOptions
  * Description: genecopoeia 网站搜索页面的克隆产品筛选菜单管理插件。
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: DHM (huimingdeng)
  * Author URI: #
  * License: Open source but the copyright is used by genecopoeia.
@@ -11,7 +11,7 @@
 
 class SearchMenuOptions
 {
-
+	const PLUGIN_VERSION = '0.0.3';
 	private static $_instance = NULL;
 	const DEBUG = TRUE;
 	private static $_license = NULL;
@@ -25,6 +25,8 @@ class SearchMenuOptions
 		register_deactivation_hook(__FILE__, array($this, 'deactivate'));
 		// 插件加载
 		add_action('plugins_loaded', array($this, 'plugins_loaded'), 1);
+		if (is_admin())
+			Admin::get_instance();
 	}
 	/*
 	 * autoloading callback function
@@ -38,7 +40,6 @@ class SearchMenuOptions
 		$classname = strtolower($class);
 		// check each path
 		$classfile = $path . $classname . '.class.php';
-
 		if (file_exists($classfile)){
 			require_once($classfile);
 		}
@@ -72,7 +73,6 @@ class SearchMenuOptions
 			$dirname .= DIRECTORY_SEPARATOR;
 
 		self::$_autoload_paths[] = $dirname;
-		print_r(self::$_autoload_paths);
 	}
 
 	/*
