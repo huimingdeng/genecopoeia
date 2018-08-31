@@ -3,7 +3,7 @@
 Plugin Name: PIO Related Posts
 Plugin URI: http: #
 Description: 从PIO中获取并展示相关产品的链接（相关产品文章推荐）
-Version: 2.1
+Version: 2.2
 Author: dhm
 Author URI: #
 License: GPL2
