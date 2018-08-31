@@ -33,6 +33,21 @@ if($action=="pio") {
 			echo json_encode(array());
 		}
 	}
+}elseif("pioCombined"==$action){
+	if($type=="get_url"){
+		if(isset($item)){
+			$postid = trim($item['postid']);
+			// $url = $item['url'];
+			$urls = explode('?',$item['url']);
+			$url = $urls[0];
+			
+			$Output = getCombinedUrl($postid,$url);
+			// echo json_encode($item);
+			echo json_encode($Output);
+		}else{
+			echo json_encode(array());
+		}
+	}
 }
 
 // 根据item的url获取别名
@@ -107,7 +122,7 @@ function getRelatePostsByPostId($postid){
 	$showPost = array();
 	$relateUrl = array();
 	foreach($results AS $row){
-		if(count($relateUrl)<($num+2)&&($num+2)<10){
+		if(count($relateUrl)<$num){
 			$post=get_post($row['sim_post_id'],'ARRAY_A');
 			$tmp['post_title']=$post['post_title'];
 			$tmp['url']='/?p='.$post['ID'].'&utm_source=genecopoeia.com&utm_medium=display&utm_campaign=also_viewed';
@@ -116,5 +131,26 @@ function getRelatePostsByPostId($postid){
 		}
 	}
 
+	return $relateUrl;
+}
+
+// 混合旧版的pio和新版的相似度
+function getCombinedUrl($postid,$url){
+	$arr = getRelatedURLBySingleItem($url);
+	if($arr){
+		$Output1 = getRelatedURLByAllItem($arr);
+	}
+	$Output2 = getRelatePostsByPostId($postid);
+	// print_r($Output2);
+	$relateUrl = array();
+	if(!empty($Output1)&&!empty($Output2)){
+		$combined = array_merge($Output1,$Output2);
+		foreach ($combined as $k => $v) {
+			$relateUrl[$v['post_title']] = $v;
+		}
+		sort($relateUrl);
+	}else{
+		$relateUrl = $Output2;
+	}
 	return $relateUrl;
 }

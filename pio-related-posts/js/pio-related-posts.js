@@ -1,12 +1,13 @@
 
 jQuery(document).ready(function($){
    
-    var a = Math.ceil(Math.random()*2);
+    /*var a = Math.ceil(Math.random()*2);
     if(a==1){
         data = "action=pio&type=get_url&item="+window.location.href;
     }else{
         data = "action=pioID&type=get_url&item="+postId;
-    }
+    }*/
+    var data = "action=pioCombined&type=get_url&item[postid]="+postId+"&item[url]="+window.location.href;
         $.ajax({
             async: false,
             type: "POST",
@@ -15,6 +16,7 @@ jQuery(document).ready(function($){
             url: "/wp-content/plugins/pio-related-posts/pio-related-ajax.php",
             data: data,
             success: function(d){//有返回才显示窗口
+                // console.log(d);
                 var obj = JSON.parse(d);
                 if(obj.length!=0){
                     var strHtml='<div id="related_posts" class="pioRelatedUrl">'+"\r\n";
