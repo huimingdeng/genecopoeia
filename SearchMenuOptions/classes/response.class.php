@@ -4,43 +4,47 @@
  */
 class Response
 {
-	public $nosend = FALSE;
-	public $session_timeout = FALSE;
+	
 	private $_headers_sent = FALSE;				// TRUE when headers are sent on instantiation
 	private $_capture = FALSE;					// TRUE when capturing output
+	private $data;
 
 	public function __construct($send_headers = FALSE)
 	{
 		if ($send_headers) {
-			$this->_send_headers(TRUE);
+			$this->_headers_sent = TRUE;
 		}
-
-		if (!is_user_logged_in())
-			$this->session_timeout = 1;
 	}
 
-	/**
-	 * Send the HTTP headers for the JSON response
-	 */
-	private function _send_headers($capture = FALSE)
+	public function set($action,$data=array())
 	{
-		if (!$this->_headers_sent) {
-			global $wp_version;
-
-			header(self::HEADER_SYNC_VERSION . ': ' . SearchMenuOptions::PLUGIN_VERSION);		// send this header so sources will know that they're talking to SYNC
-			header(self::HEADER_WP_VERSION . ': ' . $wp_version);								// send this header so sources will know that they're talking to WP
-			header('Content-Type: application/json');
-			$this->_headers_sent = TRUE;
-
-			if ($this->_capture) {
-				// headers have already been sent and ob_start() has been called.
-				// clear the output buffer so our JSON data can be sent
-				ob_get_clean();
-			}
-			if ($capture) {
+		switch ($action) {
+			case 'list':
+				// print_r($data);
+				if(!empty($data)){
+					foreach ($data as $k => $v) {
+						$newdata[$v['menu_name']][] = $v;
+						$newtitle[$v['menu_name']] = $v['menu_name'];
+					}
+				}
+				$title = array_unique($newtitle);
+				sort($title);
+				// print_r($newdata);
 				ob_start();
-				$this->_capture = TRUE;
-			}
+				include(dirname(dirname(__FILE__)).'/views/'.'list.php');
+				$this->data = ob_get_contents();
+				ob_end_clean();
+				break;
+			case 'listOne':
+				$title = $data['title'];
+				// print_r($title);
+				$newdata = $data['results'];
+				$menu_name = $data['menu_name'];
+				ob_start();
+				include(dirname(dirname(__FILE__)).'/views/'.'listOne.php');
+				$this->data = ob_get_contents();
+				ob_end_clean();
+				break;
 		}
 	}
 
@@ -50,23 +54,10 @@ class Response
 	 */
 	public function send($exit = TRUE)
 	{
-		if ($this->nosend)
-			return;
-
-		$this->_send_headers();
-
-		if ($this->has_errors()) {
-			$this->success = 0;					// force this
-			$this->set('message', Request::error_code_to_string($this->error_code));
+		if($this->_headers_sent){
+			echo json_encode(array('msg'=>$this->data));
+			exit(0);
 		}
-
-		$output = $this->__toString();			// construct data to send to browser
-		echo $output;							// send data to browser
-
-		if ($exit)
-			exit(0);							// stop script
 	}
-
-
 
 }

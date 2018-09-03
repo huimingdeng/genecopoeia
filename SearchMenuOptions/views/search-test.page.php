@@ -11,4 +11,4 @@
 		</div>
 	</div>
 </div>
-<script type="text/javascript">var isTest=false;</script>
+<script type="text/javascript">var isTest=true;</script>

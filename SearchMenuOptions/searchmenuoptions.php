@@ -3,7 +3,7 @@
  * Plugin Name: Search Menu Options
  * Plugin URI: https://github.com/huimingdeng/genecopoeia/tree/master/SearchMenuOptions
  * Description: genecopoeia 网站搜索页面的克隆产品筛选菜单管理插件。
- * Version: 0.0.3
+ * Version: 0.0.4
  * Author: DHM (huimingdeng)
  * Author URI: #
  * License: Open source but the copyright is used by genecopoeia.
@@ -11,7 +11,7 @@
 
 class SearchMenuOptions
 {
-	const PLUGIN_VERSION = '0.0.3';
+	const PLUGIN_VERSION = '0.0.4';
 	private static $_instance = NULL;
 	const DEBUG = TRUE;
 	private static $_license = NULL;
@@ -25,6 +25,8 @@ class SearchMenuOptions
 		register_deactivation_hook(__FILE__, array($this, 'deactivate'));
 		// 插件加载
 		add_action('plugins_loaded', array($this, 'plugins_loaded'), 1);
+		// AJAX 调用
+		add_action('wp_ajax_searchmenuoptions', array($this, 'check_ajax_query'));
 		if (is_admin())
 			Admin::get_instance();
 	}
@@ -111,6 +113,17 @@ class SearchMenuOptions
 	{
 		load_plugin_textdomain('searchmenuoptions', FALSE, plugin_basename(dirname(__FILE__)) . '/languages');
 		do_action('searchmenuoptions_init');//创建一个行为钩子
+	}
+
+	/**
+	 * Checks for an AJAX request and initializes the AJAX class to dispatch any found action.
+	 */
+	public function check_ajax_query()
+	{
+		if (defined('DOING_AJAX') && DOING_AJAX) {
+			$ajax = new Ajax();
+			$ajax->dispatch();
+		}
 	}
 
 }

@@ -18,11 +18,19 @@ class Admin
 	public function addMenuPage()
 	{
 		add_menu_page(
-	      'SearchMenuOptions',
-	      'Search Menu Options',
-	      'edit_pages',
-	      'SearchMenuOptions',
-	      array($this,'SearchMainPage')
+	      	'SearchMenuOptions',
+		    'Search Menu Options',
+		    'edit_pages',
+		    'SearchMenuOptions',
+		    array($this,'SearchMainPage')
+	    );
+	    add_submenu_page(
+	    	'SearchMenuOptions',
+	    	'SearchTestOptions',
+	      	'Search Test Options',
+	      	'edit_pages',
+	      	'SearchTest',
+	      	array($this,'SearchTestPage')
 	    );
 	}
 
@@ -30,16 +38,23 @@ class Admin
 	{
 
 		include_once (self::$plugin_path.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'search-main.page.php');
-		// include_once (self::$plugin_path.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.$pagename.'.page.php');
+	}
+
+	public function SearchTestPage($pagename)
+	{
+
+		include_once (self::$plugin_path.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'search-test.page.php');
 	}
 
 	public function admin_enqueue_scripts($hook_suffix)
 	{
 		// echo ($hook_suffix);
 		wp_register_script('seachmenu-bootstrap-js', SearchMenuOptions::get_asset('js/bootstrap.min.js'), array(), SearchMenuOptions::PLUGIN_VERSION, TRUE);
+		wp_register_script('seachmenu-operation-js', SearchMenuOptions::get_asset('js/operation.js'), array(), SearchMenuOptions::PLUGIN_VERSION, TRUE);
 		wp_register_style('seachmenu-bootstrap-css', SearchMenuOptions::get_asset('css/bootstrap.min.css'), array(), SearchMenuOptions::PLUGIN_VERSION, 'all');
 		wp_register_style('seachmenu-css', SearchMenuOptions::get_asset('css/searchmenuoptions.css'), array(), SearchMenuOptions::PLUGIN_VERSION, 'all');
 		wp_enqueue_script('seachmenu-bootstrap-js');
+		wp_enqueue_script('seachmenu-operation-js');
 		wp_enqueue_style('seachmenu-bootstrap-css');
 		wp_enqueue_style('seachmenu-css');
 	}
