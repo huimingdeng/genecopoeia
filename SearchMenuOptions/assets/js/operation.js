@@ -17,7 +17,7 @@ SearchMenuOptions.prototype.init = function()
 
 SearchMenuOptions.prototype.show = function()
 {
-	data = { action: 'searchmenuoptions', operation: 'showmenu' };
+	data = { action: 'searchmenuoptions', operation: 'showmenu', menu_name: this.menu_name };
 	var show_xhr = {
 		type: 'post',
 		async: true, // false,

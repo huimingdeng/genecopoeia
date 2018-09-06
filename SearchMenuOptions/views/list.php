@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/assets/css/dataTables.bootstrap.css">
+<script type="text/javascript" language="javascript" src="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/assets/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/assets/js/dataTables.bootstrap.min.js"></script>
 <ul id="list" class="nav nav-pills">
 	<?php foreach ($title as $k => $v) {
 			echo ($k==0)?("<li class=\"active\">\n"):("<li>\n");
@@ -10,8 +13,9 @@
 	<?php 
 		foreach($title as $k => $v){
 			echo ($k==0)?("<div id=\"".$v."\" class=\"contentBody col-md-12\" style=\"display:block;\">\n"):("<div id=\"".$v."\" class=\"contentBody col-md-12\" style=\"display:none;\">\n");
+			$setdom[] = "#".$v.'-body';
 	?>
-	<table class="table table-hover table-striped">
+	<table class="table table-hover table-striped" id="<?php echo $v.'-body';?>">
 		<thead>
 			<tr>
 				<th>sn</th>
@@ -46,3 +50,12 @@
 		}
 	 ?>
 </div>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$('<?php echo implode(',',$setdom);?>').DataTable({
+            responsive: true,
+            "dom": '<"container-fluid"<"row"<"col-md-2"l><"col-md-6"B><"col-md-2"f>>rt<"rol-md-2"><"col-md-2"i>p>',
+        });
+		
+	});
+</script>

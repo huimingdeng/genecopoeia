@@ -16,10 +16,12 @@ class Ajax extends Input
 		header('Expires: -1');
 		switch ($operation) {
 			case 'showmenu':
-				
+				$menu_name = $this->post('menu_name');
+				(empty($menu_name))?($menu_name='aav_crispr_detail_page'):($menu_name);
 				// $query = $wpdb->get_results("SELECT DISTINCT menu_name FROM left_menu_option",ARRAY_A);
-				$query = $wpdb->get_results("SELECT * FROM left_menu_option;",ARRAY_A);
-				$response->set('list',$query);
+				$results = $wpdb->get_results("SELECT * FROM left_menu_option;",ARRAY_A);
+				$data = array('results'=>$results,'menu_name'=>$menu_name);
+				$response->set('list',$data);
 				
 				break;
 			case 'showOne':

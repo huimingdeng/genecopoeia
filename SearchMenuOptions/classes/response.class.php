@@ -20,9 +20,11 @@ class Response
 	{
 		switch ($action) {
 			case 'list':
+				
+				$menu_name = $data['menu_name'];
 				// print_r($data);
 				if(!empty($data)){
-					foreach ($data as $k => $v) {
+					foreach ($data['results'] as $k => $v) {
 						$newdata[$v['menu_name']][] = $v;
 						$newtitle[$v['menu_name']] = $v['menu_name'];
 					}
