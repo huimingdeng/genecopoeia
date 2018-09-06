@@ -20,7 +20,7 @@ class Response
 	{
 		switch ($action) {
 			case 'list':
-				
+
 				$menu_name = $data['menu_name'];
 				// print_r($data);
 				if(!empty($data)){
@@ -47,6 +47,43 @@ class Response
 				$this->data = ob_get_contents();
 				ob_end_clean();
 				break;
+			case "addOnePage":
+				ob_start();
+				include_once(dirname(dirname(__FILE__)).'/views/'.'addOne.win.php');
+				$this->data = ob_get_contents();
+				ob_end_clean();
+				break;
+			case "add":
+				
+				$this->data = $data;
+				
+				break;
+
+			case "editOnePage":
+				ob_start();
+				include_once(dirname(dirname(__FILE__)).'/views/'.'editOne.win.php');
+				$this->data = ob_get_contents();
+				ob_end_clean();
+				break;
+
+			case "edit":
+				
+				$this->data = $data;
+				
+				break;
+
+			case "delOnePage":
+				ob_start();
+				include_once(dirname(dirname(__FILE__)).'/views/'.'delOne.win.php');
+				$this->data = ob_get_contents();
+				ob_end_clean();
+				break;
+
+			case "delete":
+				
+				$this->data = $data;
+				
+				break;
 		}
 	}
 
@@ -57,6 +94,7 @@ class Response
 	public function send($exit = TRUE)
 	{
 		if($this->_headers_sent){
+			
 			echo json_encode(array('msg'=>$this->data));
 			exit(0);
 		}
