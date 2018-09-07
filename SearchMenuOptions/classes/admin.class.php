@@ -20,7 +20,7 @@ class Admin
 		add_menu_page(
 	      	'SearchMenuOptions',
 		    'Search Menu Options',
-		    'edit_pages',
+		    'manage_options',
 		    'SearchMenuOptions',
 		    array($this,'SearchTestPage')//SearchMainPage
 	    );
@@ -28,7 +28,7 @@ class Admin
 	    	'SearchMenuOptions',
 	    	'SearchTestOptions',
 	      	'Search Test Options',
-	      	'edit_pages',
+	      	'manage_options',
 	      	'SearchTest',
 	      	array($this,'SearchTestPage')
 	    );*/
