@@ -19,7 +19,7 @@
                     <!-- sn -->
                     <div class="form-group " style="width:24.5%">
                     	<label for="sn">SN&nbsp;<span id="sn_log" class="sn_log"></span></label>
-                    	<input type="text" class="form-control disabled" id="sn" name="sn" data-toggle="tooltip" data-placement="top" title="Primary key self-increment.">
+                    	<input type="text" class="form-control" readonly="readonly" id="sn" name="sn" data-toggle="tooltip" data-placement="top" title="Primary key self-increment.">
                     </div> 
                 	<!-- Menu Name -->
                     <div class="form-group " style="width:74.5%">

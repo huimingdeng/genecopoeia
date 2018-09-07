@@ -60,10 +60,12 @@ class Response
 				break;
 
 			case "editOnePage":
-				ob_start();
-				include_once(dirname(dirname(__FILE__)).'/views/'.'editOne.win.php');
-				$this->data = ob_get_contents();
-				ob_end_clean();
+				if(!empty($data)){
+					ob_start();
+					include_once(dirname(dirname(__FILE__)).'/views/'.'editOne.win.php');
+					$this->data = ob_get_contents();
+					ob_end_clean();
+				}
 				break;
 
 			case "edit":

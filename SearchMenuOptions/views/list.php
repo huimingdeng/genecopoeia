@@ -42,7 +42,7 @@
 				<td><?php echo $vv['item_value'];?></td>
 				<td><?php echo $vv['item_order'];?></td>
 				<td><?php echo $vv['compare_mode'];?></td>
-				<td><a href="javascript:void(0);" class="btn btn-sm btn-success" onclick="SearchMenuOptions.editOne();"><span class="glyphicon glyphicon-edit"></span></a> &nbsp; <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="SearchMenuOptions.delOne();"><span class="glyphicon glyphicon-trash"></span></a></td>
+				<td><a href="javascript:void(0);" class="btn btn-sm btn-success" onclick="SearchMenuOptions.editOne(<?php echo $vv['sn'];?>);"><span class="glyphicon glyphicon-edit"></span></a> &nbsp; <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="SearchMenuOptions.delOne(<?php echo $vv['sn'];?>);"><span class="glyphicon glyphicon-trash"></span></a></td>
 			</tr>
 			<?php } ?>
 		</tbody>
