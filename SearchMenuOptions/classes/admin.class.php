@@ -50,10 +50,12 @@ class Admin
 	{
 		// echo ($hook_suffix);
 		wp_register_script('seachmenu-bootstrap-js', SearchMenuOptions::get_asset('js/bootstrap.min.js'), array(), SearchMenuOptions::PLUGIN_VERSION, TRUE);
+		wp_register_script('seachmenu-layer-js', SearchMenuOptions::get_asset('js/layer-v2.3/layer.js'), array(), SearchMenuOptions::PLUGIN_VERSION, TRUE);
 		wp_register_script('seachmenu-operation-js', SearchMenuOptions::get_asset('js/operation.js'), array(), SearchMenuOptions::PLUGIN_VERSION, TRUE);
 		wp_register_style('seachmenu-bootstrap-css', SearchMenuOptions::get_asset('css/bootstrap.min.css'), array(), SearchMenuOptions::PLUGIN_VERSION, 'all');
 		wp_register_style('seachmenu-css', SearchMenuOptions::get_asset('css/searchmenuoptions.css'), array(), SearchMenuOptions::PLUGIN_VERSION, 'all');
 		wp_enqueue_script('seachmenu-bootstrap-js');
+		wp_enqueue_script('seachmenu-layer-js');
 		wp_enqueue_script('seachmenu-operation-js');
 		wp_enqueue_style('seachmenu-bootstrap-css');
 		wp_enqueue_style('seachmenu-css');

@@ -30,11 +30,18 @@ SearchMenuOptions.prototype.show = function()
 		url: ajaxurl,
 		dataType: 'json',
 		success: function(response) {
-			layer.msg('Successful!', {
-                        icon: 1,
-                        time: 3000
-                    });
-			jQuery("#listBody").html(response.msg);
+			if(response.msg!=''){
+				layer.msg('Loading completed!', {
+	                icon: 1,
+	                time: 3000
+	            });
+	            jQuery("#listBody").html(response.msg);
+			}else{
+				layer.msg('Failed!', {
+	                icon: 2,
+	                time: 3000
+	            });
+			}
 		}
 	};
 
@@ -53,7 +60,18 @@ SearchMenuOptions.prototype.showOne = function()
 		url: ajaxurl,
 		dataType: 'json',
 		success: function(response) {
-			jQuery("#listBody").html(response.msg);
+			if(response.msg!=''){
+				layer.msg('Loading completed!', {
+	                icon: 1,
+	                time: 3000
+	            });
+	            jQuery("#listBody").html(response.msg);
+			}else{
+				layer.msg('Failed!', {
+	                icon: 2,
+	                time: 3000
+	            });
+			}
 		}
 	};
 
@@ -100,8 +118,8 @@ SearchMenuOptions.prototype.add = function()
                         icon: 1,
                         time: 3000
                     });
-					// jQuery("#addModal").modal('hide');
-					// window.location.reload();
+					jQuery("#addModal").modal('hide');
+					window.location.reload();
 				}else{
 					layer.msg('Failed!<br/>Please try again after refresh!', {
                         icon: 2,
@@ -154,10 +172,18 @@ SearchMenuOptions.prototype.edit = function()
 			dataType: 'json',
 			success: function(response){
 				if(response.msg=='1'){
+					layer.msg('Successful!', {
+                        icon: 1,
+                        time: 3000
+                    });
 					jQuery("#editModal").modal('hide');
 					window.location.reload();
+				}else{
+					layer.msg('Failed!<br/>Please try again after refresh!', {
+                        icon: 2,
+                        time: 3000
+                    });
 				}
-				console.log(response);
 			}
 		};
 		jQuery.ajax(editOne_xhr);
@@ -197,8 +223,19 @@ SearchMenuOptions.prototype.delete = function()
 		url: ajaxurl,
 		dataType: 'json',
 		success: function(response){
-			jQuery("#deleteModal").modal('hide');
-			window.location.reload();
+			if(response.msg=='1'){
+				layer.msg('Successful!', {
+                    icon: 1,
+                    time: 3000
+                });
+				jQuery("#deleteModal").modal('hide');
+				window.location.reload();
+			}else{
+				layer.msg('Failed!<br/>Please try again after refresh!', {
+                    icon: 2,
+                    time: 3000
+                });
+			}
 		}
 	};
 	jQuery.ajax(deltOnePage_xhr);
