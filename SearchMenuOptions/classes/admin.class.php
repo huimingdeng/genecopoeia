@@ -22,16 +22,16 @@ class Admin
 		    'Search Menu Options',
 		    'edit_pages',
 		    'SearchMenuOptions',
-		    array($this,'SearchMainPage')
+		    array($this,'SearchTestPage')//SearchMainPage
 	    );
-	    add_submenu_page(
+	   /* add_submenu_page(
 	    	'SearchMenuOptions',
 	    	'SearchTestOptions',
 	      	'Search Test Options',
 	      	'edit_pages',
 	      	'SearchTest',
 	      	array($this,'SearchTestPage')
-	    );
+	    );*/
 	}
 
 	public function SearchMainPage($pagename)
