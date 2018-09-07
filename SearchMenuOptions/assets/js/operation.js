@@ -2,6 +2,7 @@
 function SearchMenuOptions(){
 	this.inited = false; 
 	this.menu_name = '';
+	this.sn = 0;
 	this.operation = 'init';
 }
 
@@ -29,9 +30,10 @@ SearchMenuOptions.prototype.show = function()
 		url: ajaxurl,
 		dataType: 'json',
 		success: function(response) {
-			// jQuery("#list").html(response.msg.title).find("li").eq(0).addClass('active');
-			// jQuery(".toogleBody").html(response.msg.body);
-			// jQuery(".toogleBody").find(".contentBody").eq(0).show();
+			layer.msg('Successful!', {
+                        icon: 1,
+                        time: 3000
+                    });
 			jQuery("#listBody").html(response.msg);
 		}
 	};
@@ -51,9 +53,6 @@ SearchMenuOptions.prototype.showOne = function()
 		url: ajaxurl,
 		dataType: 'json',
 		success: function(response) {
-			// jQuery("#list").html(response.msg.title).find("li").eq(0).addClass('active');
-			// jQuery(".toogleBody").html(response.msg.body);
-			// jQuery(".toogleBody").find(".contentBody").eq(0).show();
 			jQuery("#listBody").html(response.msg);
 		}
 	};
@@ -97,9 +96,18 @@ SearchMenuOptions.prototype.add = function()
 			dataType: 'json',
 			success: function(response){
 				if(response.msg=='1'){
-					jQuery("#addModal").modal('hide');
+					layer.msg('Successful!', {
+                        icon: 1,
+                        time: 3000
+                    });
+					// jQuery("#addModal").modal('hide');
+					// window.location.reload();
+				}else{
+					layer.msg('Failed!<br/>Please try again after refresh!', {
+                        icon: 2,
+                        time: 3000
+                    });
 				}
-				console.log(response);
 			}
 		};
 		jQuery.ajax(addOne_xhr);
@@ -111,8 +119,9 @@ SearchMenuOptions.prototype.add = function()
 SearchMenuOptions.prototype.editOne = function(sn)
 {
 	this.operation = 'editOnePage';
+	this.sn = sn;
 	var _self = this;
-	data = { action: 'searchmenuoptions', operation: _self.operation, sn: sn};
+	data = { action: 'searchmenuoptions', operation: _self.operation, sn: _self.sn};
 	var editOnePage_xhr = {
 		type: 'post',
 		async: true,
@@ -146,7 +155,7 @@ SearchMenuOptions.prototype.edit = function()
 			success: function(response){
 				if(response.msg=='1'){
 					jQuery("#editModal").modal('hide');
-					// jQuery(".dataTable").dataTable().ajax.reaload();
+					window.location.reload();
 				}
 				console.log(response);
 			}
@@ -155,9 +164,44 @@ SearchMenuOptions.prototype.edit = function()
 	}
 };
 
+SearchMenuOptions.prototype.delOne = function(sn)
+{
+	this.operation = 'delOnePage';
+	this.sn = sn;
+	var _self = this;
+	data = { action: 'searchmenuoptions', operation: _self.operation, sn: _self.sn};
+	var deltOnePage_xhr = {
+		type: 'post',
+		async: true,
+		data: data,
+		url: ajaxurl,
+		dataType: 'json',
+		success: function(response){
+			jQuery("#deleteModal").remove();
+			jQuery('#listBody').append(response.msg);
+			jQuery("#deleteModal").modal();
+		}
+	};
+	jQuery.ajax(deltOnePage_xhr);
+};
+
 SearchMenuOptions.prototype.delete = function()
 {
-
+	this.operation = 'delete';
+	var _self = this;
+	data = { action: 'searchmenuoptions', operation: _self.operation, sn: _self.sn};
+	var deltOnePage_xhr = {
+		type: 'post',
+		async: true,
+		data: data,
+		url: ajaxurl,
+		dataType: 'json',
+		success: function(response){
+			jQuery("#deleteModal").modal('hide');
+			window.location.reload();
+		}
+	};
+	jQuery.ajax(deltOnePage_xhr);
 };
 
 

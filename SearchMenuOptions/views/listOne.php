@@ -1,6 +1,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/assets/css/dataTables.bootstrap.css">
 <script type="text/javascript" language="javascript" src="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/assets/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" language="javascript" src="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/assets/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf8" src="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))); ?>/assets/js/layer-v2.3/layer.js"></script>
 <ul id="list" class="nav nav-pills">
 	<?php foreach ($title as $k => $v) {
 			echo ($v['menu_name']==$menu_name)?("<li class=\"active\">\n"):("<li>\n");

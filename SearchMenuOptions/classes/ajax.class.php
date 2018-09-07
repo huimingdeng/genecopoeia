@@ -75,12 +75,22 @@ class Ajax extends Input
 				$item_value = $this->post('item_value');
 				$item_order = $this->post_int('item_order');
 				$compare_mode = $this->post('compare_mode');
-				
+
 				$query = $wpdb->query(sprintf("UPDATE left_menu_option SET `sn`=%s, `menu_name`='%s', `classify_name`='%s', `classify_order`=%s, `item_name`='%s', `item_display_name`='%s', `item_value`='%s', `item_order`=%s, `compare_mode`='%s' WHERE `sn`=%s",$sn,$menu_name,$classify_name,$classify_order,$item_name,$item_display_name,$item_value,$item_order,$compare_mode,$sn));
 				$response->set('edit',$query);
 				break;
 
-			case 'delOne':
+			case 'delOnePage':
+				$sn = $this->post_int('sn');
+				if(!empty($sn)){
+					$query = $wpdb->get_row(sprintf("SELECT sn,menu_name FROM left_menu_option WHERE sn=%s",$sn),ARRAY_A);
+					$response->set('delOnePage',$query);
+				}else{
+					$response->set('delOnePage',array());
+				}
+				break;
+
+			case 'delete':
 				$sn = $this->post_int('sn');
 				if(!empty($sn)){
 					$query = $wpdb->query(sprintf("DELETE FROM left_menu_option WHERE sn=%s",$sn));
