@@ -44,3 +44,5 @@ BmnarsAudit 插件的数据源获取工具 Python爬虫获取目标网站数据�
 ## [SearchMenuOptions](https://github.com/huimingdeng/genecopoeia/tree/master/SearchMenuOptions) 插件 ##
 genecopoeia 网站搜索页面的克隆产品筛选菜单管理插件。（尝试插件开发使用面向对象，摈弃前面list_search_bar_plugs等面向过程的形式）
 
+## pyfile spider_porject 的处理程序 ##
+针对 “生命的奥秘”数据处理脚本等。

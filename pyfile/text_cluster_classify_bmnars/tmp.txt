@@ -1,0 +1,1 @@
+0 12 * * * /home/bmnars/pyfile/text_cluster_classify_bmnars/update_cs_bmnars_contents.sh >> /home/bmnars/pyfile/text_cluster_classify_bmnars/update.log

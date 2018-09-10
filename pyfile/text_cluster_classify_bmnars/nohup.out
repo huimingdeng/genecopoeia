@@ -1,0 +1,8095 @@
+
+第1步：加载源数据地址...
+数据库连接成功！
+_cs_bmnars_link表有4330条记录！
+_cs_bmnars_link表数据加载完成！
+
+第2步：解析源数据...
+标记_cs_bmnars_link表的id号...
+
+第3步：源数据去重...
+
+Index:  0
+
+Index:  1
+
+Index:  2
+
+Index:  3
+
+Index:  4
+
+Index:  5
+
+Index:  6
+
+Index:  7
+
+Index:  8
+
+Index:  9
+
+Index:  10
+
+Index:  11
+
+Index:  12
+
+Index:  13
+
+Index:  14
+
+Index:  15
+
+Index:  16
+
+Index:  17
+
+Index:  18
+
+Index:  19
+
+Index:  20
+
+Index:  21
+
+Index:  22
+
+Index:  23
+
+Index:  24
+
+Index:  25
+
+Index:  26
+
+Index:  27
+
+Index:  28
+
+Index:  29
+
+Index:  30
+
+Index:  31
+
+Index:  32
+
+Index:  33
+
+Index:  34
+
+Index:  35
+
+Index:  36
+
+Index:  37
+
+Index:  38
+
+Index:  39
+
+Index:  40
+
+Index:  41
+
+Index:  42
+
+Index:  43
+
+Index:  44
+
+Index:  45
+
+Index:  46
+
+Index:  47
+
+Index:  48
+
+Index:  49
+
+Index:  50
+
+Index:  51
+
+Index:  52
+
+Index:  53
+
+Index:  54
+
+Index:  55
+
+Index:  56
+
+Index:  57
+
+Index:  58
+
+Index:  59
+
+Index:  60
+
+Index:  61
+
+Index:  62
+
+Index:  63
+
+Index:  64
+
+Index:  65
+
+Index:  66
+
+Index:  67
+
+Index:  68
+
+Index:  69
+
+Index:  70
+
+Index:  71
+
+Index:  72
+
+Index:  73
+
+Index:  74
+
+Index:  75
+
+Index:  76
+
+Index:  77
+
+Index:  78
+
+Index:  79
+
+Index:  80
+
+Index:  81
+
+Index:  82
+
+Index:  83
+
+Index:  84
+
+Index:  85
+
+Index:  86
+
+Index:  87
+
+Index:  88
+
+Index:  89
+
+Index:  90
+
+Index:  91
+
+Index:  92
+
+Index:  93
+
+Index:  94
+
+Index:  95
+
+Index:  96
+
+Index:  97
+
+Index:  98
+
+Index:  99
+
+Index:  100
+
+Index:  101
+
+Index:  102
+
+Index:  103
+
+Index:  104
+
+Index:  105
+
+Index:  106
+
+Index:  107
+
+Index:  108
+
+Index:  109
+
+Index:  110
+
+Index:  111
+
+Index:  112
+
+Index:  113
+
+Index:  114
+
+Index:  115
+
+Index:  116
+
+Index:  117
+
+Index:  118
+
+Index:  119
+
+Index:  120
+
+Index:  121
+
+Index:  122
+
+Index:  123
+
+Index:  124
+
+Index:  125
+
+Index:  126
+
+Index:  127
+
+Index:  128
+
+Index:  129
+
+Index:  130
+
+Index:  131
+
+Index:  132
+
+Index:  134
+
+Index:  135
+
+Index:  136
+
+Index:  137
+
+Index:  138
+
+Index:  139
+
+Index:  140
+
+Index:  141
+
+Index:  142
+
+Index:  143
+
+Index:  144
+
+Index:  145
+
+Index:  146
+
+Index:  147
+
+Index:  148
+
+Index:  149
+
+Index:  150
+
+Index:  151
+
+Index:  152
+
+Index:  153
+
+Index:  154
+
+Index:  155
+
+Index:  156
+
+Index:  157
+
+Index:  158
+
+Index:  159
+
+Index:  160
+
+Index:  161
+
+Index:  162
+
+Index:  163
+
+Index:  164
+
+Index:  165
+
+Index:  166
+
+Index:  167
+
+Index:  168
+
+Index:  169
+
+Index:  170
+
+Index:  171
+
+Index:  172
+
+Index:  173
+
+Index:  174
+
+Index:  175
+
+Index:  176
+
+Index:  177
+
+Index:  178
+
+Index:  179
+
+Index:  180
+
+Index:  181
+
+Index:  182
+
+Index:  183
+
+Index:  184
+
+Index:  185
+
+Index:  186
+
+Index:  187
+
+Index:  188
+
+Index:  189
+
+Index:  190
+
+Index:  191
+
+Index:  192
+
+Index:  193
+
+Index:  194
+
+Index:  195
+
+Index:  196
+
+Index:  197
+
+Index:  198
+
+Index:  199
+
+Index:  200
+
+Index:  201
+
+Index:  202
+
+Index:  203
+
+Index:  204
+
+Index:  205
+
+Index:  206
+
+Index:  207
+
+Index:  208
+
+Index:  209
+
+Index:  210
+
+Index:  211
+
+Index:  212
+
+Index:  213
+
+Index:  214
+
+Index:  215
+
+Index:  216
+
+Index:  217
+
+Index:  218
+
+Index:  219
+
+Index:  220
+
+Index:  221
+
+Index:  222
+
+Index:  223
+
+Index:  224
+
+Index:  225
+
+Index:  226
+
+Index:  227
+
+Index:  228
+
+Index:  229
+
+Index:  230
+
+Index:  231
+
+Index:  232
+
+Index:  233
+
+Index:  234
+
+Index:  235
+
+Index:  236
+
+Index:  237
+
+Index:  238
+
+Index:  239
+
+Index:  240
+
+Index:  241
+
+Index:  242
+
+Index:  243
+
+Index:  244
+
+Index:  245
+
+Index:  246
+
+Index:  247
+
+Index:  248
+
+Index:  249
+
+Index:  250
+
+Index:  251
+
+Index:  252
+
+Index:  253
+
+Index:  254
+
+Index:  255
+
+Index:  256
+
+Index:  257
+
+Index:  258
+
+Index:  259
+
+Index:  260
+
+Index:  261
+
+Index:  262
+
+Index:  263
+
+Index:  264
+
+Index:  265
+
+Index:  266
+
+Index:  267
+
+Index:  268
+
+Index:  269
+
+Index:  270
+
+Index:  271
+
+Index:  272
+
+Index:  273
+
+Index:  274
+
+Index:  275
+
+Index:  276
+
+Index:  277
+
+Index:  278
+
+Index:  279
+
+Index:  280
+
+Index:  281
+
+Index:  282
+
+Index:  283
+
+Index:  284
+
+Index:  285
+
+Index:  286
+content_text remain index: 512, Drop index: [286]
+
+Index:  290
+
+Index:  291
+
+Index:  294
+
+Index:  295
+
+Index:  296
+
+Index:  297
+
+Index:  298
+
+Index:  299
+
+Index:  300
+
+Index:  301
+
+Index:  302
+
+Index:  303
+
+Index:  306
+content_text remain index: 600, Drop index: [306]
+
+Index:  307
+
+Index:  308
+
+Index:  309
+
+Index:  310
+
+Index:  311
+
+Index:  312
+
+Index:  313
+
+Index:  315
+
+Index:  316
+content_text remain index: 631, Drop index: [316]
+
+Index:  317
+
+Index:  318
+
+Index:  319
+content_text remain index: 623, Drop index: [319]
+
+Index:  321
+
+Index:  322
+
+Index:  323
+
+Index:  324
+
+Index:  326
+
+Index:  327
+
+Index:  328
+
+Index:  329
+
+Index:  330
+
+Index:  334
+
+Index:  335
+
+Index:  336
+
+Index:  337
+
+Index:  338
+
+Index:  339
+
+Index:  341
+
+Index:  343
+
+Index:  344
+
+Index:  345
+content_text remain index: 773, Drop index: [345]
+
+Index:  347
+
+Index:  348
+
+Index:  349
+
+Index:  350
+
+Index:  351
+
+Index:  352
+
+Index:  355
+
+Index:  356
+
+Index:  357
+
+Index:  358
+
+Index:  360
+content_text remain index: 901, Drop index: [360]
+
+Index:  361
+
+Index:  362
+
+Index:  363
+content_text remain index: 965, Drop index: [363]
+
+Index:  365
+content_text remain index: 994, Drop index: [365]
+
+Index:  366
+
+Index:  368
+
+Index:  371
+
+Index:  372
+
+Index:  373
+
+Index:  374
+
+Index:  375
+title remain index: 1089, Drop index: [375]
+
+Index:  380
+
+Index:  381
+
+Index:  388
+
+Index:  390
+
+Index:  391
+
+Index:  392
+
+Index:  393
+content_text remain index: 1291, Drop index: [393]
+
+Index:  395
+content_text remain index: 1325, Drop index: [395]
+
+Index:  396
+content_text remain index: 1396, Drop index: [396]
+
+Index:  397
+
+Index:  399
+content_text remain index: 1416, Drop index: [399]
+
+Index:  401
+
+Index:  402
+
+Index:  403
+
+Index:  404
+
+Index:  406
+
+Index:  408
+
+Index:  409
+
+Index:  410
+
+Index:  412
+
+Index:  413
+
+Index:  414
+
+Index:  415
+content_text remain index: 1595, Drop index: [415]
+
+Index:  416
+content_text remain index: 1582, Drop index: [416]
+
+Index:  417
+content_text remain index: 1581, Drop index: [417]
+
+Index:  418
+
+Index:  419
+
+Index:  423
+
+Index:  424
+
+Index:  425
+
+Index:  427
+content_text remain index: 1631, Drop index: [427]
+
+Index:  428
+
+Index:  429
+
+Index:  430
+
+Index:  432
+
+Index:  433
+
+Index:  434
+
+Index:  435
+
+Index:  436
+
+Index:  437
+title remain index: 1802, Drop index: [437]
+
+Index:  438
+
+Index:  439
+
+Index:  440
+
+Index:  441
+
+Index:  444
+
+Index:  445
+
+Index:  446
+
+Index:  447
+
+Index:  450
+
+Index:  451
+
+Index:  452
+
+Index:  453
+
+Index:  454
+
+Index:  455
+
+Index:  456
+
+Index:  457
+
+Index:  458
+
+Index:  459
+content_text remain index: 1918, Drop index: [459]
+
+Index:  460
+
+Index:  461
+
+Index:  462
+
+Index:  463
+
+Index:  464
+
+Index:  465
+
+Index:  466
+
+Index:  467
+content_text remain index: 3951, Drop index: [467]
+
+Index:  468
+content_text remain index: 2005, Drop index: [468]
+
+Index:  469
+
+Index:  471
+
+Index:  473
+
+Index:  474
+
+Index:  475
+
+Index:  476
+
+Index:  477
+
+Index:  478
+
+Index:  480
+
+Index:  481
+
+Index:  482
+
+Index:  483
+
+Index:  484
+
+Index:  485
+
+Index:  486
+
+Index:  487
+
+Index:  488
+
+Index:  489
+
+Index:  490
+
+Index:  491
+
+Index:  492
+
+Index:  493
+
+Index:  494
+
+Index:  495
+
+Index:  496
+
+Index:  497
+
+Index:  498
+
+Index:  499
+
+Index:  500
+
+Index:  501
+
+Index:  502
+
+Index:  503
+
+Index:  504
+
+Index:  505
+
+Index:  506
+
+Index:  507
+
+Index:  508
+
+Index:  510
+
+Index:  511
+
+Index:  512
+
+Index:  513
+
+Index:  514
+
+Index:  515
+
+Index:  516
+
+Index:  517
+
+Index:  518
+
+Index:  519
+
+Index:  520
+
+Index:  521
+
+Index:  522
+
+Index:  523
+
+Index:  524
+
+Index:  525
+
+Index:  526
+
+Index:  527
+
+Index:  528
+
+Index:  529
+
+Index:  530
+
+Index:  531
+
+Index:  532
+
+Index:  533
+
+Index:  534
+
+Index:  535
+
+Index:  536
+
+Index:  537
+
+Index:  538
+
+Index:  539
+
+Index:  540
+
+Index:  541
+
+Index:  542
+
+Index:  543
+
+Index:  544
+
+Index:  545
+
+Index:  546
+
+Index:  547
+
+Index:  548
+
+Index:  549
+
+Index:  550
+
+Index:  551
+
+Index:  552
+
+Index:  553
+
+Index:  554
+
+Index:  555
+
+Index:  556
+
+Index:  557
+
+Index:  558
+
+Index:  559
+
+Index:  560
+
+Index:  561
+
+Index:  562
+
+Index:  563
+
+Index:  564
+
+Index:  565
+
+Index:  566
+
+Index:  567
+
+Index:  568
+
+Index:  569
+
+Index:  570
+
+Index:  571
+
+Index:  572
+
+Index:  573
+
+Index:  574
+
+Index:  575
+
+Index:  576
+
+Index:  577
+
+Index:  578
+
+Index:  579
+
+Index:  580
+
+Index:  581
+
+Index:  582
+
+Index:  583
+
+Index:  584
+
+Index:  585
+
+Index:  586
+
+Index:  587
+
+Index:  588
+
+Index:  589
+
+Index:  590
+
+Index:  591
+
+Index:  592
+
+Index:  593
+
+Index:  594
+
+Index:  595
+
+Index:  596
+
+Index:  597
+
+Index:  598
+
+Index:  599
+
+Index:  600
+
+Index:  601
+
+Index:  602
+
+Index:  603
+
+Index:  604
+
+Index:  605
+
+Index:  606
+
+Index:  607
+
+Index:  608
+
+Index:  609
+
+Index:  610
+
+Index:  611
+
+Index:  612
+
+Index:  613
+
+Index:  614
+
+Index:  615
+
+Index:  616
+
+Index:  617
+
+Index:  618
+
+Index:  619
+
+Index:  620
+
+Index:  621
+
+Index:  622
+
+Index:  623
+
+Index:  624
+
+Index:  626
+
+Index:  627
+
+Index:  628
+
+Index:  629
+
+Index:  630
+
+Index:  631
+
+Index:  632
+
+Index:  633
+
+Index:  634
+
+Index:  635
+
+Index:  636
+
+Index:  637
+
+Index:  638
+
+Index:  639
+
+Index:  640
+
+Index:  641
+
+Index:  642
+
+Index:  643
+
+Index:  644
+
+Index:  645
+
+Index:  646
+
+Index:  647
+
+Index:  648
+
+Index:  649
+
+Index:  650
+
+Index:  651
+
+Index:  652
+
+Index:  653
+
+Index:  654
+
+Index:  655
+
+Index:  656
+
+Index:  657
+
+Index:  658
+
+Index:  659
+
+Index:  660
+
+Index:  661
+
+Index:  662
+
+Index:  663
+
+Index:  664
+
+Index:  665
+
+Index:  666
+
+Index:  667
+
+Index:  668
+
+Index:  669
+
+Index:  670
+
+Index:  671
+
+Index:  672
+
+Index:  673
+
+Index:  674
+
+Index:  675
+
+Index:  676
+
+Index:  677
+
+Index:  678
+
+Index:  679
+
+Index:  680
+
+Index:  681
+
+Index:  682
+
+Index:  683
+
+Index:  684
+
+Index:  685
+
+Index:  686
+
+Index:  687
+
+Index:  688
+
+Index:  689
+
+Index:  690
+
+Index:  691
+
+Index:  692
+
+Index:  693
+
+Index:  694
+
+Index:  695
+
+Index:  696
+
+Index:  697
+
+Index:  698
+
+Index:  699
+
+Index:  700
+
+Index:  701
+
+Index:  702
+
+Index:  703
+
+Index:  704
+
+Index:  705
+
+Index:  706
+
+Index:  707
+
+Index:  708
+
+Index:  709
+
+Index:  710
+
+Index:  711
+
+Index:  712
+
+Index:  713
+
+Index:  714
+
+Index:  715
+
+Index:  716
+
+Index:  718
+
+Index:  719
+
+Index:  720
+
+Index:  721
+
+Index:  722
+
+Index:  723
+
+Index:  724
+
+Index:  725
+
+Index:  726
+
+Index:  727
+
+Index:  728
+
+Index:  729
+
+Index:  730
+
+Index:  731
+
+Index:  732
+
+Index:  733
+
+Index:  734
+
+Index:  735
+
+Index:  736
+
+Index:  737
+
+Index:  738
+
+Index:  739
+
+Index:  740
+
+Index:  741
+
+Index:  742
+
+Index:  743
+
+Index:  744
+
+Index:  745
+
+Index:  746
+
+Index:  747
+
+Index:  748
+
+Index:  749
+
+Index:  750
+
+Index:  751
+
+Index:  752
+
+Index:  753
+
+Index:  754
+
+Index:  755
+
+Index:  756
+
+Index:  757
+
+Index:  758
+
+Index:  759
+
+Index:  760
+
+Index:  761
+
+Index:  762
+
+Index:  763
+
+Index:  764
+
+Index:  765
+
+Index:  767
+
+Index:  768
+
+Index:  769
+
+Index:  772
+
+Index:  773
+
+Index:  774
+
+Index:  775
+
+Index:  776
+
+Index:  777
+
+Index:  778
+
+Index:  779
+
+Index:  780
+
+Index:  781
+
+Index:  783
+
+Index:  784
+
+Index:  785
+
+Index:  786
+
+Index:  787
+
+Index:  788
+
+Index:  789
+
+Index:  790
+
+Index:  791
+
+Index:  792
+
+Index:  793
+
+Index:  794
+
+Index:  795
+
+Index:  796
+
+Index:  797
+
+Index:  798
+
+Index:  799
+
+Index:  800
+
+Index:  801
+
+Index:  802
+
+Index:  803
+
+Index:  804
+
+Index:  805
+
+Index:  806
+
+Index:  807
+
+Index:  808
+
+Index:  809
+
+Index:  810
+
+Index:  811
+
+Index:  812
+
+Index:  813
+
+Index:  814
+
+Index:  815
+
+Index:  816
+
+Index:  817
+
+Index:  818
+
+Index:  819
+
+Index:  820
+
+Index:  821
+
+Index:  822
+
+Index:  823
+
+Index:  824
+
+Index:  825
+
+Index:  828
+
+Index:  829
+
+Index:  830
+
+Index:  831
+
+Index:  832
+
+Index:  833
+
+Index:  834
+
+Index:  835
+
+Index:  836
+
+Index:  837
+
+Index:  838
+
+Index:  839
+content_text remain index: 2163, Drop index: [839]
+
+Index:  840
+
+Index:  841
+
+Index:  842
+
+Index:  843
+
+Index:  844
+
+Index:  845
+
+Index:  846
+
+Index:  847
+
+Index:  849
+
+Index:  850
+
+Index:  851
+
+Index:  852
+
+Index:  853
+
+Index:  854
+
+Index:  855
+
+Index:  856
+
+Index:  857
+
+Index:  858
+
+Index:  859
+
+Index:  860
+
+Index:  861
+
+Index:  862
+
+Index:  863
+
+Index:  864
+
+Index:  865
+
+Index:  866
+
+Index:  867
+
+Index:  870
+
+Index:  871
+
+Index:  872
+
+Index:  873
+
+Index:  874
+
+Index:  875
+
+Index:  876
+
+Index:  877
+
+Index:  878
+
+Index:  879
+
+Index:  880
+
+Index:  881
+
+Index:  882
+
+Index:  885
+
+Index:  887
+
+Index:  889
+
+Index:  890
+
+Index:  891
+
+Index:  892
+
+Index:  893
+
+Index:  894
+
+Index:  895
+
+Index:  897
+
+Index:  898
+
+Index:  899
+
+Index:  900
+
+Index:  901
+
+Index:  902
+
+Index:  903
+
+Index:  904
+
+Index:  905
+
+Index:  906
+
+Index:  907
+
+Index:  908
+
+Index:  909
+
+Index:  910
+
+Index:  911
+
+Index:  912
+
+Index:  913
+
+Index:  914
+
+Index:  915
+
+Index:  916
+
+Index:  917
+
+Index:  918
+
+Index:  919
+
+Index:  920
+
+Index:  921
+
+Index:  922
+
+Index:  924
+
+Index:  925
+
+Index:  926
+
+Index:  927
+
+Index:  928
+
+Index:  929
+
+Index:  930
+
+Index:  931
+
+Index:  932
+
+Index:  933
+
+Index:  934
+
+Index:  935
+
+Index:  936
+title remain index: 954, Drop index: [936]
+
+Index:  937
+
+Index:  938
+
+Index:  939
+
+Index:  940
+
+Index:  941
+
+Index:  942
+
+Index:  943
+
+Index:  947
+
+Index:  949
+
+Index:  951
+
+Index:  952
+
+Index:  953
+
+Index:  954
+
+Index:  955
+
+Index:  956
+
+Index:  957
+
+Index:  958
+
+Index:  959
+
+Index:  960
+
+Index:  961
+
+Index:  962
+
+Index:  963
+
+Index:  964
+
+Index:  965
+
+Index:  966
+
+Index:  967
+
+Index:  968
+
+Index:  969
+
+Index:  970
+
+Index:  971
+
+Index:  972
+
+Index:  973
+
+Index:  974
+
+Index:  975
+
+Index:  976
+
+Index:  977
+
+Index:  978
+
+Index:  979
+
+Index:  980
+
+Index:  981
+
+Index:  982
+
+Index:  983
+
+Index:  984
+
+Index:  985
+
+Index:  986
+
+Index:  987
+
+Index:  988
+
+Index:  989
+
+Index:  990
+
+Index:  991
+
+Index:  992
+
+Index:  993
+
+Index:  994
+
+Index:  995
+
+Index:  996
+
+Index:  997
+
+Index:  998
+
+Index:  999
+
+Index:  1000
+
+Index:  1001
+
+Index:  1002
+
+Index:  1003
+
+Index:  1004
+
+Index:  1005
+
+Index:  1006
+
+Index:  1007
+
+Index:  1008
+
+Index:  1009
+
+Index:  1010
+
+Index:  1011
+
+Index:  1012
+
+Index:  1013
+
+Index:  1014
+
+Index:  1015
+
+Index:  1016
+
+Index:  1017
+
+Index:  1018
+
+Index:  1019
+
+Index:  1020
+
+Index:  1021
+
+Index:  1022
+
+Index:  1023
+
+Index:  1024
+
+Index:  1025
+
+Index:  1026
+
+Index:  1027
+
+Index:  1029
+
+Index:  1035
+
+Index:  1036
+
+Index:  1037
+
+Index:  1038
+
+Index:  1039
+
+Index:  1040
+
+Index:  1041
+
+Index:  1042
+
+Index:  1043
+
+Index:  1044
+
+Index:  1045
+
+Index:  1047
+
+Index:  1048
+
+Index:  1049
+
+Index:  1050
+
+Index:  1051
+
+Index:  1052
+
+Index:  1053
+
+Index:  1054
+
+Index:  1056
+
+Index:  1058
+
+Index:  1059
+
+Index:  1060
+
+Index:  1061
+
+Index:  1062
+
+Index:  1063
+
+Index:  1064
+
+Index:  1065
+
+Index:  1066
+
+Index:  1067
+
+Index:  1068
+
+Index:  1069
+
+Index:  1070
+
+Index:  1071
+
+Index:  1074
+
+Index:  1075
+
+Index:  1076
+
+Index:  1077
+
+Index:  1078
+
+Index:  1080
+
+Index:  1081
+
+Index:  1082
+
+Index:  1083
+
+Index:  1086
+
+Index:  1088
+
+Index:  1089
+
+Index:  1090
+
+Index:  1091
+
+Index:  1092
+
+Index:  1093
+
+Index:  1094
+content_text remain index: 1171, Drop index: [1094]
+
+Index:  1095
+
+Index:  1096
+
+Index:  1097
+
+Index:  1098
+
+Index:  1099
+
+Index:  1100
+
+Index:  1101
+
+Index:  1102
+
+Index:  1103
+
+Index:  1104
+
+Index:  1105
+
+Index:  1106
+
+Index:  1107
+
+Index:  1108
+
+Index:  1109
+
+Index:  1110
+
+Index:  1111
+
+Index:  1112
+
+Index:  1113
+
+Index:  1114
+
+Index:  1115
+
+Index:  1116
+
+Index:  1117
+content_text remain index: 1188, Drop index: [1117]
+
+Index:  1118
+
+Index:  1119
+
+Index:  1120
+content_text remain index: 1144, Drop index: [1120]
+
+Index:  1121
+
+Index:  1122
+
+Index:  1123
+
+Index:  1124
+
+Index:  1125
+
+Index:  1126
+
+Index:  1127
+
+Index:  1128
+
+Index:  1129
+
+Index:  1130
+content_text remain index: 2414, Drop index: [1130]
+
+Index:  1131
+
+Index:  1132
+
+Index:  1133
+
+Index:  1134
+
+Index:  1135
+
+Index:  1136
+
+Index:  1138
+
+Index:  1139
+
+Index:  1140
+content_text remain index: 1156, Drop index: [1140]
+
+Index:  1142
+content_text remain index: 1142, Drop index: [2410]
+
+Index:  1143
+
+Index:  1144
+
+Index:  1145
+
+Index:  1146
+
+Index:  1147
+
+Index:  1148
+
+Index:  1149
+
+Index:  1150
+
+Index:  1151
+
+Index:  1152
+
+Index:  1153
+
+Index:  1154
+
+Index:  1155
+
+Index:  1156
+
+Index:  1157
+
+Index:  1158
+
+Index:  1159
+
+Index:  1160
+
+Index:  1161
+
+Index:  1162
+
+Index:  1163
+
+Index:  1165
+
+Index:  1166
+
+Index:  1167
+
+Index:  1168
+
+Index:  1169
+
+Index:  1170
+
+Index:  1171
+
+Index:  1172
+
+Index:  1173
+
+Index:  1174
+
+Index:  1175
+
+Index:  1179
+
+Index:  1181
+
+Index:  1182
+
+Index:  1185
+
+Index:  1186
+
+Index:  1187
+
+Index:  1188
+
+Index:  1189
+
+Index:  1190
+
+Index:  1191
+
+Index:  1192
+
+Index:  1193
+
+Index:  1194
+
+Index:  1195
+
+Index:  1196
+
+Index:  1197
+content_text remain index: 1280, Drop index: [1197]
+
+Index:  1198
+
+Index:  1199
+
+Index:  1200
+
+Index:  1201
+
+Index:  1202
+
+Index:  1203
+
+Index:  1204
+
+Index:  1205
+
+Index:  1206
+
+Index:  1209
+content_text remain index: 4124, Drop index: [1209]
+
+Index:  1210
+
+Index:  1211
+
+Index:  1212
+
+Index:  1213
+content_text remain index: 1213, Drop index: [4178]
+
+Index:  1214
+
+Index:  1215
+
+Index:  1220
+
+Index:  1221
+title remain index: 1221, Drop index: [2755]
+
+Index:  1222
+
+Index:  1223
+
+Index:  1224
+
+Index:  1225
+
+Index:  1226
+
+Index:  1227
+
+Index:  1228
+
+Index:  1229
+
+Index:  1230
+
+Index:  1232
+
+Index:  1233
+
+Index:  1234
+
+Index:  1235
+
+Index:  1236
+
+Index:  1237
+
+Index:  1238
+
+Index:  1239
+
+Index:  1240
+
+Index:  1241
+
+Index:  1242
+
+Index:  1243
+
+Index:  1244
+
+Index:  1245
+
+Index:  1246
+
+Index:  1247
+
+Index:  1250
+
+Index:  1251
+
+Index:  1252
+content_text remain index: 1306, Drop index: [1252]
+
+Index:  1253
+
+Index:  1254
+
+Index:  1255
+
+Index:  1256
+
+Index:  1257
+
+Index:  1258
+
+Index:  1259
+
+Index:  1260
+
+Index:  1261
+
+Index:  1262
+
+Index:  1263
+
+Index:  1264
+
+Index:  1265
+
+Index:  1266
+
+Index:  1267
+
+Index:  1269
+
+Index:  1271
+
+Index:  1272
+
+Index:  1274
+
+Index:  1275
+
+Index:  1276
+
+Index:  1277
+
+Index:  1278
+
+Index:  1279
+
+Index:  1280
+
+Index:  1281
+
+Index:  1282
+
+Index:  1283
+
+Index:  1284
+
+Index:  1285
+
+Index:  1286
+
+Index:  1287
+
+Index:  1288
+
+Index:  1289
+
+Index:  1290
+
+Index:  1291
+
+Index:  1292
+
+Index:  1293
+
+Index:  1294
+
+Index:  1295
+
+Index:  1296
+
+Index:  1297
+
+Index:  1298
+
+Index:  1299
+
+Index:  1300
+
+Index:  1301
+
+Index:  1302
+
+Index:  1304
+
+Index:  1305
+
+Index:  1306
+
+Index:  1307
+
+Index:  1308
+
+Index:  1309
+
+Index:  1310
+
+Index:  1312
+
+Index:  1313
+
+Index:  1315
+
+Index:  1316
+
+Index:  1317
+
+Index:  1318
+
+Index:  1319
+
+Index:  1320
+
+Index:  1321
+
+Index:  1322
+
+Index:  1323
+
+Index:  1324
+
+Index:  1325
+
+Index:  1326
+
+Index:  1327
+
+Index:  1328
+
+Index:  1329
+
+Index:  1330
+
+Index:  1331
+
+Index:  1332
+
+Index:  1333
+
+Index:  1334
+
+Index:  1335
+
+Index:  1336
+
+Index:  1337
+
+Index:  1338
+
+Index:  1339
+
+Index:  1340
+
+Index:  1341
+
+Index:  1342
+
+Index:  1343
+
+Index:  1344
+
+Index:  1345
+
+Index:  1346
+
+Index:  1347
+
+Index:  1348
+
+Index:  1349
+
+Index:  1351
+
+Index:  1352
+
+Index:  1353
+
+Index:  1354
+
+Index:  1355
+
+Index:  1356
+
+Index:  1357
+
+Index:  1358
+
+Index:  1359
+
+Index:  1360
+
+Index:  1361
+
+Index:  1362
+
+Index:  1363
+
+Index:  1364
+
+Index:  1365
+
+Index:  1366
+
+Index:  1367
+
+Index:  1368
+
+Index:  1369
+
+Index:  1370
+
+Index:  1371
+
+Index:  1372
+
+Index:  1373
+
+Index:  1374
+
+Index:  1375
+
+Index:  1376
+
+Index:  1377
+
+Index:  1378
+
+Index:  1379
+
+Index:  1380
+
+Index:  1381
+
+Index:  1382
+
+Index:  1383
+
+Index:  1384
+
+Index:  1385
+
+Index:  1386
+
+Index:  1387
+
+Index:  1388
+
+Index:  1389
+
+Index:  1390
+
+Index:  1391
+
+Index:  1392
+
+Index:  1393
+
+Index:  1394
+
+Index:  1395
+
+Index:  1396
+
+Index:  1397
+
+Index:  1398
+
+Index:  1399
+
+Index:  1400
+
+Index:  1401
+content_text remain index: 3864, Drop index: [1401]
+
+Index:  1402
+
+Index:  1403
+
+Index:  1404
+
+Index:  1405
+
+Index:  1406
+
+Index:  1407
+
+Index:  1408
+
+Index:  1409
+
+Index:  1410
+
+Index:  1411
+
+Index:  1412
+content_text remain index: 1462, Drop index: [1412]
+
+Index:  1413
+
+Index:  1414
+
+Index:  1415
+
+Index:  1416
+
+Index:  1417
+
+Index:  1419
+
+Index:  1420
+
+Index:  1421
+
+Index:  1422
+
+Index:  1423
+
+Index:  1424
+
+Index:  1425
+
+Index:  1426
+
+Index:  1427
+
+Index:  1428
+
+Index:  1429
+
+Index:  1430
+
+Index:  1431
+
+Index:  1432
+
+Index:  1433
+
+Index:  1434
+
+Index:  1435
+
+Index:  1437
+
+Index:  1438
+
+Index:  1439
+
+Index:  1440
+
+Index:  1441
+
+Index:  1442
+
+Index:  1443
+
+Index:  1444
+
+Index:  1445
+
+Index:  1446
+
+Index:  1447
+content_text remain index: 1448, Drop index: [1447]
+
+Index:  1448
+
+Index:  1449
+
+Index:  1450
+
+Index:  1451
+
+Index:  1452
+
+Index:  1453
+
+Index:  1454
+
+Index:  1455
+
+Index:  1456
+
+Index:  1457
+
+Index:  1458
+
+Index:  1459
+
+Index:  1460
+content_text remain index: 1483, Drop index: [1460]
+
+Index:  1461
+
+Index:  1462
+
+Index:  1465
+
+Index:  1466
+
+Index:  1467
+
+Index:  1468
+
+Index:  1469
+
+Index:  1470
+
+Index:  1471
+
+Index:  1472
+
+Index:  1473
+
+Index:  1474
+
+Index:  1475
+
+Index:  1476
+
+Index:  1477
+
+Index:  1478
+
+Index:  1479
+
+Index:  1480
+
+Index:  1481
+
+Index:  1482
+
+Index:  1483
+
+Index:  1484
+
+Index:  1486
+
+Index:  1487
+
+Index:  1488
+
+Index:  1489
+
+Index:  1490
+
+Index:  1491
+
+Index:  1492
+
+Index:  1493
+
+Index:  1494
+
+Index:  1495
+
+Index:  1496
+
+Index:  1497
+
+Index:  1498
+
+Index:  1499
+
+Index:  1500
+
+Index:  1501
+
+Index:  1502
+
+Index:  1503
+
+Index:  1504
+
+Index:  1505
+
+Index:  1506
+
+Index:  1507
+
+Index:  1508
+
+Index:  1509
+
+Index:  1510
+
+Index:  1511
+
+Index:  1512
+
+Index:  1513
+
+Index:  1514
+
+Index:  1516
+
+Index:  1517
+
+Index:  1518
+
+Index:  1519
+
+Index:  1520
+
+Index:  1521
+
+Index:  1522
+
+Index:  1523
+
+Index:  1528
+
+Index:  1529
+
+Index:  1530
+
+Index:  1531
+
+Index:  1532
+
+Index:  1533
+
+Index:  1534
+
+Index:  1535
+
+Index:  1536
+
+Index:  1537
+
+Index:  1538
+
+Index:  1539
+content_text remain index: 2893, Drop index: [1539]
+
+Index:  1540
+
+Index:  1541
+
+Index:  1542
+
+Index:  1543
+
+Index:  1544
+
+Index:  1545
+
+Index:  1546
+
+Index:  1547
+
+Index:  1549
+
+Index:  1552
+
+Index:  1553
+
+Index:  1554
+
+Index:  1555
+
+Index:  1556
+
+Index:  1557
+
+Index:  1558
+
+Index:  1559
+
+Index:  1560
+
+Index:  1561
+
+Index:  1562
+
+Index:  1563
+
+Index:  1564
+
+Index:  1565
+
+Index:  1566
+
+Index:  1567
+
+Index:  1568
+
+Index:  1569
+
+Index:  1570
+
+Index:  1571
+
+Index:  1572
+
+Index:  1573
+
+Index:  1574
+
+Index:  1575
+
+Index:  1576
+
+Index:  1577
+
+Index:  1578
+
+Index:  1579
+
+Index:  1580
+
+Index:  1581
+
+Index:  1582
+
+Index:  1583
+
+Index:  1584
+
+Index:  1585
+
+Index:  1586
+
+Index:  1587
+
+Index:  1588
+
+Index:  1589
+
+Index:  1590
+
+Index:  1591
+
+Index:  1592
+
+Index:  1593
+
+Index:  1594
+
+Index:  1595
+
+Index:  1596
+
+Index:  1597
+
+Index:  1599
+
+Index:  1600
+
+Index:  1601
+
+Index:  1602
+
+Index:  1603
+
+Index:  1604
+
+Index:  1605
+
+Index:  1606
+
+Index:  1607
+
+Index:  1608
+
+Index:  1609
+
+Index:  1610
+
+Index:  1611
+title remain index: 3947, Drop index: [1611]
+
+Index:  1612
+
+Index:  1613
+
+Index:  1614
+
+Index:  1615
+
+Index:  1616
+
+Index:  1617
+
+Index:  1618
+
+Index:  1619
+
+Index:  1620
+
+Index:  1621
+
+Index:  1622
+
+Index:  1623
+
+Index:  1624
+
+Index:  1625
+
+Index:  1627
+
+Index:  1628
+
+Index:  1629
+
+Index:  1630
+
+Index:  1631
+
+Index:  1632
+
+Index:  1633
+
+Index:  1634
+
+Index:  1635
+
+Index:  1636
+
+Index:  1637
+
+Index:  1638
+
+Index:  1639
+
+Index:  1640
+
+Index:  1641
+
+Index:  1642
+
+Index:  1643
+
+Index:  1644
+
+Index:  1645
+
+Index:  1646
+
+Index:  1647
+
+Index:  1648
+
+Index:  1649
+
+Index:  1650
+
+Index:  1651
+
+Index:  1652
+
+Index:  1653
+
+Index:  1654
+
+Index:  1655
+
+Index:  1656
+
+Index:  1657
+
+Index:  1658
+
+Index:  1659
+
+Index:  1660
+
+Index:  1661
+
+Index:  1662
+
+Index:  1663
+
+Index:  1664
+
+Index:  1665
+
+Index:  1666
+
+Index:  1667
+
+Index:  1668
+
+Index:  1669
+
+Index:  1670
+
+Index:  1671
+
+Index:  1672
+
+Index:  1673
+
+Index:  1674
+
+Index:  1675
+
+Index:  1676
+
+Index:  1677
+
+Index:  1678
+
+Index:  1679
+
+Index:  1680
+
+Index:  1681
+
+Index:  1682
+
+Index:  1683
+
+Index:  1684
+
+Index:  1685
+
+Index:  1686
+
+Index:  1687
+
+Index:  1688
+
+Index:  1689
+
+Index:  1690
+
+Index:  1691
+
+Index:  1692
+
+Index:  1693
+
+Index:  1694
+
+Index:  1695
+
+Index:  1696
+
+Index:  1697
+
+Index:  1698
+
+Index:  1699
+
+Index:  1700
+
+Index:  1701
+
+Index:  1702
+
+Index:  1703
+
+Index:  1704
+
+Index:  1705
+
+Index:  1706
+
+Index:  1707
+
+Index:  1709
+
+Index:  1710
+
+Index:  1711
+
+Index:  1712
+
+Index:  1713
+
+Index:  1714
+
+Index:  1715
+
+Index:  1716
+
+Index:  1717
+
+Index:  1718
+
+Index:  1719
+
+Index:  1720
+
+Index:  1721
+
+Index:  1722
+
+Index:  1723
+
+Index:  1724
+
+Index:  1725
+
+Index:  1726
+
+Index:  1728
+
+Index:  1729
+
+Index:  1730
+
+Index:  1731
+
+Index:  1732
+
+Index:  1733
+
+Index:  1734
+
+Index:  1736
+
+Index:  1737
+
+Index:  1738
+
+Index:  1739
+
+Index:  1740
+
+Index:  1741
+
+Index:  1742
+
+Index:  1744
+
+Index:  1746
+
+Index:  1747
+content_text remain index: 1747, Drop index: [3724]
+
+Index:  1748
+
+Index:  1749
+
+Index:  1750
+
+Index:  1751
+
+Index:  1752
+
+Index:  1753
+
+Index:  1754
+
+Index:  1755
+
+Index:  1756
+
+Index:  1757
+
+Index:  1758
+
+Index:  1759
+
+Index:  1760
+
+Index:  1761
+
+Index:  1762
+
+Index:  1763
+
+Index:  1764
+
+Index:  1765
+
+Index:  1766
+
+Index:  1767
+
+Index:  1768
+
+Index:  1769
+
+Index:  1770
+
+Index:  1771
+
+Index:  1772
+
+Index:  1773
+
+Index:  1775
+
+Index:  1778
+
+Index:  1779
+
+Index:  1780
+content_text remain index: 1780, Drop index: [3074]
+
+Index:  1781
+
+Index:  1782
+
+Index:  1783
+
+Index:  1784
+
+Index:  1785
+
+Index:  1786
+
+Index:  1787
+
+Index:  1788
+
+Index:  1789
+
+Index:  1790
+
+Index:  1791
+title remain index: 3739, Drop index: [1791]
+
+Index:  1792
+
+Index:  1793
+
+Index:  1794
+
+Index:  1795
+
+Index:  1796
+
+Index:  1797
+
+Index:  1798
+
+Index:  1799
+
+Index:  1800
+
+Index:  1801
+
+Index:  1802
+
+Index:  1803
+
+Index:  1804
+
+Index:  1805
+
+Index:  1806
+
+Index:  1807
+
+Index:  1808
+
+Index:  1809
+
+Index:  1810
+
+Index:  1811
+
+Index:  1814
+
+Index:  1815
+
+Index:  1817
+
+Index:  1818
+
+Index:  1819
+
+Index:  1820
+
+Index:  1821
+
+Index:  1822
+
+Index:  1823
+
+Index:  1824
+
+Index:  1825
+
+Index:  1826
+
+Index:  1827
+
+Index:  1828
+
+Index:  1829
+
+Index:  1830
+
+Index:  1831
+
+Index:  1832
+
+Index:  1833
+
+Index:  1834
+
+Index:  1835
+
+Index:  1836
+
+Index:  1837
+
+Index:  1838
+
+Index:  1839
+
+Index:  1840
+
+Index:  1841
+
+Index:  1842
+
+Index:  1843
+
+Index:  1844
+
+Index:  1845
+
+Index:  1846
+
+Index:  1848
+
+Index:  1849
+
+Index:  1850
+
+Index:  1851
+
+Index:  1853
+
+Index:  1854
+
+Index:  1855
+
+Index:  1856
+
+Index:  1857
+
+Index:  1858
+
+Index:  1859
+
+Index:  1860
+
+Index:  1861
+
+Index:  1862
+
+Index:  1863
+
+Index:  1864
+
+Index:  1865
+
+Index:  1866
+
+Index:  1867
+
+Index:  1868
+
+Index:  1869
+
+Index:  1870
+
+Index:  1872
+
+Index:  1873
+
+Index:  1874
+
+Index:  1875
+
+Index:  1876
+
+Index:  1877
+content_text remain index: 3767, Drop index: [3770, 1877]
+
+Index:  1878
+
+Index:  1881
+
+Index:  1882
+
+Index:  1883
+
+Index:  1884
+
+Index:  1885
+
+Index:  1886
+
+Index:  1887
+
+Index:  1888
+
+Index:  1889
+
+Index:  1890
+
+Index:  1891
+
+Index:  1892
+
+Index:  1893
+
+Index:  1894
+
+Index:  1896
+
+Index:  1897
+
+Index:  1898
+
+Index:  1899
+content_text remain index: 3274, Drop index: [1899]
+
+Index:  1901
+
+Index:  1902
+
+Index:  1903
+
+Index:  1904
+
+Index:  1905
+
+Index:  1906
+
+Index:  1907
+
+Index:  1908
+
+Index:  1909
+
+Index:  1910
+
+Index:  1911
+
+Index:  1912
+
+Index:  1913
+
+Index:  1914
+
+Index:  1915
+
+Index:  1916
+
+Index:  1918
+
+Index:  1919
+
+Index:  1920
+
+Index:  1921
+
+Index:  1922
+
+Index:  1923
+
+Index:  1924
+
+Index:  1925
+
+Index:  1926
+
+Index:  1927
+
+Index:  1928
+
+Index:  1929
+
+Index:  1930
+
+Index:  1931
+
+Index:  1932
+
+Index:  1933
+
+Index:  1934
+
+Index:  1935
+
+Index:  1937
+
+Index:  1938
+
+Index:  1939
+
+Index:  1940
+
+Index:  1941
+
+Index:  1942
+
+Index:  1943
+
+Index:  1944
+
+Index:  1945
+
+Index:  1946
+
+Index:  1947
+
+Index:  1949
+
+Index:  1950
+
+Index:  1951
+
+Index:  1952
+
+Index:  1953
+
+Index:  1954
+
+Index:  1955
+
+Index:  1956
+
+Index:  1957
+
+Index:  1958
+
+Index:  1959
+
+Index:  1960
+
+Index:  1961
+
+Index:  1962
+
+Index:  1963
+
+Index:  1964
+
+Index:  1965
+
+Index:  1967
+
+Index:  1968
+
+Index:  1969
+
+Index:  1970
+
+Index:  1971
+
+Index:  1972
+
+Index:  1973
+
+Index:  1974
+
+Index:  1975
+
+Index:  1976
+
+Index:  1977
+
+Index:  1978
+
+Index:  1979
+
+Index:  1980
+
+Index:  1981
+
+Index:  1982
+
+Index:  1983
+
+Index:  1984
+
+Index:  1985
+
+Index:  1986
+
+Index:  1987
+
+Index:  1988
+
+Index:  1989
+
+Index:  1990
+
+Index:  1991
+
+Index:  1992
+
+Index:  1993
+
+Index:  1994
+
+Index:  1995
+
+Index:  1996
+
+Index:  1997
+
+Index:  1998
+
+Index:  1999
+
+Index:  2000
+
+Index:  2001
+
+Index:  2002
+
+Index:  2003
+
+Index:  2004
+
+Index:  2005
+
+Index:  2006
+
+Index:  2007
+
+Index:  2008
+
+Index:  2009
+
+Index:  2010
+
+Index:  2011
+
+Index:  2012
+
+Index:  2013
+
+Index:  2014
+
+Index:  2015
+
+Index:  2016
+
+Index:  2017
+
+Index:  2018
+
+Index:  2019
+
+Index:  2020
+
+Index:  2021
+
+Index:  2022
+
+Index:  2023
+
+Index:  2024
+
+Index:  2025
+
+Index:  2026
+
+Index:  2027
+
+Index:  2028
+
+Index:  2029
+
+Index:  2030
+
+Index:  2031
+
+Index:  2032
+
+Index:  2033
+
+Index:  2034
+
+Index:  2035
+
+Index:  2036
+
+Index:  2037
+
+Index:  2039
+
+Index:  2040
+
+Index:  2041
+
+Index:  2042
+
+Index:  2043
+
+Index:  2044
+
+Index:  2045
+
+Index:  2046
+
+Index:  2047
+
+Index:  2048
+
+Index:  2049
+
+Index:  2050
+
+Index:  2051
+
+Index:  2052
+
+Index:  2053
+
+Index:  2054
+
+Index:  2055
+
+Index:  2056
+
+Index:  2057
+
+Index:  2058
+
+Index:  2059
+
+Index:  2060
+
+Index:  2061
+
+Index:  2062
+
+Index:  2063
+
+Index:  2064
+
+Index:  2065
+
+Index:  2066
+
+Index:  2067
+
+Index:  2068
+
+Index:  2069
+
+Index:  2070
+
+Index:  2071
+
+Index:  2072
+
+Index:  2073
+
+Index:  2074
+
+Index:  2075
+
+Index:  2076
+
+Index:  2077
+
+Index:  2078
+
+Index:  2079
+
+Index:  2080
+
+Index:  2081
+
+Index:  2082
+
+Index:  2083
+
+Index:  2084
+
+Index:  2085
+
+Index:  2086
+
+Index:  2087
+
+Index:  2088
+
+Index:  2089
+
+Index:  2090
+
+Index:  2091
+
+Index:  2092
+
+Index:  2093
+
+Index:  2094
+
+Index:  2095
+
+Index:  2096
+
+Index:  2097
+
+Index:  2098
+
+Index:  2099
+
+Index:  2100
+
+Index:  2101
+
+Index:  2102
+
+Index:  2103
+
+Index:  2104
+
+Index:  2105
+
+Index:  2106
+
+Index:  2107
+
+Index:  2109
+
+Index:  2110
+
+Index:  2111
+
+Index:  2112
+
+Index:  2113
+
+Index:  2114
+
+Index:  2115
+
+Index:  2116
+
+Index:  2117
+
+Index:  2118
+
+Index:  2119
+
+Index:  2120
+
+Index:  2121
+
+Index:  2122
+
+Index:  2123
+
+Index:  2124
+
+Index:  2125
+
+Index:  2126
+
+Index:  2127
+
+Index:  2128
+
+Index:  2129
+
+Index:  2130
+
+Index:  2131
+
+Index:  2132
+
+Index:  2133
+
+Index:  2134
+
+Index:  2135
+
+Index:  2136
+
+Index:  2137
+
+Index:  2139
+
+Index:  2143
+
+Index:  2144
+
+Index:  2145
+
+Index:  2146
+
+Index:  2147
+
+Index:  2149
+
+Index:  2150
+
+Index:  2151
+
+Index:  2152
+
+Index:  2153
+
+Index:  2154
+
+Index:  2155
+
+Index:  2156
+
+Index:  2157
+
+Index:  2158
+
+Index:  2159
+
+Index:  2160
+
+Index:  2161
+
+Index:  2162
+
+Index:  2163
+
+Index:  2164
+
+Index:  2165
+
+Index:  2166
+
+Index:  2167
+
+Index:  2168
+
+Index:  2169
+
+Index:  2170
+
+Index:  2171
+
+Index:  2172
+
+Index:  2173
+
+Index:  2174
+
+Index:  2175
+
+Index:  2177
+
+Index:  2178
+
+Index:  2179
+
+Index:  2181
+
+Index:  2182
+
+Index:  2183
+
+Index:  2184
+
+Index:  2185
+
+Index:  2186
+
+Index:  2187
+
+Index:  2189
+
+Index:  2190
+
+Index:  2191
+
+Index:  2192
+
+Index:  2193
+
+Index:  2194
+
+Index:  2195
+
+Index:  2196
+
+Index:  2197
+
+Index:  2198
+
+Index:  2199
+
+Index:  2200
+
+Index:  2201
+
+Index:  2202
+
+Index:  2203
+
+Index:  2204
+
+Index:  2205
+
+Index:  2206
+
+Index:  2207
+
+Index:  2208
+
+Index:  2209
+
+Index:  2210
+
+Index:  2211
+
+Index:  2212
+
+Index:  2213
+
+Index:  2214
+
+Index:  2216
+
+Index:  2217
+
+Index:  2218
+
+Index:  2220
+
+Index:  2221
+
+Index:  2222
+
+Index:  2223
+
+Index:  2225
+
+Index:  2226
+
+Index:  2227
+
+Index:  2228
+
+Index:  2229
+
+Index:  2230
+
+Index:  2231
+
+Index:  2232
+
+Index:  2233
+
+Index:  2234
+
+Index:  2235
+
+Index:  2236
+
+Index:  2237
+
+Index:  2238
+
+Index:  2239
+
+Index:  2240
+
+Index:  2241
+
+Index:  2244
+
+Index:  2246
+
+Index:  2247
+
+Index:  2248
+
+Index:  2249
+
+Index:  2250
+
+Index:  2251
+
+Index:  2253
+
+Index:  2254
+
+Index:  2255
+
+Index:  2256
+
+Index:  2257
+
+Index:  2258
+
+Index:  2259
+
+Index:  2260
+
+Index:  2261
+
+Index:  2262
+
+Index:  2263
+
+Index:  2264
+
+Index:  2265
+
+Index:  2266
+
+Index:  2267
+
+Index:  2268
+
+Index:  2269
+
+Index:  2270
+
+Index:  2271
+
+Index:  2272
+
+Index:  2273
+
+Index:  2274
+
+Index:  2275
+
+Index:  2276
+
+Index:  2278
+
+Index:  2279
+
+Index:  2280
+
+Index:  2281
+
+Index:  2282
+
+Index:  2283
+
+Index:  2284
+
+Index:  2285
+
+Index:  2286
+
+Index:  2289
+
+Index:  2290
+
+Index:  2291
+
+Index:  2292
+
+Index:  2293
+
+Index:  2294
+
+Index:  2295
+
+Index:  2296
+
+Index:  2297
+
+Index:  2298
+
+Index:  2299
+
+Index:  2300
+
+Index:  2301
+
+Index:  2302
+
+Index:  2303
+
+Index:  2304
+
+Index:  2305
+
+Index:  2306
+
+Index:  2307
+
+Index:  2308
+
+Index:  2314
+
+Index:  2315
+
+Index:  2316
+
+Index:  2317
+
+Index:  2318
+
+Index:  2319
+
+Index:  2320
+
+Index:  2321
+
+Index:  2322
+
+Index:  2325
+
+Index:  2326
+
+Index:  2327
+
+Index:  2328
+
+Index:  2329
+
+Index:  2330
+
+Index:  2331
+
+Index:  2332
+
+Index:  2333
+
+Index:  2334
+
+Index:  2335
+
+Index:  2336
+
+Index:  2337
+
+Index:  2338
+
+Index:  2339
+
+Index:  2340
+
+Index:  2341
+
+Index:  2342
+
+Index:  2343
+
+Index:  2344
+
+Index:  2345
+
+Index:  2346
+
+Index:  2347
+
+Index:  2348
+
+Index:  2349
+
+Index:  2350
+
+Index:  2351
+
+Index:  2352
+
+Index:  2353
+
+Index:  2354
+
+Index:  2355
+
+Index:  2356
+
+Index:  2357
+
+Index:  2360
+
+Index:  2361
+
+Index:  2362
+
+Index:  2363
+
+Index:  2364
+
+Index:  2365
+
+Index:  2366
+
+Index:  2367
+
+Index:  2368
+
+Index:  2373
+
+Index:  2374
+
+Index:  2378
+
+Index:  2379
+
+Index:  2380
+
+Index:  2381
+
+Index:  2382
+
+Index:  2383
+
+Index:  2384
+
+Index:  2385
+
+Index:  2386
+
+Index:  2387
+
+Index:  2390
+
+Index:  2391
+
+Index:  2392
+
+Index:  2393
+
+Index:  2394
+
+Index:  2395
+
+Index:  2396
+
+Index:  2397
+
+Index:  2398
+
+Index:  2399
+
+Index:  2400
+
+Index:  2401
+
+Index:  2402
+
+Index:  2403
+
+Index:  2404
+
+Index:  2405
+
+Index:  2406
+
+Index:  2407
+
+Index:  2409
+
+Index:  2410
+
+Index:  2411
+
+Index:  2412
+
+Index:  2413
+
+Index:  2414
+
+Index:  2415
+
+Index:  2416
+
+Index:  2417
+
+Index:  2418
+
+Index:  2421
+
+Index:  2422
+
+Index:  2423
+
+Index:  2425
+
+Index:  2426
+
+Index:  2427
+
+Index:  2428
+
+Index:  2429
+
+Index:  2430
+
+Index:  2431
+
+Index:  2432
+
+Index:  2433
+
+Index:  2434
+
+Index:  2435
+
+Index:  2437
+
+Index:  2438
+
+Index:  2439
+
+Index:  2440
+
+Index:  2441
+
+Index:  2442
+
+Index:  2443
+
+Index:  2444
+
+Index:  2445
+
+Index:  2446
+
+Index:  2447
+
+Index:  2448
+
+Index:  2449
+
+Index:  2450
+
+Index:  2452
+
+Index:  2453
+
+Index:  2454
+
+Index:  2455
+
+Index:  2456
+
+Index:  2457
+
+Index:  2458
+
+Index:  2459
+
+Index:  2460
+
+Index:  2461
+
+Index:  2462
+
+Index:  2463
+
+Index:  2464
+
+Index:  2465
+
+Index:  2466
+
+Index:  2467
+
+Index:  2468
+
+Index:  2469
+
+Index:  2470
+
+Index:  2471
+
+Index:  2472
+
+Index:  2477
+
+Index:  2478
+
+Index:  2479
+
+Index:  2480
+
+Index:  2481
+
+Index:  2482
+
+Index:  2483
+
+Index:  2484
+
+Index:  2485
+
+Index:  2486
+
+Index:  2487
+
+Index:  2489
+
+Index:  2490
+
+Index:  2491
+
+Index:  2492
+
+Index:  2493
+
+Index:  2494
+
+Index:  2495
+
+Index:  2497
+
+Index:  2498
+
+Index:  2499
+
+Index:  2500
+
+Index:  2501
+
+Index:  2502
+
+Index:  2503
+
+Index:  2504
+
+Index:  2505
+
+Index:  2506
+
+Index:  2507
+
+Index:  2508
+
+Index:  2509
+
+Index:  2510
+
+Index:  2511
+
+Index:  2512
+
+Index:  2513
+
+Index:  2514
+
+Index:  2515
+
+Index:  2516
+
+Index:  2517
+
+Index:  2518
+
+Index:  2519
+
+Index:  2520
+
+Index:  2521
+
+Index:  2522
+
+Index:  2523
+
+Index:  2524
+
+Index:  2525
+
+Index:  2527
+
+Index:  2528
+
+Index:  2529
+
+Index:  2530
+
+Index:  2531
+
+Index:  2532
+
+Index:  2533
+
+Index:  2534
+
+Index:  2536
+
+Index:  2537
+
+Index:  2538
+
+Index:  2539
+
+Index:  2540
+
+Index:  2541
+
+Index:  2542
+
+Index:  2543
+
+Index:  2546
+
+Index:  2547
+
+Index:  2548
+
+Index:  2549
+
+Index:  2550
+
+Index:  2551
+
+Index:  2552
+
+Index:  2553
+
+Index:  2554
+
+Index:  2555
+
+Index:  2556
+
+Index:  2557
+
+Index:  2558
+
+Index:  2559
+
+Index:  2560
+
+Index:  2561
+
+Index:  2562
+
+Index:  2563
+
+Index:  2564
+
+Index:  2565
+
+Index:  2566
+
+Index:  2567
+
+Index:  2568
+
+Index:  2569
+
+Index:  2570
+
+Index:  2571
+
+Index:  2572
+
+Index:  2573
+
+Index:  2574
+
+Index:  2575
+
+Index:  2576
+
+Index:  2577
+
+Index:  2578
+
+Index:  2579
+
+Index:  2580
+
+Index:  2581
+
+Index:  2582
+
+Index:  2583
+
+Index:  2584
+
+Index:  2585
+
+Index:  2586
+
+Index:  2587
+
+Index:  2588
+
+Index:  2589
+
+Index:  2590
+
+Index:  2591
+
+Index:  2592
+
+Index:  2593
+
+Index:  2594
+
+Index:  2595
+
+Index:  2596
+
+Index:  2597
+
+Index:  2598
+
+Index:  2599
+
+Index:  2600
+
+Index:  2601
+
+Index:  2602
+
+Index:  2603
+
+Index:  2604
+
+Index:  2605
+
+Index:  2606
+
+Index:  2607
+
+Index:  2608
+
+Index:  2609
+
+Index:  2610
+
+Index:  2611
+
+Index:  2612
+
+Index:  2613
+
+Index:  2614
+
+Index:  2615
+
+Index:  2616
+
+Index:  2617
+
+Index:  2618
+
+Index:  2619
+
+Index:  2622
+
+Index:  2624
+
+Index:  2625
+
+Index:  2626
+
+Index:  2627
+
+Index:  2628
+
+Index:  2629
+
+Index:  2630
+
+Index:  2631
+
+Index:  2632
+
+Index:  2633
+
+Index:  2634
+
+Index:  2636
+
+Index:  2637
+
+Index:  2639
+
+Index:  2641
+
+Index:  2642
+
+Index:  2643
+
+Index:  2644
+
+Index:  2645
+
+Index:  2646
+
+Index:  2647
+
+Index:  2648
+
+Index:  2649
+
+Index:  2650
+
+Index:  2651
+
+Index:  2654
+
+Index:  2655
+
+Index:  2656
+
+Index:  2657
+
+Index:  2658
+
+Index:  2659
+
+Index:  2660
+
+Index:  2661
+
+Index:  2662
+
+Index:  2663
+
+Index:  2665
+
+Index:  2666
+
+Index:  2667
+
+Index:  2668
+
+Index:  2669
+
+Index:  2670
+
+Index:  2671
+
+Index:  2672
+
+Index:  2673
+
+Index:  2677
+
+Index:  2678
+
+Index:  2682
+
+Index:  2683
+
+Index:  2684
+
+Index:  2688
+
+Index:  2689
+
+Index:  2690
+
+Index:  2692
+
+Index:  2693
+
+Index:  2694
+
+Index:  2695
+
+Index:  2696
+
+Index:  2697
+
+Index:  2698
+
+Index:  2699
+
+Index:  2700
+
+Index:  2701
+
+Index:  2702
+
+Index:  2703
+
+Index:  2704
+
+Index:  2705
+
+Index:  2706
+
+Index:  2707
+
+Index:  2708
+
+Index:  2710
+
+Index:  2711
+
+Index:  2712
+
+Index:  2713
+
+Index:  2714
+
+Index:  2716
+
+Index:  2717
+
+Index:  2718
+
+Index:  2719
+
+Index:  2720
+
+Index:  2721
+
+Index:  2722
+
+Index:  2723
+
+Index:  2724
+
+Index:  2725
+
+Index:  2726
+
+Index:  2727
+
+Index:  2728
+
+Index:  2729
+
+Index:  2730
+
+Index:  2732
+
+Index:  2733
+
+Index:  2734
+
+Index:  2735
+
+Index:  2736
+
+Index:  2737
+
+Index:  2738
+
+Index:  2740
+
+Index:  2741
+
+Index:  2742
+
+Index:  2743
+
+Index:  2745
+
+Index:  2746
+
+Index:  2747
+
+Index:  2748
+
+Index:  2749
+
+Index:  2750
+
+Index:  2751
+
+Index:  2752
+
+Index:  2753
+
+Index:  2754
+
+Index:  2755
+
+Index:  2756
+
+Index:  2757
+
+Index:  2758
+
+Index:  2759
+
+Index:  2760
+
+Index:  2761
+
+Index:  2762
+
+Index:  2763
+
+Index:  2764
+
+Index:  2765
+
+Index:  2766
+
+Index:  2767
+
+Index:  2768
+
+Index:  2769
+
+Index:  2770
+
+Index:  2771
+
+Index:  2772
+
+Index:  2773
+
+Index:  2774
+
+Index:  2775
+
+Index:  2776
+
+Index:  2777
+
+Index:  2778
+
+Index:  2779
+
+Index:  2780
+
+Index:  2781
+
+Index:  2782
+
+Index:  2783
+
+Index:  2784
+
+Index:  2785
+
+Index:  2786
+
+Index:  2787
+
+Index:  2788
+
+Index:  2789
+
+Index:  2790
+
+Index:  2791
+
+Index:  2792
+
+Index:  2793
+
+Index:  2794
+
+Index:  2795
+
+Index:  2796
+
+Index:  2797
+
+Index:  2798
+
+Index:  2799
+
+Index:  2800
+
+Index:  2801
+
+Index:  2802
+
+Index:  2803
+
+Index:  2804
+
+Index:  2805
+
+Index:  2806
+
+Index:  2807
+
+Index:  2808
+
+Index:  2809
+
+Index:  2810
+
+Index:  2811
+
+Index:  2812
+
+Index:  2813
+
+Index:  2814
+
+Index:  2815
+
+Index:  2816
+
+Index:  2817
+
+Index:  2818
+
+Index:  2820
+
+Index:  2821
+
+Index:  2822
+
+Index:  2823
+
+Index:  2824
+
+Index:  2825
+
+Index:  2826
+
+Index:  2827
+
+Index:  2828
+
+Index:  2829
+
+Index:  2830
+
+Index:  2831
+
+Index:  2832
+
+Index:  2833
+
+Index:  2834
+
+Index:  2835
+
+Index:  2836
+
+Index:  2837
+
+Index:  2838
+
+Index:  2839
+
+Index:  2840
+
+Index:  2841
+
+Index:  2842
+
+Index:  2843
+
+Index:  2844
+
+Index:  2845
+
+Index:  2846
+
+Index:  2847
+
+Index:  2848
+
+Index:  2849
+
+Index:  2850
+
+Index:  2851
+
+Index:  2852
+
+Index:  2854
+
+Index:  2855
+
+Index:  2856
+
+Index:  2857
+
+Index:  2858
+
+Index:  2859
+
+Index:  2860
+
+Index:  2861
+
+Index:  2862
+
+Index:  2863
+
+Index:  2864
+
+Index:  2865
+
+Index:  2866
+
+Index:  2867
+content_text remain index: 2867, Drop index: [2870]
+
+Index:  2868
+
+Index:  2869
+
+Index:  2870
+
+Index:  2871
+
+Index:  2872
+
+Index:  2873
+
+Index:  2874
+
+Index:  2875
+
+Index:  2876
+
+Index:  2877
+
+Index:  2878
+
+Index:  2879
+
+Index:  2880
+
+Index:  2881
+
+Index:  2882
+
+Index:  2883
+
+Index:  2884
+
+Index:  2885
+
+Index:  2886
+
+Index:  2887
+
+Index:  2888
+
+Index:  2889
+
+Index:  2890
+
+Index:  2891
+
+Index:  2892
+
+Index:  2893
+
+Index:  2894
+
+Index:  2895
+
+Index:  2896
+
+Index:  2897
+
+Index:  2898
+
+Index:  2899
+
+Index:  2900
+
+Index:  2901
+
+Index:  2902
+
+Index:  2903
+
+Index:  2905
+
+Index:  2906
+
+Index:  2907
+
+Index:  2908
+
+Index:  2910
+
+Index:  2911
+
+Index:  2912
+
+Index:  2914
+
+Index:  2915
+
+Index:  2916
+
+Index:  2917
+
+Index:  2918
+
+Index:  2919
+
+Index:  2920
+
+Index:  2921
+
+Index:  2922
+
+Index:  2923
+
+Index:  2924
+
+Index:  2925
+
+Index:  2926
+
+Index:  2927
+
+Index:  2928
+
+Index:  2929
+
+Index:  2930
+
+Index:  2931
+
+Index:  2932
+
+Index:  2933
+
+Index:  2934
+
+Index:  2935
+
+Index:  2936
+
+Index:  2937
+
+Index:  2938
+
+Index:  2939
+
+Index:  2940
+
+Index:  2941
+
+Index:  2942
+
+Index:  2943
+
+Index:  2944
+
+Index:  2945
+
+Index:  2946
+
+Index:  2947
+
+Index:  2948
+
+Index:  2949
+
+Index:  2950
+
+Index:  2951
+
+Index:  2952
+
+Index:  2953
+
+Index:  2954
+
+Index:  2955
+
+Index:  2956
+
+Index:  2957
+
+Index:  2958
+
+Index:  2959
+
+Index:  2960
+
+Index:  2961
+
+Index:  2962
+
+Index:  2963
+
+Index:  2964
+
+Index:  2965
+
+Index:  2966
+
+Index:  2967
+
+Index:  2968
+
+Index:  2969
+
+Index:  2970
+
+Index:  2971
+
+Index:  2972
+
+Index:  2973
+
+Index:  2974
+
+Index:  2975
+
+Index:  2976
+
+Index:  2977
+
+Index:  2978
+
+Index:  2979
+
+Index:  2980
+
+Index:  2981
+
+Index:  2982
+
+Index:  2983
+
+Index:  2984
+
+Index:  2985
+
+Index:  2986
+
+Index:  2987
+
+Index:  2988
+
+Index:  2989
+
+Index:  2990
+
+Index:  2991
+
+Index:  2992
+
+Index:  2993
+
+Index:  2994
+
+Index:  2995
+
+Index:  2996
+
+Index:  2997
+
+Index:  2998
+
+Index:  3000
+
+Index:  3001
+
+Index:  3002
+
+Index:  3003
+
+Index:  3004
+
+Index:  3005
+
+Index:  3006
+
+Index:  3007
+
+Index:  3008
+
+Index:  3009
+
+Index:  3010
+
+Index:  3011
+
+Index:  3012
+
+Index:  3013
+
+Index:  3014
+
+Index:  3015
+
+Index:  3016
+
+Index:  3017
+
+Index:  3018
+
+Index:  3019
+
+Index:  3020
+
+Index:  3021
+
+Index:  3022
+
+Index:  3023
+
+Index:  3024
+
+Index:  3025
+
+Index:  3026
+
+Index:  3027
+
+Index:  3028
+
+Index:  3029
+
+Index:  3030
+
+Index:  3031
+
+Index:  3032
+
+Index:  3033
+
+Index:  3034
+
+Index:  3035
+
+Index:  3036
+
+Index:  3037
+
+Index:  3038
+
+Index:  3039
+
+Index:  3040
+
+Index:  3041
+
+Index:  3042
+
+Index:  3043
+
+Index:  3044
+
+Index:  3046
+
+Index:  3047
+
+Index:  3048
+
+Index:  3049
+
+Index:  3050
+
+Index:  3051
+
+Index:  3052
+
+Index:  3053
+
+Index:  3054
+
+Index:  3055
+
+Index:  3056
+
+Index:  3057
+
+Index:  3058
+
+Index:  3059
+
+Index:  3060
+
+Index:  3061
+
+Index:  3062
+
+Index:  3063
+
+Index:  3064
+
+Index:  3065
+
+Index:  3066
+
+Index:  3067
+
+Index:  3068
+
+Index:  3069
+
+Index:  3070
+
+Index:  3071
+
+Index:  3072
+
+Index:  3074
+
+Index:  3075
+
+Index:  3076
+
+Index:  3077
+
+Index:  3078
+
+Index:  3079
+
+Index:  3080
+
+Index:  3081
+
+Index:  3082
+
+Index:  3083
+
+Index:  3084
+
+Index:  3085
+
+Index:  3086
+
+Index:  3087
+
+Index:  3088
+
+Index:  3089
+
+Index:  3090
+
+Index:  3091
+
+Index:  3092
+
+Index:  3093
+
+Index:  3094
+
+Index:  3095
+
+Index:  3096
+
+Index:  3097
+
+Index:  3098
+
+Index:  3099
+
+Index:  3100
+
+Index:  3101
+
+Index:  3102
+
+Index:  3103
+
+Index:  3104
+
+Index:  3105
+
+Index:  3106
+
+Index:  3107
+
+Index:  3108
+
+Index:  3109
+
+Index:  3110
+
+Index:  3111
+
+Index:  3112
+
+Index:  3113
+
+Index:  3114
+
+Index:  3115
+
+Index:  3116
+
+Index:  3117
+
+Index:  3118
+
+Index:  3119
+
+Index:  3120
+
+Index:  3121
+
+Index:  3122
+
+Index:  3123
+
+Index:  3124
+
+Index:  3125
+
+Index:  3126
+
+Index:  3127
+
+Index:  3128
+
+Index:  3129
+
+Index:  3130
+
+Index:  3131
+
+Index:  3132
+
+Index:  3133
+
+Index:  3134
+
+Index:  3135
+
+Index:  3136
+
+Index:  3137
+
+Index:  3138
+
+Index:  3139
+
+Index:  3140
+
+Index:  3141
+
+Index:  3142
+
+Index:  3143
+
+Index:  3144
+
+Index:  3145
+
+Index:  3146
+
+Index:  3147
+
+Index:  3148
+
+Index:  3149
+
+Index:  3150
+
+Index:  3151
+
+Index:  3152
+
+Index:  3153
+content_text remain index: 3207, Drop index: [3153]
+
+Index:  3154
+
+Index:  3155
+
+Index:  3156
+
+Index:  3157
+
+Index:  3158
+
+Index:  3159
+
+Index:  3160
+
+Index:  3161
+
+Index:  3162
+
+Index:  3163
+
+Index:  3164
+
+Index:  3165
+
+Index:  3166
+
+Index:  3167
+
+Index:  3168
+
+Index:  3169
+
+Index:  3170
+
+Index:  3171
+
+Index:  3172
+
+Index:  3173
+
+Index:  3174
+
+Index:  3175
+
+Index:  3176
+
+Index:  3177
+
+Index:  3178
+
+Index:  3179
+
+Index:  3180
+
+Index:  3181
+
+Index:  3182
+
+Index:  3183
+
+Index:  3184
+
+Index:  3185
+
+Index:  3186
+
+Index:  3187
+
+Index:  3188
+
+Index:  3189
+
+Index:  3190
+
+Index:  3191
+
+Index:  3192
+
+Index:  3193
+
+Index:  3194
+
+Index:  3195
+
+Index:  3196
+
+Index:  3197
+
+Index:  3198
+
+Index:  3199
+
+Index:  3200
+
+Index:  3201
+
+Index:  3202
+
+Index:  3203
+
+Index:  3204
+
+Index:  3205
+
+Index:  3206
+
+Index:  3207
+
+Index:  3208
+
+Index:  3209
+
+Index:  3210
+
+Index:  3211
+
+Index:  3212
+
+Index:  3213
+
+Index:  3214
+
+Index:  3215
+
+Index:  3216
+
+Index:  3217
+
+Index:  3218
+
+Index:  3219
+
+Index:  3220
+
+Index:  3221
+
+Index:  3222
+
+Index:  3224
+
+Index:  3225
+
+Index:  3226
+
+Index:  3227
+
+Index:  3228
+
+Index:  3229
+
+Index:  3230
+
+Index:  3231
+
+Index:  3232
+
+Index:  3233
+
+Index:  3235
+
+Index:  3236
+
+Index:  3237
+
+Index:  3238
+
+Index:  3239
+
+Index:  3240
+
+Index:  3241
+
+Index:  3242
+
+Index:  3243
+
+Index:  3244
+
+Index:  3245
+
+Index:  3246
+
+Index:  3247
+
+Index:  3248
+
+Index:  3249
+
+Index:  3250
+
+Index:  3251
+
+Index:  3252
+
+Index:  3253
+
+Index:  3254
+
+Index:  3255
+
+Index:  3256
+
+Index:  3257
+
+Index:  3258
+
+Index:  3259
+
+Index:  3260
+
+Index:  3261
+
+Index:  3262
+
+Index:  3263
+
+Index:  3264
+
+Index:  3265
+
+Index:  3266
+
+Index:  3267
+
+Index:  3268
+
+Index:  3269
+
+Index:  3270
+
+Index:  3272
+
+Index:  3273
+
+Index:  3274
+
+Index:  3275
+
+Index:  3276
+
+Index:  3277
+
+Index:  3278
+
+Index:  3279
+
+Index:  3280
+
+Index:  3281
+
+Index:  3282
+
+Index:  3283
+
+Index:  3284
+
+Index:  3285
+
+Index:  3286
+
+Index:  3288
+
+Index:  3289
+
+Index:  3290
+
+Index:  3291
+
+Index:  3292
+
+Index:  3293
+
+Index:  3294
+
+Index:  3295
+
+Index:  3296
+
+Index:  3297
+
+Index:  3298
+
+Index:  3299
+
+Index:  3300
+
+Index:  3301
+
+Index:  3302
+
+Index:  3303
+
+Index:  3304
+
+Index:  3305
+
+Index:  3306
+
+Index:  3307
+
+Index:  3308
+
+Index:  3309
+
+Index:  3310
+
+Index:  3311
+
+Index:  3312
+
+Index:  3313
+
+Index:  3314
+
+Index:  3315
+
+Index:  3316
+
+Index:  3317
+
+Index:  3318
+
+Index:  3319
+
+Index:  3320
+
+Index:  3321
+
+Index:  3322
+
+Index:  3323
+
+Index:  3324
+
+Index:  3325
+
+Index:  3326
+
+Index:  3327
+
+Index:  3328
+
+Index:  3329
+
+Index:  3330
+
+Index:  3331
+
+Index:  3332
+
+Index:  3333
+
+Index:  3334
+
+Index:  3335
+
+Index:  3336
+
+Index:  3337
+
+Index:  3338
+
+Index:  3339
+
+Index:  3340
+
+Index:  3341
+
+Index:  3342
+
+Index:  3343
+
+Index:  3344
+
+Index:  3345
+
+Index:  3346
+
+Index:  3347
+
+Index:  3348
+
+Index:  3349
+
+Index:  3350
+
+Index:  3351
+
+Index:  3352
+
+Index:  3353
+
+Index:  3354
+
+Index:  3355
+
+Index:  3356
+
+Index:  3357
+
+Index:  3358
+
+Index:  3359
+
+Index:  3360
+
+Index:  3361
+
+Index:  3362
+
+Index:  3363
+
+Index:  3364
+
+Index:  3365
+
+Index:  3366
+
+Index:  3367
+
+Index:  3368
+
+Index:  3369
+
+Index:  3370
+
+Index:  3371
+
+Index:  3372
+
+Index:  3373
+
+Index:  3374
+
+Index:  3375
+
+Index:  3376
+
+Index:  3377
+
+Index:  3378
+
+Index:  3379
+
+Index:  3380
+
+Index:  3381
+
+Index:  3382
+
+Index:  3383
+
+Index:  3384
+
+Index:  3385
+
+Index:  3386
+
+Index:  3387
+
+Index:  3388
+
+Index:  3389
+
+Index:  3390
+
+Index:  3391
+
+Index:  3392
+
+Index:  3393
+
+Index:  3394
+
+Index:  3395
+
+Index:  3396
+
+Index:  3397
+
+Index:  3398
+
+Index:  3399
+
+Index:  3400
+
+Index:  3401
+
+Index:  3402
+
+Index:  3403
+
+Index:  3404
+
+Index:  3405
+
+Index:  3406
+
+Index:  3407
+
+Index:  3408
+
+Index:  3409
+
+Index:  3410
+
+Index:  3411
+
+Index:  3412
+
+Index:  3413
+
+Index:  3414
+
+Index:  3415
+
+Index:  3416
+
+Index:  3417
+
+Index:  3418
+
+Index:  3419
+
+Index:  3420
+
+Index:  3421
+
+Index:  3422
+
+Index:  3423
+
+Index:  3424
+
+Index:  3425
+
+Index:  3426
+
+Index:  3427
+
+Index:  3428
+
+Index:  3429
+
+Index:  3430
+
+Index:  3431
+
+Index:  3432
+
+Index:  3433
+
+Index:  3434
+
+Index:  3435
+
+Index:  3436
+
+Index:  3437
+
+Index:  3438
+
+Index:  3439
+
+Index:  3440
+
+Index:  3441
+
+Index:  3442
+
+Index:  3443
+
+Index:  3444
+
+Index:  3445
+
+Index:  3446
+
+Index:  3447
+
+Index:  3448
+
+Index:  3449
+
+Index:  3450
+
+Index:  3451
+
+Index:  3452
+
+Index:  3453
+
+Index:  3454
+
+Index:  3455
+
+Index:  3456
+
+Index:  3457
+
+Index:  3458
+
+Index:  3459
+
+Index:  3460
+
+Index:  3461
+
+Index:  3462
+
+Index:  3463
+
+Index:  3464
+
+Index:  3465
+
+Index:  3466
+
+Index:  3467
+
+Index:  3468
+
+Index:  3469
+
+Index:  3470
+
+Index:  3471
+
+Index:  3472
+
+Index:  3473
+
+Index:  3474
+
+Index:  3475
+
+Index:  3476
+
+Index:  3477
+
+Index:  3478
+
+Index:  3479
+
+Index:  3480
+
+Index:  3481
+
+Index:  3482
+
+Index:  3483
+
+Index:  3484
+
+Index:  3485
+
+Index:  3486
+
+Index:  3487
+
+Index:  3488
+
+Index:  3489
+
+Index:  3490
+
+Index:  3491
+
+Index:  3492
+
+Index:  3493
+
+Index:  3494
+
+Index:  3495
+
+Index:  3496
+
+Index:  3497
+
+Index:  3498
+
+Index:  3499
+
+Index:  3500
+
+Index:  3501
+
+Index:  3502
+
+Index:  3503
+
+Index:  3504
+
+Index:  3505
+
+Index:  3506
+
+Index:  3507
+
+Index:  3508
+
+Index:  3509
+
+Index:  3510
+
+Index:  3511
+
+Index:  3512
+
+Index:  3513
+
+Index:  3514
+
+Index:  3515
+
+Index:  3516
+
+Index:  3517
+
+Index:  3518
+
+Index:  3519
+
+Index:  3520
+
+Index:  3521
+
+Index:  3522
+
+Index:  3523
+
+Index:  3524
+
+Index:  3525
+
+Index:  3526
+
+Index:  3527
+
+Index:  3528
+
+Index:  3529
+
+Index:  3530
+
+Index:  3531
+
+Index:  3532
+
+Index:  3533
+
+Index:  3534
+
+Index:  3535
+
+Index:  3536
+
+Index:  3537
+
+Index:  3538
+
+Index:  3539
+
+Index:  3540
+
+Index:  3541
+
+Index:  3542
+
+Index:  3543
+
+Index:  3544
+
+Index:  3545
+
+Index:  3546
+
+Index:  3547
+
+Index:  3548
+
+Index:  3549
+
+Index:  3550
+
+Index:  3551
+
+Index:  3553
+
+Index:  3554
+
+Index:  3555
+
+Index:  3556
+
+Index:  3557
+
+Index:  3558
+
+Index:  3559
+
+Index:  3561
+
+Index:  3562
+
+Index:  3563
+
+Index:  3567
+
+Index:  3568
+
+Index:  3571
+
+Index:  3579
+
+Index:  3580
+
+Index:  3581
+
+Index:  3582
+
+Index:  3583
+
+Index:  3584
+
+Index:  3585
+
+Index:  3586
+
+Index:  3588
+
+Index:  3590
+
+Index:  3591
+
+Index:  3592
+
+Index:  3593
+
+Index:  3594
+
+Index:  3602
+
+Index:  3606
+
+Index:  3609
+
+Index:  3610
+
+Index:  3611
+
+Index:  3612
+
+Index:  3613
+
+Index:  3614
+
+Index:  3615
+
+Index:  3617
+
+Index:  3618
+
+Index:  3619
+
+Index:  3620
+
+Index:  3622
+
+Index:  3624
+
+Index:  3625
+
+Index:  3626
+
+Index:  3627
+
+Index:  3628
+
+Index:  3629
+
+Index:  3630
+
+Index:  3631
+
+Index:  3632
+
+Index:  3633
+
+Index:  3634
+
+Index:  3635
+
+Index:  3636
+
+Index:  3637
+
+Index:  3638
+
+Index:  3639
+
+Index:  3640
+
+Index:  3641
+
+Index:  3645
+
+Index:  3648
+
+Index:  3649
+
+Index:  3650
+
+Index:  3651
+
+Index:  3652
+
+Index:  3653
+
+Index:  3654
+
+Index:  3655
+
+Index:  3656
+
+Index:  3658
+
+Index:  3660
+
+Index:  3661
+
+Index:  3662
+
+Index:  3663
+
+Index:  3664
+
+Index:  3665
+
+Index:  3666
+
+Index:  3671
+
+Index:  3672
+
+Index:  3673
+
+Index:  3674
+
+Index:  3675
+
+Index:  3676
+
+Index:  3677
+
+Index:  3678
+
+Index:  3679
+
+Index:  3680
+
+Index:  3681
+
+Index:  3682
+
+Index:  3683
+
+Index:  3684
+
+Index:  3685
+
+Index:  3686
+
+Index:  3687
+
+Index:  3688
+
+Index:  3689
+
+Index:  3690
+
+Index:  3693
+
+Index:  3694
+
+Index:  3695
+
+Index:  3696
+
+Index:  3697
+
+Index:  3698
+
+Index:  3699
+
+Index:  3700
+
+Index:  3701
+
+Index:  3702
+
+Index:  3703
+
+Index:  3704
+
+Index:  3705
+
+Index:  3706
+
+Index:  3707
+
+Index:  3709
+
+Index:  3710
+
+Index:  3711
+
+Index:  3713
+
+Index:  3714
+
+Index:  3715
+
+Index:  3717
+
+Index:  3718
+
+Index:  3719
+
+Index:  3720
+
+Index:  3721
+
+Index:  3723
+
+Index:  3724
+
+Index:  3725
+
+Index:  3726
+
+Index:  3727
+
+Index:  3728
+
+Index:  3729
+
+Index:  3730
+
+Index:  3731
+
+Index:  3732
+
+Index:  3733
+
+Index:  3734
+
+Index:  3735
+
+Index:  3736
+
+Index:  3737
+
+Index:  3739
+
+Index:  3740
+
+Index:  3743
+
+Index:  3744
+
+Index:  3745
+
+Index:  3746
+
+Index:  3747
+
+Index:  3748
+
+Index:  3749
+
+Index:  3750
+
+Index:  3751
+
+Index:  3753
+
+Index:  3754
+
+Index:  3755
+
+Index:  3756
+
+Index:  3757
+
+Index:  3758
+
+Index:  3759
+
+Index:  3761
+
+Index:  3762
+
+Index:  3763
+
+Index:  3764
+
+Index:  3765
+
+Index:  3766
+
+Index:  3767
+
+Index:  3768
+
+Index:  3769
+
+Index:  3770
+
+Index:  3771
+
+Index:  3772
+
+Index:  3779
+
+Index:  3780
+
+Index:  3781
+
+Index:  3782
+
+Index:  3783
+
+Index:  3784
+
+Index:  3785
+
+Index:  3786
+
+Index:  3787
+
+Index:  3788
+
+Index:  3789
+
+Index:  3790
+
+Index:  3791
+
+Index:  3793
+
+Index:  3794
+
+Index:  3795
+
+Index:  3796
+
+Index:  3797
+
+Index:  3798
+
+Index:  3799
+
+Index:  3800
+
+Index:  3801
+
+Index:  3802
+
+Index:  3803
+
+Index:  3804
+
+Index:  3805
+
+Index:  3806
+
+Index:  3807
+
+Index:  3808
+
+Index:  3809
+
+Index:  3810
+
+Index:  3811
+
+Index:  3812
+
+Index:  3813
+
+Index:  3814
+
+Index:  3815
+
+Index:  3816
+
+Index:  3817
+
+Index:  3818
+
+Index:  3819
+
+Index:  3820
+
+Index:  3821
+
+Index:  3822
+
+Index:  3823
+
+Index:  3824
+
+Index:  3825
+
+Index:  3826
+
+Index:  3827
+
+Index:  3828
+
+Index:  3829
+
+Index:  3830
+
+Index:  3831
+
+Index:  3832
+
+Index:  3833
+
+Index:  3834
+
+Index:  3835
+
+Index:  3836
+
+Index:  3837
+
+Index:  3838
+
+Index:  3839
+
+Index:  3840
+
+Index:  3842
+
+Index:  3843
+
+Index:  3844
+
+Index:  3845
+
+Index:  3847
+
+Index:  3848
+
+Index:  3849
+
+Index:  3850
+
+Index:  3851
+
+Index:  3852
+
+Index:  3853
+
+Index:  3854
+
+Index:  3855
+
+Index:  3856
+
+Index:  3857
+
+Index:  3858
+
+Index:  3859
+
+Index:  3860
+
+Index:  3861
+
+Index:  3862
+
+Index:  3863
+
+Index:  3864
+
+Index:  3865
+
+Index:  3866
+
+Index:  3867
+
+Index:  3868
+
+Index:  3869
+
+Index:  3870
+
+Index:  3871
+
+Index:  3872
+
+Index:  3873
+
+Index:  3874
+
+Index:  3875
+
+Index:  3876
+
+Index:  3877
+
+Index:  3878
+
+Index:  3879
+
+Index:  3880
+
+Index:  3881
+
+Index:  3882
+
+Index:  3883
+
+Index:  3884
+
+Index:  3885
+
+Index:  3886
+
+Index:  3887
+
+Index:  3888
+
+Index:  3889
+
+Index:  3890
+
+Index:  3891
+
+Index:  3892
+
+Index:  3893
+
+Index:  3894
+
+Index:  3895
+
+Index:  3896
+
+Index:  3897
+
+Index:  3898
+
+Index:  3899
+
+Index:  3900
+
+Index:  3901
+
+Index:  3902
+
+Index:  3903
+
+Index:  3904
+
+Index:  3905
+
+Index:  3906
+
+Index:  3907
+
+Index:  3908
+
+Index:  3909
+
+Index:  3910
+
+Index:  3911
+
+Index:  3912
+
+Index:  3914
+
+Index:  3915
+
+Index:  3916
+
+Index:  3917
+
+Index:  3918
+
+Index:  3919
+
+Index:  3920
+
+Index:  3921
+
+Index:  3922
+
+Index:  3923
+
+Index:  3924
+
+Index:  3925
+
+Index:  3926
+
+Index:  3927
+
+Index:  3928
+
+Index:  3929
+
+Index:  3930
+
+Index:  3931
+
+Index:  3932
+
+Index:  3933
+
+Index:  3934
+
+Index:  3935
+
+Index:  3936
+
+Index:  3937
+
+Index:  3938
+
+Index:  3939
+
+Index:  3940
+
+Index:  3941
+
+Index:  3942
+
+Index:  3943
+
+Index:  3944
+
+Index:  3945
+
+Index:  3946
+
+Index:  3947
+
+Index:  3948
+
+Index:  3949
+
+Index:  3951
+
+Index:  3952
+
+Index:  3953
+
+Index:  3954
+
+Index:  3955
+
+Index:  3956
+
+Index:  3957
+
+Index:  3958
+
+Index:  3959
+
+Index:  3960
+
+Index:  3961
+
+Index:  3962
+
+Index:  3963
+
+Index:  3964
+
+Index:  3965
+
+Index:  3966
+
+Index:  3967
+
+Index:  3968
+
+Index:  3969
+
+Index:  3970
+
+Index:  3971
+
+Index:  3972
+
+Index:  3973
+
+Index:  3974
+
+Index:  3975
+
+Index:  3976
+
+Index:  3977
+
+Index:  3978
+
+Index:  3979
+
+Index:  3980
+
+Index:  3981
+
+Index:  3982
+
+Index:  3983
+
+Index:  3984
+
+Index:  3985
+
+Index:  3986
+
+Index:  3987
+
+Index:  3988
+
+Index:  3989
+
+Index:  3990
+
+Index:  3991
+
+Index:  3992
+
+Index:  3993
+
+Index:  3994
+
+Index:  3995
+
+Index:  3996
+
+Index:  3997
+
+Index:  3998
+
+Index:  3999
+
+Index:  4000
+
+Index:  4001
+
+Index:  4002
+
+Index:  4003
+
+Index:  4004
+
+Index:  4005
+
+Index:  4006
+
+Index:  4007
+
+Index:  4008
+
+Index:  4009
+
+Index:  4010
+
+Index:  4011
+
+Index:  4012
+
+Index:  4013
+
+Index:  4014
+
+Index:  4015
+
+Index:  4016
+
+Index:  4017
+
+Index:  4018
+
+Index:  4019
+
+Index:  4020
+
+Index:  4021
+
+Index:  4022
+
+Index:  4023
+
+Index:  4024
+
+Index:  4025
+
+Index:  4027
+
+Index:  4028
+
+Index:  4031
+
+Index:  4032
+
+Index:  4033
+
+Index:  4034
+
+Index:  4035
+
+Index:  4036
+
+Index:  4038
+
+Index:  4039
+
+Index:  4040
+
+Index:  4041
+
+Index:  4042
+
+Index:  4045
+
+Index:  4046
+
+Index:  4047
+
+Index:  4049
+
+Index:  4054
+
+Index:  4055
+
+Index:  4056
+
+Index:  4057
+
+Index:  4058
+
+Index:  4059
+
+Index:  4060
+
+Index:  4061
+
+Index:  4065
+
+Index:  4066
+
+Index:  4067
+
+Index:  4068
+
+Index:  4069
+
+Index:  4070
+
+Index:  4071
+
+Index:  4072
+
+Index:  4073
+
+Index:  4074
+
+Index:  4075
+
+Index:  4076
+
+Index:  4077
+
+Index:  4081
+
+Index:  4082
+
+Index:  4083
+
+Index:  4084
+
+Index:  4085
+
+Index:  4088
+
+Index:  4089
+
+Index:  4090
+
+Index:  4091
+
+Index:  4092
+
+Index:  4095
+
+Index:  4096
+
+Index:  4097
+
+Index:  4098
+
+Index:  4099
+
+Index:  4100
+
+Index:  4101
+
+Index:  4102
+
+Index:  4103
+
+Index:  4104
+
+Index:  4105
+
+Index:  4106
+
+Index:  4107
+
+Index:  4108
+
+Index:  4110
+
+Index:  4111
+
+Index:  4112
+
+Index:  4113
+
+Index:  4114
+
+Index:  4115
+
+Index:  4116
+
+Index:  4117
+
+Index:  4118
+
+Index:  4119
+
+Index:  4120
+
+Index:  4121
+
+Index:  4122
+
+Index:  4123
+
+Index:  4124
+
+Index:  4125
+
+Index:  4126
+
+Index:  4127
+
+Index:  4128
+
+Index:  4129
+
+Index:  4130
+
+Index:  4131
+
+Index:  4132
+
+Index:  4133
+
+Index:  4134
+
+Index:  4137
+
+Index:  4138
+
+Index:  4139
+
+Index:  4140
+
+Index:  4141
+
+Index:  4142
+
+Index:  4143
+
+Index:  4144
+
+Index:  4145
+
+Index:  4146
+
+Index:  4147
+
+Index:  4148
+
+Index:  4149
+
+Index:  4152
+
+Index:  4155
+
+Index:  4156
+
+Index:  4157
+
+Index:  4158
+
+Index:  4159
+
+Index:  4160
+
+Index:  4161
+
+Index:  4162
+
+Index:  4163
+
+Index:  4164
+
+Index:  4165
+
+Index:  4166
+
+Index:  4167
+
+Index:  4168
+
+Index:  4169
+
+Index:  4170
+
+Index:  4171
+
+Index:  4172
+
+Index:  4173
+
+Index:  4174
+
+Index:  4175
+
+Index:  4176
+
+Index:  4177
+
+Index:  4178
+
+Index:  4179
+
+Index:  4180
+
+Index:  4181
+
+Index:  4182
+
+Index:  4183
+
+Index:  4184
+
+Index:  4185
+
+Index:  4186
+
+Index:  4187
+
+Index:  4188
+
+Index:  4189
+
+Index:  4190
+
+Index:  4191
+
+Index:  4192
+
+Index:  4193
+
+Index:  4194
+
+Index:  4195
+
+Index:  4196
+
+Index:  4197
+
+Index:  4198
+
+Index:  4199
+
+Index:  4200
+
+Index:  4201
+
+Index:  4202
+
+Index:  4203
+
+Index:  4204
+
+Index:  4205
+
+Index:  4206
+
+Index:  4207
+
+Index:  4208
+
+Index:  4209
+
+Index:  4210
+
+Index:  4211
+
+Index:  4212
+
+Index:  4213
+
+Index:  4214
+
+Index:  4215
+
+Index:  4216
+
+Index:  4217
+
+Index:  4218
+
+Index:  4219
+
+Index:  4220
+
+Index:  4221
+
+Index:  4222
+
+Index:  4223
+
+Index:  4224
+
+Index:  4225
+
+Index:  4226
+
+Index:  4227
+
+Index:  4228
+
+Index:  4229
+
+Index:  4230
+
+Index:  4231
+
+Index:  4232
+
+Index:  4233
+
+Index:  4234
+
+Index:  4235
+
+Index:  4236
+
+Index:  4237
+
+Index:  4238
+
+Index:  4239
+
+Index:  4240
+
+Index:  4241
+
+Index:  4242
+
+Index:  4243
+
+Index:  4244
+
+Index:  4245
+
+Index:  4246
+
+Index:  4247
+
+Index:  4248
+
+Index:  4249
+
+Index:  4250
+
+Index:  4251
+
+Index:  4252
+
+Index:  4253
+
+Index:  4254
+
+Index:  4255
+
+Index:  4256
+
+Index:  4257
+
+Index:  4258
+
+Index:  4259
+
+Index:  4260
+
+Index:  4261
+
+Index:  4262
+
+Index:  4263
+
+Index:  4264
+
+Index:  4265
+
+Index:  4266
+
+Index:  4267
+
+Index:  4268
+
+Index:  4269
+
+Index:  4270
+
+Index:  4271
+
+Index:  4272
+
+Index:  4273
+
+Index:  4274
+
+Index:  4275
+
+Index:  4276
+
+Index:  4277
+
+Index:  4278
+
+Index:  4279
+
+Index:  4280
+
+Index:  4281
+
+Index:  4282
+
+Index:  4283
+
+Index:  4284
+
+Index:  4285
+
+Index:  4286
+
+Index:  4287
+
+Index:  4288
+
+Index:  4289
+
+Index:  4290
+
+Index:  4291
+
+Index:  4292
+
+Index:  4293
+
+Index:  4294
+
+Index:  4295
+
+Index:  4296
+
+Index:  4297
+
+Index:  4298
+
+Index:  4299
+
+Index:  4300
+
+Index:  4301
+
+Index:  4302
+
+Index:  4303
+
+Index:  4304
+
+Index:  4305
+
+Index:  4306
+
+Index:  4307
+
+Index:  4308
+
+Index:  4309
+
+Index:  4310
+
+Index:  4311
+
+Index:  4312
+
+Index:  4313
+
+Index:  4314
+
+Index:  4315
+
+Index:  4316
+
+Index:  4317
+
+Index:  4318
+
+Index:  4319/home/bmnars/spider_porject/spider_venv/lib/python3.4/site-packages/pymysql/cursors.py:170: Warning: (1264, "Out of range value for column 'source_date' at row 1")
+  result = self._query(query)
+
+
+Index:  4320
+
+Index:  4321
+
+Index:  4322
+
+Index:  4323
+
+Index:  4324
+
+Index:  4325
+
+Index:  4326
+
+Index:  4327
+
+Index:  4328
+
+Index:  4329
+
+第4步：去重后的数据导入数据表中...
+数据库连接成功！
+先清空_cs_bmnars_contents表数据...
+_cs_bmnars_contents表已清空！
+数据导入表成功！
+
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 2.536 seconds.
+Prefix dict has been built succesfully.
+
+第5步：从数据库中加载数据...
+数据库连接成功！
+聚类数据加载...
+聚类数据加载完成！
+创建词语列表...
+创建词汇表...
+将文档词语转换为词向量...
+数据处理完成！
+
+第6步：聚类...
+构建聚类模型...
+可视化结果和模型评价...
+轮廓系数评价方法(KMeans_silhouette最佳值为畸变程度最大,在不考虑业务情况下得分越高越好，最高得分是1)...
+Calinski-Harabasz指数评价方法(最佳值为相较最大)...
+K=2, calinski_harabaz指数=44.196
+K=3, calinski_harabaz指数=12.845
+K=4, calinski_harabaz指数=9.564
+K=5, calinski_harabaz指数=8.215
+K=6, calinski_harabaz指数=5.832
+K=7, calinski_harabaz指数=9.239
+聚类完成！
+
+第7步：结果标签导入数据库中...
+数据库连接成功！
+聚类标签导入表成功！
+
+Traceback (most recent call last):
+  File "text_cluster_classify.py", line 51, in <module>
+    import seaborn as sns
+ImportError: No module named 'seaborn'
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.078 seconds.
+Prefix dict has been built succesfully.
