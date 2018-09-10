@@ -170,9 +170,8 @@
 		        	"data": "id",
 	            //将catalog渲染成两个按钮，点击按钮时将dt单元格的catalog作为参数调用对应的方法
 	                "render": function ( data, type, full, meta ){
-	                    return '<a class="btn btn-primary btn-xs edit" onclick="previewCrawler(\''+data+'\',this)" title="预览"><span class="glyphicon glyphicon-eye-open"></span></a>'
-	                    +'&nbsp'+
-	                    '<a data-toggle="modal" title="通过" class="btn btn-success btn-xs delete" onclick="allowed(\''+data+'\')"><span class="glyphicon glyphicon-ok"></span></a>'
+	                    return '<a class="btn btn-primary btn-xs edit" onclick="allowed(\''+data+'\',this)" title="预览"><span class="glyphicon glyphicon-eye-open"></span></a>'
+	                    +'&nbsp'
 	                    +'&nbsp'+
 	                    '<a title="不通过" class="btn btn-danger btn-xs delete" onclick="disallowed(\''+data+'\')"><span class="glyphicon glyphicon-remove"></span></a>';
 	                },"orderable": false,"width":"15%"
@@ -180,16 +179,17 @@
 	        ]
         });
 	}
-	function previewCrawler(postid,object){
+
+	function allowed(postid,object){
 		$.ajax({
 			"url": "<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/bmnars-ajax.php';?>",
 			"type": 'GET',
 			"dataType": 'json',
-			"data": {action:"listOne",id: postid},
+			"data": {action:"previewdraft",id: postid},
 		})
 		.done(function(json) {
 			$("#previewModal").modal().find('#preview_title').text(json.title);
-			$("#previewbody").html(json.content_html);
+			$("#previewbody").html(json.html);
 		})
 		.fail(function() {
 			
@@ -198,14 +198,30 @@
 			
 		});
 		$("#preview_button").unbind('click').click(function(){
-			layer.msg('同步到WordPress草稿箱，请查看!', {
-	                            icon: 0,
-	                            time: 3000
-	                        });
-		});
-	}
-	function allowed(postid){
 
+			$.ajax({
+				url: "<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/bmnars-ajax.php';?>",
+				type: 'GET',
+				dataType: 'json',
+				data: {action:"savedraft",id: postid},
+				success:function(msg){
+					if(msg.status==200){
+						layer.msg('OK! 同步到WordPress草稿箱，请查看!', {
+			                icon: 1,
+			                time: 3000
+			            });
+					}else{
+						layer.msg('抱歉，无法同步到WordPress草稿箱!', {
+			                icon: 2,
+			                time: 3000
+			            });
+					}
+
+				}
+			});
+			
+			
+		});
 	}
 	function disallowed(postid){
 
