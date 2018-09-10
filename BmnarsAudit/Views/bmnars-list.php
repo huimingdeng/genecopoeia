@@ -33,6 +33,7 @@
 		<div class="col-md-12">
 			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;Bmnars Data Audit &nbsp;  &nbsp;  &nbsp;  
 			</h2> 
+			<p class="text-danger">P.S.<b>审核通过后，请到<a href="/wp-admin/edit.php">文章</a>中编辑文章，选择分类目录后保存为草稿才可以在“生命科学”中预览。编辑完成后发布则可以让用户查看。</b></p>
 		</div>
 		<div class="col-md-12">
 			<table class="table table-striped table-bordered table-hover"  id="bmnars-list">
@@ -71,8 +72,9 @@
             </div>
             <!-- /.modal-body -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="preview_button">Preview</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal"> Cancel </button>
+                <button type="button" class="btn btn-success" id="preview_button">通过</button>
+                <button type="button" class="btn btn-danger" id="disallowed_button">禁止</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"> 取消 </button>
             </div>
             <!-- /.modal-footer -->
         </div>
@@ -198,7 +200,6 @@
 			
 		});
 		$("#preview_button").unbind('click').click(function(){
-
 			$.ajax({
 				url: "<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/bmnars-ajax.php';?>",
 				type: 'GET',
@@ -210,6 +211,8 @@
 			                icon: 1,
 			                time: 3000
 			            });
+			            table.ajax.reload( null, false );
+			            $("#previewModal").modal('hide');
 					}else{
 						layer.msg('抱歉，无法同步到WordPress草稿箱!', {
 			                icon: 2,
@@ -219,12 +222,58 @@
 
 				}
 			});
-			
-			
+		});
+		$("#disallowed_button").unbind('click').click(function() {
+			$.ajax({
+				"url": "<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/bmnars-ajax.php';?>",
+				"type": 'GET',
+				"dataType": 'json',
+				"data": {action:"disallowed",id: postid},
+				success:function(msg){
+					if(msg.status==200){
+						layer.msg('审核不通过!', {
+			                icon: 1,
+			                time: 3000
+			            });
+			            table.ajax.reload( null, false );
+			            $("#previewModal").modal('hide');
+					}else{
+						layer.msg('抱歉，操作失败!', {
+			                icon: 2,
+			                time: 3000
+			            });
+					}
+				}
+			});
 		});
 	}
 	function disallowed(postid){
-
+		$.ajax({
+			"url": "<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/bmnars-ajax.php';?>",
+			"type": 'GET',
+			"dataType": 'json',
+			"data": {action:"disallowed",id: postid},
+		})
+		.done(function(msg) {
+			if(msg.status==200){
+				layer.msg('审核不通过!', {
+	                icon: 1,
+	                time: 3000
+	            });
+	            table.ajax.reload( null, false );
+			}else{
+				layer.msg('抱歉，操作失败!', {
+	                icon: 2,
+	                time: 3000
+	            });
+			}
+		})
+		.fail(function() {
+			
+		})
+		.always(function() {
+			
+		});
 	}
 </script>
 

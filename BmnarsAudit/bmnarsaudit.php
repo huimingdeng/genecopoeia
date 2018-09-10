@@ -3,7 +3,7 @@
  * Plugin Name: Bmnars Audit
  * Plugin URI: https://github.com/huimingdeng/genecopoeia/tree/master/BmnarsAudit
  * Description: 生命的奥秘——爬虫文章审核发布插件。
- * Version: 0.0.7
+ * Version: 0.0.8
  * Author: DHM (huimingdeng)
  * Author URI: https://github.com/huimingdeng/
  */
