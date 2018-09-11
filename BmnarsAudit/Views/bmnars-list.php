@@ -31,7 +31,7 @@
 <div class="wrap">
 	<div class="row">
 		<div class="col-md-12">
-			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;Bmnars Data Audit &nbsp;  &nbsp;  &nbsp;  
+			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;Bmnars Data Audit &nbsp;  &nbsp;  &nbsp;  &nbsp;<a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/help_manual.docx'; ?>" data-toggle="tooltip" data-placement="top" title="Instructions document."><span class="glyphicon glyphicon-question-sign"></span></a>
 			</h2> 
 			<p class="text-danger">P.S.<b>审核通过后，请到<a href="/wp-admin/edit.php">文章</a>中编辑文章，选择分类目录后保存为草稿才可以在“生命科学”中预览。编辑完成后发布则可以让用户查看。</b></p>
 		</div>
