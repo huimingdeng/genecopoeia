@@ -16,3 +16,59 @@ v0.0.6 取消上一版本的发布到WordPress草稿箱的功能；实现审核�
 v0.0.7 添加插件激活动作 —— 创建审核状态表，用于记录审核操作。
 
 v0.0.8 实现审核通过功能，发布到 WordPress 成为草稿，实现审核不通过，记录状态，不用发布到 WordPress。
+
+v0.0.9 实现复审页面。仅管理员可操作。
+![版本0.0.9示意图](https://i.imgur.com/zGWXwg5.png)
+
+----------
+
+## _cs_audit_bmnars_status 表数据字典： ##
+
+<table cellpadding="0" cellspacing="0">
+	<thead>
+		<tr>
+			<th>编号</th>
+			<th>字段</th>
+			<th>类型长度</th>
+			<th>说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td>id</td>
+			<td>int(11)</td>
+			<td>主键标识</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>crawler_id</td>
+			<td>int(11)</td>
+			<td>爬虫文章主键标识，用于记录审核状态所属文章标识</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>post_id</td>
+			<td>int(11)</td>
+			<td>爬虫文章审核通过后保存的发布成草稿的wp文章ID（post）</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>user_id</td>
+			<td>int(11)</td>
+			<td>审核用户操作的用户编号</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>status</td>
+			<td>int(11)</td>
+			<td>爬虫文章审核状态，NULL:未审核，1:审核通过，2:审核不通过。</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>audit_time</td>
+			<td>int(11)</td>
+			<td>UNIX时间戳，记录审核时间。</td>
+		</tr>
+	</tbody>
+</table>

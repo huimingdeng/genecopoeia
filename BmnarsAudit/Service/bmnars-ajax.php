@@ -36,20 +36,18 @@ if (!function_exists("GetSQLValueString")) {
 if($user_login){
 	$action = $_REQUEST['action'];
 
-	if ('listAll' == $action) 
+	if ('listAll' == $action || 'listRecheck' == $action) 
 	{
 		$imgSrc = WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__)));
-		$sql = sprintf("SELECT id,title,author,source,source_url,content_text FROM _cs_bmnars_contents",$imgSrc);//REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html,
+		$sql = sprintf("SELECT b.id,title,author,source,source_url,content_text,a.`status`,a.user_id FROM _cs_bmnars_contents as b LEFT JOIN _cs_audit_bmnars_status as a ON b.id = a.crawler_id",$imgSrc);//REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html,
 		$results = $wpdb->get_results($sql);
 
-		$filter = $wpdb->get_results("SELECT crawler_id FROM _cs_audit_bmnars_status",ARRAY_A);
 		$final_results=array();
-		if(!empty($filter)){
-			foreach($filter as $k=>$v){
-				$filters[] = $v['crawler_id'];
-			}
-			foreach ($results as $k => $obj) {
-				if(!in_array($obj->id, $filters)){
+		if(!empty($results)){
+			foreach($results as $k=>$obj){
+				if(is_null($obj->status)&&'listAll' == $action){
+					$final_results[] = $obj;
+				}elseif('listRecheck' == $action&&!is_null($obj->status)){
 					$final_results[] = $obj;
 				}
 			}
@@ -77,23 +75,11 @@ if($user_login){
 			echo json_encode($query);
 	}
 
-	if ('allowed' == $action || 'disallowed' == $action) 
-	{
-		switch ($action) {
-			case 'allowed':
-				$sql = sprintf("");
-				break;
-			
-			case 'disallowed':
-				
-				break;
-		}
-	}
 	// 查看
 	if ('previewdraft' == $action) {
 		$post_id = trim($_REQUEST['id']);
 		$imgSrc = WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__)));
-		$sql = sprintf("SELECT id,title,author,source,source_url,source_date,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html, content_p,content_text FROM _cs_bmnars_contents WHERE id = %s",$imgSrc,$post_id);
+		$sql = sprintf("SELECT b.id,title,author,source,source_url,source_date,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html, content_p,content_text,a.`status`,a.user_id,a.post_id FROM _cs_bmnars_contents as b LEFT JOIN _cs_audit_bmnars_status AS a ON b.id = a.crawler_id WHERE b.id = %s",$imgSrc,$post_id);
 			
 		$query = $wpdb->get_row($sql);
 		// 替换Python字典无关字符
@@ -106,14 +92,22 @@ if($user_login){
 		include('../Views/template.php');
 		$html = ob_get_contents();
 		ob_end_clean();
-		echo json_encode(array('status'=>200,'html'=>$html,'title'=>$query->title));
+
+		// 按钮显示状态，复审使用
+		if(is_null($query->status)||!get_post($query->post_id)||$query->status==2){
+			$btn_status = 'show';
+		}else{
+			$btn_status = 'hide';
+		}
+
+		echo json_encode(array('status'=>200,'html'=>$html,'title'=>$query->title,'btn_status'=>$btn_status));
 		
 	}
 	// 保存发布到 wp 审核通过 1
 	if ('savedraft' == $action) {
 		$post_id = trim($_REQUEST['id']);
 		$imgSrc = WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__)));
-		$sql = sprintf("SELECT id,title,author,source,source_url,source_date,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html, content_p,content_text FROM _cs_bmnars_contents WHERE id = %s",$imgSrc,$post_id);
+		$sql = sprintf("SELECT b.id,title,author,source,source_url,source_date,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html, content_p,content_text,a.`status`,a.user_id,a.post_id FROM _cs_bmnars_contents as b LEFT JOIN _cs_audit_bmnars_status AS a ON b.id = a.crawler_id WHERE b.id = %s",$imgSrc,$post_id);
 			
 		$query = $wpdb->get_row($sql);
 		// 替换Python字典无关字符
@@ -127,15 +121,28 @@ if($user_login){
 		$html = ob_get_contents();
 		ob_end_clean();
 		$user_id = get_current_user_id();
-		$insert = array(
-			'post_title' => $query->title,
-	        'post_content' => $html,
-	        'post_excerpt' => $query->content_text,
-	        'post_type' => 'post',
-	        'post_status' => 'draft',
-		);
+
+		if(is_null($query->status)||!get_post($query->post_id)){
+			$insert = array(
+				'post_title' => $query->title,
+		        'post_content' => $html,
+		        'post_excerpt' => $query->content_text,
+		        'post_type' => 'post',
+		        'post_status' => 'draft',
+			);
+			$wp_post_id = wp_insert_post($insert);
+		}else{
+			$update = array(
+				'ID'=>$query->post_id,
+				'post_title' => $query->title,
+		        'post_content' => $html,
+		        'post_excerpt' => $query->content_text,
+		        'post_type' => 'post',
+		        'post_status' => 'draft',
+			);
+			$wp_post_id = wp_update_post($update);
+		}
 		
-		$wp_post_id = wp_insert_post($insert);
 		if($wp_post_id!==0) {
 			$status = 200;
 		}else{
@@ -158,12 +165,19 @@ if($user_login){
 	// 审核不通过 状态 2
 	if ('disallowed' == $action) {
 		$post_id = trim($_REQUEST['id']);
-		$oksql = sprintf("SELECT id FROM `_cs_audit_bmnars_status` WHERE crawler_id=%s",$post_id);
+		$oksql = sprintf("SELECT id,post_id FROM `_cs_audit_bmnars_status` WHERE crawler_id=%s",$post_id);
 		$ok = $wpdb->get_row($oksql);
 		
 		$user_id = get_current_user_id();
 		if(!empty($ok)){
-			$sql = sprintf("UPDATE `_cs_audit_bmnars_status` SET crawler_id=%s,post_id=%s,user_id=%s,status=%s,audit_time=%s WHERE crawler_id=%s ;",$post_id,0,$user_id,2,time(),$post_id);
+			$update = array(
+				'ID' => $ok->post_id,
+		        'post_type' => 'post',
+		        'post_status' => 'trash',
+			);
+			wp_update_post($update);
+			$sql = sprintf("UPDATE `_cs_audit_bmnars_status` SET crawler_id=%s,user_id=%s,status=%s,audit_time=%s WHERE crawler_id=%s ;",$post_id,$user_id,2,time(),$post_id);
+
 		}else{
 			$sql = sprintf("INSERT INTO `_cs_audit_bmnars_status`(crawler_id,post_id,user_id,status,audit_time) VALUES(%s,%s,%s,%s,%s);",$post_id,0,$user_id,2,time());
 		}
@@ -177,4 +191,5 @@ if($user_login){
 		}
 		echo json_encode(array('status'=>$status));
 	}
+
 }

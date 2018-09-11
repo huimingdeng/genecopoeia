@@ -31,7 +31,7 @@
 <div class="wrap">
 	<div class="row">
 		<div class="col-md-12">
-			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;Bmnars Data Audit &nbsp;  &nbsp;  &nbsp;  
+			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;Bmnars Data Recheck &nbsp;  &nbsp;  &nbsp;  
 			</h2> 
 			<p class="text-danger">P.S.<b>审核通过后，请到<a href="/wp-admin/edit.php">文章</a>中编辑文章，选择分类目录后保存为草稿才可以在“生命科学”中预览。编辑完成后发布则可以让用户查看。</b></p>
 		</div>
@@ -140,7 +140,7 @@
 	        "ajax": {//发送ajax请求
 	            "url": "<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/bmnars-ajax.php'; ?>",
 	            "type": "GET",
-	            "data": { action: "listAll"},
+	            "data": { action: "listRecheck"},
 	        },
 	        "columns": [
 		        { 
@@ -162,10 +162,10 @@
 		    	{
 		    		"data" : "status",
 		        	"render": function ( data, type, full, meta ){
-	                    if(data==null){
-	                        return '<span class="label label-info">待审</span>'; 
+	                    if(data!=null){
+	                        return (data==1)?('<span class="label label-success">通过</span>'):('<span class="label label-danger">不通过</span>'); 
 	                    }else{
-	                        return '';
+	                        return '<span class="label label-info">待审</span>';
 	                    }
                 	},
                 	"width":"5%"
@@ -185,9 +185,7 @@
 	            //将catalog渲染成两个按钮，点击按钮时将dt单元格的catalog作为参数调用对应的方法
 	                "render": function ( data, type, full, meta ){
 	                    return '<a class="btn btn-primary btn-xs edit" onclick="allowed(\''+data+'\',this)" title="预览"><span class="glyphicon glyphicon-eye-open"></span></a>'
-	                    +'&nbsp'
-	                    +'&nbsp'+
-	                    '<a title="不通过" class="btn btn-danger btn-xs delete" onclick="disallowed(\''+data+'\')"><span class="glyphicon glyphicon-remove"></span></a>';
+	                    +'&nbsp';
 	                },"orderable": false,"width":"15%"
 		        }
 	        ]
@@ -204,6 +202,14 @@
 		.done(function(json) {
 			$("#previewModal").modal().find('#preview_title').text(json.title);
 			$("#previewbody").html(json.html);
+			if(json.btn_status=='hide'){
+				$("#preview_button").hide();
+				$("#disallowed_button").show();
+			}
+			else if(json.btn_status=='show'){
+				$("#preview_button").show();
+				$("#disallowed_button").hide();
+			}
 		})
 		.fail(function() {
 			
