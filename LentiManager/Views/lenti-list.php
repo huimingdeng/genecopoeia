@@ -32,7 +32,7 @@
 <div class="wrap">
 	<div class="row">
 		<div class="col-md-12">
-			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;<?php _e("Lentivirus Management","LentiManager"); ?> &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/help%20manual.docx'; ?>" data-toggle="tooltip" data-placement="top" title="Instructions document."><span class="glyphicon glyphicon-question-sign"></span></a> &nbsp; &nbsp; &nbsp; <a href="javascript:void(0);" onclick="addLentil()" data-toggle="modal" data-target="#addModal" class="btn btn-primary"><?php _e("Add","LentiManager"); ?></a> &nbsp; <a href="javascript:void(0);" onclick="uploadLentiviurs();" class="btn btn-success"><?php _e("uploads","LentiManager"); ?></a> &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/template.xlsx'; ?>" data-toggle="tooltip" data-placement="right" title="<?php _e("For bulk import data, refer to the template.","LentiManager"); ?>" id="template" class="btn btn-warning"><?php _e("template","LentiManager"); ?></a> 
+			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;<?php _e("Lentivirus Management","LentiManager"); ?> &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/help%20manual.docx'; ?>" data-toggle="tooltip" data-placement="top" title="<?php _e("Instructions document.","LentiManager"); ?>"><span class="glyphicon glyphicon-question-sign"></span></a> &nbsp; &nbsp; &nbsp; <a href="javascript:void(0);" onclick="addLentil()" data-toggle="modal" data-target="#addModal" class="btn btn-primary"><?php _e("Add","LentiManager"); ?></a> &nbsp; <a href="javascript:void(0);" onclick="uploadLentiviurs();" class="btn btn-success"><?php _e("uploads","LentiManager"); ?></a> &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/template.xlsx'; ?>" data-toggle="tooltip" data-placement="right" title="<?php _e("For bulk import data, refer to the template.","LentiManager"); ?>" id="template" class="btn btn-warning"><?php _e("template","LentiManager"); ?></a> 
 			</h2> 
 		</div>
 		<div class="col-md-12">
@@ -484,7 +484,7 @@
 	    })
 	    .done(function(d){//d为单条记录
 	        $(obj).removeAttr('disabled');
-	        $("#addModal").modal().find("#addModalLabel").text('Edit Lentivirus');
+	        $("#addModal").modal().find("#addModalLabel").text('<?php _e("Edit Lentivirus","LentiManager"); ?>');
 	        var parsedJson = jQuery.parseJSON(d);
 	        $("#catalog").val(parsedJson.catalog);
 	        $("#type").val(parsedJson.type);
@@ -583,7 +583,7 @@
 			'borderColor': '#ddd'
 		}).val('');
 		document.getElementById("form_add").reset();
-	   	$("#addModalLabel").text("Add Lentivirus");
+	   	$("#addModalLabel").text('<?php _e("Add Lentivirus","LentiManager"); ?>');
 	   	$("#modal_save_button").unbind('click').click(function(){
 	   		var formCheck = CheckForm();
 	   		form_add = $("#form_add").serialize();

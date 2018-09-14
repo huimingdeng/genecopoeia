@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: lentiManager\n"
-"POT-Creation-Date: 2018-09-14 14:04+0800\n"
-"PO-Revision-Date: 2018-09-14 14:34+0800\n"
+"Project-Id-Version: LentiManager\n"
+"POT-Creation-Date: 2018-09-14 16:35+0800\n"
+"PO-Revision-Date: 2018-09-14 16:36+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -134,7 +134,7 @@ msgstr "删除Excel"
 
 #: Views/files-list.php:106 Views/lenti-list.php:187
 msgid "Are you sure to delete"
-msgstr "您确定要删除"
+msgstr "您确定删除"
 
 #: Views/files-list.php:112 Views/lenti-list.php:193
 msgid "Delete"
@@ -211,7 +211,7 @@ msgstr "成功"
 
 #: Views/files-list.php:369 Views/lenti-list.php:568 Views/lenti-list.php:611
 msgid "Failed!<br/>Please try again after refresh"
-msgstr "失败!<br/>请刷新后重试"
+msgstr "失败！<br/>请刷新后重试"
 
 #: Views/lenti-assign.php:21
 msgid "LMOPAP"
@@ -236,6 +236,10 @@ msgstr "允许"
 #: Views/lenti-list.php:35
 msgid "Lentivirus Management"
 msgstr "慢病毒管理"
+
+#: Views/lenti-list.php:35
+msgid "Instructions document."
+msgstr "说明文档。"
 
 #: Views/lenti-list.php:35
 msgid "Add"
@@ -300,7 +304,7 @@ msgstr "保存"
 
 #: Views/lenti-list.php:82
 msgid "Required. Can only contain letters, numbers, dashes."
-msgstr "必填。只能够包含字母，数字和英文短横线(-)"
+msgstr "必填。只能填写字母，数字，破折号(-)"
 
 #: Views/lenti-list.php:87 Views/lenti-list.php:92 Views/lenti-list.php:97
 #: Views/lenti-list.php:111 Views/lenti-list.php:125 Views/lenti-list.php:142
@@ -315,11 +319,11 @@ msgstr "￥"
 
 #: Views/lenti-list.php:104
 msgid "Required. Need to be a positive integer."
-msgstr "必填。整型。"
+msgstr "必填。整型"
 
 #: Views/lenti-list.php:120
 msgid "Required. Vector Name."
-msgstr "载体名必填。"
+msgstr "必填。载体名。"
 
 #: Views/lenti-list.php:129
 msgid "Priority"
@@ -327,7 +331,7 @@ msgstr "优先级"
 
 #: Views/lenti-list.php:130 Views/lenti-list.php:135 Views/lenti-list.php:159
 msgid "Optional."
-msgstr "可选的。"
+msgstr "可选的"
 
 #: Views/lenti-list.php:134
 msgid "PDF Link"
@@ -341,10 +345,11 @@ msgid ""
 "class='form_code_2'>&micro;</code>, refer to the <a href='http://www."
 "w3cschool.cn/htmltags/ref-entities.html' target='_blank'>Manual</a>."
 msgstr ""
-"主：请使用<code class='form_code_1'>&amp;trade;</code>代替 <code "
-"class='form_code_2'>&trade;</code>使用<code class='form_code_1'>&amp;micro;</"
-"code>代替<code class='form_code_2'>&micro;</code>请参考<a href='http://www."
-"w3cschool.cn/htmltags/ref-entities.html' target='_blank'>手册</a>."
+"注：请使用<code class='form_code_1'>&amp;trade;</code>代替 <code "
+"\"\"class='form_code_2'>&trade;</code>使用<code class='form_code_1'>&amp;"
+"micro;</\"\"code>代替<code class='form_code_2'>&micro;</code>请参考<a "
+"href='http://www.\"\"w3cschool.cn/htmltags/ref-entities.html' "
+"target='_blank'>手册</a>."
 
 #: Views/lenti-list.php:146
 msgid "Titer Description"
@@ -368,7 +373,7 @@ msgstr "批量上传慢病毒数据"
 
 #: Views/lenti-list.php:218
 msgid "File input"
-msgstr "选择文件"
+msgstr "文件选择"
 
 #: Views/lenti-list.php:340 Views/lenti-list.php:388 Views/lenti-list.php:405
 #: Views/lenti-list.php:413 Views/lenti-list.php:429
@@ -383,6 +388,10 @@ msgstr "无效"
 msgid "already exists"
 msgstr "已经存在"
 
+#: Views/lenti-list.php:487
+msgid "Edit Lentivirus"
+msgstr "编辑慢病毒"
+
 #: Views/lenti-list.php:532
 msgid "You seem to not modify the product"
 msgstr "您似乎没有修改产品信息"
@@ -391,6 +400,10 @@ msgstr "您似乎没有修改产品信息"
 #: Views/lenti-recycled.php:283
 msgid "Failed!<br/>Please try again after refresh!"
 msgstr "失败！<br/>请刷新后重试！"
+
+#: Views/lenti-list.php:586
+msgid "Add Lentivirus"
+msgstr "添加慢病毒"
 
 #: Views/lenti-list.php:658
 msgid "Failed"
