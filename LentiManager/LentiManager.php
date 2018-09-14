@@ -1,9 +1,9 @@
 <?php 
 /*
- Plugin Name: lentiManager
+ Plugin Name: LentiManager
  Plugin URI: https://github.com/huimingdeng/genecopoeia/tree/master/LentiManager
  Description: _cs_lenti_collection table management, If you have changed the price, please test and inform the IT department if there are any bugs.
- Version: 0.5.12
+ Version: 0.5.13
  Author: DHM
  Author URI: #
  License: none
@@ -16,22 +16,22 @@ function add_lenti_menu(){
   $allowed_user_options = json_decode($allowed_user,true);
   if(in_array($user_login, $allowed_user_options)){
   	add_menu_page(
-      'lentiManager',
-      'lenti Manager',
+      'LentiManager',
+      'Lenti Manager',
       'edit_pages',
-      'lentiManager',
+      'LentiManager',
       'render_lenti_list_page'
     );
     add_submenu_page(
-      'lentiManager',
-      'lentiRecycled',
-      'lenti Recycled',
+      'LentiManager',
+      'LentiRecycled',
+      'Lenti Recycled',
       'edit_pages',
-      'lentiRec',
+      'LentiRec',
       'render_lenti_recycled_page'
     );
     add_submenu_page(
-      'lentiManager',
+      'LentiManager',
       'LogsManager',
       'Logs Manager',
       'edit_pages',
@@ -41,7 +41,7 @@ function add_lenti_menu(){
   }
   // if('admin'==$user_login||'huimingdeng'==$user_login){
     add_submenu_page(
-      'lentiManager',
+      'LentiManager',
       'lentiAssign',
       'lenti Assign',
       'manage_options',
@@ -49,7 +49,7 @@ function add_lenti_menu(){
       'render_lenti_assign_page'
     );
     add_submenu_page(
-      'lentiManager',
+      'LentiManager',
       'FilesManager',
       'Files Manager',
       'manage_options',
@@ -82,7 +82,7 @@ function render_log_manager_page(){
 add_action('admin_menu','add_lenti_menu');
 
 function lenti_manager_init() {
-    load_plugin_textdomain( 'lentiManager', false, dirname( plugin_basename( __FILE__ ) ) );
+    load_plugin_textdomain( 'LentiManager', false, dirname( plugin_basename( __FILE__ ) ) );
 }
 add_action( 'plugins_loaded', 'lenti_manager_init' );
 

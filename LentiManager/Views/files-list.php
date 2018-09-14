@@ -19,22 +19,22 @@
 <div class="wrap">
 	<div class="row">
 		<div class="col-md-12">
-			<h2><span class="glyphicon glyphicon-file"></span>&nbsp;Lentivirus Files Management &nbsp; 
+			<h2><span class="glyphicon glyphicon-file"></span>&nbsp;<?php _e("Lentivirus Files Management","LentiManager"); ?> &nbsp; 
 			</h2>
 		</div>
 		<div class="col-md-12">
 			<table class="table table-striped table-bordered table-hover"  id="files-list">
 				<thead>
 					<tr>
-						<th>Filename</th>
-						<th>Size</th>
-						<th>Readable</th>
-						<th>Writable</th>
-						<th>Executable</th>
-						<th>Creation Time</th>
-						<th>Modification Time</th>
-						<th>Access Time</th>
-						<th>Action</th>
+						<th><?php _e("Filename","LentiManager");?></th>
+						<th><?php _e("Size","LentiManager");?></th>
+						<th><?php _e("Readable","LentiManager");?></th>
+						<th><?php _e("Writable","LentiManager");?></th>
+						<th><?php _e("Executable","LentiManager");?></th>
+						<th><?php _e("Creation Time","LentiManager");?></th>
+						<th><?php _e("Modification Time","LentiManager");?></th>
+						<th><?php _e("Access Time","LentiManager");?></th>
+						<th><?php _e("Action","LentiManager");?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -52,7 +52,7 @@
                     &times;
                 </button>
                 <h4 class="modal-title" id="lookModalLabel">
-                    Look the Excel <span id="look_excel" class="code"></span>
+                    <?php _e("Look the Excel","LentiManager"); ?> <span id="look_excel" class="code"></span>
                 </h4>
             </div>
             <!-- /.modal-header -->
@@ -60,21 +60,21 @@
                 <table class="table table-hover table-striped" id="excel-list">
                 	<thead>
                 		<tr>
-                			<th>catalog</th>
-	                		<th>type</th>
-	                		<th>description</th>
-	                		<th>volume</th>
-	                		<th>titer</th>
-	                		<th>titer_description</th>
-	                		<th>purity</th>
-	                		<th>size</th>
-	                		<th>vector</th>
-	                		<th>delivery_format</th>
-	                		<th>delivery_time</th>
-	                		<th>symbol_link</th>
-	                		<th>pdf_link</th>
-	                		<th>price</th>
-	                		<th>priority</th>
+                			<th><?php _e("catalog","LentiManager");?></th>
+	                		<th><?php _e("type","LentiManager");?></th>
+	                		<th><?php _e("description","LentiManager");?></th>
+	                		<th><?php _e("volume","LentiManager");?></th>
+	                		<th><?php _e("titer","LentiManager");?></th>
+	                		<th><?php _e("titer_description","LentiManager");?></th>
+	                		<th><?php _e("purity","LentiManager");?></th>
+	                		<th><?php _e("size","LentiManager");?></th>
+	                		<th><?php _e("vector","LentiManager");?></th>
+	                		<th><?php _e("delivery_format","LentiManager");?></th>
+	                		<th><?php _e("delivery_time","LentiManager");?></th>
+	                		<th><?php _e("symbol_link","LentiManager");?></th>
+	                		<th><?php _e("pdf_link","LentiManager");?></th>
+	                		<th><?php _e("price","LentiManager");?></th>
+	                		<th><?php _e("priority","LentiManager");?></th>
                 		</tr>
                 	</thead>
                 	<tbody>
@@ -84,7 +84,7 @@
             </div>
             <!-- /.modal-body -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"> <?php _e("Close","LentiManager"); ?> </button>
             </div>
 		</div>
 	</div>
@@ -98,19 +98,19 @@
                     &times;
                 </button>
                 <h4 class="modal-title" id="deleteModalLabel">
-                    Delete the Excel 
+                    <?php _e("Delete the Excel","LentiManager"); ?> 
                 </h4>
             </div>
             <!-- /.modal-header -->
             <div class="modal-body">
-                Are you sure to delete
+                <?php _e("Are you sure to delete","LentiManager"); ?>
                 <span id="delete_excel" class="code">
                 </span>&nbsp;?
             </div>
             <!-- /.modal-body -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="delete_button">Delete</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal"> Cancel </button>
+                <button type="button" class="btn btn-danger" id="delete_button"><?php _e("Delete","LentiManager"); ?></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"> <?php _e("Cancel","LentiManager"); ?> </button>
             </div>
             <!-- /.modal-footer -->
         </div>
@@ -131,7 +131,7 @@
             "stateSave": true,
             "buttons": [
 	            {
-	                text:'Reload',
+	                text:'<?php _e("Reload","LentiManager"); ?>',
 	                action: function( e, dt, node, config ) {
 	                   table.ajax.reload();
 	                }
@@ -148,19 +148,19 @@
 	        "processing": true,//处理中的提示
 	        "serverSide": false,//客户端处理
 	        "language": {
-	            "sProcessing": "Processing...",
+	            "sProcessing": '<?php _e("Processing...","LentiManager"); ?>',
 	            "sLengthMenu": "Show _MENU_ entires",
-	            "sZeroRecords": "No matching records found.",
+	            "sZeroRecords": '<?php _e("No matching records found.","LentiManager"); ?>',
 	            "sInfo": "Showing _START_ to _END_ of _TOTAL_ entires",
-	            "sInfoEmpty": "Showing 0 to 0 of 0 entires",
-	            "sInfoFiltered": "(filtered from _MAX_ total entries)",
-	            "sSearch": "Search",
-	            "sEmptyTable": "No data was found",
-	            "sLoadingRecords": "loading...",
+	            "sInfoEmpty": '<?php _e("Showing 0 to 0 of 0 entires","LentiManager"); ?>',
+	            "sInfoFiltered": '<?php _e("(filtered from _MAX_ total entries)","LentiManager"); ?>',
+	            "sSearch": '<?php _e("Search","LentiManager"); ?>',
+	            "sEmptyTable": '<?php _e("No data was found","LentiManager"); ?>',
+	            "sLoadingRecords": '<?php _e("loading...","LentiManager"); ?>',
 	            "sInfoThousands": ",",
 	            "oPaginate": {
-	                "sPrevious": "Previous",
-	                "sNext": "Next"
+	                "sPrevious": '<?php _e("Previous","LentiManager"); ?>',
+	                "sNext": '<?php _e("Next","LentiManager"); ?>'
 	            }
 	        },
 	        "ajax": {//发送ajax请求
@@ -237,19 +237,19 @@
 	        "processing": true,//处理中的提示
 	        "serverSide": false,//客户端处理
 	        "language": {
-	            "sProcessing": "Processing...",
+	            "sProcessing": '<?php _e("Processing...","LentiManager"); ?>',
 	            "sLengthMenu": "Show _MENU_ entires",
-	            "sZeroRecords": "No matching records found.",
+	            "sZeroRecords": '<?php _e("No matching records found.","LentiManager"); ?>',
 	            "sInfo": "Showing _START_ to _END_ of _TOTAL_ entires",
-	            "sInfoEmpty": "Showing 0 to 0 of 0 entires",
-	            "sInfoFiltered": "(filtered from _MAX_ total entries)",
-	            "sSearch": "Search",
-	            "sEmptyTable": "No data was found",
-	            "sLoadingRecords": "loading...",
+	            "sInfoEmpty": '<?php _e("Showing 0 to 0 of 0 entires","LentiManager"); ?>',
+	            "sInfoFiltered": '<?php _e("(filtered from _MAX_ total entries)","LentiManager"); ?>',
+	            "sSearch": '<?php _e("Search","LentiManager"); ?>',
+	            "sEmptyTable": '<?php _e("No data was found","LentiManager"); ?>',
+	            "sLoadingRecords": '<?php _e("loading...","LentiManager"); ?>',
 	            "sInfoThousands": ",",
 	            "oPaginate": {
-	                "sPrevious": "Previous",
-	                "sNext": "Next"
+	                "sPrevious": '<?php _e("Previous","LentiManager"); ?>',
+	                "sNext": '<?php _e("Next","LentiManager"); ?>'
 	            }
 	        },
 	        "ajax": {//发送ajax请求
@@ -358,7 +358,7 @@
 	                console.log(obj);
 	                if (obj.query == "1") {
 	                    //如果后台删除成功，则刷新表格
-	                    layer.msg('Successful!', {
+	                    layer.msg('<?php _e("Successful","LentiManager"); ?>!', {
 	                        icon: 1,
 	                        time: 3000
 	                    });
@@ -366,7 +366,7 @@
 	                    table.ajax.reload( null, false );
 	                    
 	                } else {
-	                    layer.msg('Failed!<br/>Please try again after refresh!', {
+	                    layer.msg('<?php _e("Failed!<br/>Please try again after refresh","LentiManager"); ?>!', {
 	                        icon: 2,
 	                        time: 3000
 	                    });

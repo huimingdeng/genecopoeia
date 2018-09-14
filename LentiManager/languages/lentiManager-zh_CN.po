@@ -1,0 +1,425 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: lentiManager\n"
+"POT-Creation-Date: 2018-09-14 14:04+0800\n"
+"PO-Revision-Date: 2018-09-14 14:34+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: Views/files-list.php:22
+msgid "Lentivirus Files Management"
+msgstr "慢病毒文件管理"
+
+#: Views/files-list.php:29 Views/logs-list.php:29
+msgid "Filename"
+msgstr "文件名"
+
+#: Views/files-list.php:30 Views/lenti-list.php:48 Views/lenti-list.php:115
+#: Views/lenti-recycled.php:61 Views/logs-list.php:30
+msgid "Size"
+msgstr "大小"
+
+#: Views/files-list.php:31 Views/logs-list.php:31
+msgid "Readable"
+msgstr "可读"
+
+#: Views/files-list.php:32 Views/logs-list.php:32
+msgid "Writable"
+msgstr "可写"
+
+#: Views/files-list.php:33 Views/logs-list.php:33
+msgid "Executable"
+msgstr "可执行"
+
+#: Views/files-list.php:34 Views/logs-list.php:34
+msgid "Creation Time"
+msgstr "创建时间"
+
+#: Views/files-list.php:35 Views/logs-list.php:35
+msgid "Modification Time"
+msgstr "修改时间"
+
+#: Views/files-list.php:36 Views/logs-list.php:36
+msgid "Access Time"
+msgstr "访问时间"
+
+#: Views/files-list.php:37 Views/lenti-assign.php:30 Views/lenti-list.php:52
+#: Views/lenti-recycled.php:66 Views/logs-list.php:37
+msgid "Action"
+msgstr "操作"
+
+#: Views/files-list.php:55
+msgid "Look the Excel"
+msgstr "查看Excel"
+
+#: Views/files-list.php:63
+msgid "catalog"
+msgstr "货号"
+
+#: Views/files-list.php:64
+msgid "type"
+msgstr "类型"
+
+#: Views/files-list.php:65
+msgid "description"
+msgstr "描述"
+
+#: Views/files-list.php:66
+msgid "volume"
+msgstr "容量"
+
+#: Views/files-list.php:67
+msgid "titer"
+msgstr "浓度"
+
+#: Views/files-list.php:68
+msgid "titer_description"
+msgstr "浓度描述"
+
+#: Views/files-list.php:69
+msgid "purity"
+msgstr "纯度"
+
+#: Views/files-list.php:70
+msgid "size"
+msgstr "大小"
+
+#: Views/files-list.php:71
+msgid "vector"
+msgstr "载体"
+
+#: Views/files-list.php:72
+msgid "delivery_format"
+msgstr "交付格式"
+
+#: Views/files-list.php:73
+msgid "delivery_time"
+msgstr "交付时间"
+
+#: Views/files-list.php:74
+msgid "symbol_link"
+msgstr "符号链接"
+
+#: Views/files-list.php:75
+msgid "pdf_link"
+msgstr "附件链接"
+
+#: Views/files-list.php:76
+msgid "price"
+msgstr "价格"
+
+#: Views/files-list.php:77
+msgid "priority"
+msgstr "优先级"
+
+#: Views/files-list.php:87 Views/logs-list.php:66
+msgid "Close"
+msgstr "关闭"
+
+#: Views/files-list.php:101
+msgid "Delete the Excel"
+msgstr "删除Excel"
+
+#: Views/files-list.php:106 Views/lenti-list.php:187
+msgid "Are you sure to delete"
+msgstr "您确定要删除"
+
+#: Views/files-list.php:112 Views/lenti-list.php:193
+msgid "Delete"
+msgstr "删除"
+
+#: Views/files-list.php:113 Views/lenti-list.php:75 Views/lenti-list.php:194
+#: Views/lenti-list.php:225 Views/lenti-recycled.php:98
+msgid "Cancel"
+msgstr "取消"
+
+#: Views/files-list.php:134 Views/lenti-list.php:246
+#: Views/lenti-recycled.php:128 Views/logs-list.php:86
+msgid "Reload"
+msgstr "刷新"
+
+#: Views/files-list.php:151 Views/files-list.php:240 Views/lenti-assign.php:54
+#: Views/lenti-list.php:271 Views/lenti-recycled.php:149
+#: Views/logs-list.php:103
+msgid "Processing..."
+msgstr "处理中..."
+
+#: Views/files-list.php:153 Views/files-list.php:242 Views/lenti-assign.php:56
+#: Views/lenti-list.php:273 Views/lenti-recycled.php:151
+#: Views/logs-list.php:105
+msgid "No matching records found."
+msgstr "没有找到匹配的记录。"
+
+#: Views/files-list.php:155 Views/files-list.php:244 Views/lenti-assign.php:58
+#: Views/lenti-list.php:275 Views/lenti-recycled.php:153
+#: Views/logs-list.php:107
+msgid "Showing 0 to 0 of 0 entires"
+msgstr "显示 0 到 0 条 共 0 条记录"
+
+#: Views/files-list.php:156 Views/files-list.php:245 Views/lenti-assign.php:59
+#: Views/lenti-list.php:276 Views/lenti-recycled.php:154
+#: Views/logs-list.php:108
+msgid "(filtered from _MAX_ total entries)"
+msgstr "从 _MAX_total 条记录中筛选"
+
+#: Views/files-list.php:157 Views/files-list.php:246 Views/lenti-assign.php:60
+#: Views/lenti-list.php:277 Views/lenti-recycled.php:155
+#: Views/logs-list.php:109
+msgid "Search"
+msgstr "查询"
+
+#: Views/files-list.php:158 Views/files-list.php:247 Views/lenti-assign.php:61
+#: Views/lenti-list.php:278 Views/lenti-recycled.php:156
+#: Views/logs-list.php:110
+msgid "No data was found"
+msgstr "没有发现任何数据"
+
+#: Views/files-list.php:159 Views/files-list.php:248 Views/lenti-assign.php:62
+#: Views/lenti-list.php:279 Views/lenti-recycled.php:157
+#: Views/logs-list.php:111
+msgid "loading..."
+msgstr "加载中..."
+
+#: Views/files-list.php:162 Views/files-list.php:251 Views/lenti-assign.php:65
+#: Views/lenti-list.php:282 Views/lenti-recycled.php:160
+#: Views/logs-list.php:114
+msgid "Previous"
+msgstr "上一页"
+
+#: Views/files-list.php:163 Views/files-list.php:252 Views/lenti-assign.php:66
+#: Views/lenti-list.php:283 Views/lenti-recycled.php:161
+#: Views/logs-list.php:115
+msgid "Next"
+msgstr "下一页"
+
+#: Views/files-list.php:361 Views/lenti-list.php:525 Views/lenti-list.php:560
+#: Views/lenti-list.php:600 Views/lenti-list.php:647
+msgid "Successful"
+msgstr "成功"
+
+#: Views/files-list.php:369 Views/lenti-list.php:568 Views/lenti-list.php:611
+msgid "Failed!<br/>Please try again after refresh"
+msgstr "失败!<br/>请刷新后重试"
+
+#: Views/lenti-assign.php:21
+msgid "LMOPAP"
+msgstr "慢病毒权限分配页"
+
+#: Views/lenti-assign.php:22
+msgid "Lentivirus management operation permission allocation page."
+msgstr "慢病毒管理操作权限分配页面。"
+
+#: Views/lenti-assign.php:30
+msgid "USERS"
+msgstr "用户"
+
+#: Views/lenti-assign.php:99
+msgid "Disallow"
+msgstr "禁止"
+
+#: Views/lenti-assign.php:105
+msgid "Allow"
+msgstr "允许"
+
+#: Views/lenti-list.php:35
+msgid "Lentivirus Management"
+msgstr "慢病毒管理"
+
+#: Views/lenti-list.php:35
+msgid "Add"
+msgstr "添加"
+
+#: Views/lenti-list.php:35
+msgid "uploads"
+msgstr "上传"
+
+#: Views/lenti-list.php:35
+msgid "For bulk import data, refer to the template."
+msgstr "批量导入数据模板。"
+
+#: Views/lenti-list.php:35
+msgid "template"
+msgstr "模板"
+
+#: Views/lenti-list.php:42 Views/lenti-list.php:81 Views/lenti-recycled.php:55
+msgid "Catalog"
+msgstr "货号"
+
+#: Views/lenti-list.php:43 Views/lenti-list.php:91 Views/lenti-recycled.php:56
+msgid "Type"
+msgstr "类型"
+
+#: Views/lenti-list.php:44 Views/lenti-list.php:139
+#: Views/lenti-recycled.php:57
+msgid "Description"
+msgstr "描述"
+
+#: Views/lenti-list.php:45 Views/lenti-list.php:96 Views/lenti-recycled.php:58
+msgid "Volume"
+msgstr "容量"
+
+#: Views/lenti-list.php:46 Views/lenti-list.php:86 Views/lenti-recycled.php:59
+msgid "Titer"
+msgstr "浓度"
+
+#: Views/lenti-list.php:47 Views/lenti-list.php:110
+#: Views/lenti-recycled.php:60
+msgid "Purity"
+msgstr "纯度"
+
+#: Views/lenti-list.php:49 Views/lenti-list.php:120
+#: Views/lenti-recycled.php:62
+msgid "Vector"
+msgstr "载体"
+
+#: Views/lenti-list.php:50 Views/lenti-list.php:124
+#: Views/lenti-recycled.php:63
+msgid "Delivery Time"
+msgstr "交付时间"
+
+#: Views/lenti-list.php:51 Views/lenti-list.php:101
+#: Views/lenti-recycled.php:64
+msgid "Price"
+msgstr "价格"
+
+#: Views/lenti-list.php:74 Views/lenti-list.php:224
+msgid "Save"
+msgstr "保存"
+
+#: Views/lenti-list.php:82
+msgid "Required. Can only contain letters, numbers, dashes."
+msgstr "必填。只能够包含字母，数字和英文短横线(-)"
+
+#: Views/lenti-list.php:87 Views/lenti-list.php:92 Views/lenti-list.php:97
+#: Views/lenti-list.php:111 Views/lenti-list.php:125 Views/lenti-list.php:142
+#: Views/lenti-list.php:148 Views/lenti-list.php:154
+msgid "Required."
+msgstr "必填。"
+
+#: Views/lenti-list.php:103 Views/lenti-list.php:319
+#: Views/lenti-recycled.php:198
+msgid "$"
+msgstr "￥"
+
+#: Views/lenti-list.php:104
+msgid "Required. Need to be a positive integer."
+msgstr "必填。整型。"
+
+#: Views/lenti-list.php:120
+msgid "Required. Vector Name."
+msgstr "载体名必填。"
+
+#: Views/lenti-list.php:129
+msgid "Priority"
+msgstr "优先级"
+
+#: Views/lenti-list.php:130 Views/lenti-list.php:135 Views/lenti-list.php:159
+msgid "Optional."
+msgstr "可选的。"
+
+#: Views/lenti-list.php:134
+msgid "PDF Link"
+msgstr "附件链接"
+
+#: Views/lenti-list.php:141 Views/lenti-list.php:147 Views/lenti-list.php:153
+msgid ""
+"Note: Please use <code class='form_code_1'>&amp;trade;</code> instead of "
+"<code class='form_code_2'>&trade;</code> and use <code "
+"class='form_code_1'>&amp;micro;</code> instead of <code "
+"class='form_code_2'>&micro;</code>, refer to the <a href='http://www."
+"w3cschool.cn/htmltags/ref-entities.html' target='_blank'>Manual</a>."
+msgstr ""
+"主：请使用<code class='form_code_1'>&amp;trade;</code>代替 <code "
+"class='form_code_2'>&trade;</code>使用<code class='form_code_1'>&amp;micro;</"
+"code>代替<code class='form_code_2'>&micro;</code>请参考<a href='http://www."
+"w3cschool.cn/htmltags/ref-entities.html' target='_blank'>手册</a>."
+
+#: Views/lenti-list.php:146
+msgid "Titer Description"
+msgstr "浓度描述"
+
+#: Views/lenti-list.php:152
+msgid "Delivery Format"
+msgstr "交付格式"
+
+#: Views/lenti-list.php:158
+msgid "Symbol Link"
+msgstr "符号链接"
+
+#: Views/lenti-list.php:182
+msgid "Delete the Lentivirus"
+msgstr "删除慢病毒"
+
+#: Views/lenti-list.php:213
+msgid "Uploads Lentivirus Data In Batches"
+msgstr "批量上传慢病毒数据"
+
+#: Views/lenti-list.php:218
+msgid "File input"
+msgstr "选择文件"
+
+#: Views/lenti-list.php:340 Views/lenti-list.php:388 Views/lenti-list.php:405
+#: Views/lenti-list.php:413 Views/lenti-list.php:429
+msgid "required"
+msgstr "必填"
+
+#: Views/lenti-list.php:348 Views/lenti-list.php:437
+msgid "invalid"
+msgstr "无效"
+
+#: Views/lenti-list.php:370
+msgid "already exists"
+msgstr "已经存在"
+
+#: Views/lenti-list.php:532
+msgid "You seem to not modify the product"
+msgstr "您似乎没有修改产品信息"
+
+#: Views/lenti-list.php:537 Views/lenti-recycled.php:254
+#: Views/lenti-recycled.php:283
+msgid "Failed!<br/>Please try again after refresh!"
+msgstr "失败！<br/>请刷新后重试！"
+
+#: Views/lenti-list.php:658
+msgid "Failed"
+msgstr "失败"
+
+#: Views/lenti-recycled.php:48
+msgid "Lentivirus Recycled Management"
+msgstr "慢病毒回收站管理"
+
+#: Views/lenti-recycled.php:48 Views/lenti-recycled.php:97
+msgid "Restore"
+msgstr "还原"
+
+#: Views/lenti-recycled.php:65
+msgid "Del Time"
+msgstr "删除时间"
+
+#: Views/lenti-recycled.php:86
+msgid "Restore the Lentivirus"
+msgstr "还原慢病毒"
+
+#: Views/lenti-recycled.php:91
+msgid "Are you sure to restore"
+msgstr "您确定还原"
+
+#: Views/logs-list.php:22
+msgid "Logs Management"
+msgstr "日志管理"
+
+#: Views/logs-list.php:55
+msgid "Look the Log"
+msgstr "查看日志"

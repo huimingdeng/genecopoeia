@@ -45,25 +45,25 @@
 <div class="wrap">
 	<div class="row">
 		<div class="col-md-12">
-			<h2><span class="glyphicon glyphicon-trash"></span>&nbsp;Lentivirus Recycled Management &nbsp; <a href="javascript:void(0);" onclick="restoreLentilAll();" class="btn btn-primary">Restore</a></h2> 
+			<h2><span class="glyphicon glyphicon-trash"></span>&nbsp;<?php _e("Lentivirus Recycled Management","LentiManager"); ?> &nbsp; <a href="javascript:void(0);" onclick="restoreLentilAll();" class="btn btn-primary"><?php _e("Restore","LentiManager"); ?></a></h2> 
 		</div>
 		<div class="col-md-12">
 			<table class="table table-striped table-bordered table-hover"  id="recycled-list">
 				<thead>
 					<tr>
 						<th><input type="checkbox" class="select_all" name="select_all" id="selectAll"></th>
-						<th>Catalog</th>
-						<th>Type</th>
-						<th>Description</th>
-						<th>Volume</th>
-						<th>Titer</th>
-						<th>Purity</th>
-						<th>Size</th>
-						<th>Vector</th>
-						<th>Delivery Time</th>
-						<th>Price</th>
-						<th>Del Time</th>
-						<th>Action</th>
+						<th><?php _e("Catalog","LentiManager");?></th>
+						<th><?php _e("Type","LentiManager");?></th>
+						<th><?php _e("Description","LentiManager");?></th>
+						<th><?php _e("Volume","LentiManager");?></th>
+						<th><?php _e("Titer","LentiManager");?></th>
+						<th><?php _e("Purity","LentiManager");?></th>
+						<th><?php _e("Size","LentiManager");?></th>
+						<th><?php _e("Vector","LentiManager");?></th>
+						<th><?php _e("Delivery Time","LentiManager");?></th>
+						<th><?php _e("Price","LentiManager");?></th>
+						<th><?php _e("Del Time","LentiManager");?></th>
+						<th><?php _e("Action","LentiManager");?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -83,19 +83,19 @@
                     &times;
                 </button>
                 <h4 class="modal-title" id="deleteModalLabel">
-                    Restore the Lentivirus
+                    <?php _e("Restore the Lentivirus","LentiManager"); ?>
                 </h4>
             </div>
             <!-- /.modal-header -->
             <div class="modal-body">
-                Are you sure to restore
+                <?php _e("Are you sure to restore","LentiManager"); ?>
                 <span id="delete_lenti" class="code">
                 </span>&nbsp;?
             </div>
             <!-- /.modal-body -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="restore_button">Restore</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal"> Cancel </button>
+                <button type="button" class="btn btn-success" id="restore_button"><?php _e("Restore","LentiManager"); ?></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"> <?php _e("Cancel","LentiManager"); ?> </button>
             </div>
             <!-- /.modal-footer -->
         </div>
@@ -125,7 +125,7 @@
             "stateSave": true,
             "buttons": [
 	            {
-	                text:'Reload',
+	                text:'<?php _e("Reload","LentiManager"); ?>',
 	                action: function( e, dt, node, config ) {
 	                   table.ajax.reload();
 	                }
@@ -146,19 +146,19 @@
 	        "processing": true,//处理中的提示
 	        "serverSide": false,//客户端处理
 	        "language": {
-	            "sProcessing": "Processing...",
+	            "sProcessing": '<?php _e("Processing...","LentiManager"); ?>',
 	            "sLengthMenu": "Show _MENU_ entires",
-	            "sZeroRecords": "No matching records found.",
+	            "sZeroRecords": '<?php _e("No matching records found.","LentiManager"); ?>',
 	            "sInfo": "Showing _START_ to _END_ of _TOTAL_ entires",
-	            "sInfoEmpty": "Showing 0 to 0 of 0 entires",
-	            "sInfoFiltered": "(filtered from _MAX_ total entries)",
-	            "sSearch": "Search",
-	            "sEmptyTable": "No data was found",
-	            "sLoadingRecords": "loading...",
+	            "sInfoEmpty": '<?php _e("Showing 0 to 0 of 0 entires","LentiManager"); ?>',
+	            "sInfoFiltered": '<?php _e("(filtered from _MAX_ total entries)","LentiManager"); ?>',
+	            "sSearch": '<?php _e("Search","LentiManager"); ?>',
+	            "sEmptyTable": '<?php _e("No data was found","LentiManager"); ?>',
+	            "sLoadingRecords": '<?php _e("loading...","LentiManager"); ?>',
 	            "sInfoThousands": ",",
 	            "oPaginate": {
-	                "sPrevious": "Previous",
-	                "sNext": "Next"
+	                "sPrevious": '<?php _e("Previous","LentiManager"); ?>',
+	                "sNext": '<?php _e("Next","LentiManager"); ?>'
 	            }
 	        },
 	        "ajax": {//发送ajax请求
@@ -195,7 +195,7 @@
 		        {	"data" : "delivery_time", "width" : "10%"	},
 		        {	"data" : "price",
 		        	"render" : function(data,type,full,meta){
-		        		return '$'+data;
+		        		return '<?php _e("$","LentiManager");?>'+data;
 		        	},
 		        	"width" : "5%"
 		        },
@@ -251,7 +251,7 @@
 	                    table.ajax.reload( null, false );
 	                    
 	                } else {
-	                    layer.msg('Failed!<br/>Please try again after refresh!', {
+	                    layer.msg('<?php _e("Failed!<br/>Please try again after refresh!","LentiManager"); ?>', {
 	                        icon: 2,
 	                        time: 3000
 	                    });
@@ -280,7 +280,7 @@
 	                    table.ajax.reload( null, false );
 	                    
 	                } else {
-	                    layer.msg('Failed!<br/>Please try again after refresh!', {
+	                    layer.msg('<?php _e("Failed!<br/>Please try again after refresh!","LentiManager"); ?>', {
 	                        icon: 2,
 	                        time: 3000
 	                    });

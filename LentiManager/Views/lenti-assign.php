@@ -18,8 +18,8 @@ $allowed_user_options = json_decode($allowed_user,true);
 	<div class="wrap">
 		<div class="row">
 			<div class="col-md-12">
-				<h2><span class="glyphicon glyphicon-wrench glyphicon-blue"></span>&nbsp;LMOPAP</h2>
-				<p>Lentivirus management operation permission allocation page</p>
+				<h2><span class="glyphicon glyphicon-wrench glyphicon-blue"></span>&nbsp;<?php _e("LMOPAP","LentiManager"); ?></h2>
+				<p><?php _e("Lentivirus management operation permission allocation page.","LentiManager"); ?></p>
 			</div>
 		</div>
 		<div class="row">
@@ -27,7 +27,7 @@ $allowed_user_options = json_decode($allowed_user,true);
 				<div class="col-md-8">
 					<table class="table table-striped table-hover" id="lenti-assign">
 						<thead>
-							<tr><th>USERS</th><th>Action</th></tr>
+							<tr><th><?php _e("USERS","LentiManager");?></th><th><?php _e("Action","LentiManager");?></th></tr>
 						</thead>
 						<tbody>
 							
@@ -51,19 +51,19 @@ $allowed_user_options = json_decode($allowed_user,true);
 		        "processing": true,//处理中的提示
 		        "serverSide": false,//客户端处理
 		        "language": {
-		            "sProcessing": "Processing...",
+		            "sProcessing": '<?php _e("Processing...","LentiManager"); ?>',
 		            "sLengthMenu": "Show _MENU_ entires",
-		            "sZeroRecords": "No matching records found.",
+		            "sZeroRecords": '<?php _e("No matching records found.","LentiManager"); ?>',
 		            "sInfo": "Showing _START_ to _END_ of _TOTAL_ entires",
-		            "sInfoEmpty": "Showing 0 to 0 of 0 entires",
-		            "sInfoFiltered": "(filtered from _MAX_ total entries)",
-		            "sSearch": "Search",
-		            "sEmptyTable": "No data was found",
-		            "sLoadingRecords": "loading...",
+		            "sInfoEmpty": '<?php _e("Showing 0 to 0 of 0 entires","LentiManager"); ?>',
+		            "sInfoFiltered": '<?php _e("(filtered from _MAX_ total entries)","LentiManager"); ?>',
+		            "sSearch": '<?php _e("Search","LentiManager"); ?>',
+		            "sEmptyTable": '<?php _e("No data was found","LentiManager"); ?>',
+		            "sLoadingRecords": '<?php _e("loading...","LentiManager"); ?>',
 		            "sInfoThousands": ",",
 		            "oPaginate": {
-		                "sPrevious": "Previous",
-		                "sNext": "Next"
+		                "sPrevious": '<?php _e("Previous","LentiManager"); ?>',
+		                "sNext": '<?php _e("Next","LentiManager"); ?>'
 		            }
 		        },
 		        "ajax": {//发送ajax请求
@@ -96,13 +96,13 @@ $allowed_user_options = json_decode($allowed_user,true);
 					console.log(obj.msg);
 					console.log(obj.value);
 					if(obj.value){//如果存在且值为1，则修改按钮
-						$(objs).replaceWith("<a class='btn btn-danger btn-xs' onclick='permissions(this,\""+manager+"\");'>Disallow</a>");
+						$(objs).replaceWith("<a class='btn btn-danger btn-xs' onclick='permissions(this,\""+manager+"\");'><?php _e('Disallow','LentiManager'); ?></a>");
 						layer.msg(obj.msg, {
                             icon: 1,
                             time: 1000
                         });
 					}else{
-						$(objs).replaceWith("<a class='btn btn-primary btn-xs' onclick='permissions(this,\""+manager+"\");'>Allow</a>");
+						$(objs).replaceWith("<a class='btn btn-primary btn-xs' onclick='permissions(this,\""+manager+"\");'><?php _e('Allow','LentiManager'); ?></a>");
 						layer.msg(obj.msg, {
                             icon: 1,
                             time: 1000
@@ -114,6 +114,6 @@ $allowed_user_options = json_decode($allowed_user,true);
 	</script>
 <?php 
 /*}else{
-	die("Sorry, you don't have access to the current page.");
+	die(<?php _e("Sorry, you don't have access to the current page.","LentiManager");?>);
 }*/
 ?>

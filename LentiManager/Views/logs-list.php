@@ -19,22 +19,22 @@
 <div class="wrap">
 	<div class="row">
 		<div class="col-md-12">
-			<h2><span class="glyphicon glyphicon-file"></span>&nbsp;Logs Management &nbsp; 
+			<h2><span class="glyphicon glyphicon-file"></span>&nbsp;<?php _e("Logs Management","LentiManager"); ?> &nbsp; 
 			</h2>
 		</div>
 		<div class="col-md-12">
 			<table class="table table-striped table-bordered table-hover"  id="files-list">
 				<thead>
 					<tr>
-						<th>Filename</th>
-						<th>Size</th>
-						<th>Readable</th>
-						<th>Writable</th>
-						<th>Executable</th>
-						<th>Creation Time</th>
-						<th>Modification Time</th>
-						<th>Access Time</th>
-						<th>Action</th>
+						<th><?php _e("Filename","LentiManager");?></th>
+						<th><?php _e("Size","LentiManager");?></th>
+						<th><?php _e("Readable","LentiManager");?></th>
+						<th><?php _e("Writable","LentiManager");?></th>
+						<th><?php _e("Executable","LentiManager");?></th>
+						<th><?php _e("Creation Time","LentiManager");?></th>
+						<th><?php _e("Modification Time","LentiManager");?></th>
+						<th><?php _e("Access Time","LentiManager");?></th>
+						<th><?php _e("Action","LentiManager");?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -52,7 +52,7 @@
                     &times;
                 </button>
                 <h4 class="modal-title" id="lookModalLabel">
-                    Look the Log <span id="look_log" class="code"></span>
+                    <?php _e("Look the Log","LentiManager"); ?> <span id="look_log" class="code"></span>
                 </h4>
             </div>
             <!-- /.modal-header -->
@@ -63,7 +63,7 @@
             </div>
             <!-- /.modal-body -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"> <?php _e("Close","LentiManager"); ?> </button>
             </div>
 		</div>
 	</div>
@@ -83,7 +83,7 @@
             "stateSave": true,
             "buttons": [
 	            {
-	                text:'Reload',
+	                text:'<?php _e("Reload","LentiManager"); ?>',
 	                action: function( e, dt, node, config ) {
 	                   table.ajax.reload();
 	                }
@@ -100,19 +100,19 @@
 	        "processing": true,//处理中的提示
 	        "serverSide": false,//客户端处理
 	        "language": {
-	            "sProcessing": "Processing...",
+	            "sProcessing": '<?php _e("Processing...","LentiManager"); ?>',
 	            "sLengthMenu": "Show _MENU_ entires",
-	            "sZeroRecords": "No matching records found.",
+	            "sZeroRecords": '<?php _e("No matching records found.","LentiManager"); ?>',
 	            "sInfo": "Showing _START_ to _END_ of _TOTAL_ entires",
-	            "sInfoEmpty": "Showing 0 to 0 of 0 entires",
-	            "sInfoFiltered": "(filtered from _MAX_ total entries)",
-	            "sSearch": "Search",
-	            "sEmptyTable": "No data was found",
-	            "sLoadingRecords": "loading...",
+	            "sInfoEmpty": '<?php _e("Showing 0 to 0 of 0 entires","LentiManager"); ?>',
+	            "sInfoFiltered": '<?php _e("(filtered from _MAX_ total entries)","LentiManager"); ?>',
+	            "sSearch": '<?php _e("Search","LentiManager"); ?>',
+	            "sEmptyTable": '<?php _e("No data was found","LentiManager"); ?>',
+	            "sLoadingRecords": '<?php _e("loading...","LentiManager"); ?>',
 	            "sInfoThousands": ",",
 	            "oPaginate": {
-	                "sPrevious": "Previous",
-	                "sNext": "Next"
+	                "sPrevious": '<?php _e("Previous","LentiManager"); ?>',
+	                "sNext": '<?php _e("Next","LentiManager"); ?>'
 	            }
 	        },
 	        "ajax": {//发送ajax请求

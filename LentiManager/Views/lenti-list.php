@@ -32,24 +32,24 @@
 <div class="wrap">
 	<div class="row">
 		<div class="col-md-12">
-			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;Lentivirus Management &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/help%20manual.docx'; ?>" data-toggle="tooltip" data-placement="top" title="Instructions document."><span class="glyphicon glyphicon-question-sign"></span></a> &nbsp; &nbsp; &nbsp; <a href="javascript:void(0);" onclick="addLentil()" data-toggle="modal" data-target="#addModal" class="btn btn-primary">Add</a> &nbsp; <a href="javascript:void(0);" onclick="uploadLentiviurs();" class="btn btn-success">uploads</a> &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/template.xlsx'; ?>" data-toggle="tooltip" data-placement="right" title="For bulk import data, refer to the template." id="template" class="btn btn-warning">template</a> 
+			<h2><span class="glyphicon glyphicon-th-list"></span>&nbsp;<?php _e("Lentivirus Management","LentiManager"); ?> &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/help%20manual.docx'; ?>" data-toggle="tooltip" data-placement="top" title="Instructions document."><span class="glyphicon glyphicon-question-sign"></span></a> &nbsp; &nbsp; &nbsp; <a href="javascript:void(0);" onclick="addLentil()" data-toggle="modal" data-target="#addModal" class="btn btn-primary"><?php _e("Add","LentiManager"); ?></a> &nbsp; <a href="javascript:void(0);" onclick="uploadLentiviurs();" class="btn btn-success"><?php _e("uploads","LentiManager"); ?></a> &nbsp; <a href="<?php echo WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__))) . '/Service/template.xlsx'; ?>" data-toggle="tooltip" data-placement="right" title="<?php _e("For bulk import data, refer to the template.","LentiManager"); ?>" id="template" class="btn btn-warning"><?php _e("template","LentiManager"); ?></a> 
 			</h2> 
 		</div>
 		<div class="col-md-12">
 			<table class="table table-striped table-bordered table-hover"  id="lenti-list">
 				<thead>
 					<tr>
-						<th>Catalog</th>
-						<th>Type</th>
-						<th>Description</th>
-						<th>Volume</th>
-						<th>Titer</th>
-						<th>Purity</th>
-						<th>Size</th>
-						<th>Vector</th>
-						<th>Delivery Time</th>
-						<th>Price</th>
-						<th>Action</th>
+						<th><?php _e("Catalog","LentiManager"); ?></th>
+						<th><?php _e("Type","LentiManager");?></th>
+						<th><?php _e("Description","LentiManager");?></th>
+						<th><?php _e("Volume","LentiManager");?></th>
+						<th><?php _e("Titer","LentiManager");?></th>
+						<th><?php _e("Purity","LentiManager");?></th>
+						<th><?php _e("Size","LentiManager");?></th>
+						<th><?php _e("Vector","LentiManager");?></th>
+						<th><?php _e("Delivery Time","LentiManager"); ?></th>
+						<th><?php _e("Price","LentiManager");?></th>
+						<th><?php _e("Action","LentiManager");?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -71,92 +71,92 @@
 	                    </h4>
 	                </div>
 	                <div style="display: inline-block;float: right;margin-right:10px;">
-	                    <button type="button" class="btn btn-primary addLentil" id="modal_save_button">Save</button>
-	                    <button type="button" class="btn btn-default close-edit-modal" data-dismiss="modal">Cancel</button>
+	                    <button type="button" class="btn btn-primary addLentil" id="modal_save_button"><?php _e("Save","LentiManager"); ?></button>
+	                    <button type="button" class="btn btn-default close-edit-modal" data-dismiss="modal"><?php _e("Cancel","LentiManager"); ?></button>
 	                </div>
 	            </div>
             	<!-- modal-header -->
                 <div class="modal-body">
                 	<div class="form-group" style="width:49.5%">
-                        <label style="font-size:13px;" for="catalog">Catalog&nbsp;<span id="catalog_log" class="valid_log"></span></label>
-                        <input type="text" class="form-control" id="catalog" name="catalog" placeholder="" onBlur="checkCatalog()" data-toggle="tooltip" data-placement="top" title="Required. Can only contain letters, numbers, dashes."/>
+                        <label style="font-size:13px;" for="catalog"><?php _e("Catalog","LentiManager"); ?>&nbsp;<span id="catalog_log" class="valid_log"></span></label>
+                        <input type="text" class="form-control" id="catalog" name="catalog" placeholder="" onBlur="checkCatalog()" data-toggle="tooltip" data-placement="top" title="<?php _e("Required. Can only contain letters, numbers, dashes.","LentiManager"); ?>"/>
                     </div>
                     <!-- Titer -->
                     <div class="form-group" style="width:49.5%">
-                    	<label for="titer">Titer&nbsp;<span id="titer_log" class="valid_log"></span></label>
-                    	<input type="text" class="form-control" id="titer" name="titer" data-toggle="tooltip" data-placement="top" title="Required." onBlur="checkIsNotNull(this);">
+                    	<label for="titer"><?php _e("Titer","LentiManager"); ?>&nbsp;<span id="titer_log" class="valid_log"></span></label>
+                    	<input type="text" class="form-control" id="titer" name="titer" data-toggle="tooltip" data-placement="top" title="<?php _e("Required.","LentiManager"); ?>" onBlur="checkIsNotNull(this);">
                     </div>
                     <!-- Type -->
                     <div class="form-group " style="width:24.5%">
-                    	<label for="type">Type&nbsp;<span id="type_log" class="valid_log"></span></label>
-                    	<input type="text" class="form-control" id="type" name="type" data-toggle="tooltip" data-placement="top" title="Required." onBlur="checkIsNotNull(this);">
+                    	<label for="type"><?php _e("Type","LentiManager"); ?>&nbsp;<span id="type_log" class="valid_log"></span></label>
+                    	<input type="text" class="form-control" id="type" name="type" data-toggle="tooltip" data-placement="top" title="<?php _e("Required.","LentiManager"); ?>" onBlur="checkIsNotNull(this);">
                     </div> 
                 	<!-- Volume -->
                     <div class="form-group " style="width:24.5%">
-                    	<label for="volume">Volume&nbsp;<span id="volume_log" class="valid_log"></span></label>
-                    	<input type="text" class="form-control" id="volume" name="volume" data-toggle="tooltip" data-placement="top" onBlur="checkIsNotNull(this);" title="Required.">
+                    	<label for="volume"><?php _e("Volume","LentiManager"); ?>&nbsp;<span id="volume_log" class="valid_log"></span></label>
+                    	<input type="text" class="form-control" id="volume" name="volume" data-toggle="tooltip" data-placement="top" onBlur="checkIsNotNull(this);" title="<?php _e("Required.","LentiManager"); ?>">
                     </div>
                     <!-- Price -->
 					<div class="form-group" style="width:24.5%">
-						<label for="price">Price&nbsp;<span id="price_log" class="valid_log"></span></label>
+						<label for="price"><?php _e("Price","LentiManager"); ?>&nbsp;<span id="price_log" class="valid_log"></span></label>
                         <div class="input-group">
-                            <div class="input-group-addon">$</div>
-                            <input type="text" class="form-control" id="price" name="price" onBlur="checkPrice()" data-toggle="tooltip" data-placement="top" title="Required. Need to be a positive integer."/>
+                            <div class="input-group-addon"><?php _e("$","LentiManager"); ?></div>
+                            <input type="text" class="form-control" id="price" name="price" onBlur="checkPrice()" data-toggle="tooltip" data-placement="top" title="<?php _e("Required. Need to be a positive integer.","LentiManager"); ?>"/>
                             <div class="input-group-addon">.00</div>
                         </div>
 					</div>
 					<!-- Purity -->
 					<div class="form-group" style="width:24.5%">
-						<label for="purity">Purity&nbsp;<span id="purity_log" class="valid_log"></span></label>
-						<input type="text" id="purity" name="purity" class="form-control" data-toggle="tooltip" data-placement="top" onBlur="checkIsNotNull(this);" title="Required.">
+						<label for="purity"><?php _e("Purity","LentiManager"); ?>&nbsp;<span id="purity_log" class="valid_log"></span></label>
+						<input type="text" id="purity" name="purity" class="form-control" data-toggle="tooltip" data-placement="top" onBlur="checkIsNotNull(this);" title="<?php _e("Required.","LentiManager"); ?>">
 					</div>
 					<!-- Size -->
 					<div class="form-group" style="width:24.5%">
-						<label for="size">Size&nbsp;<span id="size_log" class="valid_log"></span></label>
+						<label for="size"><?php _e("Size","LentiManager"); ?>&nbsp;<span id="size_log" class="valid_log"></span></label>
 						<input type="text" id="size" name="size" data-toggle="tooltip" data-placement="top" title="Required. Need to be a positive integer." onBlur="checkisInteger(this);" class="form-control">
 					</div>
 					<!-- Vector -->
 					<div class="form-group" style="width:24.5%">
-						<label for="vector">Vector&nbsp;<span id="vector_log" class="valid_log"></span></label><input type="text" id="vector" name="vector" data-toggle="tooltip" data-placement="top" title="Required. Vector Name." onBlur="checkIsNotNull(this);" class="form-control">
+						<label for="vector"><?php _e("Vector","LentiManager"); ?>&nbsp;<span id="vector_log" class="valid_log"></span></label><input type="text" id="vector" name="vector" data-toggle="tooltip" data-placement="top" title="<?php _e("Required. Vector Name.","LentiManager"); ?>" onBlur="checkIsNotNull(this);" class="form-control">
 					</div>
                     <!-- Delivery Time -->
                     <div class="form-group" style="width:24.5%">
-						<label for="delivery_time">Delivery Time&nbsp;<span id="delivery_time_log" class="valid_log"></span></label>
-						<input type="text" id="delivery_time" name="delivery_time" data-toggle="tooltip" data-placement="top" title="Required." onBlur="checkIsNotNull(this);" class="form-control">
+						<label for="delivery_time"><?php _e("Delivery Time","LentiManager"); ?>&nbsp;<span id="delivery_time_log" class="valid_log"></span></label>
+						<input type="text" id="delivery_time" name="delivery_time" data-toggle="tooltip" data-placement="top" title="<?php _e("Required.","LentiManager"); ?>" onBlur="checkIsNotNull(this);" class="form-control">
 					</div>
 					<!-- Priority -->
 					<div class="form-group" style="width:24.5%">
-						<label for="priority">Priority&nbsp;<span id="priority_log" class="valid_log"></span></label>
-						<input type="text" id="priority" data-toggle="tooltip" data-placement="top" title="Optional." class="form-control">
+						<label for="priority"><?php _e("Priority","LentiManager"); ?>&nbsp;<span id="priority_log" class="valid_log"></span></label>
+						<input type="text" id="priority" data-toggle="tooltip" data-placement="top" title="<?php _e("Optional.","LentiManager"); ?>" class="form-control">
 					</div>
                     <!-- PDF Link -->
                     <div class="form-group" style="width:100%">
-						<label for="pdf_link">PDF Link&nbsp;<span id="pdf_link_log" class="valid_log"></span></label>
-						<input type="text" id="pdf_link" name="pdf_link" placeholder=" Attachment link eg. /wp-content/uploads/oldpdfs/tech/omicslink/pEZ-AV02.pdf" data-toggle="tooltip" data-placement="top" title="Optional." class="form-control">
+						<label for="pdf_link"><?php _e("PDF Link","LentiManager"); ?>&nbsp;<span id="pdf_link_log" class="valid_log"></span></label>
+						<input type="text" id="pdf_link" name="pdf_link" placeholder=" Attachment link eg. /wp-content/uploads/oldpdfs/tech/omicslink/pEZ-AV02.pdf" data-toggle="tooltip" data-placement="top" title="<?php _e("Optional.","LentiManager"); ?>" class="form-control">
 					</div>
                     <!-- Description -->
                     <div class="form-group " style="width:100%">
-                    	<label for="description">Description&nbsp;<span id="description_log" class="valid_log"></span>
+                    	<label for="description"><?php _e("Description","LentiManager"); ?>&nbsp;<span id="description_log" class="valid_log"></span>
                     	</label>
-                    	<span class="character_entity_tip">Note: Please use <code class='form_code_1'>&amp;trade;</code> instead of <code class='form_code_2'>&trade;</code> and use <code class='form_code_1'>&amp;micro;</code> instead of <code class='form_code_2'>&micro;</code>, refer to the <a href='http://www.w3cschool.cn/htmltags/ref-entities.html' target='_blank'>Manual</a>.</span>
-                    	<textarea class="form-control" id="description" name="description" data-toggle="tooltip" data-placement="top" onBlur="checkIsNotNull(this);" title="Required."></textarea> 
+                    	<span class="character_entity_tip"><?php _e("Note: Please use <code class='form_code_1'>&amp;trade;</code> instead of <code class='form_code_2'>&trade;</code> and use <code class='form_code_1'>&amp;micro;</code> instead of <code class='form_code_2'>&micro;</code>, refer to the <a href='http://www.w3cschool.cn/htmltags/ref-entities.html' target='_blank'>Manual</a>.","LentiManager"); ?></span>
+                    	<textarea class="form-control" id="description" name="description" data-toggle="tooltip" data-placement="top" onBlur="checkIsNotNull(this);" title="<?php _e("Required.","LentiManager"); ?>"></textarea> 
                     </div>
                     <!-- Titer Description -->
                     <div class="form-group" style="width:100%">
-                    	<label for="titer_description">Titer Description&nbsp;<span id="titer_description_log" class="valid_log"></span></label>
-                    	<span class="character_entity_tip">Note: Please use <code class='form_code_1'>&amp;trade;</code> instead of <code class='form_code_2'>&trade;</code> and use <code class='form_code_1'>&amp;micro;</code> instead of <code class='form_code_2'>&micro;</code>, refer to the <a href='http://www.w3cschool.cn/htmltags/ref-entities.html' target='_blank'>Manual</a>.</span>
-                    	<textarea class="form-control" id="titer_description" name="titer_description" data-toggle="tooltip" data-placement="top" onBlur="checkIsNotNull(this);" title="Required."></textarea>
+                    	<label for="titer_description"><?php _e("Titer Description","LentiManager"); ?>&nbsp;<span id="titer_description_log" class="valid_log"></span></label>
+                    	<span class="character_entity_tip"><?php _e("Note: Please use <code class='form_code_1'>&amp;trade;</code> instead of <code class='form_code_2'>&trade;</code> and use <code class='form_code_1'>&amp;micro;</code> instead of <code class='form_code_2'>&micro;</code>, refer to the <a href='http://www.w3cschool.cn/htmltags/ref-entities.html' target='_blank'>Manual</a>.", "LentiManager"); ?></span>
+                    	<textarea class="form-control" id="titer_description" name="titer_description" data-toggle="tooltip" data-placement="top" onBlur="checkIsNotNull(this);" title="<?php _e("Required.","LentiManager"); ?>"></textarea>
                     </div>
 					<!-- Delivery Format -->
 					<div class="form-group" style="width:100%">
-						<label for="delivery_format">Delivery Format&nbsp;<span id="delivery_format_log" class="valid_log"></span></label>
-						<span class="character_entity_tip">Note: Please use <code class='form_code_1'>&amp;trade;</code> instead of <code class='form_code_2'>&trade;</code> and use <code class='form_code_1'>&amp;micro;</code> instead of <code class='form_code_2'>&micro;</code>, refer to the <a href='http://www.w3cschool.cn/htmltags/ref-entities.html' target='_blank'>Manual</a>.</span>
-						<textarea id="delivery_format" name="delivery_format" data-toggle="tooltip" data-placement="top" title="Required." onBlur="checkIsNotNull(this);" class="form-control"></textarea>
+						<label for="delivery_format"><?php _e("Delivery Format","LentiManager"); ?>&nbsp;<span id="delivery_format_log" class="valid_log"></span></label>
+						<span class="character_entity_tip"><?php _e("Note: Please use <code class='form_code_1'>&amp;trade;</code> instead of <code class='form_code_2'>&trade;</code> and use <code class='form_code_1'>&amp;micro;</code> instead of <code class='form_code_2'>&micro;</code>, refer to the <a href='http://www.w3cschool.cn/htmltags/ref-entities.html' target='_blank'>Manual</a>.","LentiManager"); ?></span>
+						<textarea id="delivery_format" name="delivery_format" data-toggle="tooltip" data-placement="top" title="<?php _e("Required.","LentiManager"); ?>" onBlur="checkIsNotNull(this);" class="form-control"></textarea>
 					</div>
 					<!-- Symbol Link -->
 					<div class="form-group" style="width:100%">
-						<label for="symbol_link">Symbol Link&nbsp;<span id="symbol_link_log" class="valid_log"></span></label>
-						<input type="text" id="symbol_link" name="symbol_link" data-toggle="tooltip" data-placement="top" title="Optional." class="form-control">
+						<label for="symbol_link"><?php _e("Symbol Link","LentiManager"); ?>&nbsp;<span id="symbol_link_log" class="valid_log"></span></label>
+						<input type="text" id="symbol_link" name="symbol_link" data-toggle="tooltip" data-placement="top" title="<?php _e("Optional.","LentiManager"); ?>" class="form-control">
 					</div>
                 </div>
                 <!-- modal-body -->
@@ -179,19 +179,19 @@
                     &times;
                 </button>
                 <h4 class="modal-title" id="deleteModalLabel">
-                    Delete the Lentivirus
+                    <?php _e("Delete the Lentivirus","LentiManager"); ?>
                 </h4>
             </div>
             <!-- /.modal-header -->
             <div class="modal-body">
-                Are you sure to delete
+                <?php _e("Are you sure to delete","LentiManager"); ?>
                 <span id="delete_lenti" class="code">
                 </span>&nbsp;?
             </div>
             <!-- /.modal-body -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="delete_button">Delete</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal"> Cancel </button>
+                <button type="button" class="btn btn-danger" id="delete_button"><?php _e("Delete","LentiManager"); ?></button>
+                <button type="button" class="btn btn-default" data-dismiss="modal"> <?php _e("Cancel","LentiManager"); ?> </button>
             </div>
             <!-- /.modal-footer -->
         </div>
@@ -210,19 +210,19 @@
 	                    &times;
 	                </button>
 	                <h4 class="modal-title" id="deleteModalLabel">
-	                    Uploads Lentivirus Data In Batches
+	                    <?php _e("Uploads Lentivirus Data In Batches","LentiManager"); ?>
 	                </h4>
 	            </div>
 				<div class="modal-body">
 					<div class="form-group">
-                        <label for="Files">File input</label>
+                        <label for="Files"><?php _e("File input","LentiManager"); ?></label>
                         <input id="Files" name="Files" type="file">
                         <input type="hidden" name="action" value="uploads">
                     </div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" id="upload_button" class="btn btn-primary">Save</button>
-					<button type="button" class="btn btn-default" data-dismiss="modal"> Cancel </button>
+					<button type="button" id="upload_button" class="btn btn-primary"><?php _e("Save","LentiManager"); ?></button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"> <?php _e("Cancel","LentiManager"); ?> </button>
 				</div>
 			</form>
 		</div>
@@ -243,7 +243,7 @@
             "stateSave": true,
             "buttons": [
 	            {
-	                text:'Reload',
+	                text:'<?php _e("Reload","LentiManager"); ?>',
 	                action: function( e, dt, node, config ) {
 	                   table.ajax.reload();
 	                }
@@ -268,19 +268,19 @@
 	        "processing": true,//处理中的提示
 	        "serverSide": false,//客户端处理
 	        "language": {
-	            "sProcessing": "Processing...",
+	            "sProcessing": '<?php _e("Processing...","LentiManager"); ?>',
 	            "sLengthMenu": "Show _MENU_ entires",
-	            "sZeroRecords": "No matching records found.",
+	            "sZeroRecords": '<?php _e("No matching records found.","LentiManager"); ?>',
 	            "sInfo": "Showing _START_ to _END_ of _TOTAL_ entires",
-	            "sInfoEmpty": "Showing 0 to 0 of 0 entires",
-	            "sInfoFiltered": "(filtered from _MAX_ total entries)",
-	            "sSearch": "Search",
-	            "sEmptyTable": "No data was found",
-	            "sLoadingRecords": "loading...",
+	            "sInfoEmpty": '<?php _e("Showing 0 to 0 of 0 entires","LentiManager"); ?>',
+	            "sInfoFiltered": '<?php _e("(filtered from _MAX_ total entries)","LentiManager"); ?>',
+	            "sSearch": '<?php _e("Search","LentiManager"); ?>',
+	            "sEmptyTable": '<?php _e("No data was found","LentiManager"); ?>',
+	            "sLoadingRecords": '<?php _e("loading...","LentiManager"); ?>',
 	            "sInfoThousands": ",",
 	            "oPaginate": {
-	                "sPrevious": "Previous",
-	                "sNext": "Next"
+	                "sPrevious": '<?php _e("Previous","LentiManager"); ?>',
+	                "sNext": '<?php _e("Next","LentiManager"); ?>'
 	            }
 	        },
 	        "ajax": {//发送ajax请求
@@ -316,7 +316,7 @@
 		        {	"data" : "delivery_time", "width" : "10%"	},
 		        {	"data" : "price",
 		        	"render" : function(data,type,full,meta){
-		        		return '$'+data;
+		        		return '<?php _e("$","LentiManager"); ?>'+data;
 		        	},
 		        	"width" : "5%"
 		        },
@@ -337,7 +337,7 @@
 	    var catalog = document.getElementById('catalog').value.trim();
 	    if (catalog.length==0) {//为空时
 	        catalogCheck = false;//使用全局变量存储结果
-	        $("#catalog_log").html(' * required！');//提示文字
+	        $("#catalog_log").html(' * <?php _e("required","LentiManager"); ?>！');//提示文字
 	        $("#catalog_log").css({color:"#d44950"});//提示着色
 	        $("#catalog").css("borderColor","#d44950");//框着色
 	    } else {//不为空时
@@ -345,7 +345,7 @@
 	        var r_1 = catalog.match(reg_1);
 	        if(r_1==null){//不匹配正则时
 	            catalogCheck = false;//使用全局变量存储结果
-	            $("#catalog_log").html(' * invalid！');//提示文字
+	            $("#catalog_log").html(' * <?php _e("invalid","LentiManager"); ?>！');//提示文字
 	            $("#catalog_log").css({color:"#d44950"});//提示着色
 	            $("#catalog").css("borderColor","#d44950");//框着色
 	        } else if(r_1!=null && action=='add') {//添加弹窗中验证通过时查询是否已存在该Catalog（编辑弹窗不验证）
@@ -367,7 +367,7 @@
 	                        $("#catalog").css("borderColor","");//框着色
 	                    } else {//存在重复时
 	                        catalogCheck = false;
-	                        $("#catalog_log").html(' * already exists！');//提示文字
+	                        $("#catalog_log").html(' * <?php _e("already exists","LentiManager"); ?>！');//提示文字
 	                        $("#catalog_log").css({color:"#d44950"});//提示着色
 	                        $("#catalog").css("borderColor","#d44950");//框着色
 	                    }
@@ -385,7 +385,7 @@
 		var objvalue = document.getElementById(objname).value.trim();
 	    if (objvalue.length==0) {//为空时
 	        var objCheck = false;
-	        $("#"+objname+"_log").html('*required!');//提示文字
+	        $("#"+objname+"_log").html('*<?php _e("required","LentiManager"); ?>!');//提示文字
 	        $("#"+objname+"_log").css({color:"#d44950"});//提示着色
 	        $("#"+objname).css("borderColor","#d44950");//框着色
 	    } else {//不为空时
@@ -402,7 +402,7 @@
 		var objvalue = document.getElementById(objname).value.trim();
 		if (objvalue.length==0) {//为空时
 	        var objCheck = false;
-	        $("#"+objname+"_log").html('*required!');//提示文字
+	        $("#"+objname+"_log").html('*<?php _e("required","LentiManager"); ?>!');//提示文字
 	        $("#"+objname+"_log").css({color:"#d44950"});//提示着色
 	        $("#"+objname).css("borderColor","#d44950");//框着色
 	    } else {
@@ -410,7 +410,7 @@
 	    	var is_int = objvalue.match(reg_int);
 	    	if(is_int==null){
 	    		var objCheck = false;
-		        $("#"+objname+"_log").html('*required!');//提示文字
+		        $("#"+objname+"_log").html('*<?php _e("required","LentiManager"); ?>!');//提示文字
 		        $("#"+objname+"_log").css({color:"#d44950"});//提示着色
 		        $("#"+objname).css("borderColor","#d44950");//框着色
 	    	}else{
@@ -426,7 +426,7 @@
 	    var price = document.getElementById('price').value.trim();
 	    if (price.length==0) {//为空时
 	        var priceCheck = false;
-	        $("#price_log").html(' * required！');//提示文字
+	        $("#price_log").html(' * <?php _e("required","LentiManager"); ?>！');//提示文字
 	        $("#price_log").css({color:"#d44950"});//提示着色
 	        $("#price").css("borderColor","#d44950");//框着色
 	    } else {//不为空时
@@ -434,7 +434,7 @@
 	        var r_3 = price.match(reg_3);
 	        if(r_3==null){//不匹配正则时
 	            var priceCheck = false;
-	            $("#price_log").html(' * invalid！');//提示文字
+	            $("#price_log").html(' * <?php _e("invalid","LentiManager"); ?>！');//提示文字
 	            $("#price_log").css({color:"#d44950"});//提示着色
 	            $("#price").css("borderColor","#d44950");//框着色
 	        } else {//匹配正则时
@@ -522,19 +522,19 @@
 	                success: function(d){//d为json字符串{query:1,query_record:1}
 	                    var obj = JSON.parse(d);
 	                    if(obj.query=="1"){
-	                        layer.msg('Successful!', {
+	                        layer.msg('<?php _e("Successful","LentiManager"); ?>!', {
 	                            icon: 1,
 	                            time: 1000
 	                        });
 	                        $('#addModal').modal('hide');//隐藏弹窗
 	                        table.ajax.reload( null, false );//重新载入列表
 	                    } else if(obj.query=="0"){
-	                        layer.msg('You seem to not modify the product!', {
+	                        layer.msg('<?php _e("You seem to not modify the product","LentiManager"); ?>!', {
 	                            icon: 0,
 	                            time: 3000
 	                        });
 	                    } else {
-	                        layer.msg("Failed!<br/>Please try again after refresh!", {
+	                        layer.msg('<?php _e("Failed!<br/>Please try again after refresh!","LentiManager"); ?>', {
 	                        icon: 2,
 	                        time: 3000
 	                    });
@@ -557,7 +557,7 @@
 	                var obj = JSON.parse(d);
 	                if (obj.query == "1") {
 	                    //如果后台删除成功，则刷新表格
-	                    layer.msg('Successful!', {
+	                    layer.msg('<?php _e("Successful","LentiManager"); ?>!', {
 	                        icon: 1,
 	                        time: 1000
 	                    });
@@ -565,7 +565,7 @@
 	                    table.ajax.reload( null, false );
 	                    
 	                } else {
-	                    layer.msg('Failed!<br/>Please try again after refresh!', {
+	                    layer.msg('<?php _e("Failed!<br/>Please try again after refresh","LentiManager"); ?>!', {
 	                        icon: 2,
 	                        time: 3000
 	                    });
@@ -597,7 +597,7 @@
 	                    // console.log("ajax request done");
 	                    var obj = JSON.parse(d);
 	                    if(obj.query=="1"){
-	                        layer.msg('Successful!', {
+	                        layer.msg('<?php _e("Successful","LentiManager"); ?>!', {
 	                            icon: 1,
 	                            time: 5000
 	                        });
@@ -608,7 +608,7 @@
 								'borderColor': '#ddd'
 							}).val('');
 	                    } else {
-	                    	layer.msg('Failed!<br/>Please try again after refresh!', {
+	                    	layer.msg('<?php _e("Failed!<br/>Please try again after refresh","LentiManager"); ?>!', {
 		                        icon: 2,
 		                        time: 3000
 		                    });
@@ -644,7 +644,7 @@
 				data: data,
 				success:function (msg) {
 					if(msg.No==200){
-							layer.msg('Successful!'+msg.Msg, {
+							layer.msg('<?php _e("Successful","LentiManager"); ?>!'+msg.Msg, {
 	                            icon: 1,
 	                            time: 1000
 	                        });
@@ -655,7 +655,7 @@
 								'borderColor': '#ddd'
 							}).val('');
 	                 }else{
-	                 	layer.msg('Failed!<br/>'+msg.Msg, {
+	                 	layer.msg('<?php _e("Failed","LentiManager"); ?>!<br/>'+msg.Msg, {
 	                        icon: 2,
 	                        time: 3000
 	                    }); 
