@@ -146,19 +146,19 @@
 	        "processing": true,//处理中的提示
 	        "serverSide": false,//客户端处理
 	        "language": {
-	            "sProcessing": '<?php _e("Processing...","LentiManager"); ?>',
-	            "sLengthMenu": "Show _MENU_ entires",
-	            "sZeroRecords": '<?php _e("No matching records found.","LentiManager"); ?>',
-	            "sInfo": "Showing _START_ to _END_ of _TOTAL_ entires",
-	            "sInfoEmpty": '<?php _e("Showing 0 to 0 of 0 entires","LentiManager"); ?>',
-	            "sInfoFiltered": '<?php _e("(filtered from _MAX_ total entries)","LentiManager"); ?>',
-	            "sSearch": '<?php _e("Search","LentiManager"); ?>',
-	            "sEmptyTable": '<?php _e("No data was found","LentiManager"); ?>',
-	            "sLoadingRecords": '<?php _e("loading...","LentiManager"); ?>',
+	            "sProcessing": "<?php _e( "Processing", 'LentiManager' ); ?>...",
+	            "sLengthMenu": "<?php _e( "Show _MENU_ entires", 'LentiManager' ); ?>",
+	            "sZeroRecords": "<?php _e( "No matching records found.", 'LentiManager' ); ?>",
+	            "sInfo": "<?php _e( "Showing _START_ to _END_ of _TOTAL_ entires", 'LentiManager' ); ?>",
+	            "sInfoEmpty": "<?php _e( "Showing 0 to 0 of 0 entires", 'LentiManager' ); ?>",
+	            "sInfoFiltered": "(<?php _e( "filtered from _MAX_ total entries", 'LentiManager' ); ?>)",
+	            "sSearch": "<?php _e( "Search", 'LentiManager' ); ?>:",
+	            "sEmptyTable": "<?php _e( "No data was found", 'LentiManager' ); ?>",
+	            "sLoadingRecords": "<?php _e( "loading", 'LentiManager' ); ?>...",
 	            "sInfoThousands": ",",
 	            "oPaginate": {
-	                "sPrevious": '<?php _e("Previous","LentiManager"); ?>',
-	                "sNext": '<?php _e("Next","LentiManager"); ?>'
+	                "sPrevious": "<?php _e( "Previous", 'LentiManager' ); ?>",
+	                "sNext": "<?php _e( "Next", 'LentiManager' ); ?>"
 	            }
 	        },
 	        "ajax": {//发送ajax请求

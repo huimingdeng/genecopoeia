@@ -81,10 +81,10 @@ function render_log_manager_page(){
 
 add_action('admin_menu','add_lenti_menu');
 
-function Lenti_manager_init() {
+function lenti_manager_init() {
     load_plugin_textdomain( 'LentiManager', false, dirname( plugin_basename( __FILE__ ) ) );
 }
-add_action( 'plugins_loaded', 'Lenti_manager_init' );
+add_action( 'plugins_loaded', 'lenti_manager_init' );
 
 
 // 创建回收站和备份表
