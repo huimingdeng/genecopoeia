@@ -72,7 +72,7 @@ if($user_login){
 		foreach ($results as $row) {
 			$users[] = array(
 				'users'=>$row[0],
-				'action'=>in_array($row[0],$allowed_user_options)?($row[0]=='admin')?"<a class='btn btn-danger btn-xs disabled' onclick='permissions(this,\"".$row[0]."\");'>Disallow</a>":"<a class='btn btn-danger btn-xs' onclick='permissions(this,\"".$row[0]."\");'>Disallow</a>":"<a class='btn btn-primary btn-xs' onclick='permissions(this,\"".$row[0]."\");'>Allow</a>"
+				'action'=>in_array($row[0],$allowed_user_options)?($row[0]=='admin')?("<a class='btn btn-danger btn-xs disabled' onclick='permissions(this,\"".$row[0]."\");'>Disallow</a>"):("<a class='btn btn-danger btn-xs' onclick='permissions(this,\"".$row[0]."\");'>Disallow</a>"):("<a class='btn btn-primary btn-xs' onclick='permissions(this,\"".$row[0]."\");'>Allow</a>")
 			);
 		}
 

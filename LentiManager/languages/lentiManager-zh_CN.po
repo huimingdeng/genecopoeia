@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LentiManager\n"
-"POT-Creation-Date: 2018-09-14 17:41+0800\n"
-"PO-Revision-Date: 2018-09-14 17:43+0800\n"
+"POT-Creation-Date: 2018-09-17 11:21+0800\n"
+"PO-Revision-Date: 2018-09-17 11:21+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -17,6 +17,10 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
+
+#: Service/lenti-ajax.php:75 Views/lenti-assign.php:99
+msgid "Disallow"
+msgstr "禁止"
 
 #: Views/files-list.php:22
 msgid "Lentivirus Files Management"
@@ -153,9 +157,8 @@ msgstr "刷新"
 #: Views/files-list.php:151 Views/files-list.php:240 Views/lenti-assign.php:54
 #: Views/lenti-list.php:273 Views/lenti-recycled.php:149
 #: Views/logs-list.php:103
-#, fuzzy
 msgid "Processing"
-msgstr "处理中..."
+msgstr "处理中"
 
 #: Views/files-list.php:152 Views/files-list.php:241 Views/lenti-assign.php:55
 #: Views/lenti-list.php:274 Views/lenti-recycled.php:150
@@ -202,9 +205,8 @@ msgstr "没有发现任何数据"
 #: Views/files-list.php:159 Views/files-list.php:248 Views/lenti-assign.php:62
 #: Views/lenti-list.php:281 Views/lenti-recycled.php:157
 #: Views/logs-list.php:111
-#, fuzzy
 msgid "loading"
-msgstr "加载中..."
+msgstr "加载中"
 
 #: Views/files-list.php:162 Views/files-list.php:251 Views/lenti-assign.php:65
 #: Views/lenti-list.php:284 Views/lenti-recycled.php:160
@@ -238,10 +240,6 @@ msgstr "慢病毒管理操作权限分配页面。"
 #: Views/lenti-assign.php:30
 msgid "USERS"
 msgstr "用户"
-
-#: Views/lenti-assign.php:99
-msgid "Disallow"
-msgstr "禁止"
 
 #: Views/lenti-assign.php:105
 msgid "Allow"
