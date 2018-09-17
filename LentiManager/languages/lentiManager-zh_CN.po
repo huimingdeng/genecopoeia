@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LentiManager\n"
-"POT-Creation-Date: 2018-09-17 11:21+0800\n"
-"PO-Revision-Date: 2018-09-17 11:21+0800\n"
+"POT-Creation-Date: 2018-09-17 14:37+0800\n"
+"PO-Revision-Date: 2018-09-17 14:42+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -18,10 +18,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Service/lenti-ajax.php:75 Views/lenti-assign.php:99
-msgid "Disallow"
-msgstr "禁止"
-
 #: Views/files-list.php:22
 msgid "Lentivirus Files Management"
 msgstr "慢病毒文件管理"
@@ -33,7 +29,7 @@ msgstr "文件名"
 #: Views/files-list.php:30 Views/lenti-list.php:48 Views/lenti-list.php:114
 #: Views/lenti-recycled.php:61 Views/logs-list.php:30
 msgid "Size"
-msgstr "大小"
+msgstr "规格大小"
 
 #: Views/files-list.php:31 Views/logs-list.php:31
 msgid "Readable"
@@ -82,7 +78,7 @@ msgstr "描述"
 
 #: Views/files-list.php:66
 msgid "volume"
-msgstr "容量"
+msgstr "规格"
 
 #: Views/files-list.php:67
 msgid "titer"
@@ -98,7 +94,7 @@ msgstr "纯度"
 
 #: Views/files-list.php:70
 msgid "size"
-msgstr "大小"
+msgstr "规格大小"
 
 #: Views/files-list.php:71
 msgid "vector"
@@ -110,7 +106,7 @@ msgstr "交付格式"
 
 #: Views/files-list.php:73
 msgid "delivery_time"
-msgstr "交付时间"
+msgstr "货期"
 
 #: Views/files-list.php:74
 msgid "symbol_link"
@@ -241,6 +237,10 @@ msgstr "慢病毒管理操作权限分配页面。"
 msgid "USERS"
 msgstr "用户"
 
+#: Views/lenti-assign.php:99
+msgid "Disallow"
+msgstr "禁止"
+
 #: Views/lenti-assign.php:105
 msgid "Allow"
 msgstr "允许"
@@ -284,7 +284,7 @@ msgstr "描述"
 
 #: Views/lenti-list.php:45 Views/lenti-list.php:95 Views/lenti-recycled.php:58
 msgid "Volume"
-msgstr "容量"
+msgstr "规格"
 
 #: Views/lenti-list.php:46 Views/lenti-list.php:85 Views/lenti-recycled.php:59
 msgid "Titer"
@@ -303,7 +303,7 @@ msgstr "载体"
 #: Views/lenti-list.php:50 Views/lenti-list.php:123
 #: Views/lenti-recycled.php:63
 msgid "Delivery Time"
-msgstr "交付时间"
+msgstr "货期"
 
 #: Views/lenti-list.php:51 Views/lenti-list.php:100
 #: Views/lenti-recycled.php:64
