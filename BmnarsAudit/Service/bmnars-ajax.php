@@ -63,7 +63,7 @@ if($user_login){
 	{
 		$post_id = trim($_REQUEST['id']);
 		$imgSrc = WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__)));
-		$sql = sprintf("SELECT id,title,author,source,source_url,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html,REPLACE(content_p,'/home/bmnars/data/','%s/data/') as content_p,content_text FROM _cs_bmnars_contents WHERE id = %s",$imgSrc,$post_id);
+		$sql = sprintf("SELECT id,title,author,source,source_url,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html,REPLACE(content_text_html,'/home/bmnars/data/','%s/data/') as content_text_html,content_text FROM _cs_bmnars_contents WHERE id = %s",$imgSrc,$post_id);
 			switch ($action) {
 				case 'listOne':
 				$query = $wpdb->get_row($sql);
@@ -79,15 +79,15 @@ if($user_login){
 	if ('previewdraft' == $action) {
 		$post_id = trim($_REQUEST['id']);
 		$imgSrc = WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__)));
-		$sql = sprintf("SELECT b.id,title,author,source,source_url,source_date,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html, content_p,content_text,a.`status`,a.user_id,a.post_id FROM _cs_bmnars_contents as b LEFT JOIN _cs_audit_bmnars_status AS a ON b.id = a.crawler_id WHERE b.id = %s",$imgSrc,$post_id);
+		$sql = sprintf("SELECT b.id,title,author,source,source_url,source_date,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html, content_text_html,content_text,a.`status`,a.user_id,a.post_id FROM _cs_bmnars_contents as b LEFT JOIN _cs_audit_bmnars_status AS a ON b.id = a.crawler_id WHERE b.id = %s",$imgSrc,$post_id);
 			
 		$query = $wpdb->get_row($sql);
-		// 替换Python字典无关字符
-		$temp = preg_replace('/\d+\:|\{|\}/', '', $query->content_p);
+		
 		// 替换图片路径
+		$temp = str_replace(array("\\n","\r"),"",$query->content_text_html);
 		$temp2 = str_replace('/home/bmnars/',$imgSrc.'/',$temp);
-		// 形成 p 标签数组
-		$data = explode(',', $temp2);
+		$data = stripslashes($temp2);
+		// print_r($temp);exit;
 		ob_start();
 		include('../Views/template.php');
 		$html = ob_get_contents();
@@ -107,15 +107,13 @@ if($user_login){
 	if ('savedraft' == $action) {
 		$post_id = trim($_REQUEST['id']);
 		$imgSrc = WP_PLUGIN_URL . '/' . dirname(dirname(plugin_basename(__FILE__)));
-		$sql = sprintf("SELECT b.id,title,author,source,source_url,source_date,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html, content_p,content_text,a.`status`,a.user_id,a.post_id FROM _cs_bmnars_contents as b LEFT JOIN _cs_audit_bmnars_status AS a ON b.id = a.crawler_id WHERE b.id = %s",$imgSrc,$post_id);
+		$sql = sprintf("SELECT b.id,title,author,source,source_url,source_date,REPLACE(content_html,'/home/bmnars/data/','%s/data/') as content_html, content_text_html,content_text,a.`status`,a.user_id,a.post_id FROM _cs_bmnars_contents as b LEFT JOIN _cs_audit_bmnars_status AS a ON b.id = a.crawler_id WHERE b.id = %s",$imgSrc,$post_id);
 			
 		$query = $wpdb->get_row($sql);
-		// 替换Python字典无关字符
-		$temp = preg_replace('/\d+\:|\{|\}/', '', $query->content_p);
 		// 替换图片路径
+		$temp = str_replace(array("\\n","\r"),"",$query->content_text_html);
 		$temp2 = str_replace('/home/bmnars/',$imgSrc.'/',$temp);
-		// 形成 p 标签数组
-		$data = explode(',', $temp2);
+		$data = stripslashes($temp2);
 		ob_start();
 		include('../Views/template.php');
 		$html = ob_get_contents();
