@@ -88,13 +88,16 @@ class GetWPCategories
 	private function deleteJson()
 	{
 		$filename = dirname(__FILE__).DIRECTORY_SEPARATOR.'data'.DIRECTORY_SEPARATOR.$this->filename;
-		if(file_exists($filename)){
+		$ext = pathinfo($this->filename,PATHINFO_EXTENSION);
+		if(file_exists($filename)&&"json"==$ext){
 			unlink($filename);
 			if(!file_exists($filename)){
 				echo json_encode(array('status' => 200, 'info' => 'Ok, Deleted success.' ));
 			}else{
 				echo json_encode(array('status' => 500, 'info' => 'Deleted failed.' ));
 			}
+		}else{
+			echo json_encode(array('status' => 500, 'info' => 'Sorry, only the json file can be deleted.' ));
 		}
 	}
 
