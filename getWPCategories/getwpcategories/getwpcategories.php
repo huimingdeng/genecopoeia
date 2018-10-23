@@ -35,7 +35,10 @@ class GetWPCategories
 					$this->filename = $_POST['filename'];
 					$this->deleteJson();
 					break;
-				
+
+				case 'getjsonurl':
+					$this->getJsonUrl();
+					break;
 			}
 			
 		}
@@ -59,17 +62,18 @@ class GetWPCategories
 				file_put_contents($path, $json);
 				if(file_exists($path)){
 					$url = $this->host.'/data/link-'.date("ymdH").'.json';
-					file_put_contents($this->logfile,sprintf($this->log,date("Y-m-d H:i:s"),$url));
+					update_option("permalink_json",$url);
+					file_put_contents($this->logfile,sprintf($this->log,date("Y-m-d H:i:s"),"Note: Url generation success -- ".$url));
 					echo json_encode(array('status' => 200, 'path' => $path, 'url' => $url, 'info' => 'Ok, Generate success.' ));
 					exit(0);
 				}else{
-					file_put_contents($this->logfile,sprintf($this->log,date("Y-m-d H:i:s"),'null'));
+					file_put_contents($this->logfile,sprintf($this->log,date("Y-m-d H:i:s"),' Error, URL generation error.'));
 					echo json_encode(array('status' => 500, 'path' => '', 'url' => '', 'info'=>'Sorry, json file cannot be generated, please check if the directory has writable permission.') );
 					exit(0);
 				}
 			}else{
 				$url = $this->host.'/data/link-'.date("ymdH").'.json';
-				file_put_contents($this->logfile,sprintf($this->log,date("Y-m-d H:i:s"),$url));
+				file_put_contents($this->logfile,sprintf($this->log,date("Y-m-d H:i:s")," Instead of generating a new json file, use the old file: ".$url));
 				echo json_encode(array('status'=>200, 'path'=>$path, 'url' => $url, 'info' => "The file has been generated." ));
 				exit(0);
 			}
@@ -98,6 +102,16 @@ class GetWPCategories
 			}
 		}else{
 			echo json_encode(array('status' => 500, 'info' => 'Sorry, only the json file can be deleted.' ));
+		}
+	}
+
+	private function getJsonUrl()
+	{
+		$json = get_option('permalink_json');
+		if($json){
+			echo json_encode(array('status' => 200, 'url'=>$json, 'info' => 'Ok, success.' ));
+		}else{
+			echo json_encode(array('status' => 500, 'url'=>'', 'info' => 'Failed.' ));
 		}
 	}
 
