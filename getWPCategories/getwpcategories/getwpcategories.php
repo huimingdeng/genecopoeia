@@ -61,7 +61,7 @@ class GetWPCategories
 			if(!file_exists($path)){
 				file_put_contents($path, $json);
 				if(file_exists($path)){
-					$url = $this->host.'/data/link-'.date("ymdH").'.json';
+					$url = $this->host.'/getwpcategories/data/link-'.date("ymdH").'.json';
 					update_option("permalink_json",$url);
 					file_put_contents($this->logfile,sprintf($this->log,date("Y-m-d H:i:s"),"Note: Url generation success -- ".$url));
 					echo json_encode(array('status' => 200, 'path' => $path, 'url' => $url, 'info' => 'Ok, Generate success.' ));
