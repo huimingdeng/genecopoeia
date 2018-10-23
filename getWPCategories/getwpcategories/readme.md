@@ -17,7 +17,7 @@ PHP curl：调用示例(仅供参考)：
 		return $data;
 	}
 
-	$url = "https://xxxx/getwpcategories/getwpcategories.php";
+	$url = "https://xxxx/xxxx/getwpcategories.php";
 	//删除 实例
 	$param = array(
 		"operation" => "delete",
@@ -37,14 +37,14 @@ PHP curl：调用示例(仅供参考)：
 	//生成实例返回 json 信息示例：
 	{
 		"status":200, // 状态码
-		"path":"/home/xxxx/httpdocs/getwpcategories/data/link-18102304.json",
-		"url":"https:\/\/xxxxx\/data\/link-18102304.json", //调用生成的json地址
+		"path":"/home/xxxx/httpdocs/xxxx/data/link-18102304.json",
+		"url":"https:\/\/xxxxx\/xxxx\/data\/link-18102304.json", //调用生成的json地址
 		"info":"Ok, Generate success."
 	}
 	// 生成后，忘记 json 文件调用路径可以查询
 	{
 		"status":200,
-		"url":"https:\/\/xxxxx\/getwpcategories\/data\/link-18102304.json",
+		"url":"https:\/\/xxxxx\/xxxx\/data\/link-18102304.json",
 		"info":"Ok, success."
 	}
 
@@ -52,7 +52,7 @@ PHP curl：调用示例(仅供参考)：
 
 	#!/usr/bin/env python3
 	import requests
-	url='https://xxxxx/getwpcategories/getwpcategories.php'
+	url='https://xxxxx/xxxx/getwpcategories.php'
 	# 创建 json 文件
 	# param = {'operation':'generate'}
 	# 获取 json 文件链接
@@ -62,7 +62,7 @@ PHP curl：调用示例(仅供参考)：
 	# print(r.text)
 	print(r.content)
 	# 返回格式：
-	b'{"status":200,"url":"https:\/\/xxxxx\/getwpcategories\/data\/link-18102304.json","info":"Ok, success."}'
+	b'{"status":200,"url":"https:\/\/xxxxx\/xxxx\/data\/link-18102304.json","info":"Ok, success."}'
 
 
 
