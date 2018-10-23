@@ -37,7 +37,8 @@ class Operation extends Input
 				break;
 
 			case 'product'://get genecopoeia product
-				# code...
+				// $this->genearateLink2();
+				echo json_encode(array('status'=>200, 'info'=>'ok...'));exit(0);
 				break;
 			
 		}

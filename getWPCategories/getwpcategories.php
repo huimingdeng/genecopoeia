@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Get Blog Categories
  * Plugin URI: #
- * Description: 用于获取博客的分类目录。
- * Version: 0.0.1
+ * Description: 用于获取博客的分类目录。 目前不采用，因为接口需要密码验证等才能调用
+ * Version: 0.0.2
  * Author: DHM(huimingdeng)
  * Author URI: #
  * License: GPL2
@@ -12,7 +12,7 @@ class GetWPCategories
 {
 	private static $_instance = null; // object instace
 	private $id_a = array(); // posts ID array
-	const PLUGIN_VERSION = '0.0.1';
+	const PLUGIN_VERSION = '0.0.2';
 
 	private function __construct()
 	{
