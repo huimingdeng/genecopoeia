@@ -130,10 +130,10 @@
 	                   table.ajax.reload();
 	                }
 	            },
-	            {
-	                extend:'excel',
-	                exportOptions:{columns: ':visible'}
-	            },
+	            // {
+	            //     extend:'excel',
+	            //     exportOptions:{columns: ':visible'}
+	            // },
 	            {   
 	                extend: 'colvis',
 	                className: 'colvisButton',

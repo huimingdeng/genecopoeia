@@ -34,3 +34,4 @@ Version Description
 0.5.11 修改 add_submenu_page() 函数的权限，设置分配页面权限和管理Excel页面的权限为 manage_options
 0.5.12 修改 lenti-assign.php 默认时区为上海。
 0.5.13 汉化插件
+0.5.14 删除 PDF 和 Excel 按钮，避免错误使用 lenti-list.php 和 lenti-recycled.php 。
