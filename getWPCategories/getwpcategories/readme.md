@@ -65,4 +65,10 @@ PHP curl：调用示例(仅供参考)：
 	b'{"status":200,"url":"https:\/\/xxxxx\/xxxx\/data\/link-18102304.json","info":"Ok, success."}'
 
 
+## getWPPostsExcel 获取站点所有文章链接 ##
+存放位置：`/home/<user>/httpdocs/getwpcategories/` 必须引入 `PHPExcel` 库，引入 `wp-config.php`,使用函数 `get_permalink($POSTID)` 转换成文章的URL地址，获取数据，然后导出形成 Excel 。
+
+使用脚本执行 `php getWPPostsExcel.php` ，这样会出现 session_start()... 的相关警告，可以忽略。
+
+
 
