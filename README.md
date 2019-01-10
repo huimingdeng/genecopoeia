@@ -46,3 +46,9 @@ genecopoeia 网站搜索页面的克隆产品筛选菜单管理插件。（尝�
 
 ## pyfile spider_porject 的处理程序 ##
 针对 “生命的奥秘”数据处理脚本等。
+
+
+
+https://www.genecopoeia.com/product/search/detail.php?prt=15&cid=&key=RmiR6228&type=mirna&choose=RmiR6228
+
+https://gcdev.fulengen.cn/product/search/detail.php?prt=15&cid=&key=RmiR6228&type=mirna&choose=RmiR6228
