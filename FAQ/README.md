@@ -55,15 +55,30 @@ FAQ 数据表设置，使用 INNODB 引擎。
 1. 插件设置 FAQ 分类目录保存在 `wp_terms` 表。
 2. 插件的 FAQ 信息使用 `wp_posts` 表存储。
 
+设置后效果图：
+![Ultimate FAQs 插件设置效果图](https://i.imgur.com/Rq4vo49.png)
 
 ### 插件弊端： ###
 1. FAQ 保存到 `wp_posts` 中，生成的文章链接无法打开，404 not found。
 2. 文章使用短代码 `[ultimate-faqs]` 中对内容进行评论提交后，跳转的路径 404 not found ： 因为跳转的路径为 `<http://host>/ufaqs/what-delivery-formats-do-you-offer-for-your-orf-clones/#comment-11` ,而这条 FAQ 保存到 `wp_posts` 中的字段 `post_type` 的值为 `ufaq`，所以评论后，跳转的链接，WordPress 无法打开。
 3. 文章使用短代码 `[ultimate-faqs]` 会将所有 FAQs 信息全部在文章中显示，暂未发现按照特定分类显示。高级功能需要付费。 `$4.00`
-4. P.S. 重点是未能体验 VIP 版本功能，不想付费。
+4. 因为使用 `wp_terms` 表存储分类目录，对获取FAQ的分类信息关系和FAQ的关系不是很友好。
+5. P.S. 重点是未能体验 VIP 版本功能，不想付费。
 
 
+## Accordion FAQ 插件使用和分析 ##
+因 `Ultimate FAQ` 存在各种问题，功能不满意，现分析 `Accordion FAQ`。
 
-P.S. 综上所述，需要自己开发一个。
+### Accordion FAQ 数据表 ### 
+1. 插件设置 FAQ 分类目录保存在 `wp_terms` 表。
+2. 插件的 FAQ 信息使用 `wp_posts` 表存储。
+
+设置后效果图：
+![Accordion FAQs 插件设置效果](https://i.imgur.com/TisqxBS.png)
+
+### 插件优缺点 ###
+1. FAQ 的创建和 Ultimate FAQ 类似，但比 Ultimate FAQ 更友好，不过创建的界面太过花俏。
+
+
 
 
