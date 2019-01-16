@@ -45,3 +45,5 @@ FAQ 数据表设置，使用 INNODB 引擎。
 ### FAQ 短代码管理表 ###
 管理，追踪生成的短代码所在地方。
 
+
+暂停开发，考虑使用插件 [Ultimate FAQ](https://wordpress.org/plugins/ultimate-faqs/ "Ultimate FAQ")
