@@ -45,8 +45,22 @@ FAQ 数据表设置，使用 INNODB 引擎。
 ### FAQ 短代码管理表 ###
 管理，追踪生成的短代码所在地方。
 
+参考插件：
+1. [Ultimate FAQ](https://wordpress.org/plugins/ultimate-faqs/ "Ultimate FAQ")
+2. [Accordion FAQ](https://wordpress.org/plugins/responsive-accordion-and-collapse/ "Accordion FAQ")
 
-暂停开发，考虑使用插件 [Ultimate FAQ](https://wordpress.org/plugins/ultimate-faqs/ "Ultimate FAQ")
+创建数据表（该表可能会重新修改，因为该边设计理念有些模糊）
+
+	CREATE TABLE `_faq_shortcode` (
+		`id`  int NOT NULL AUTO_INCREMENT ,
+		`short_code`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+		`location`  varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '记录使用的wp_posts表的ID' ,
+		`pubdate`  datetime NULL ,
+		`editdate`  datetime NULL ,
+		PRIMARY KEY (`id`)
+	)
+	ENGINE=InnoDB
+	DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci;
 
 ## Ultimate FAQ 插件使用和分析说明 ##
 安装使用后对插件的分析结果，决定是否使用插件还是重新开发。
