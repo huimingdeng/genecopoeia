@@ -14,6 +14,8 @@ LentiManager.zip 慢病毒管理插件的压缩包，用于WordPress下载安装
 
 20180823 pio-related-posts 文本相似度插件，第二版的数据源同时由两位同事提供，danhuang 和 junfangzhang 。
 
+Jan 17,2019: 需要修改，随机显示 pio 或 相似度内容，但 pio 的概率要提高。
+
 ## [BmnarsAudit](https://github.com/huimingdeng/genecopoeia/tree/master/BmnarsAudit) 《[生命的奥秘](http://www.lifeomics.com/)》爬虫管理插件 ##
 添加插件入口，设置入口管理列表。
 
@@ -33,10 +35,14 @@ BmnarsAudit 插件的数据源获取工具 Python爬虫获取目标网站数据�
 
 从 [hello-world.git](https://github.com/huimingdeng/hello-world) 仓库迁移而来。-- Aug 28,2018
 
+Jan 17,2019: 没有使用。
+
 ## [searchBar](https://github.com/huimingdeng/genecopoeia/tree/master/searchBar) 插件 ##
 为 genecopoeia 公司开发的search3查询工具，利用短代码在文章页中设置特定的查询条件，一篇文章中只能设置一个；修改能在一篇文章中设置多个查询后则命名为 list_search_bar_plugs。
 
 从 [hello-world.git](https://github.com/huimingdeng/hello-world) 仓库迁移而来。-- Aug 28,2018
+
+Jan 17,2019: 没有使用。
 
 ## [fix_wp_404](https://github.com/huimingdeng/genecopoeia/tree/master/fix_wp_404) 工具 ##
 脚本运行，查询检查 WordPress 文章中的 404 链接，修复文章中的 404 链接。
@@ -47,7 +53,7 @@ genecopoeia 网站搜索页面的克隆产品筛选菜单管理插件。（尝�
 ## pyfile spider_porject 的处理程序 ##
 针对 “生命的奥秘”数据处理脚本等。
 
+## FAQ 插件 ##
+分析 Ultimate FAQ 和 Accordion FAQ 插件，学习重新开发 FAQ 插件，方便使用 Python 获取 FAQs 内容进行训练。
 
-
-https://www.genecopoeia.com/product/search/detail.php?prt=15&cid=&key=RmiR6228&type=mirna&choose=RmiR6228
 
