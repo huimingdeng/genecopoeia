@@ -1,0 +1,14 @@
+{
+    "name": "huimingdeng/genecopoeia",
+    "description": "WordPress plugin development by genecopoeia",
+    "type": "project",
+    "license": "no",
+    "authors": [
+        {
+            "name": "huimingdeng",
+            "email": "1458575181@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
