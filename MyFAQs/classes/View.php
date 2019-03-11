@@ -20,7 +20,7 @@ class View
      */
     public function make($file){
         $this->file = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.$file.'.php';
-        print_r($this->file);
+//        print_r($this->file);
         return $this;
     }
 
@@ -38,7 +38,7 @@ class View
      */
     public function __toString()
     {
-        echo "__toString";
+//        echo "__toString";
         extract($this->vars); // 因在同一作用域中，模板中可以获得
         include $this->file;
         return '';

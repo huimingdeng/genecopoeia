@@ -35,9 +35,9 @@ class FaqCategories
         return $slug;
     }
 
-    private function categories_page(){
-
-        return $this->view->make('index');
+    public function categories_page(){
+//echo 'ok';
+        echo $this->view->make('index');
 
     }
 
