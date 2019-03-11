@@ -14,13 +14,16 @@ use MyFAQs\Classes\Model; // 数据库操作模型类
 
 class MyFAQs{
     private static $_instance = null;
+    const VERSION = '0.0.1';
 
     private function __construct()
     {
         spl_autoload_register(array($this,'__autoload'));
         add_action('wp_ajax_spectrom_sync', array($this, 'check_ajax_query'));
-        if(is_admin())
+        if(is_admin()) {
             FaqCategories::getInstance();
+
+        }
     }
 
     public function __autoload($class){
@@ -42,6 +45,16 @@ class MyFAQs{
         //     $ajax = new SyncAjax();
         //     $ajax->dispatch();
         // }
+    }
+
+    /**
+     * @param $ref assets uri / file name
+     * @return string
+     */
+    public static function get_asset($ref)
+    {
+        $ret = plugin_dir_url(__FILE__) . 'assets/' . $ref;
+        return $ret;
     }
 
 

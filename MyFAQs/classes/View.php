@@ -13,7 +13,7 @@ class View
 {
     protected $file;
     // 模板变量
-    protected $vars = array(); //兼容5.4一下版本用 array()
+    protected $vars = array(); //兼容5.4以下版本用 array()
 
     /**
      * @param $file Template file name
