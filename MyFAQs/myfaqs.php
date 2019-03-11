@@ -9,6 +9,7 @@
 namespace MyFAQs;
 
 
+use MyFAQs\Classes\FaqCategories;
 use MyFAQs\Classes\Model; // 数据库操作模型类
 
 class MyFAQs{
@@ -18,12 +19,17 @@ class MyFAQs{
     {
         spl_autoload_register(array($this,'__autoload'));
         add_action('wp_ajax_spectrom_sync', array($this, 'check_ajax_query'));
+        if(is_admin())
+            FaqCategories::getInstance();
     }
 
-    private function __autoload($class){
+    public function __autoload($class){
         $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR;
 
 //        $class = strtolower($class);
+        $classname = explode('\\',$class);//命名空间获取最后一个元素为文件名
+//        print_r($classname);
+        $class = array_pop($classname);
 
         $classfile = $path . $class . ".php";
 
@@ -38,7 +44,6 @@ class MyFAQs{
         // }
     }
 
-    private function __clone(){ }
 
 	public static function getInstance(){
 
