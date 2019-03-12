@@ -1,13 +1,66 @@
 <div class="wrap">
-    <ul class="nav nav-tabs">
-        <?php if(!empty($tabs)){
-            foreach ($tabs as $tabname => $tabinfo){
-                $actived = ($tabname==='categories')?'active':'';
-                $uri = ($tabname!=='categories')?'/wp-admin/admin.php?page='.$tabname:'';
-                ?>
-            <li role="presentating" class="<?php echo $actived;?>"><a href="<?php echo $uri;?>" title="<?php echo $tabinfo['title'];?>"><i class="<?php echo $tabinfo['icon'];?>"></i>&nbsp;&nbsp;<?php echo $tabinfo['name'];?></a></li>
-        <?php }
-        }?>
-    </ul>
+    <?php include 'header.php';?>
     <h2><?php echo $title;?></h2>
+    <content>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Add New FAQ Category</h3>
+                <form action="add.php">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" class="form-control" name="name" >
+                    </div>
+                    <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <input type="text" id="slug" class="form-control" name="slug">
+                    </div>
+                    <div class="form-group">
+                        <label for="parent">Parent FAQ Category</label>
+                        <br>
+                        <select name="parent" id="parent">
+                            <option value="0">Non</option>
+                            <?php if(!empty($data)){
+                                foreach ($data as $categories) {
+                                    echo "<option value='".$categories['id']."'>".$categories['slug']."</option>\n";
+                                }
+                            }?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-default" type="submit" name="submit" value="submit">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8 pull-right">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Slug</th>
+                        <th>Sum</th>
+                        <th>Parent</th>
+                        <th>EditDate</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php  if(!empty($data)){
+                        foreach ($data as $categories){?>
+                            <tr>
+                                <td><?php echo $categories['name'];?></td>
+                                <td><?php echo $categories['slug'];?></td>
+                                <td><?php echo $categories['sumfaq'];?></td>
+                                <td><?php echo $categories['parent'];?></td>
+                                <td><?php echo $categories['editdate'];?></td>
+                            </tr>
+                    <?php  }
+                        }else{ ?>
+                        <tr>
+                            <td colspan="5" align="center">No data....</td>
+                        </tr>
+                    <?php  } ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </content>
 </div>
