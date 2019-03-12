@@ -38,7 +38,16 @@ class Admin
             strtolower(FAQs::MENU_NAME),
             array($this,'getFaqsPage')
         );
+        add_submenu_page(
+            strtolower(FaqCategories::MENU_NAME),
+            FaqManage::MENU_NAME,
+            MyFAQs::PLUGIN_NAME.'&middot;'.FaqManage::MENU_NAME,
+            'edit_pages',
+            strtolower(FaqManage::MENU_NAME),
+            array($this, 'getTracesPage')
+        );
     }
+
 
     public function getCategoryPage(){
         return FaqCategories::getInstance()->categories_page();
@@ -48,10 +57,14 @@ class Admin
         return FAQs::getInstance()->faqs_page();
     }
 
+    public function getTracesPage(){
+        return FaqManage::getInstance()->traces_page();
+    }
+
     public function admin_enqueue_scripts(){
         $screen = get_current_screen();
         wp_register_style('myfaqdef',MyFAQs::get_asset('css/bootstrap.min.css'), MyFAQs::VERSION);
-        if($screen->id === 'myfaqs_page_faqs' || $screen->id === 'toplevel_page_categories'){
+        if($screen->id === 'myfaqs_page_faqs' || $screen->id === 'toplevel_page_categories' || $screen->id === 'myfaqs_page_traces'){
             wp_enqueue_style('myfaqdef');
         }
     }

@@ -26,25 +26,7 @@ class FAQs
      *
      */
     public function faqs_page(){
-//echo 'ok';
-        $tabs = array(
-            'categories' => array(
-                'name' => __("MyFAQs Categories", 'myfaqs'),
-                'title' => __('Setting Category for FAQs'),
-                'icon' => 'glyphicon glyphicon-cog',
-            ),
-            'faqs' => array(
-                'name' => __("MyFAQs&middot;Faqs", 'myfaqs'),
-                'title' => __('FAQs list'),
-                'icon' => 'glyphicon glyphicon-list-all',
-            ),
-            'used' => array(
-                'name' => __("MyFAQs used trace", 'myfaqs'),
-                'title' => __('Track FAQ usage for management'),
-                'icon' => 'glyphicon glyphicon-th-list',
-            ),
-        );
-        echo $this->view->make('faqs')->with('title','Faqs')->with('tabs', $tabs);
+        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME));
 
     }
 

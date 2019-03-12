@@ -26,25 +26,16 @@ class FaqCategories
      *
      */
     public function categories_page(){
+        $categories = new Model('categories');
+        $categories->setFiles('id,name,slug,sumfaq,editdate,parent');
+        $data = $categories->getList();
+        echo $this->view->make('categories')->with('title','Categories')->with('actived',strtolower(self::MENU_NAME))->with('data',$data);
 
-        $tabs = array(
-            'categories' => array(
-                'name' => __("MyFAQs Categories", 'myfaqs'),
-                'title' => __('Setting Category for FAQs'),
-                'icon' => 'glyphicon glyphicon-cog',
-            ),
-            'faqs' => array(
-                'name' => __("MyFAQs&middot;Faqs", 'myfaqs'),
-                'title' => __('FAQs list'),
-                'icon' => 'glyphicon glyphicon-list-all',
-            ),
-            'used' => array(
-                'name' => __("MyFAQs used trace", 'myfaqs'),
-                'title' => __('Track FAQ usage for management'),
-                'icon' => 'glyphicon glyphicon-th-list',
-            ),
-        );
-        echo $this->view->make('categories')->with('title','Categories')->with('tabs', $tabs);
+    }
+
+    public function addCategory(){
+        $category = new Model('categries');
+
 
     }
 
