@@ -4,25 +4,23 @@
  * Plugin URI: #
  * Description: FAQ 展示工具，后期将结合百度 AnyQ | RasaHQ 形成机器客服
  * Author: DHM(huimingdeng)
- * Version: 0.0.1
+ * Version: 0.0.2
  */
 namespace MyFAQs;
 
-
-use MyFAQs\Classes\FaqCategories;
-use MyFAQs\Classes\Model; // 数据库操作模型类
+use MyFAQs\Classes\Admin;
 
 class MyFAQs{
     private static $_instance = null;
-    const VERSION = '0.0.1';
+    const VERSION = '0.0.2';
+    const PLUGIN_NAME = 'MyFAQs';
 
     private function __construct()
     {
         spl_autoload_register(array($this,'__autoload'));
         add_action('wp_ajax_spectrom_sync', array($this, 'check_ajax_query'));
         if(is_admin()) {
-            FaqCategories::getInstance();
-
+            Admin::getInstance();
         }
     }
 
