@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : user-genec1-localhost@wamp-or-phpStudy2018
+Source Server         : root@localhost
 Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : cn_web
@@ -10,16 +10,16 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-01-17 17:18:48
+Date: 2019-03-12 13:57:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for _faq_catagories
+-- Table structure for _faq_categories
 -- ----------------------------
-DROP TABLE IF EXISTS `_faq_catagories`;
-CREATE TABLE `_faq_catagories` (
+DROP TABLE IF EXISTS `_faq_categories`;
+CREATE TABLE `_faq_categories` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL COMMENT '分类名',
   `slug` varchar(255) NOT NULL COMMENT '别名,必须英文',
@@ -29,4 +29,9 @@ CREATE TABLE `_faq_catagories` (
   `parent` int(10) DEFAULT NULL COMMENT '父级分类',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of _faq_categories
+-- ----------------------------
+INSERT INTO `_faq_categories` VALUES ('1', 'FAQ', 'faq', '2019-03-12 13:33:33', '2019-03-12 13:33:41', '0000000000', null);
