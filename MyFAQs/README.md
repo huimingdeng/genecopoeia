@@ -5,9 +5,9 @@
 FAQ 数据表设置，使用 INNODB 引擎。
 
 ### FAQ 分类表 ###
-创建 FAQ 的分类表 `_faq_catagories`。用于记录 FAQ 的分类，统计当前分类下有多少 FAQ。
+创建 FAQ 的分类表 `_faq_categories`。用于记录 FAQ 的分类，统计当前分类下有多少 FAQ。
 
-	CREATE TABLE `_faq_catagories` (
+	CREATE TABLE `_faq_categories` (
 		`id`  int(10) UNSIGNED NOT NULL AUTO_INCREMENT ,
 		`name`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '分类名' ,
 		`slug`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '别名,必须英文' ,
