@@ -12,31 +12,15 @@ namespace MyFAQs\Classes;
 class FAQs
 {
     private static $_instance = null;
-    const FAQS_PAGE = 'faqs';
+    const MENU_NAME  = 'faqs';
     private $view;
 
     private function __construct()
     {
         $this->view = new View();
-        add_action('admin_menu', array($this, 'add_faqs_page'));
+
     }
 
-    /**
-     * @return false|string
-     */
-    public function add_faqs_page()
-    {
-
-        /*$slug = add_submenu_page(
-            'options-general.php',
-            __('MyFAQs Faqs list', 'myfaqs'),
-            __('MyFAQs&middot;Faqs', 'myfaqs'),		// displayed in menu
-            'manage_options',							// capability
-            self::FAQS_PAGE,						// menu slug
-            array($this, 'faqs_page')				// callback
-        );
-        return $slug;*/
-    }
 
     /**
      *
