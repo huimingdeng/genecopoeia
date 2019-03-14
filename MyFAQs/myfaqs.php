@@ -9,6 +9,7 @@
 namespace MyFAQs;
 
 use MyFAQs\Classes\Admin;
+use MyFAQs\Classes\Ajax;
 
 class MyFAQs{
     private static $_instance = null;
@@ -18,7 +19,7 @@ class MyFAQs{
     private function __construct()
     {
         spl_autoload_register(array($this,'__autoload'));
-        add_action('wp_ajax_spectrom_sync', array($this, 'check_ajax_query'));
+        add_action('wp_ajax_myfaqs', array($this, 'check_ajax_query'));
         if(is_admin()) {
             Admin::getInstance();
         }
@@ -38,11 +39,11 @@ class MyFAQs{
             require_once $classfile;
     }
 
-    private function check_ajax_query(){
-        // if (defined('DOING_AJAX') && DOING_AJAX) {
-        //     $ajax = new SyncAjax();
-        //     $ajax->dispatch();
-        // }
+    public function check_ajax_query(){
+         if (defined('DOING_AJAX') && DOING_AJAX) {
+             $ajax = new Ajax();
+             $ajax->dispatch();
+         }
     }
 
     /**
