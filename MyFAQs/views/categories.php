@@ -28,6 +28,7 @@
                     </div>
                     <div class="form-group">
                         <input class="btn btn-default" type="submit" name="submit" value="submit">
+                        <a href="javascript:void(0);" onclick="Category.add();">Test</a>
                     </div>
                 </form>
             </div>
