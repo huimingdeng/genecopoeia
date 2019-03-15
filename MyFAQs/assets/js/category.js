@@ -15,15 +15,14 @@ Category.prototype.init = function () {
 Category.prototype.add = function () {
     this.operation = 'add';
     var _self = this;
-    var data = { "operation":_self.operation, "action":_self.ajaxponit, 'data':jQuery('#AddNewC').serialize() };
+    var data = { "operation":_self.operation, "type":_self.myaction, "action":_self.ajaxponit, 'data':jQuery('#AddNewC').serialize() };
     
     var show_xhr = {
-        "type": 'get',
+        "type": 'post',
         "async": true, // false,
         "data": data,
         "url": ajaxurl,
         "dataType": 'JSON',
-        "contentType": 'application/json; charset=utf-8',
         "success": function(response) {
             console.dir(response);
             console.dir(jQuery('#AddNewC').serialize());
