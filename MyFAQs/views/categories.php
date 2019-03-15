@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-4">
                 <h3>Add New FAQ Category</h3>
-                <form action="add.php" id="AddNewC">
+                <form id="AddNewC">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" class="form-control" name="name" >
@@ -27,8 +27,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input class="btn btn-default" type="submit" name="submit" value="submit">
-                        <a href="javascript:void(0);" onclick="Category.add();">Test</a>
+                        <a class="btn btn-default" href="javascript:void(0);" onclick="Category.add();">sublimt</a>
                     </div>
                 </form>
             </div>
