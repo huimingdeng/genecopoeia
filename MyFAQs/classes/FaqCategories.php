@@ -35,8 +35,8 @@ class FaqCategories
 
     public function add($data){
         $category = new Model('categries');
-        $category->addOne($data);
-
+        $msg = $category->addOne($data);
+        return $msg;
     }
 
 

@@ -18,7 +18,6 @@ class Ajax extends Input
         $operation = $this->post('operation');
         $data = $this->post('data');
         $type = $this->post('type');
-        $class = new FaqCategories();
         // set headers
         header('Content-Type: application/json; charset=utf-8');
         header('Content-Encoding: ajax');
@@ -28,9 +27,9 @@ class Ajax extends Input
             case 'add':
             // print_r($data);
                 $data2 = $this->str2arr($data);
-                
-                // $msg = $obj->add($data);
-                echo json_encode($data2);
+                $obj = $this->getObject($type);
+                $msg = $obj->add($data);
+                echo json_encode(array('msg'=>$msg));
                 exit(0);
                 break;
             case 'edit':
