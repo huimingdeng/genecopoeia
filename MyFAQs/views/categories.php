@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-4">
                 <h3>Add New FAQ Category</h3>
-                <form action="add.php">
+                <form action="add.php" id="AddNewC">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" class="form-control" name="name" >
