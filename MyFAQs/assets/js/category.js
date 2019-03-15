@@ -3,48 +3,34 @@
  */
 
 function Category() {
-    this.action = 'category';
+    this.myaction = 'category';
     this.operation = 'init';
-}
+    this.ajaxponit = 'myfaqs';
+};
 
 Category.prototype.init = function () {
-    /*var _self = this;
-    data = {
-        "operation":_self.operation,
-        "data":"test"
-    };
-    ajax_xhr = {
-        type:'post',
-        async:true,
-        data:data,
-        url:ajaxurl,
-        dataType:'json',
-        success:function (response) {
-            console.dir(response);
-        }
-    }
-    jQuery.ajax(ajax_xhr);*/
+
 };
 
 Category.prototype.add = function () {
     this.operation = 'add';
     var _self = this;
-    data = {
-        "operation":_self.operation,
-        "data":jQuery("form").serialize()
-    };
-    console.log(data);
-    ajax_xhr = {
-        type:'post',
-        async:true,
-        data:data,
-        url:ajaxurl,
-        dataType:'json',
-        success:function (response) {
+    var data = { "operation":_self.operation, "action":_self.ajaxponit, 'data':jQuery('#AddNewC').serialize() };
+    
+    var show_xhr = {
+        "type": 'get',
+        "async": true, // false,
+        "data": data,
+        "url": ajaxurl,
+        "dataType": 'JSON',
+        "contentType": 'application/json; charset=utf-8',
+        "success": function(response) {
             console.dir(response);
+            console.dir(jQuery('#AddNewC').serialize());
         }
-    }
-    jQuery.ajax(ajax_xhr);
+    };
+
+    jQuery.ajax(show_xhr);
 
 };
 
