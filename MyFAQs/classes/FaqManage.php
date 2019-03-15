@@ -15,7 +15,7 @@ class FaqManage
     const MENU_NAME  = 'traces';
     private $view;
 
-    private function __construct()
+    public function __construct()
     {
         $this->view = new View();
 

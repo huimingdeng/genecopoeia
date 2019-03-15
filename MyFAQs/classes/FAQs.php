@@ -15,7 +15,7 @@ class FAQs
     const MENU_NAME  = 'faqs';
     private $view;
 
-    private function __construct()
+    public function __construct()
     {
         $this->view = new View();
 

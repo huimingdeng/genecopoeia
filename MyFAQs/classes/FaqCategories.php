@@ -17,7 +17,7 @@ class FaqCategories
     const MENU_NAME = 'Categories';
     private $view;
 
-    private function __construct()
+    public function __construct()
     {
         $this->view = new View();
     }
@@ -33,9 +33,9 @@ class FaqCategories
 
     }
 
-    public function addCategory(){
+    public function add($data){
         $category = new Model('categries');
-
+        $category->addOne($data);
 
     }
 

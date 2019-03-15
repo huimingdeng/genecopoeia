@@ -8,12 +8,17 @@
 
 namespace MyFAQs\Classes;
 
+use MyFAQs\Classes\FAQs;
+use MyFAQs\Classes\FaqCategories;
+use MyFAQs\Classes\FaqManage;
 
 class Ajax extends Input
 {
     public function dispatch(){
         $operation = $this->post('operation');
         $data = $this->post('data');
+        $type = $this->post('type');
+        $class = new FaqCategories();
         // set headers
         header('Content-Type: application/json; charset=utf-8');
         header('Content-Encoding: ajax');
@@ -21,15 +26,43 @@ class Ajax extends Input
         header('Expires: -1');
         switch ($operation){
             case 'add':
-                print_r($data);
+            // print_r($data);
+                $data2 = $this->str2arr($data);
+                
+                // $msg = $obj->add($data);
+                echo json_encode($data2);
+                exit(0);
                 break;
             case 'edit':
                 break;
             case 'delete':
                 break;
             default:
-                print_r($data);
+                
                 break;
         }
+        // exit(0);
+    }
+
+    private function str2arr ($str,$sp="&",$kv="=")
+    {
+        $arr = str_replace(array($kv,$sp),array('"=>"','","'),'array("'.$str.'")');
+        eval("\$arr"." = $arr;");   
+        return $arr;
+    }
+
+    public function getObject($type){
+        switch ($type){
+            case 'category':
+                $class = new FaqCategories();
+                break;
+            case 'faqs':
+                $class = new FAQs();
+                break;
+            case 'traces':
+                $class = new FaqManage();
+                break;
+        }
+        return $class;
     }
 }
