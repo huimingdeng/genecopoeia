@@ -1,40 +1,39 @@
 /**
- * Created by huimingdeng on 2019/3/14.
+ * Created by huimingdeng on 2019/3/16.
  */
 
-function Category() {
-    this.myaction = 'category';
+function Traces() {
+    this.myaction = 'traces';
     this.operation = 'init';
     this.ajaxponit = 'myfaqs';
+}
+
+Traces.prototype.init = function () {
+
 };
 
-Category.prototype.init = function () {
-
-};
-
-Category.prototype.add = function () {
+Traces.prototype.add = function () {
     this.operation = 'add';
     var _self = this;
-    var data = { "operation":_self.operation, "type":_self.myaction, "action":_self.ajaxponit, 'data':jQuery('#AddNewC').serialize() };
-    
-    var show_xhr = {
+    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data': 'add_data'};
+
+    var add_xhr = {
         "type": 'post',
         "async": true, // false,
         "data": data,
         "url": ajaxurl,
         "dataType": 'JSON',
         "success": function(response) {
-            console.dir(response);
-            console.dir(jQuery('#AddNewC').serialize());
+
         }
     };
 
-    jQuery.ajax(show_xhr);
-
+    jQuery.ajax(add_xhr);
 };
 
-Category.prototype.edit = function () {
+Traces.prototype.edit = function () {
     this.operation = 'edit';
+
     var _self = this;
     var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit,'data' : 'edit_data' };
 
@@ -51,7 +50,7 @@ Category.prototype.edit = function () {
     jQuery.ajax(edit_xhr);
 };
 
-Category.prototype.delete = function () {
+Traces.prototype.delete = function () {
     this.operation = 'delete';
     var _self = this;
     var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : 'deleted_id'};
@@ -70,10 +69,10 @@ Category.prototype.delete = function () {
         }
     };
     jQuery.ajax(del_xhr);
-}
+};
 
-var Category = new Category();
+var Traces = new Traces();
 
 jQuery(document).ready(function () {
-    Category.init();
+    Traces.init();
 });
