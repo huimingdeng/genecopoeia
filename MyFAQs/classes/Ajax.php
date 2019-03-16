@@ -14,6 +14,9 @@ use MyFAQs\Classes\FaqManage;
 
 class Ajax extends Input
 {
+    /**
+     * Setting Ajax point
+     */
     public function dispatch(){
         $operation = $this->post('operation');
         $data = $this->post('data');
@@ -40,9 +43,16 @@ class Ajax extends Input
                 
                 break;
         }
-        // exit(0);
+         exit(0);
     }
 
+    /**
+     * Converts serialized form data into arrays.
+     * @param $str serialized from data
+     * @param string $sp Connection separator
+     * @param string $kv The key-value connection separator
+     * @return mixed
+     */
     private function str2arr ($str,$sp="&",$kv="=")
     {
         $arr = str_replace(array($kv,$sp),array('"=>"','","'),'array("'.$str.'")');
@@ -50,6 +60,10 @@ class Ajax extends Input
         return $arr;
     }
 
+    /**
+     * @param $type
+     * @return \MyFAQs\Classes\FaqCategories|\MyFAQs\Classes\FaqManage|\MyFAQs\Classes\FAQs
+     */
     public function getObject($type){
         switch ($type){
             case 'category':

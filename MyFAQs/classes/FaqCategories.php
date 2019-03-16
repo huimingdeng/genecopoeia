@@ -23,7 +23,7 @@ class FaqCategories
     }
 
     /**
-     *
+     * Category list page.
      */
     public function categories_page(){
         $categories = new Model('categories');
