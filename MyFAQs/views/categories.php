@@ -7,18 +7,18 @@
                 <h3>Add New FAQ Category</h3>
                 <form id="AddNewC">
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name"><?php _e('Name','myfaqs');?></label>
                         <input type="text" id="name" class="form-control" name="name" >
                     </div>
                     <div class="form-group">
-                        <label for="slug">Slug</label>
+                        <label for="slug"><?php _e('Slug','myfaqs');?></label>
                         <input type="text" id="slug" class="form-control" name="slug">
                     </div>
                     <div class="form-group">
-                        <label for="parent">Parent FAQ Category</label>
+                        <label for="parent"><?php _e('Parent FAQ Category', 'myfaqs');?></label>
                         <br>
                         <select name="parent" id="parent">
-                            <option value="0">Non</option>
+                            <option value="0"><?php _e('Non', 'myfaqs');?></option>
                             <?php if(!empty($data)){
                                 foreach ($data as $categories) {
                                     echo "<option value='".$categories['id']."'>".$categories['slug']."</option>\n";
@@ -27,7 +27,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <a class="btn btn-default" href="javascript:void(0);" onclick="Category.add();">sublimt</a>
+                        <a class="btn btn-default" href="javascript:void(0);" onclick="Category.add();"><?php _e('sublimt','myfaqs');?></a>
                     </div>
                 </form>
             </div>
@@ -35,11 +35,11 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Slug</th>
-                        <th>Sum</th>
-                        <th>Parent</th>
-                        <th>EditDate</th>
+                        <th><?php _e('Name', 'myfaqs');?></th>
+                        <th><?php _e('Slug', 'myfaqs');?></th>
+                        <th><?php _e('Sum', 'myfaqs');?></th>
+                        <th><?php _e('Parent', 'myfaqs');?></th>
+                        <th><?php _e('EditDate', 'myfaqs');?></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -55,7 +55,7 @@
                     <?php  }
                         }else{ ?>
                         <tr>
-                            <td colspan="5" align="center">No data....</td>
+                            <td colspan="5" align="center"><?php _e('No data', 'myfaqs');?>....</td>
                         </tr>
                     <?php  } ?>
                     </tbody>
