@@ -49,7 +49,7 @@ Category.prototype.save = function () {
 Category.prototype.edit = function (id) {
     this.operation = 'popup';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit,'data' : 'edit_data' };
+    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit,'data' : id };
 
     var edit_xhr = {
         type: 'post',
@@ -58,7 +58,10 @@ Category.prototype.edit = function (id) {
         url: ajaxurl,
         dataType: 'HTML',
         success:function (response) {
-            alert(response);
+
+                jQuery('.wrap aside').html(response);
+                jQuery("#editModal").modal();
+
         }
     };
     jQuery.ajax(edit_xhr);

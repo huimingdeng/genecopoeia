@@ -32,7 +32,7 @@
                 </form>
             </div>
             <div class="col-md-8 pull-right">
-                <table class="table table-hover">
+                <table class="table table-hover table-striped">
                     <thead>
                     <tr>
                         <th><?php _e('Name', 'myfaqs');?></th>
@@ -66,4 +66,5 @@
             </div>
         </div>
     </content>
+    <aside></aside>
 </div>
