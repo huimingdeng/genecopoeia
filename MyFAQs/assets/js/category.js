@@ -24,8 +24,12 @@ Category.prototype.add = function () {
         "url": ajaxurl,
         "dataType": 'JSON',
         "success": function(response) {
-            console.dir(response);
-            console.dir(jQuery('#AddNewC').serialize());
+            if(response.status==200){
+                alert(response.msg);
+                window.location.href = '/wp-admin/admin.php?page=categories';
+            }else{
+                alert(response.msg);
+            }
         }
     };
 

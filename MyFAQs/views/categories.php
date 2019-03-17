@@ -17,7 +17,7 @@
                     <div class="form-group">
                         <label for="parent"><?php _e('Parent FAQ Category', 'myfaqs');?></label>
                         <br>
-                        <select name="parent" id="parent">
+                        <select name="parent" class="form-control" id="parent">
                             <option value="0"><?php _e('Non', 'myfaqs');?></option>
                             <?php if(!empty($data)){
                                 foreach ($data as $categories) {
