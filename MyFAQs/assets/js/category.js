@@ -36,9 +36,18 @@ Category.prototype.add = function () {
     jQuery.ajax(show_xhr);
 
 };
+/**
+ * Perform modifications or deletions based on the type.
+ */
+Category.prototype.save = function () {
 
-Category.prototype.edit = function () {
-    this.operation = 'edit';
+};
+/**
+ * Get popup window
+ * @param id
+ */
+Category.prototype.edit = function (id) {
+    this.operation = 'popup';
     var _self = this;
     var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit,'data' : 'edit_data' };
 
@@ -47,9 +56,9 @@ Category.prototype.edit = function () {
         async: true,
         data: data,
         url: ajaxurl,
-        dataType: 'JSON',
+        dataType: 'HTML',
         success:function (response) {
-
+            alert(response);
         }
     };
     jQuery.ajax(edit_xhr);

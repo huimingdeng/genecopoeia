@@ -39,6 +39,9 @@ class FaqCategories
         return $msg;
     }
 
+    public function getPopup(){
+        return (string)$this->view->make('catpopup')->with('id','test-id');
+    }
 
     /**
      * @return FaqCategories|null

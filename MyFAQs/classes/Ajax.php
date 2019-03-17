@@ -39,6 +39,12 @@ class Ajax extends Input
                 break;
             case 'delete':
                 break;
+            case 'popup':
+                $obj = $this->getObject($type);
+                echo $obj->getPopup();
+                exit(0);
+                echo json_encode($msg);
+                break;
             default:
                 
                 break;
