@@ -29,10 +29,10 @@ class Ajax extends Input
         switch ($operation){
             case 'add':
             // print_r($data);
-                $data2 = $this->str2arr($data);
+                $data2 = $this->str2arr(urldecode($data));
                 $obj = $this->getObject($type);
-                $msg = $obj->add($data);
-                echo json_encode(array('msg'=>$msg));
+                $msg = $obj->add($data2);
+                echo json_encode($msg);
                 exit(0);
                 break;
             case 'edit':
