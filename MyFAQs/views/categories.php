@@ -40,6 +40,7 @@
                         <th><?php _e('Sum', 'myfaqs');?></th>
                         <th><?php _e('Parent', 'myfaqs');?></th>
                         <th><?php _e('EditDate', 'myfaqs');?></th>
+                        <th><?php _e('Action','myfaqs');?></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -51,6 +52,8 @@
                                 <td><?php echo $categories['sumfaq'];?></td>
                                 <td><?php echo $categories['parent'];?></td>
                                 <td><?php echo $categories['editdate'];?></td>
+                                <td><a href="javascript:void(0);" class="btn btn-primary btn-sm" onclick="Category.edit(<?php echo $categories['id'];?>)"><?php _e('Edit', 'myfaqs');?></a>&nbsp;<a
+                                            href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="Category.delete(<?php echo $categories['id'];?>)"><?php _e('Delete', 'myfaqs');?></a></td>
                             </tr>
                     <?php  }
                         }else{ ?>
