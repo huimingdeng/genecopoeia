@@ -86,12 +86,14 @@ class Admin
         $screen = get_current_screen();
         wp_register_style('myfaqdef', MyFAQs::get_asset('css/bootstrap.min.css'), array(), MyFAQs::VERSION);
         wp_register_script('jq1123', MyFAQs::get_asset('js/jquery-1.12.3.min.js'), array(), MyFAQs::VERSION);
+        wp_register_script('bootstrapv3', MyFAQs::get_asset('js/bootstrap.min.js'), array('jquery'), MyFAQs::VERSION);
         wp_register_script('category', MyFAQs::get_asset('js/category.js'), array('jquery'), MyFAQs::VERSION);
         wp_register_script('faqsjs', MyFAQs::get_asset('js/faqs.js'), array('jquery'), MyFAQs::VERSION);
         wp_register_script('traced', MyFAQs::get_asset('js/traces.js'), array('jquery'), MyFAQs::VERSION);
         if($screen->id === 'myfaqs_page_faqs' || $screen->id === 'toplevel_page_categories' || $screen->id === 'myfaqs_page_traces'){
             wp_enqueue_style('myfaqdef');
             wp_enqueue_script('jq1123');
+            wp_enqueue_script('bootstrapv3');
             if($screen->id === 'toplevel_page_categories'){
                 wp_enqueue_script('category');
             }

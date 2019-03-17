@@ -70,6 +70,12 @@ class Model
         return $this->msg;
     }
 
+    public function getOne($id){
+        $this->sql = "SELECT {$this->fields} FROM {$this->table} WHERE id = {$id} LIMIT 1";
+        $data = $this->wpdb->get_row($this->sql, ARRAY_A);
+        return $data;
+    }
+
     public function query($sql = ''){
         $data = $this->wpdb->get_results($sql, ARRAY_A);
         return $data;

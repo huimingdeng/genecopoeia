@@ -16,31 +16,41 @@ class FaqCategories
     private static $_instance = null;
     const MENU_NAME = 'Categories';
     private $view;
+    private $categories;
+    private $allcategories;
 
     public function __construct()
     {
         $this->view = new View();
+        $this->categories = new Model('categories');
     }
 
     /**
      * Category list page.
      */
     public function categories_page(){
-        $categories = new Model('categories');
-        $categories->setFiles('id,name,slug,sumfaq,editdate,parent');
-        $data = $categories->getList();
+
+        $this->categories->setFiles('id,name,slug,sumfaq,editdate,parent');
+        $data = $this->categories->getList();
+
         echo $this->view->make('categories')->with('title','Categories')->with('actived',strtolower(self::MENU_NAME))->with('data',$data);
 
     }
 
+    public function getAllCategories(){
+        $this->allcategories = $this->categories->getList();
+        return $this->allcategories;
+    }
+
     public function add($data){
-        $category = new Model('categories');
-        $msg = $category->addOne($data);
+        $msg = $this->categories->addOne($data);
         return $msg;
     }
 
-    public function getPopup(){
-        return (string)$this->view->make('catpopup')->with('id','test-id');
+    public function getPopup($id){
+        $data = $this->categories->getOne($id);
+        $category = $this->getAllCategories();
+        return (string)$this->view->make('catpopup')->with('data', $data)->with('categories',$category);
     }
 
     /**
