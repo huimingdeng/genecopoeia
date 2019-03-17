@@ -11,6 +11,7 @@ namespace MyFAQs\Classes;
 use MyFAQs\Classes\FAQs;
 use MyFAQs\Classes\FaqCategories;
 use MyFAQs\Classes\FaqManage;
+use MyFAQs\MyFAQs;
 
 class Ajax extends Input
 {
@@ -29,7 +30,7 @@ class Ajax extends Input
         switch ($operation){
             case 'add':
             // print_r($data);
-                $data2 = $this->str2arr(urldecode($data));
+                $data2 = MyFAQs::str2arr(urldecode($data));
                 $obj = $this->getObject($type);
                 $msg = $obj->add($data2);
                 echo json_encode($msg);
@@ -50,20 +51,6 @@ class Ajax extends Input
                 break;
         }
          exit(0);
-    }
-
-    /**
-     * Converts serialized form data into arrays.
-     * @param $str serialized from data
-     * @param string $sp Connection separator
-     * @param string $kv The key-value connection separator
-     * @return mixed
-     */
-    private function str2arr ($str,$sp="&",$kv="=")
-    {
-        $arr = str_replace(array($kv,$sp),array('"=>"','","'),'array("'.$str.'")');
-        eval("\$arr"." = $arr;");   
-        return $arr;
     }
 
     /**

@@ -76,6 +76,29 @@ class Model
         return $data;
     }
 
+    public function editOne($data){
+        $data['editdate'] = date('Y-m-d H:i:s',time());
+        $fields = array_keys($data);
+        foreach ($data as $k => $v)
+        {
+            $data[$k] = $this->format($k , $v);
+        }
+
+        $values = array_values($data);
+        // 需要按照table的字段类型设置字段
+        // ...
+        /*$query = sprintf("UPDATE {$this->table} SET %s",implode(',', $fields),implode(',',$values));
+        $bool = $this->wpdb->query($query);
+
+        if($bool !== false){
+            $this->msg = array( 'status'=>200, 'msg'=>_('Data added successfully','myfaqs'));
+        }else{
+            $this->msg = array( 'status'=>500, 'msg'=>_('Data addition error.','myfaqs'));
+        }
+
+        return $this->msg;*/
+    }
+
     public function query($sql = ''){
         $data = $this->wpdb->get_results($sql, ARRAY_A);
         return $data;

@@ -41,6 +41,30 @@ class MyFAQs{
             require_once $classfile;
     }
 
+    /**
+     * Converts serialized form data into arrays.
+     * @param $str serialized from data
+     * @param string $sp Connection separator
+     * @param string $kv The key-value connection separator
+     * @return mixed
+     */
+    public function str2arr ($str,$sp="&",$kv="=")
+    {
+        $arr = str_replace(array($kv,$sp),array('"=>"','","'),'array("'.$str.'")');
+        eval("\$arr"." = $arr;");
+        return $arr;
+    }
+
+    public function arr2str($arr){
+        $str = '';
+        $a = array();
+        foreach ($arr as $k=>$v) {
+            $a[] = $k . '=' . $v ;
+        }
+        $str = implode(',',$a);
+        return $str;
+    }
+
     public function plugins_loaded(){
         load_plugin_textdomain('myfaqs', FALSE, plugin_basename(dirname(__FILE__)) . '/languages');
         do_action('myfaqs_init');//创建一个行为钩子
@@ -51,6 +75,19 @@ class MyFAQs{
             $ajax = new Ajax();
             $ajax->dispatch();
         }
+    }
+    public function AddShortCode($atts){
+        $atts = shortcode_atts(
+            array(
+                'class'=>1,
+                'title'=>'Enter Gene Symbol or Accession No.',
+                'width'=>300
+            ),$atts);
+
+        ob_start();
+        include('views'.DIRECTORY_SEPARATOR.'shortcode.php');
+        $output = ob_get_clean();
+        return $output;
     }
 
     /**
@@ -75,3 +112,4 @@ class MyFAQs{
 }
 
 MyFAQs::getInstance();
+add_shortcode('myfaqs', array('MyFAQs','AddShortCode'));
