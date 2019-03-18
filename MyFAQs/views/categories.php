@@ -35,6 +35,7 @@
                 <table class="table table-hover table-striped">
                     <thead>
                     <tr>
+                        <th><input type="checkbox" name="select"></th>
                         <th><?php _e('Name', 'myfaqs');?></th>
                         <th><?php _e('Slug', 'myfaqs');?></th>
                         <th><?php _e('Sum', 'myfaqs');?></th>
@@ -47,6 +48,7 @@
                     <?php  if(!empty($data)){
                         foreach ($data as $categories){?>
                             <tr>
+                                <td><input type="checkbox" name="ids[]" value="<?php echo $categories['id']; ?>"></td>
                                 <td><?php echo $categories['name'];?></td>
                                 <td><?php echo $categories['slug'];?></td>
                                 <td><?php echo $categories['sumfaq'];?></td>

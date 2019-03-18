@@ -1,7 +1,7 @@
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" id="add-modal-dialog">
         <div class="modal-content">
-            <form method="post">
+            <form method="post" id="editForm">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="deleteModalLabel">

@@ -4,7 +4,7 @@
  * Plugin URI: #
  * Description: FAQ 展示工具，后期将结合百度 AnyQ | RasaHQ 形成机器客服
  * Author: DHM(huimingdeng)
- * Version: 0.0.7
+ * Version: 0.0.8
  */
 namespace MyFAQs;
 
@@ -13,7 +13,7 @@ use MyFAQs\Classes\Ajax;
 
 class MyFAQs{
     private static $_instance = null;
-    const VERSION = '0.0.7';
+    const VERSION = '0.0.8';
     const PLUGIN_NAME = 'MyFAQs';
 
     public function __construct()
@@ -30,9 +30,9 @@ class MyFAQs{
     public function autoload($class){
         $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR;
 
-//        $class = strtolower($class);
-        $classname = explode('\\',$class);//命名空间获取最后一个元素为文件名
-//        print_r($classname);
+       // $class = strtolower($class);
+        $classname = explode('\\',$class);// Namespace gets the last element as the filename.
+       // print_r($classname);
         $class = array_pop($classname);
 
         $classfile = $path . $class . ".php";
@@ -43,39 +43,54 @@ class MyFAQs{
 
     /**
      * Converts serialized form data into arrays.
-     * @param $str serialized from data
+     * @param string $str serialized from data
      * @param string $sp Connection separator
      * @param string $kv The key-value connection separator
      * @return mixed
      */
-    public function str2arr ($str,$sp="&",$kv="=")
+    public static function str2arr ($str,$sp="&",$kv="=")
     {
         $arr = str_replace(array($kv,$sp),array('"=>"','","'),'array("'.$str.'")');
         eval("\$arr"." = $arr;");
         return $arr;
     }
 
-    public function arr2str($arr){
-        $str = '';
+    /**
+     * Array conversion string.
+     * @param  Array $arr 
+     * @return String      
+     */
+    public static function arr2str($arr){
         $a = array();
         foreach ($arr as $k=>$v) {
-            $a[] = $k . '=' . $v ;
+            $a[] = '`'.$k . '` = ' . $v ;
         }
         $str = implode(',',$a);
         return $str;
     }
 
+    /**
+     * Add a plugin custom hook
+     */
     public function plugins_loaded(){
         load_plugin_textdomain('myfaqs', FALSE, plugin_basename(dirname(__FILE__)) . '/languages');
         do_action('myfaqs_init');//创建一个行为钩子
     }
 
+    /**
+     * Add Ajax action interfaces.
+     */
     public function add_ajax_point(){
         if (defined('DOING_AJAX') && DOING_AJAX) {
             $ajax = new Ajax();
             $ajax->dispatch();
         }
     }
+
+    /**
+     * @param $atts
+     * @return mixed
+     */
     public function AddShortCode($atts){
         $atts = shortcode_atts(
             array(
@@ -100,7 +115,9 @@ class MyFAQs{
         return $ret;
     }
 
-
+    /**
+     * @return MyFAQs|null
+     */
 	public static function getInstance(){
 
         if(NULL === self::$_instance){
@@ -111,5 +128,6 @@ class MyFAQs{
 	}
 }
 
+
+add_shortcode('myfaqs', array('MyFAQs','AddShortCode'));// The current short code is invalid, and subsequent debugging tests are required.
 MyFAQs::getInstance();
-add_shortcode('myfaqs', array('MyFAQs','AddShortCode'));
