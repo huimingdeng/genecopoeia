@@ -87,7 +87,11 @@ Category.prototype.edit = function (id) {
     };
     jQuery.ajax(edit_xhr);
 };
-
+/**
+ * Deletion of a category
+ * @param  Integer id  category's id
+ * @return mixed
+ */
 Category.prototype.delete = function (id) {
     this.operation = 'delete';
     var _self = this;
