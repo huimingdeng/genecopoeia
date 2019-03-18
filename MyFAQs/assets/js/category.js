@@ -88,10 +88,12 @@ Category.prototype.edit = function (id) {
     jQuery.ajax(edit_xhr);
 };
 
-Category.prototype.delete = function () {
+Category.prototype.delete = function (id) {
     this.operation = 'delete';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : 'deleted_id'};
+    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : id};
+
+    var bool = confirm("Delete the "+id+" ?");
 
     var del_xhr = {
         type: 'post',
@@ -100,13 +102,18 @@ Category.prototype.delete = function () {
         url: ajaxurl,
         dataType: 'JSON',
         success:function (response) {
-
+            if(response.status==200){
+                window.location = '/wp-admin/admin.php?page=categories';
+            }else{
+                alert(response.msg);
+            }
         },
         error:function (response) {
 
         }
     };
-    jQuery.ajax(del_xhr);
+    if(bool)
+        jQuery.ajax(del_xhr);
 }
 
 var Category = new Category();

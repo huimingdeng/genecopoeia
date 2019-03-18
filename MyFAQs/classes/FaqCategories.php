@@ -62,6 +62,15 @@ class FaqCategories
         return $msg;
     }
 
+    /**
+     * @param $id
+     * @return array
+     */
+    public function delete($id){
+        $msg = $this->categories->deleteOne($id);
+        return $msg;
+    }
+
     public function getPopup($id){
         $data = $this->categories->getOne($id);
         $category = $this->getAllCategories();

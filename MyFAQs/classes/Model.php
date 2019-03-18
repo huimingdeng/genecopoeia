@@ -70,6 +70,7 @@ class Model
     }
 
     /**
+     * Get the data by id.
      * @param $id
      * @return mixed
      */
@@ -79,6 +80,11 @@ class Model
         return $data;
     }
 
+    /**
+     * Perform modification
+     * @param array $data
+     * @return array
+     */
     public function editOne($data){
         $data['editdate'] = date('Y-m-d H:i:s',time());
         $id = $data['id'];
@@ -97,6 +103,21 @@ class Model
             $this->msg = array( 'status'=>500, 'msg'=>_('Data modification error.','myfaqs'));
         }
 
+        return $this->msg;
+    }
+
+    /**
+     * @param Integer $id
+     * @return array
+     */
+    public function deleteOne($id){
+        $query = "DELETE FROM {$this->table} WHERE id={$id}";
+        $bool = $this->wpdb->query($query);
+        if($bool !== false){
+            $this->msg = array( 'status'=>200, 'msg'=>_('Data deleted successfully','myfaqs'));
+        }else{
+            $this->msg = array( 'status'=>500, 'msg'=>_('Data deletion error.','myfaqs'));
+        }
         return $this->msg;
     }
 
