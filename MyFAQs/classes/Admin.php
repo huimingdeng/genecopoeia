@@ -8,7 +8,6 @@
 
 namespace MyFAQs\Classes;
 
-
 use MyFAQs\MyFAQs;
 
 class Admin

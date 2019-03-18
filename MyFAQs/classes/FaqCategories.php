@@ -18,6 +18,9 @@ class FaqCategories
     private $categories;
     private $allcategories;
 
+    /**
+     * FaqCategories constructor.
+     */
     public function __construct()
     {
         $this->view = new View();
@@ -29,7 +32,10 @@ class FaqCategories
      */
     public function categories_page(){
 
-        $this->categories->setFiles('id,name,slug,sumfaq,editdate,parent');
+        if (!empty($this->categories)) {
+            $this->categories->setFiles('id,name,slug,sumfaq,editdate,parent');
+        }
+        /** @var TYPE_NAME $data */
         $data = $this->categories->getList();
 
         echo $this->view->make('categories')->with('title','Categories')->with('actived',strtolower(self::MENU_NAME))->with('data',$data);
@@ -40,7 +46,9 @@ class FaqCategories
      * @return mixed
      */
     public function getAllCategories(){
-        $this->allcategories = $this->categories->getList();
+        if (!empty($this->categories)) {
+            $this->allcategories = $this->categories->getList();
+        }
         return $this->allcategories;
     }
 
@@ -58,6 +66,7 @@ class FaqCategories
      * @return array
      */
     public function edit($data){
+        /** @var TYPE_NAME $this */
         $msg = $this->categories->editOne($data);
         return $msg;
     }
@@ -71,6 +80,10 @@ class FaqCategories
         return $msg;
     }
 
+    /**
+     * @param $id
+     * @return string
+     */
     public function getPopup($id){
         $data = $this->categories->getOne($id);
         $category = $this->getAllCategories();

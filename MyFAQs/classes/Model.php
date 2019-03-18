@@ -20,6 +20,10 @@ class Model
     private $limited;
     private $msg = array();
 
+    /**
+     * Model constructor.
+     * @param $tab_name
+     */
     public function __construct($tab_name)
     {
         global $wpdb;
@@ -27,10 +31,16 @@ class Model
         $this->table = $this->prefix.$tab_name;
     }
 
+    /**
+     * @param string $fields
+     */
     public function setFiles($fields="*"){
         $this->fields = $fields;
     }
 
+    /**
+     * @return mixed
+     */
     public function getList(){
         $fields = $this->fields;
         $table = $this->table;
@@ -61,9 +71,9 @@ class Model
         $bool = $this->wpdb->query($query);
 
         if($bool !== false){
-            $this->msg = array( 'status'=>200, 'msg'=>_('Data added successfully','myfaqs'));
+            $this->msg = array( 'status'=>200, 'msg'=>__('Data added successfully','myfaqs'));
         }else{
-            $this->msg = array( 'status'=>500, 'msg'=>_('Data addition error.','myfaqs'));
+            $this->msg = array( 'status'=>500, 'msg'=>__('Data addition error.','myfaqs'));
         }
 
         return $this->msg;
@@ -98,9 +108,9 @@ class Model
         $bool = $this->wpdb->query($query);
 
         if($bool !== false){
-            $this->msg = array( 'status'=>200, 'msg'=>_('Data modified successfully','myfaqs'));
+            $this->msg = array( 'status'=>200, 'msg'=>__('Data modified successfully','myfaqs'));
         }else{
-            $this->msg = array( 'status'=>500, 'msg'=>_('Data modification error.','myfaqs'));
+            $this->msg = array( 'status'=>500, 'msg'=>__('Data modification error.','myfaqs'));
         }
 
         return $this->msg;
@@ -114,18 +124,25 @@ class Model
         $query = "DELETE FROM {$this->table} WHERE id={$id}";
         $bool = $this->wpdb->query($query);
         if($bool !== false){
-            $this->msg = array( 'status'=>200, 'msg'=>_('Data deleted successfully','myfaqs'));
+            $this->msg = array( 'status'=>200, 'msg'=>__('Data deleted successfully','myfaqs'));
         }else{
-            $this->msg = array( 'status'=>500, 'msg'=>_('Data deletion error.','myfaqs'));
+            $this->msg = array( 'status'=>500, 'msg'=>__('Data deletion error.','myfaqs'));
         }
         return $this->msg;
     }
 
+    /**
+     * @param string $sql
+     * @return mixed
+     */
     public function query($sql = ''){
         $data = $this->wpdb->get_results($sql, ARRAY_A);
         return $data;
     }
 
+    /**
+     * @return array
+     */
     public function getConstucture(){
         // Get table structure
         $sql  = 'describe ' . $this->table;
@@ -202,14 +219,24 @@ class Model
         return false;
     }
 
-    public function limitpage($start=0,$offeser=20){
+    /**
+     * @param int $start
+     * @param int $offeser
+     */
+    public function limitpage($start=0, $offeser=20){
         $this->limited = " limit {$start},{$offeser}";
     }
 
+    /**
+     * @return mixed
+     */
     public function getSql(){
         return $this->sql;
     }
 
+    /**
+     *
+     */
     public function __destruct()
     {
         // TODO: Implement __destruct() method.

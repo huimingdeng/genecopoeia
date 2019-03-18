@@ -17,6 +17,7 @@ class View
 
     /**
      * @param $file Template file name
+     * @return $this
      */
     public function make($file){
         $this->file = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.$file.'.php';
@@ -27,6 +28,7 @@ class View
     /**
      * @param string $name 变量名
      * @param string $value 变量值
+     * @return $this
      */
     public function with($name, $value){
         $this->vars[$name] = $value;
@@ -38,7 +40,6 @@ class View
      */
     public function __toString()
     {
-//        echo "__toString";
         extract($this->vars); // 因在同一作用域中，模板中可以获得
         include $this->file;
         return '';

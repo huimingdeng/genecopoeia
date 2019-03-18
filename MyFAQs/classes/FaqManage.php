@@ -30,6 +30,9 @@ class FaqManage
 
     }
 
+    /**
+     * @param $atts
+     */
     public function shortcode($atts){
         echo $this->view->make('shortcode');
     }
