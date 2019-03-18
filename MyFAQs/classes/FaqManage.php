@@ -30,6 +30,9 @@ class FaqManage
 
     }
 
+    public function shortcode($atts){
+        echo $this->view->make('shortcode');
+    }
 
     /**
      * @return FaqCategories|null

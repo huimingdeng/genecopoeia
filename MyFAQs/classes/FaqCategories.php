@@ -8,7 +8,6 @@
 
 namespace MyFAQs\Classes;
 
-
 use MyFAQs\MyFAQs;
 
 class FaqCategories
@@ -37,13 +36,29 @@ class FaqCategories
 
     }
 
+    /**
+     * @return mixed
+     */
     public function getAllCategories(){
         $this->allcategories = $this->categories->getList();
         return $this->allcategories;
     }
 
+    /**
+     * @param $data
+     * @return bool
+     */
     public function add($data){
         $msg = $this->categories->addOne($data);
+        return $msg;
+    }
+
+    /**
+     * @param $data
+     * @return array
+     */
+    public function edit($data){
+        $msg = $this->categories->editOne($data);
         return $msg;
     }
 

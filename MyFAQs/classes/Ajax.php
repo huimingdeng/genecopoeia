@@ -29,7 +29,6 @@ class Ajax extends Input
         header('Expires: -1');
         switch ($operation){
             case 'add':
-            // print_r($data);
                 $data2 = MyFAQs::str2arr(urldecode($data));
                 $obj = $this->getObject($type);
                 $msg = $obj->add($data2);
@@ -37,6 +36,11 @@ class Ajax extends Input
                 exit(0);
                 break;
             case 'edit':
+                $data2 = MyFAQs::str2arr(urldecode($data));
+                $obj = $this->getObject($type);
+                $msg = $obj->edit($data2);
+                echo json_encode($msg);
+                exit(0);
                 break;
             case 'delete':
                 break;
@@ -44,7 +48,6 @@ class Ajax extends Input
                 $obj = $this->getObject($type);
                 echo $obj->getPopup($data);
                 exit(0);
-                echo json_encode($msg);
                 break;
             default:
                 

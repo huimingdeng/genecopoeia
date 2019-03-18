@@ -8,6 +8,7 @@
 
 namespace MyFAQs\Classes;
 
+use MyFAQs\MyFAQs;
 
 class Model
 {
@@ -52,9 +53,7 @@ class Model
         foreach ($data as $k => $v)
         {
             $data[$k] = $this->format($k , $v);
-//            var_dump($data[$k]);
         }
-//        var_dump($data);
         $values = array_values($data);
         // 需要按照table的字段类型设置字段
         // ...
@@ -70,6 +69,10 @@ class Model
         return $this->msg;
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function getOne($id){
         $this->sql = "SELECT {$this->fields} FROM {$this->table} WHERE id = {$id} LIMIT 1";
         $data = $this->wpdb->get_row($this->sql, ARRAY_A);
@@ -78,25 +81,23 @@ class Model
 
     public function editOne($data){
         $data['editdate'] = date('Y-m-d H:i:s',time());
-        $fields = array_keys($data);
+        $id = $data['id'];
+        unset($data['id']);
         foreach ($data as $k => $v)
         {
             $data[$k] = $this->format($k , $v);
         }
-
-        $values = array_values($data);
-        // 需要按照table的字段类型设置字段
-        // ...
-        /*$query = sprintf("UPDATE {$this->table} SET %s",implode(',', $fields),implode(',',$values));
+        $string = MyFAQs::arr2str($data);
+        $query = sprintf("UPDATE {$this->table} SET %s WHERE id=%d",$string, $id);
         $bool = $this->wpdb->query($query);
 
         if($bool !== false){
-            $this->msg = array( 'status'=>200, 'msg'=>_('Data added successfully','myfaqs'));
+            $this->msg = array( 'status'=>200, 'msg'=>_('Data modified successfully','myfaqs'));
         }else{
-            $this->msg = array( 'status'=>500, 'msg'=>_('Data addition error.','myfaqs'));
+            $this->msg = array( 'status'=>500, 'msg'=>_('Data modification error.','myfaqs'));
         }
 
-        return $this->msg;*/
+        return $this->msg;
     }
 
     public function query($sql = ''){
