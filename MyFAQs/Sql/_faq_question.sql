@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : user-genec1-localhost@wamp-or-phpStudy2018
-Source Server Version : 50553
+Source Server         : user-root@localhost@phpStudy2018
+Source Server Version : 50725
 Source Host           : localhost:3306
 Source Database       : cn_web
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50725
 File Encoding         : 65001
 
-Date: 2019-01-17 17:19:45
+Date: 2019-03-19 17:14:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,9 +25,13 @@ CREATE TABLE `_faq_question` (
   `answer` text NOT NULL COMMENT 'answer',
   `pubdate` datetime NOT NULL,
   `editdate` datetime NOT NULL,
-  `catagory` int(10) unsigned DEFAULT NULL,
+  `category` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `issue` (`title`),
-  KEY `catagory_id` (`catagory`),
-  CONSTRAINT `catagory_id` FOREIGN KEY (`catagory`) REFERENCES `_faq_catagories` (`id`) ON DELETE CASCADE
+  KEY `catagory_id` (`category`),
+  CONSTRAINT `catagory_id` FOREIGN KEY (`category`) REFERENCES `_faq_categories` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of _faq_question
+-- ----------------------------
