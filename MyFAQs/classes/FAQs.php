@@ -14,6 +14,7 @@ class FAQs
     private static $_instance = null;
     const MENU_NAME  = 'faqs';
     private $view;
+    private $faqs;
 
     /**
      * FAQs constructor.
@@ -21,14 +22,28 @@ class FAQs
     public function __construct()
     {
         $this->view = new View();
+        $this->faqs = new Model('question');
     }
 
     /**
      *
      */
     public function faqs_page(){
-        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME));
 
+         $this->faqs->setUnion('categories','category','id');
+         $data = $this->faqs->getList();
+//        print_r($data);
+        $categories = FaqCategories::getInstance()->getAllCategories();
+        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with('categories', $categories);
+    }
+
+    /**
+     * @param $data
+     * @return bool
+     */
+    public function add($data){
+        $msg = $this->faqs->addOne($data);
+        return $msg;
     }
 
     /**

@@ -20,7 +20,7 @@
             		</div>
             		<div class="form-group">
             			<label for="answer"><?php _e('Answer', 'myfaqs'); ?></label>
-            			<input type="text" class="form-control" id="answer" name="answer" value="<?php echo (!empty($data))?($data['answer']):('');?>">
+            			<textarea class="form-control" id="answer" name="answer" rows="3"><?php echo (!empty($data))?($data['answer']):('');?></textarea>
             		</div>
             		<div class="form-group">
             			<label for="category"><?php _e("Category", 'myfaqs'); ?></label>
@@ -39,7 +39,7 @@
             		</div>
             	</div>
 				<div class="modal-footer">
-                    <button type="button" class="btn btn-primary addLentil" onclick="Faqs.save();" id="modal_save_button"><?php _e("Save","myfaqs"); ?></button>
+                    <button type="button" class="btn btn-primary addLentil" onclick="<?php echo (!empty($data))?("Faqs.save();"):"Faqs.add();";?>" id="modal_save_button"><?php _e("Save","myfaqs"); ?></button>
                     <button type="button" class="btn btn-default close-edit-modal" data-dismiss="modal"><?php _e("Cancel","myfaqs"); ?></button>
                 </div>
             </form>

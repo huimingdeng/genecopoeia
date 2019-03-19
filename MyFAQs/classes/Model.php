@@ -19,6 +19,7 @@ class Model
     private $fields = '*';
     private $limited;
     private $msg = array();
+    private $union; //
 
     /**
      * Model constructor.
@@ -46,13 +47,22 @@ class Model
         $table = $this->table;
         $limited = $this->limited;
 
-        $sql = "SELECT {$fields} FROM {$table} {$limited};";
+        $sql = "SELECT {$fields} FROM {$table} {$this->union} {$limited};";
         $this->sql = $sql;
-
+//        print_r($sql);
         $res = $this->wpdb->get_results($sql,ARRAY_A);
         return $res;
     }
 
+    /**
+     * @param $table    Join queries another table
+     * @param $field1   The join field of the current table
+     * @param $field2   Join queries the join fields of another table
+     */
+    public function setUnion($table,$field1,$field2){
+        $table = $this->prefix.$table;
+        $this->union = " LEFT JOIN {$table} ON {$this->table}.{$field1} = {$table}.{$field2} ";
+    }
     /**
      * @param $data
      * @return bool true|false;
@@ -75,6 +85,7 @@ class Model
         }else{
             $this->msg = array( 'status'=>500, 'msg'=>__('Data addition error.','myfaqs'));
         }
+//        $this->msg = array('status'=>203, 'msg'=> $query);
 
         return $this->msg;
     }

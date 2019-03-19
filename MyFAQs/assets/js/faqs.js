@@ -39,27 +39,31 @@ Faqs.prototype.addPopup = function(){
 Faqs.prototype.add = function () {
     this.operation = 'add';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data': 'add_data'};
+    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data': jQuery('#addForm').serialize()};
 
     var add_xhr = {
-        "type": 'post',
-        "async": true, // false,
-        "data": data,
-        "url": ajaxurl,
-        "dataType": 'JSON',
-        "success": function(response) {
-
+        type: 'post',
+        async: true, // false,
+        data: data,
+        url: ajaxurl,
+        dataType: 'JSON',
+        success: function(response) {
+            if(response.status==200){
+                window.location.href = '/wp-admin/admin.php?page=faqs';
+            }else{
+                alert(response.msg);
+            }
         }
     };
 
     jQuery.ajax(add_xhr);
 };
 
-Faqs.prototype.edit = function () {
-    this.operation = 'edit';
+Faqs.prototype.edit = function (id) {
+    this.operation = 'popup';
 
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit,'data' : 'edit_data' };
+    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit,'data' : id };
 
     var edit_xhr = {
         type: 'post',
