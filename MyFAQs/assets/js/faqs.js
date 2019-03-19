@@ -12,6 +12,30 @@ Faqs.prototype.init = function () {
 
 };
 
+Faqs.prototype.addPopup = function(){
+    this.operation = 'popup';
+    var _self = this;
+    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit , "data" : ''};
+
+    var add_xhr = {
+        type : 'post',
+        async : true,
+        data : data,
+        url : ajaxurl,
+        dataType : 'html',
+        success : function(response){
+            // alert(response);
+            jQuery('.wrap aside').html(response);
+            jQuery("#faqModal").modal();
+        },
+        error : function(response){
+            alert(JSON.stringify(response));
+        }
+    };
+
+    jQuery.ajax(add_xhr);
+};
+
 Faqs.prototype.add = function () {
     this.operation = 'add';
     var _self = this;

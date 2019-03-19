@@ -21,9 +21,7 @@ class FAQs
     public function __construct()
     {
         $this->view = new View();
-
     }
-
 
     /**
      *
@@ -33,6 +31,20 @@ class FAQs
 
     }
 
+    /**
+     * @param String|Integer $id
+     * @return string
+     */
+    public function getPopup($id = ''){
+        if(!empty($id)){
+
+            $data = array();
+        }else{
+            $data = array();
+        }
+        $categories = FaqCategories::getInstance()->getAllCategories();
+        return (string)$this->view->make('faqpopup')->with('data', $data)->with('categories', $categories);
+    }
 
     /**
      * @return FaqCategories|null
