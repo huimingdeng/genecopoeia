@@ -4,7 +4,7 @@
     <content>
         <div class="row">
             <div class="col-md-4">
-                <h3>Add New FAQ Category</h3>
+                <h3><?php _e('Add New FAQ Category', 'myfaqs');?></h3>
                 <form id="AddNewC">
                     <div class="form-group">
                         <label for="name"><?php _e('Name','myfaqs');?></label>
