@@ -57,7 +57,21 @@ class FAQs
      * @return array
      */
     public function edit($data){
-        $msg = $this->faqs->editOne($data);
+        $id = $data['id'];
+        $new_category = $data['category'];
+        $old_data = $this->faqs->getOne($id);
+        $old_category = $old_data['category'];
+        if($old_data['title']!=$data['title']||$old_data['answer']!=$data['answer']||$old_data['category']!=$data['category']){
+            $msg = $this->faqs->editOne($data);
+            // Modify the statistics if the category changes
+            if($old_data['category']!=$data['category']){
+                $this->faqs->save("UPDATE `_faq_categories` SET sumfaq=sumfaq-1 WHERE id = {$old_category}");
+                $this->faqs->save("UPDATE `_faq_categories` SET sumfaq=sumfaq+1 WHERE id = {$new_category}");
+            }
+        }else{
+            $msg = array("status" => 304, "msg" => __("The submitted information has not been modified.", "myfaqs"));
+        }
+
         return $msg;
     }
 

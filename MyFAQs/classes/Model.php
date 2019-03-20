@@ -86,7 +86,7 @@ class Model
         }else{
             $this->msg = array( 'status'=>500, 'msg'=>__('Data addition error.','myfaqs'));
         }
-//        $this->msg = array('status'=>203, 'msg'=> $query);
+//        $this->msg = array('status'=>205, 'msg'=> $query);
 
         return $this->msg;
     }
