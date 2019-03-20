@@ -4,7 +4,7 @@
  * Plugin URI: #
  * Description: FAQ 展示工具，后期将结合百度 AnyQ | RasaHQ 形成机器客服
  * Author: DHM(huimingdeng)
- * Version: 0.0.10
+ * Version: 0.0.11
  */
 namespace MyFAQs;
 
@@ -13,7 +13,7 @@ use MyFAQs\Classes\Ajax;
 
 class MyFAQs{
     private static $_instance = null;
-    const VERSION = '0.0.10';
+    const VERSION = '0.0.11';
     const PLUGIN_NAME = 'MyFAQs';
 
     public function __construct()
@@ -98,7 +98,7 @@ class MyFAQs{
                 'title'=>'Enter Gene Symbol or Accession No.',
                 'width'=>300
             ),$atts);
-
+        
         ob_start();
         include('views'.DIRECTORY_SEPARATOR.'shortcode.php');
         $output = ob_get_clean();
@@ -128,6 +128,7 @@ class MyFAQs{
 	}
 }
 
-
-add_shortcode('myfaqs', array('MyFAQs','AddShortCode'));// The current short code is invalid, and subsequent debugging tests are required.
 MyFAQs::getInstance();
+
+
+// add_shortcode('myfaqs', array('MyFAQs\MyFAQs','AddShortCode'));

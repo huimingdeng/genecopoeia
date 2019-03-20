@@ -1,3 +1,4 @@
+<style type="text/css">#add-modal-dialog{width:50%;}</style>
 <div class="modal fade" id="faqModal" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" id="add-modal-dialog">
         <div class="modal-content">
@@ -21,6 +22,7 @@
             		</div>
             		<div class="form-group">
             			<label for="answer"><span class="text-danger">*</span>&nbsp;<?php _e('Answer', 'myfaqs'); ?></label>
+                        <span class="character_entity_tip"><?php _e("Note: Please use <code class='form_code_1'>&amp;trade;</code> instead of <code class='form_code_2'>&trade;</code> and use <code class='form_code_1'>&amp;micro;</code> instead of <code class='form_code_2'>&micro;</code>, refer to the <a href='http://www.w3cschool.cn/htmltags/ref-entities.html' target='_blank'>Manual</a>.","myfaqs"); ?></span>
             			<textarea class="form-control" id="answer" name="answer" rows="3"><?php echo (!empty($data))?($data['answer']):('');?></textarea>
             		</div>
             		<div class="form-group">

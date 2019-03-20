@@ -78,6 +78,7 @@ class Model
         // 需要按照table的字段类型设置字段
         // ...
         $query = sprintf("INSERT INTO {$this->table} (%s) VALUES(%s)",implode(',', $fields),implode(',',$values));
+
         $bool = $this->wpdb->query($query);
 
         if($bool !== false){
@@ -148,6 +149,16 @@ class Model
      */
     public function query($sql = ''){
         $data = $this->wpdb->get_results($sql, ARRAY_A);
+        return $data;
+    }
+
+    /**
+     * @param string $sql
+     * @return mixed
+     */
+    public function save($sql = ''){
+        $data = $this->wpdb->query($sql);
+        //print_r($data);
         return $data;
     }
 

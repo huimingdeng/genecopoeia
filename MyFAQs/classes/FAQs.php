@@ -42,6 +42,13 @@ class FAQs
      */
     public function add($data){
         $msg = $this->faqs->addOne($data);
+
+        if($msg['status']==200){
+            $category_id = $data['category'];
+            $bool = $this->faqs->save("UPDATE `_faq_categories` SET sumfaq=sumfaq+1 WHERE id = {$category_id}");
+            //print_r($bool);
+            $msg['bool'] = $bool;
+        }
         return $msg;
     }
 
@@ -59,7 +66,13 @@ class FAQs
      * @return array
      */
     public function delete($id){
+        $faq = $this->faqs->getOne($id);
+        // $msg = array('status'=>205, 'msg'=> 'delete Test'.$faq); //Test
         $msg = $this->faqs->deleteOne($id);
+        if($msg['status']==200){
+            $category_id = $faq['category'];
+            $this->faqs->save("UPDATE `_faq_categories` SET sumfaq=sumfaq-1 WHERE id = {$category_id}");
+        }
         return $msg;
     }
 
