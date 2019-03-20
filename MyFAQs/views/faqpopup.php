@@ -16,17 +16,16 @@
             	</div>
             	<div class="modal-body">
             		<div class="form-group">
-            			<label for="title"><?php _e('Title', 'myfaqs'); ?></label>
+            			<label for="title"><span class="text-danger">*</span>&nbsp;<?php _e('Title', 'myfaqs'); ?></label>
             			<input type="text" class="form-control" id="title" name="title" value="<?php echo (!empty($data))?($data['title']):('');?>">
             		</div>
             		<div class="form-group">
-            			<label for="answer"><?php _e('Answer', 'myfaqs'); ?></label>
+            			<label for="answer"><span class="text-danger">*</span>&nbsp;<?php _e('Answer', 'myfaqs'); ?></label>
             			<textarea class="form-control" id="answer" name="answer" rows="3"><?php echo (!empty($data))?($data['answer']):('');?></textarea>
             		</div>
             		<div class="form-group">
-            			<label for="category"><?php _e("Category", 'myfaqs'); ?></label>
+            			<label for="category"><span class="text-danger">*</span>&nbsp;<?php _e("Category", 'myfaqs'); ?></label>
             			<select name="category" id="category" class="form-control">
-            				<option value="0"><?php _e('Non', 'myfaqs'); ?></option>
             				<?php if(!empty($categories)){
                                 foreach ($categories as $category) {
                                     if($data['category']==$category['id']){

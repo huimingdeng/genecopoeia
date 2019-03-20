@@ -7,15 +7,15 @@
                 <h3><?php _e('Add New FAQ Category', 'myfaqs');?></h3>
                 <form id="AddNewC">
                     <div class="form-group">
-                        <label for="name"><?php _e('Name','myfaqs');?></label>
+                        <label for="name"><span class="text-danger">*</span>&nbsp;<?php _e('Name','myfaqs');?></label>
                         <input type="text" id="name" class="form-control" name="name" >
                     </div>
                     <div class="form-group">
-                        <label for="slug"><?php _e('Slug','myfaqs');?></label>
+                        <label for="slug"><span class="text-danger">*</span>&nbsp;<?php _e('Slug','myfaqs');?></label>
                         <input type="text" id="slug" class="form-control" name="slug">
                     </div>
                     <div class="form-group">
-                        <label for="parent"><?php _e('Parent FAQ Category', 'myfaqs');?></label>
+                        <label for="parent"><span class="text-danger">*</span>&nbsp;<?php _e('Parent FAQ Category', 'myfaqs');?></label>
                         <br>
                         <select name="parent" class="form-control" id="parent">
                             <option value="0"><?php _e('Non', 'myfaqs');?></option>
