@@ -7,6 +7,7 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
+                        <th><input type="checkbox" name="select"></th>
                         <th><?php _e('Title','myfaqs');?></th>
                         <th><?php _e('Answer', 'myfaqs');?></th>
                         <th><?php _e('Category', 'myfaqs');?></th>
@@ -18,11 +19,12 @@
                         <?php if(!empty($data)){
                             foreach($data as $faq){?>
                             <tr>
+                                <td><input type="checkbox" name="ids[]" value="<?php echo $faq['id']; ?>"></td>
                                 <td><?php echo $faq['title']; ?></td>
                                 <td><?php echo $faq['answer']; ?></td>
                                 <td><?php echo $faq['name'] ?></td>
                                 <td><?php echo $faq['editdate']; ?></td>
-                                <td><a href="javascript:void(0)" class="btn btn-sm btn-primary" onclick="Faqs.edit(<?php echo $faq['id']; ?>);"><?php _e('edit', 'myfaqs'); ?></a></td>
+                                <td><a href="javascript:void(0)" class="btn btn-sm btn-primary" onclick="Faqs.edit(<?php echo $faq['id']; ?>);"><?php _e('Edit', 'myfaqs'); ?></a></td>
                             </tr>
                             <?php }
                         }else{
