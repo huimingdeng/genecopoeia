@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : user-root@localhost@phpStudy2018
-Source Server Version : 50725
+Source Server         : root@localhost
+Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : cn_web
 
 Target Server Type    : MYSQL
-Target Server Version : 50725
+Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2019-03-19 17:14:17
+Date: 2019-03-20 22:03:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,8 +30,4 @@ CREATE TABLE `_faq_question` (
   UNIQUE KEY `issue` (`title`),
   KEY `catagory_id` (`category`),
   CONSTRAINT `catagory_id` FOREIGN KEY (`category`) REFERENCES `_faq_categories` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of _faq_question
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;

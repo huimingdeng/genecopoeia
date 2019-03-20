@@ -13,7 +13,7 @@ FAQ 数据表设置，使用 INNODB 引擎。
 		`slug`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '别名,必须英文' ,
 		`pubdate`  datetime NOT NULL COMMENT '发布时间' ,
 		`editdate`  datetime NOT NULL COMMENT '修改时间' ,
-		`sumfaq`  int(10) UNSIGNED ZEROFILL NOT NULL COMMENT '统计当前分类faq数量' ,
+		`sumfaq`  int(10) UNSIGNED NOT NULL COMMENT '统计当前分类faq数量' ,
 		`parent`  int(10) NULL DEFAULT NULL COMMENT '父级分类' ,
 		PRIMARY KEY (`id`),
 		UNIQUE INDEX `name` (`name`) USING BTREE 
@@ -36,7 +36,7 @@ FAQ 数据表设置，使用 INNODB 引擎。
 		PRIMARY KEY (`id`),
 		FOREIGN KEY (`catagory`) REFERENCES `_faq_catagories` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
 		UNIQUE INDEX `issue` (`title`) USING BTREE ,
-		INDEX `catagory_id` (`catagory`) USING BTREE 
+		INDEX `category_id` (`category`) USING BTREE 
 	)
 	ENGINE=InnoDB
 	DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
