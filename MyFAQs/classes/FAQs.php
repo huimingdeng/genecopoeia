@@ -29,10 +29,9 @@ class FAQs
      *
      */
     public function faqs_page(){
-
-         $this->faqs->setUnion('categories','category','id');
-         $data = $this->faqs->getList();
-//        print_r($data);
+        $sql = "SELECT q.id,q.title,q.answer,c.name,q.editdate FROM _faq_question as q LEFT JOIN _faq_categories as c ON q.category=c.id LIMIT 0,20 ";
+        $data = $this->faqs->query($sql);
+        
         $categories = FaqCategories::getInstance()->getAllCategories();
         echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with('categories', $categories);
     }
