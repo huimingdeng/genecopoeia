@@ -4,7 +4,7 @@
  * Plugin URI: #
  * Description: FAQ 展示工具，后期将结合百度 AnyQ | RasaHQ 形成机器客服
  * Author: DHM(huimingdeng)
- * Version: 0.0.9
+ * Version: 0.0.10
  */
 namespace MyFAQs;
 
@@ -13,7 +13,7 @@ use MyFAQs\Classes\Ajax;
 
 class MyFAQs{
     private static $_instance = null;
-    const VERSION = '0.0.9';
+    const VERSION = '0.0.10';
     const PLUGIN_NAME = 'MyFAQs';
 
     public function __construct()

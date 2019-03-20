@@ -11,7 +11,9 @@ function Faqs() {
 Faqs.prototype.init = function () {
 
 };
-
+/**
+ * Show the add popover
+ */
 Faqs.prototype.addPopup = function(){
     this.operation = 'popup';
     var _self = this;
@@ -35,7 +37,9 @@ Faqs.prototype.addPopup = function(){
 
     jQuery.ajax(add_xhr);
 };
-
+/**
+ * Add operation
+ */
 Faqs.prototype.add = function () {
     this.operation = 'add';
     var _self = this;
@@ -58,7 +62,11 @@ Faqs.prototype.add = function () {
 
     jQuery.ajax(add_xhr);
 };
-
+/**
+ * Gets the modification information and displays it in the popover.
+ * @param  Integer id 
+ * @return html
+ */
 Faqs.prototype.edit = function (id) {
     this.operation = 'popup';
 
@@ -70,9 +78,13 @@ Faqs.prototype.edit = function (id) {
         async: true,
         data: data,
         url: ajaxurl,
-        dataType: 'JSON',
+        dataType: 'html',
         success:function (response) {
-
+            jQuery('.wrap aside').html(response);
+            jQuery("#faqModal").modal();
+        },
+        error:function(response){
+            alert(JSON.stringify(response));
         }
     };
     jQuery.ajax(edit_xhr);

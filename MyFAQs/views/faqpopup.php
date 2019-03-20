@@ -7,7 +7,7 @@
                     <h4 class="modal-title" id="deleteModalLabel">
                     	<?php if(!empty($data)){ ?>
 	                        <?php _e('Edit Faq',"myfaqs"); ?>
-	                        <code><?php echo $data['name'];?></code>
+	                        <code><?php echo mb_substr($data['title'], 0, 10, 'utf8').'...';?></code>
                     	<?php }else{ ?>
                     		<?php _e('Add Faq', "myfaqs"); ?>
                     	<?php } ?>
