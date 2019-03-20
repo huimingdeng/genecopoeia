@@ -46,6 +46,24 @@ class FAQs
     }
 
     /**
+     * @param $data
+     * @return array
+     */
+    public function edit($data){
+        $msg = $this->faqs->editOne($data);
+        return $msg;
+    }
+
+    /**
+     * @param $id
+     * @return array
+     */
+    public function delete($id){
+        $msg = $this->faqs->deleteOne($id);
+        return $msg;
+    }
+
+    /**
      * @param String|Integer $id
      * @return string
      */

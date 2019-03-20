@@ -8,6 +8,7 @@
                     	<?php if(!empty($data)){ ?>
 	                        <?php _e('Edit Faq',"myfaqs"); ?>
 	                        <code><?php echo mb_substr($data['title'], 0, 10, 'utf8').'...';?></code>
+                            <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
                     	<?php }else{ ?>
                     		<?php _e('Add Faq', "myfaqs"); ?>
                     	<?php } ?>

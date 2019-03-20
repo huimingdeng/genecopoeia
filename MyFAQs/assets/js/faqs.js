@@ -89,11 +89,46 @@ Faqs.prototype.edit = function (id) {
     };
     jQuery.ajax(edit_xhr);
 };
+/**
+ * Perform modifications or deletions based on the type.
+ * @return success|failure
+ */
+Faqs.prototype.save = function(){
+    this.operation = 'edit';
+    var _self = this;
+    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : jQuery("#addForm").serialize()};
+    // alert(JSON.stringify(data));
+    var edit_xhr = {
+        type: 'post',
+        async: true,
+        data: data,
+        url: ajaxurl,
+        dataType: 'JSON',
+        success: function (response){
+            if(response.status==200){
+                window.location.href = '/wp-admin/admin.php?page=faqs';
+            }else{
+                alert(response.msg);
+            }
+        },
+        error: function(response){
+            alert(JSON.stringify(response));
+        }
+    };
 
-Faqs.prototype.delete = function () {
+    jQuery.ajax(edit_xhr);
+};
+/**
+ * [delete description]
+ * @param  Integer id 
+ * @return sucess|failure    message
+ */
+Faqs.prototype.delete = function (id) {
     this.operation = 'delete';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : 'deleted_id'};
+    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : id};
+
+    var bool = confirm("Delete the "+id+" ?");
 
     var del_xhr = {
         type: 'post',
@@ -102,13 +137,18 @@ Faqs.prototype.delete = function () {
         url: ajaxurl,
         dataType: 'JSON',
         success:function (response) {
-
+            if(response.status==200){
+                window.location = '/wp-admin/admin.php?page=faqs';
+            }else{
+                alert(response.msg);
+            }
         },
         error:function (response) {
-
+            alert(JSON.stringify(response));
         }
     };
-    jQuery.ajax(del_xhr);
+    if(bool)
+        jQuery.ajax(del_xhr);
 };
 
 var Faqs = new Faqs();

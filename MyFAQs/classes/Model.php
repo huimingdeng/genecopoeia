@@ -123,7 +123,7 @@ class Model
         }else{
             $this->msg = array( 'status'=>500, 'msg'=>__('Data modification error.','myfaqs'));
         }
-
+//        $this->msg = array('status'=>203, 'msg'=> $query);
         return $this->msg;
     }
 
