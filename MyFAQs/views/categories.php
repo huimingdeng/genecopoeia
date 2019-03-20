@@ -27,7 +27,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <a class="btn btn-default" href="javascript:void(0);" onclick="Category.add();"><?php _e('sublimt','myfaqs');?></a>
+                        <a class="btn btn-default" href="javascript:void(0);" onclick="Category.add();"><?php _e('Submit','myfaqs');?></a>
                     </div>
                 </form>
             </div>
