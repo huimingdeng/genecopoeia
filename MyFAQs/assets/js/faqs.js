@@ -53,7 +53,7 @@ Faqs.prototype.add = function() {
         "type": _self.myaction,
         "action": _self.ajaxponit,
         'data': jQuery('#addForm').serialize()
-    };
+    };console.log(data);
 
     var add_xhr = {
         type: 'post',
@@ -67,6 +67,9 @@ Faqs.prototype.add = function() {
             } else {
                 alert(response.msg);
             }
+        },
+        error:function(response){
+            console.log(JSON.stringify(response));
         }
     };
 

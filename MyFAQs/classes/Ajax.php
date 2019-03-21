@@ -32,21 +32,21 @@ class Ajax extends Input
                 $data2 = MyFAQs::str2arr(urldecode($data));
                 $obj = $this->getObject($type);
                 $msg = $obj->add($data2);
-                echo json_encode($msg);
+                echo json_encode($msg,JSON_HEX_TAG);
                 exit(0);
                 break;
             case 'edit':
                 $data2 = MyFAQs::str2arr(urldecode($data));
                 $obj = $this->getObject($type);
                 $msg = $obj->edit($data2);
-                echo json_encode($msg);
+                echo json_encode($msg,JSON_HEX_TAG);
                 exit(0);
                 break;
             case 'delete':
                 $id = $data;
                 $obj = $this->getObject($type);
                 $msg = $obj->delete($id);
-                echo json_encode($msg);
+                echo json_encode($msg,JSON_HEX_TAG);
                 exit(0);
                 break;
             case 'popup':

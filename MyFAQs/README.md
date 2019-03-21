@@ -116,6 +116,7 @@ FAQ 数据表设置，使用 INNODB 引擎。
 
 - v0.0.x : 开发分类和 `faqs` 列表等信息 （Category&Faq）
 	- ... ...
+	- v0.0.11 : 修复部分 SQL 过滤，js 等技术问题
 	- v0.0.12 : 要实现列表分页, html 页码，js 异步提交页码
 	- v0.0.13 : 要实现 faqs 筛选搜索，排序等
 	- v0.0.14 : 要实现 category 列表父子分类效果 -- 参考 posts 的 category 列表显示

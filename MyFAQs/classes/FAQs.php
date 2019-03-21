@@ -14,6 +14,10 @@ class FAQs
     private static $_instance = null;
     const MENU_NAME  = 'faqs';
     private $view;
+    /**
+     * faqs model
+     * @var [type]
+     */
     private $faqs;
 
     /**
@@ -26,7 +30,8 @@ class FAQs
     }
 
     /**
-     *
+     * faqs list page
+     * @return html
      */
     public function faqs_page(){
         $sql = "SELECT q.id,q.title,q.answer,c.name,q.editdate FROM _faq_question as q LEFT JOIN _faq_categories as c ON q.category=c.id LIMIT 0,20 ";

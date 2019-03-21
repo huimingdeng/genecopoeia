@@ -21,7 +21,7 @@
                             <tr>
                                 <td><input type="checkbox" name="ids[]" value="<?php echo $faq['id']; ?>"></td>
                                 <td><?php echo mb_substr($faq['title'], 0, 10, 'utf8').'...'; ?></td>
-                                <td ><?php echo mb_substr($faq['answer'], 0, 80, 'utf8').'...'; ?></td>
+                                <td ><?php echo mb_substr( htmlentities($faq['answer']), 0, 80, 'utf8').'...'; ?></td>
                                 <td><?php echo $faq['name'] ?></td>
                                 <td><?php echo $faq['editdate']; ?></td>
                                 <td><a href="javascript:void(0)" class="btn btn-sm btn-primary" onclick="Faqs.edit(<?php echo $faq['id']; ?>);"><?php _e('Edit', 'myfaqs'); ?></a>&nbsp;<a href="javascript:void(0);" class="btn btn-danger btn-sm" onclick="Faqs.delete(<?php echo $faq['id']; ?>);"><?php _e('Delete', 'myfaqs'); ?></a></td>

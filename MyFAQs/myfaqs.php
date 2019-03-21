@@ -50,8 +50,10 @@ class MyFAQs{
      */
     public static function str2arr ($str,$sp="&",$kv="=")
     {
-        $arr = str_replace(array($kv,$sp),array('"=>"','","'),'array("'.$str.'")');
-        eval("\$arr"." = $arr;");
+        $arr = array();
+        parse_str($str, $arr);
+        /*$arr = str_replace(array($kv,$sp),array('"=>"','","'),'array("'.$str.'")');
+        eval("\$arr"." = $arr;");*/
         return $arr;
     }
 

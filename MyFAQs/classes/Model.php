@@ -78,7 +78,7 @@ class Model
         // 需要按照table的字段类型设置字段
         // ...
         $query = sprintf("INSERT INTO {$this->table} (%s) VALUES(%s)",implode(',', $fields),implode(',',$values));
-
+        // echo $query;exit;
         $bool = $this->wpdb->query($query);
 
         if($bool !== false){
@@ -86,7 +86,7 @@ class Model
         }else{
             $this->msg = array( 'status'=>500, 'msg'=>__('Data addition error.','myfaqs'));
         }
-//        $this->msg = array('status'=>205, 'msg'=> $query);
+        // $this->msg = array('status'=>205, 'msg'=> $query);
 
         return $this->msg;
     }
@@ -231,6 +231,7 @@ class Model
                 {
                     if ($type === $ok_type){
                         return "'" . $val . "'";
+                        //return "'" . addslashes(htmlentities($val)) . "'";
                     }
                 }
 
