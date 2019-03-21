@@ -8,29 +8,34 @@ function Faqs() {
     this.ajaxponit = 'myfaqs';
 }
 
-Faqs.prototype.init = function () {
+Faqs.prototype.init = function() {
 
 };
 /**
  * Show the add popover
  */
-Faqs.prototype.addPopup = function(){
+Faqs.prototype.addPopup = function() {
     this.operation = 'popup';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit , "data" : ''};
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        "data": ''
+    };
 
     var add_xhr = {
-        type : 'post',
-        async : true,
-        data : data,
-        url : ajaxurl,
-        dataType : 'html',
-        success : function(response){
+        type: 'post',
+        async: true,
+        data: data,
+        url: ajaxurl,
+        dataType: 'html',
+        success: function(response) {
             // alert(response);
             jQuery('.wrap aside').html(response);
             jQuery("#faqModal").modal();
         },
-        error : function(response){
+        error: function(response) {
             alert(JSON.stringify(response));
         }
     };
@@ -40,10 +45,15 @@ Faqs.prototype.addPopup = function(){
 /**
  * Add operation
  */
-Faqs.prototype.add = function () {
+Faqs.prototype.add = function() {
     this.operation = 'add';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data': jQuery('#addForm').serialize()};
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': jQuery('#addForm').serialize()
+    };
 
     var add_xhr = {
         type: 'post',
@@ -52,9 +62,9 @@ Faqs.prototype.add = function () {
         url: ajaxurl,
         dataType: 'JSON',
         success: function(response) {
-            if(response.status==200){
+            if (response.status == 200) {
                 window.location.href = '/wp-admin/admin.php?page=faqs';
-            }else{
+            } else {
                 alert(response.msg);
             }
         }
@@ -67,11 +77,16 @@ Faqs.prototype.add = function () {
  * @param  Integer id 
  * @return html
  */
-Faqs.prototype.edit = function (id) {
+Faqs.prototype.edit = function(id) {
     this.operation = 'popup';
 
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit,'data' : id };
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': id
+    };
 
     var edit_xhr = {
         type: 'post',
@@ -79,11 +94,11 @@ Faqs.prototype.edit = function (id) {
         data: data,
         url: ajaxurl,
         dataType: 'html',
-        success:function (response) {
+        success: function(response) {
             jQuery('.wrap aside').html(response);
             jQuery("#faqModal").modal();
         },
-        error:function(response){
+        error: function(response) {
             alert(JSON.stringify(response));
         }
     };
@@ -93,10 +108,15 @@ Faqs.prototype.edit = function (id) {
  * Perform modifications or deletions based on the type.
  * @return success|failure
  */
-Faqs.prototype.save = function(){
+Faqs.prototype.save = function() {
     this.operation = 'edit';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : jQuery("#addForm").serialize()};
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': jQuery("#addForm").serialize()
+    };
     // alert(JSON.stringify(data));
     var edit_xhr = {
         type: 'post',
@@ -104,14 +124,14 @@ Faqs.prototype.save = function(){
         data: data,
         url: ajaxurl,
         dataType: 'JSON',
-        success: function (response){
-            if(response.status==200){
+        success: function(response) {
+            if (response.status == 200) {
                 window.location.href = '/wp-admin/admin.php?page=faqs';
-            }else{
+            } else {
                 alert(response.msg);
             }
         },
-        error: function(response){
+        error: function(response) {
             alert(JSON.stringify(response));
         }
     };
@@ -123,12 +143,17 @@ Faqs.prototype.save = function(){
  * @param  Integer id 
  * @return sucess|failure    message
  */
-Faqs.prototype.delete = function (id) {
+Faqs.prototype.delete = function(id) {
     this.operation = 'delete';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : id};
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': id
+    };
 
-    var bool = confirm("Delete the "+id+" ?");
+    var bool = confirm("Delete the " + id + " ?");
 
     var del_xhr = {
         type: 'post',
@@ -136,23 +161,23 @@ Faqs.prototype.delete = function (id) {
         data: data,
         url: ajaxurl,
         dataType: 'JSON',
-        success:function (response) {
-            if(response.status==200){
+        success: function(response) {
+            if (response.status == 200) {
                 window.location = '/wp-admin/admin.php?page=faqs';
-            }else{
+            } else {
                 alert(response.msg);
             }
         },
-        error:function (response) {
+        error: function(response) {
             alert(JSON.stringify(response));
         }
     };
-    if(bool)
+    if (bool)
         jQuery.ajax(del_xhr);
 };
 
 var Faqs = new Faqs();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     Faqs.init();
 });

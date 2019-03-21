@@ -8,15 +8,20 @@ function Category() {
     this.ajaxponit = 'myfaqs';
 };
 
-Category.prototype.init = function () {
+Category.prototype.init = function() {
 
 };
 
-Category.prototype.add = function () {
+Category.prototype.add = function() {
     this.operation = 'add';
     var _self = this;
-    var data = { "operation":_self.operation, "type":_self.myaction, "action":_self.ajaxponit, 'data':jQuery('#AddNewC').serialize() };
-    
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': jQuery('#AddNewC').serialize()
+    };
+
     var show_xhr = {
         type: 'post',
         async: true, // false,
@@ -24,10 +29,10 @@ Category.prototype.add = function () {
         url: ajaxurl,
         dataType: 'JSON',
         success: function(response) {
-            if(response.status==200){
-                alert(response.msg);
+            if (response.status == 200) {
+                // alert(response.msg);
                 window.location.href = '/wp-admin/admin.php?page=categories';
-            }else{
+            } else {
                 alert(response.msg);
             }
         }
@@ -39,10 +44,15 @@ Category.prototype.add = function () {
 /**
  * Perform modifications or deletions based on the type.
  */
-Category.prototype.save = function () {
+Category.prototype.save = function() {
     this.operation = 'edit';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : jQuery("#editForm").serialize()};
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': jQuery("#editForm").serialize()
+    };
     // alert(JSON.stringify(data));
     var edit_xhr = {
         type: 'post',
@@ -50,15 +60,15 @@ Category.prototype.save = function () {
         data: data,
         url: ajaxurl,
         dataType: 'JSON',
-        success: function (response){
-            if(response.status==200){
-                alert(response.msg);
+        success: function(response) {
+            if (response.status == 200) {
+                // alert(response.msg);
                 window.location.href = '/wp-admin/admin.php?page=categories';
-            }else{
+            } else {
                 alert(response.msg);
             }
         },
-        error: function(response){
+        error: function(response) {
             alert(JSON.stringify(response));
         }
     };
@@ -69,10 +79,15 @@ Category.prototype.save = function () {
  * Get popup window
  * @param id
  */
-Category.prototype.edit = function (id) {
+Category.prototype.edit = function(id) {
     this.operation = 'popup';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit,'data' : id };
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': id
+    };
 
     var edit_xhr = {
         type: 'post',
@@ -80,7 +95,7 @@ Category.prototype.edit = function (id) {
         data: data,
         url: ajaxurl,
         dataType: 'HTML',
-        success:function (response) {
+        success: function(response) {
             jQuery('.wrap aside').html(response);
             jQuery("#editModal").modal();
         }
@@ -92,12 +107,17 @@ Category.prototype.edit = function (id) {
  * @param  Integer id  category's id
  * @return mixed
  */
-Category.prototype.delete = function (id) {
+Category.prototype.delete = function(id) {
     this.operation = 'delete';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : id};
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': id
+    };
 
-    var bool = confirm("Delete the "+id+" ?");
+    var bool = confirm("Delete the " + id + " ?");
 
     var del_xhr = {
         type: 'post',
@@ -105,23 +125,23 @@ Category.prototype.delete = function (id) {
         data: data,
         url: ajaxurl,
         dataType: 'JSON',
-        success:function (response) {
-            if(response.status==200){
+        success: function(response) {
+            if (response.status == 200) {
                 window.location = '/wp-admin/admin.php?page=categories';
-            }else{
+            } else {
                 alert(response.msg);
             }
         },
-        error:function (response) {
+        error: function(response) {
 
         }
     };
-    if(bool)
+    if (bool)
         jQuery.ajax(del_xhr);
 }
 
 var Category = new Category();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     Category.init();
 });

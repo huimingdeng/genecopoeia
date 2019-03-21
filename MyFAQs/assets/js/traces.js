@@ -8,14 +8,19 @@ function Traces() {
     this.ajaxponit = 'myfaqs';
 }
 
-Traces.prototype.init = function () {
+Traces.prototype.init = function() {
 
 };
 
-Traces.prototype.add = function () {
+Traces.prototype.add = function() {
     this.operation = 'add';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data': 'add_data'};
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': 'add_data'
+    };
 
     var add_xhr = {
         "type": 'post',
@@ -31,11 +36,16 @@ Traces.prototype.add = function () {
     jQuery.ajax(add_xhr);
 };
 
-Traces.prototype.edit = function () {
+Traces.prototype.edit = function() {
     this.operation = 'edit';
 
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit,'data' : 'edit_data' };
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': 'edit_data'
+    };
 
     var edit_xhr = {
         type: 'post',
@@ -43,17 +53,22 @@ Traces.prototype.edit = function () {
         data: data,
         url: ajaxurl,
         dataType: 'JSON',
-        success:function (response) {
+        success: function(response) {
 
         }
     };
     jQuery.ajax(edit_xhr);
 };
 
-Traces.prototype.delete = function () {
+Traces.prototype.delete = function() {
     this.operation = 'delete';
     var _self = this;
-    var data = { "operation" : _self.operation, "type" : _self.myaction, "action" : _self.ajaxponit, 'data' : 'deleted_id'};
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': 'deleted_id'
+    };
 
     var del_xhr = {
         type: 'post',
@@ -61,10 +76,10 @@ Traces.prototype.delete = function () {
         data: data,
         url: ajaxurl,
         dataType: 'JSON',
-        success:function (response) {
+        success: function(response) {
 
         },
-        error:function (response) {
+        error: function(response) {
 
         }
     };
@@ -73,6 +88,6 @@ Traces.prototype.delete = function () {
 
 var Traces = new Traces();
 
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
     Traces.init();
 });

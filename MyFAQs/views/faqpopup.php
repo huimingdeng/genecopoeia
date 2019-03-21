@@ -31,9 +31,9 @@
             				<?php if(!empty($categories)){
                                 foreach ($categories as $category) {
                                     if($data['category']==$category['id']){
-                                        echo "<option value='".$category['id']."' selected = \"selected\">".$category['slug']."</option>\n";
+                                        echo "<option value='".$category['id']."' selected = \"selected\">".$category['name']."</option>\n";
                                     }else{
-                                        echo "<option value='".$category['id']."'>".$category['slug']."</option>\n";
+                                        echo "<option value='".$category['id']."'>".$category['name']."</option>\n";
                                     }
                                 }
                             }?>
