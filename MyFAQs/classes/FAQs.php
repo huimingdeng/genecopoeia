@@ -34,11 +34,15 @@ class FAQs
      * @return html
      */
     public function faqs_page(){
-        $sql = "SELECT q.id,q.title,q.answer,c.name,q.editdate FROM _faq_question as q LEFT JOIN _faq_categories as c ON q.category=c.id LIMIT 0,20 ";
+        $offset = 10;
+        $page = (isset($_GET['p']))?$_GET['p']:1;
+        $start = ($page-1)*$offset;
+        $sql = "SELECT q.id,q.title,q.answer,c.name,q.editdate FROM _faq_question as q LEFT JOIN _faq_categories as c ON q.category=c.id LIMIT {$start},{$offset} ";
         $data = $this->faqs->query($sql);
-
+        $total = $this->faqs->getCount();
+        $html = $this->faqs->getPage($page,$offset,$total['total'], '/wp-admin/admin.php?page=faqs');// Access to the paging
         $categories = FaqCategories::getInstance()->getAllCategories();
-        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with('categories', $categories);
+        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with('categories', $categories)->with('page',$html);
     }
 
     /**

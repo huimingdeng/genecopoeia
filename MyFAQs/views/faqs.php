@@ -36,7 +36,9 @@
                         }?>
                     </tbody>
                 </table>
+                <?php echo $page; ?>
             </div>
+
         </div>
     </content>
     <aside></aside>

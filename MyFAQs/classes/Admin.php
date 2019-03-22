@@ -52,7 +52,6 @@ class Admin
         );
     }
 
-
     /**
      * Get the instance of the Categories list page.
      * @return mixed
@@ -105,6 +104,7 @@ class Admin
     }
 
     /**
+     * Get an instance of the Admin class
      * @return Admin
      */
     public static function getInstance(){
