@@ -99,8 +99,11 @@ class Model
         }
         $html.=     "</ul>\n";
         $html.= "</nav>\n";
-
-        return $html;
+        if($total >= 1):
+            return $html;
+        else:
+            return '';
+        endif;
     }
 
     /**
