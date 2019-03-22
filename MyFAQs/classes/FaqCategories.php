@@ -37,7 +37,8 @@ class FaqCategories
         }
         $offset = 10;
         $page = (isset($_GET['p']))?$_GET['p']:1;
-        $this->categories->limitpage($page-1,$offset);
+        $start = ($page-1)*$offset;
+        $this->categories->limitpage($start,$offset);
         $data = $this->categories->getList();
         $total = $this->categories->getCount();
         $html = $this->categories->getPage($page,$offset,$total['total'],'/wp-admin/admin.php?page=categories');
