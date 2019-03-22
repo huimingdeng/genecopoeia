@@ -35,10 +35,14 @@ class FaqCategories
         if (!empty($this->categories)) {
             $this->categories->setFiles('id,name,slug,sumfaq,editdate,parent');
         }
-        /** @var TYPE_NAME $data */
+        $offset = 10;
+        $page = (isset($_GET['p']))?$_GET['p']:1;
+        $this->categories->limitpage($page-1,$offset);
         $data = $this->categories->getList();
+        $total = $this->categories->getCount();
+        $html = $this->categories->getPage($page,$offset,$total['total'],'/wp-admin/admin.php?page=categories');
 
-        echo $this->view->make('categories')->with('title','Categories')->with('actived',strtolower(self::MENU_NAME))->with('data',$data);
+        echo $this->view->make('categories')->with('title','Categories')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with("page",$html);
 
     }
 

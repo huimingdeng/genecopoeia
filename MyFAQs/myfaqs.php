@@ -4,7 +4,7 @@
  * Plugin URI: #
  * Description: FAQ 展示工具，后期将结合百度 AnyQ | RasaHQ 形成机器客服
  * Author: DHM(huimingdeng)
- * Version: 0.0.11
+ * Version: 0.0.12
  */
 namespace MyFAQs;
 
@@ -13,13 +13,17 @@ use MyFAQs\Classes\Ajax;
 
 class MyFAQs{
     private static $_instance = null;
-    const VERSION = '0.0.11';
+    const VERSION = '0.0.12';
     const PLUGIN_NAME = 'MyFAQs';
-
+    /**
+     * Register to load class files, 
+     * create ajax access hooks, 
+     * and generate administrative pages
+     */
     public function __construct()
     {
         spl_autoload_register(array($this,'autoload'));
-        add_action('wp_ajax_myfaqs', array($this, 'add_ajax_point'));
+        add_action('wp_ajax_myfaqs', array($this, 'add_ajax_point')); // Add an ajax access endpoint
         add_action('plugins_loaded', array($this, 'plugins_loaded'), 1);
         
         if(is_admin()) {
@@ -27,6 +31,10 @@ class MyFAQs{
         }
     }
 
+    /**
+     * Automatic class loading implementation.
+     * @param String $class
+     */
     public function autoload($class){
         $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR;
 
@@ -90,6 +98,7 @@ class MyFAQs{
     }
 
     /**
+     * Short code templates implement functions.
      * @param $atts
      * @return mixed
      */
@@ -108,6 +117,7 @@ class MyFAQs{
     }
 
     /**
+     * Assemble the plugin resource path
      * @param $ref assets uri / file name
      * @return string
      */
@@ -118,6 +128,7 @@ class MyFAQs{
     }
 
     /**
+     * Get class instance
      * @return MyFAQs|null
      */
 	public static function getInstance(){
@@ -131,6 +142,5 @@ class MyFAQs{
 }
 
 MyFAQs::getInstance();
-
 
 // add_shortcode('myfaqs', array('MyFAQs\MyFAQs','AddShortCode'));

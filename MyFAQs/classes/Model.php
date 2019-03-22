@@ -40,6 +40,7 @@ class Model
     }
 
     /**
+     * Query database return data.
      * @return mixed
      */
     public function getList(){
@@ -52,6 +53,54 @@ class Model
 //        print_r($sql);
         $res = $this->wpdb->get_results($sql,ARRAY_A);
         return $res;
+    }
+
+    /**
+     * Gets the total number of data rows.
+     * @return array
+     */
+    public function getCount(){
+        $sql = "SELECT count(*) AS total FROM {$this->table} ";
+        return $this->wpdb->get_row($sql, ARRAY_A);
+    }
+
+    /**
+     * Gets the paging HTML code.
+     * @param int $current_page The current page number
+     * @param int $offset Number per page
+     * @param int $total The total number of records
+     * @return string
+     */
+    public function getPage($current_page = 1, $offset = 15, $total =0, $uri=''){
+        $last_page = ceil($total/$offset);// Calculate the total page number
+        $url = (!empty($uri))?$uri.'&p=':'javascript:void(0);';
+
+        $html = "<nav aria-label=\"...\">\n";
+        $html.=     "<ul class=\"pagination\">\n";
+        if($current_page==1){
+            $html.=         "<li class=\"disabled\"><a href=\"javascript:void(0);\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a></li>\n";
+        }else{
+            $html.=         "<li><a href=\"" . $url . ($current_page-1) ."\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a></li>\n";
+        }
+
+        for ($page=1;$page<=$last_page;$page++){
+            if($current_page==$page){
+                $html.=         "<li class=\"active\"><a href=\"javascript:void(0);\">" . $page . "</a></li>\n";
+            }elseif($page==1){
+                $html.=         "<li><a href=\"". $uri ."\">" . $page . "</a></li>\n";
+            }else{
+                $html.=         "<li><a href=\"". $url . $page ."\">" . $page . "</a></li>\n";
+            }
+        }
+        if($current_page==$last_page){
+            $html.=         "<li class=\"disabled\"><a href=\"javascript:void(0);\" aria-label=\"Next\"><span aria-hidden=\"true\">&raquo;</span></a></li>\n";
+        }else{
+            $html.=         "<li><a href=\"" . $url . ($current_page+1) ."\" aria-label=\"Next\"><span aria-hidden=\"true\">&raquo;</span></a></li>\n";
+        }
+        $html.=     "</ul>\n";
+        $html.= "</nav>\n";
+
+        return $html;
     }
 
     /**

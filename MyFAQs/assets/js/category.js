@@ -12,6 +12,10 @@ Category.prototype.init = function() {
 
 };
 
+Category.prototype.page = function(p) {
+
+};
+
 Category.prototype.add = function() {
     this.operation = 'add';
     var _self = this;
