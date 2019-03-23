@@ -296,10 +296,10 @@ class Model
 
     /**
      * @param int $start
-     * @param int $offeser
+     * @param int $offset
      */
-    public function limitpage($start=0, $offeser=20){
-        $this->limited = " limit {$start},{$offeser}";
+    public function limitpage($start=0, $offset=20){
+        $this->limited = " limit {$start},{$offset}";
     }
 
     /**

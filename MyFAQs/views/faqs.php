@@ -1,6 +1,6 @@
 <div class="wrap">
     <?php include "header.php"; ?>
-    <h2><?php echo $title;?> &nbsp;&nbsp;<a href="javascript:void(0);" onclick="Faqs.addPopup()" class="btn btn-primary"><?php _e('Add New', 'myfaqs');?></a></h2>
+    <h2><?php echo $title;?> &nbsp;&nbsp;<a href="javascript:void(0);" onclick="Faqs.addPopup()" class="btn btn-primary"><?php _e('Add New', 'myfaqs');?></a>&nbsp;&nbsp;<a href="javascript:void(0);" class="btn btn-warning" onclick="Faqs.export();"><?php _e('Export Json', 'myfaqs'); ?></a></h2>
     <content>
         <div class="row">
             <div class="col-md-12">

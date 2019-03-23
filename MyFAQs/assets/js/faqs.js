@@ -68,7 +68,7 @@ Faqs.prototype.add = function() {
                 alert(response.msg);
             }
         },
-        error:function(response){
+        error: function(response) {
             console.log(JSON.stringify(response));
         }
     };
@@ -177,6 +177,30 @@ Faqs.prototype.delete = function(id) {
     };
     if (bool)
         jQuery.ajax(del_xhr);
+};
+
+Faqs.prototype.export = function() {
+    this.operation = 'export';
+    var _self = this;
+    var data = {
+        "operation": _self.operation,
+        "type": _self.myaction,
+        "action": _self.ajaxponit,
+        'data': ""
+    };
+    var export_xhr = {
+        type: 'post',
+        async: true,
+        data: data,
+        url: ajaxurl,
+        dataType: 'JSON',
+        success: function(response) {
+            
+        },
+        error: function(response) {
+            alert(JSON.stringify(response));
+        }
+    };
 };
 
 var Faqs = new Faqs();
