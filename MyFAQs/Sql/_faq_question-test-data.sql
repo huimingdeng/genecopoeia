@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50725
 File Encoding         : 65001
 
-Date: 2019-03-21 16:48:36
+Date: 2019-03-25 16:45:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,8 +29,8 @@ CREATE TABLE `_faq_question` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `issue` (`title`),
   KEY `catagory_id` (`category`),
-  CONSTRAINT `catagory_id` FOREIGN KEY (`category`) REFERENCES `_faq_categories` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+  CONSTRAINT `category_id` FOREIGN KEY (`category`) REFERENCES `_faq_categories` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of _faq_question
@@ -57,3 +57,4 @@ INSERT INTO `_faq_question` VALUES ('32', 'How do I order ORF clones from GeneCo
 INSERT INTO `_faq_question` VALUES ('33', 'test2', '<a href=\"mailto:support@genecopoeia.com\">support@genecopoeia.com</a>', '2019-03-21 08:43:09', '2019-03-21 08:43:09', '4');
 INSERT INTO `_faq_question` VALUES ('34', 'What delivery formats do you offer for your ORF clones?', 'Answer: We provide most ORF clones as 10 µg of purified plasmid. For our NextDay™ clones, you can choose between bacterial stock or transfection-ready DNA (10 µg or 50 µg). You can also request alternative delivery formats by contacting us at <a href=\"mailto:support@genecopoeia.com\">support@genecopoeia.com</a>', '2019-03-21 08:44:53', '2019-03-21 08:44:53', '6');
 INSERT INTO `_faq_question` VALUES ('35', 'What is a “NextDay™” ORF clone?', 'Answer: A NextDay™ ORF clone is a pre-made ORF clone. It is available at a competitive and ships next day if the order is placed by noon Eastern Time.', '2019-03-21 08:47:24', '2019-03-21 08:47:24', '1');
+INSERT INTO `_faq_question` VALUES ('36', 'test3', 'test', '2019-03-22 08:41:44', '2019-03-22 08:43:12', '2');

@@ -23,6 +23,9 @@ class MyFAQs{
     public function __construct()
     {
         spl_autoload_register(array($this,'autoload'));
+        // activation hooks
+        register_activation_hook(__FILE__, array($this, 'activate'));
+        register_deactivation_hook(__FILE__, array($this, 'deactivate'));
         add_action('wp_ajax_myfaqs', array($this, 'add_ajax_point')); // Add an ajax access endpoint
         add_action('plugins_loaded', array($this, 'plugins_loaded'), 1);
         
@@ -47,6 +50,23 @@ class MyFAQs{
 
         if(file_exists($classfile))
             require_once $classfile;
+    }
+
+    /**
+     * [activate description]
+     * @return [type] [description]
+     */
+    public function activate(){
+        require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'install' . DIRECTORY_SEPARATOR . 'Activate.php');
+
+    }
+
+    /**
+     * [deactivate description]
+     * @return [type] [description]
+     */
+    public function deactivate(){
+        require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'install' . DIRECTORY_SEPARATOR . 'Deactivate.php');
     }
 
     /**
