@@ -57,7 +57,8 @@ class Admin
      * @return mixed
      */
     public function getCategoryPage(){
-        return FaqCategories::getInstance()->categories_page();
+        $page = (isset($_GET['p']))?$_GET['p']:1;
+        return FaqCategories::getInstance()->categories_page($page);
     }
 
     /**
@@ -65,7 +66,8 @@ class Admin
      * @return mixed
      */
     public function getFaqsPage(){
-        return FAQs::getInstance()->faqs_page();
+        $page = (isset($_GET['p']))?$_GET['p']:1;
+        return FAQs::getInstance()->faqs_page($page);
     }
 
     /**

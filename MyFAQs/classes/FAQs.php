@@ -33,9 +33,8 @@ class FAQs
      * faqs list page
      * @return html
      */
-    public function faqs_page(){
-        $offset = 10;
-        $page = (isset($_GET['p']))?$_GET['p']:1;
+    public function faqs_page($page = 1, $offset = 10){
+        
         $start = ($page-1)*$offset;
         $sql = "SELECT q.id,q.title,q.answer,c.name,q.editdate FROM _faq_question as q LEFT JOIN _faq_categories as c ON q.category=c.id LIMIT {$start},{$offset} ";
         $data = $this->faqs->query($sql);

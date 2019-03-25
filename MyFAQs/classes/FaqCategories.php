@@ -29,14 +29,16 @@ class FaqCategories
 
     /**
      * Category list page.
+     * @param  integer $page   [description]
+     * @param  integer $offset [description]
+     * @return  html
      */
-    public function categories_page(){
+    public function categories_page($page = 1,$offset = 10){
 
         if (!empty($this->categories)) {
             $this->categories->setFiles('id,name,slug,sumfaq,editdate,parent');
         }
-        $offset = 10;
-        $page = (isset($_GET['p']))?$_GET['p']:1;
+        
         $start = ($page-1)*$offset;
         $this->categories->limitpage($start,$offset);
         $data = $this->categories->getList();
