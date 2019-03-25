@@ -25,7 +25,7 @@ class MyFAQs{
         spl_autoload_register(array($this,'autoload'));
         // activation hooks
         register_activation_hook(__FILE__, array($this, 'activate'));
-        register_deactivation_hook(__FILE__, array($this, 'deactivate'));
+        register_uninstall_hook(__FILE__, array($this, 'deactivate'));
         add_action('wp_ajax_myfaqs', array($this, 'add_ajax_point')); // Add an ajax access endpoint
         add_action('plugins_loaded', array($this, 'plugins_loaded'), 1);
         
