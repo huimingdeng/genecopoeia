@@ -19,9 +19,9 @@ class Ajax extends Input
      * Setting Ajax point
      */
     public function dispatch(){
-        $operation = $this->post('operation');
-        $data = $this->post('data');
-        $type = $this->post('type');
+        $operation = ($this->post_exists('data'))?$this->post('operation'):'';
+        $data = ($this->post_exists('data'))?$this->post('data'):'';
+        $type = ($this->post_exists('type'))?$this->post('type'):'';
         // set headers
         header('Content-Type: application/json; charset=utf-8');
         header('Content-Encoding: ajax');
@@ -52,6 +52,12 @@ class Ajax extends Input
             case 'popup':
                 $obj = $this->getObject($type);
                 echo $obj->getPopup($data);
+                exit(0);
+                break;
+            case 'export':
+                $obj = $this->getObject($type);
+                $msg = $obj->exportJson();
+                echo json_encode($msg);
                 exit(0);
                 break;
             default:

@@ -113,6 +113,42 @@ class FAQs
     }
 
     /**
+     * Generate json file. 
+     * @return [type] [description]
+     */
+    public function exportJson(){
+        $path = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'assets'.DIRECTORY_SEPARATOR.'json'.DIRECTORY_SEPARATOR;
+        if(!is_dir($path)){
+            mkdir($path, 0777);
+        }
+        $filename = 'faqs.json';
+        $file = $path . $filename;
+
+        if(!file_exists($file)){
+            $this->faqs->setFiles('id,title,answer');
+            $res = $this->faqs->getList();
+            $json = json_encode($res);
+            file_put_contents($file, $json);
+            $msg = array("status" => 200, "msg" => __("Generate Json File.",'myfaqs') );
+        }else{
+            $etime = filemtime($file);
+            $time = $_SERVER['REQUEST_TIME'];
+            // The interval of about 30 minutes allows the original file to be overwritten again.
+            if($time>$etime && ($time-$etime) >= 1800 ){ 
+                $this->faqs->setFiles('id,title,answer');
+                $res = $this->faqs->getList();
+                $json = json_encode($res);
+                file_put_contents($file, $json);
+                $msg = array("status" => 200, "msg" => __("Generate New Json File.", 'myfaqs') );
+            }else{
+                $newtime = 1800 - ($time - $etime);
+                $msg = array( "status" => 500, "msg" => __("The new json file cannot be generated; please regenerate it after {$newtime} seconds.", 'myfaqs') );
+            }
+        }
+        return $msg;
+    }
+
+    /**
      * @return FaqCategories|null
      */
     public static function getInstance(){

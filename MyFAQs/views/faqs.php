@@ -1,6 +1,6 @@
 <div class="wrap">
     <?php include "header.php"; ?>
-    <h2><?php echo $title;?> &nbsp;&nbsp;<a href="javascript:void(0);" onclick="Faqs.addPopup()" class="btn btn-primary"><?php _e('Add New', 'myfaqs');?></a>&nbsp;&nbsp;<a href="javascript:void(0);" class="btn btn-warning" onclick="Faqs.export();"><?php _e('Export Json', 'myfaqs'); ?></a></h2>
+    <h2><?php echo $title;?> &nbsp;&nbsp;<a href="javascript:void(0);" onclick="Faqs.addPopup()" class="btn btn-primary"><?php _e('Add New', 'myfaqs');?></a>&nbsp;&nbsp;<a href="javascript:void(0);" class="btn btn-warning" onclick="Faqs.export();"><?php _e('Generate Json File', 'myfaqs'); ?></a>&nbsp;<?php $file = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR.'assets'.DIRECTORY_SEPARATOR.'json'.DIRECTORY_SEPARATOR.'faqs.json'; if(file_exists($file)){ $url = dirname(plugin_dir_url(__FILE__)).'/assets/json/faqs.json';?> <a href="<?php echo $url; ?>" class="btn btn-success"><?php _e("Download Json File", 'myfaqs'); ?></a> <?php } ?></h2>
     <content>
         <div class="row">
             <div class="col-md-12">
