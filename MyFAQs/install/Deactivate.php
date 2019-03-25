@@ -11,5 +11,5 @@ namespace MyFAQs\Install;
 
 class Deactivate
 {
-
+    
 }

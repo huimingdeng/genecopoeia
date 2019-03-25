@@ -10,6 +10,7 @@ namespace MyFAQs;
 
 use MyFAQs\Classes\Admin;
 use MyFAQs\Classes\Ajax;
+use MyFAQs\Install\Activate;
 
 class MyFAQs{
     private static $_instance = null;
@@ -56,9 +57,10 @@ class MyFAQs{
      * [activate description]
      * @return [type] [description]
      */
-    public function activate(){
+    public function activate($network = FALSE){
         require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'install' . DIRECTORY_SEPARATOR . 'Activate.php');
-
+        $activate = new Activate();
+        $activate->plugin_active();
     }
 
     /**
@@ -67,6 +69,7 @@ class MyFAQs{
      */
     public function deactivate(){
         require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'install' . DIRECTORY_SEPARATOR . 'Deactivate.php');
+
     }
 
     /**
