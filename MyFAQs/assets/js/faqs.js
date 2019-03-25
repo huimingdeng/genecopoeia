@@ -8,9 +8,7 @@ function Faqs() {
     this.ajaxponit = 'myfaqs';
 }
 
-Faqs.prototype.init = function() {
-
-};
+Faqs.prototype.init = function() {};
 /**
  * Show the add popover
  */
@@ -195,12 +193,18 @@ Faqs.prototype.export = function() {
         url: ajaxurl,
         dataType: 'JSON',
         success: function(response) {
-            
+            if(response.status == 200) {
+                window.location = '/wp-admin/admin.php?page=faqs';
+            }else{
+                alert(response.msg);
+            }
+            // alert(JSON.stringify(response));
         },
         error: function(response) {
             alert(JSON.stringify(response));
         }
     };
+    jQuery.ajax(export_xhr);
 };
 
 var Faqs = new Faqs();
