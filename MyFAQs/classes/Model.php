@@ -79,6 +79,8 @@ class Model
         $html.=     "<ul class=\"pagination\">\n";
         if($current_page==1){
             $html.=         "<li class=\"disabled\"><a href=\"javascript:void(0);\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a></li>\n";
+        }elseif($current_page==2){
+            $html.=         "<li><a href=\"" . $uri ."\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a></li>\n";
         }else{
             $html.=         "<li><a href=\"" . $url . ($current_page-1) ."\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a></li>\n";
         }
