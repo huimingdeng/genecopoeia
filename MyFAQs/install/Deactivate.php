@@ -27,7 +27,7 @@ class Deactivate
 
 		$tables = $this->get_table_data();
 		foreach ($tables as $table) {
-			$sql = "DROP TABLE IF EXISTS `_faq_{$table}`";
+			$sql = "DROP TABLE IF EXISTS `_faq_{$table}`;";
 			$wpdb->query($sql);
 		}
 	}
@@ -39,7 +39,8 @@ class Deactivate
 	protected function get_table_data()
 	{
 		$tables = array(
-			'question', // Because of the foreign key relationship, the `question` table must be dropped first.
+			// Because of the foreign key relationship, the `question` table must be dropped first.
+			'question', 
 			'categories',
 			'shortcode',
 		);
