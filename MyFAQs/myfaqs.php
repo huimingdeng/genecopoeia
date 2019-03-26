@@ -11,6 +11,7 @@ namespace MyFAQs;
 use MyFAQs\Classes\Admin;
 use MyFAQs\Classes\Ajax;
 use MyFAQs\Install\Activate;
+use MyFAQs\Install\Deactivate;
 
 class MyFAQs{
     private static $_instance = null;
@@ -54,22 +55,22 @@ class MyFAQs{
     }
 
     /**
-     * [activate description]
-     * @return [type] [description]
+     * The installation data table is activated for the first time.
+     * @param bool $network
      */
     public function activate($network = FALSE){
         require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'install' . DIRECTORY_SEPARATOR . 'Activate.php');
         $activate = new Activate();
-        $activate->plugin_active();
+        $activate->plugin_active($network);
     }
 
     /**
-     * [deactivate description]
-     * @return [type] [description]
+     * Perform a table cleanup operation if the plugin is uninstalled
      */
     public function deactivate(){
         require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'install' . DIRECTORY_SEPARATOR . 'Deactivate.php');
-
+        $deactivate = new Deactivate();
+        $deactivate->plugin_deactivation();
     }
 
     /**
