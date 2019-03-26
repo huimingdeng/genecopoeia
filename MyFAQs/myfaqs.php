@@ -4,7 +4,7 @@
  * Plugin URI: #
  * Description: FAQ 展示工具，后期将结合百度 AnyQ | RasaHQ 形成机器客服
  * Author: DHM(huimingdeng)
- * Version: 0.0.12
+ * Version: 0.0.13
  */
 namespace MyFAQs;
 
@@ -15,7 +15,7 @@ use MyFAQs\Install\Deactivate;
 
 class MyFAQs{
     private static $_instance = null;
-    const VERSION = '0.0.12';
+    const VERSION = '0.0.13';
     const PLUGIN_NAME = 'MyFAQs';
     /**
      * Register to load class files, 
