@@ -27,8 +27,8 @@ class MyFAQs{
         spl_autoload_register(array($this,'autoload'));
         // activation hooks
         register_activation_hook(__FILE__, array($this, 'activate'));
-        register_deactivation_hook(__FILE__, array($this, 'deactivate'));
-        // register_uninstall_hook(__FILE__, array($this, 'deactivate'));
+        // register_deactivation_hook(__FILE__, array($this, 'deactivate'));
+        // register_uninstall_hook(__FILE__, array($this, 'deactivate')); // The tables cannot be deleted while uninstalling the plugin
         add_action('wp_ajax_myfaqs', array($this, 'add_ajax_point')); // Add an ajax access endpoint
         add_action('plugins_loaded', array($this, 'plugins_loaded'), 1);
         
@@ -167,5 +167,5 @@ class MyFAQs{
 }
 
 MyFAQs::getInstance();
-
+register_uninstall_hook(__FILE__, array('MyFAQs\MyFAQs', 'deactivate'));
 // add_shortcode('myfaqs', array('MyFAQs\MyFAQs','AddShortCode'));
