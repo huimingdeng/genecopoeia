@@ -12,38 +12,51 @@ Category.prototype.init = function() {
 
 };
 
-Category.prototype.page = function(p) {
+Category.prototype.isEmpty = function(obj) {
+    var items = jQuery(obj).serializeArray();
+    jQuery.each(items, function(i, item) {
+        // console.log(item);
+        if (item['value'] == '') {
+            flag = 1;
+            return false;
+        } else {
+            flag = 0;
+        }
+    });
 
+    return !flag;
 };
 
 Category.prototype.add = function() {
     this.operation = 'add';
     var _self = this;
-    var data = {
-        "operation": _self.operation,
-        "type": _self.myaction,
-        "action": _self.ajaxponit,
-        'data': jQuery('#AddNewC').serialize()
-    };
+    var bool = _self.isEmpty(jQuery('#AddNewC'));
+    if (bool) {
+        var data = {
+            "operation": _self.operation,
+            "type": _self.myaction,
+            "action": _self.ajaxponit,
+            'data': jQuery('#AddNewC').serialize()
+        };
 
-    var show_xhr = {
-        type: 'post',
-        async: true, // false,
-        data: data,
-        url: ajaxurl,
-        dataType: 'JSON',
-        success: function(response) {
-            if (response.status == 200) {
-                // alert(response.msg);
-                window.location.href = '/wp-admin/admin.php?page=categories';
-            } else {
-                alert(response.msg);
+        var show_xhr = {
+            type: 'post',
+            async: true, // false,
+            data: data,
+            url: ajaxurl,
+            dataType: 'JSON',
+            success: function(response) {
+                if (response.status == 200) {
+                    // alert(response.msg);
+                    window.location.href = '/wp-admin/admin.php?page=categories';
+                } else {
+                    alert(response.msg);
+                }
             }
-        }
-    };
+        };
 
-    jQuery.ajax(show_xhr);
-
+        jQuery.ajax(show_xhr);
+    }
 };
 /**
  * Perform modifications or deletions based on the type.
@@ -51,33 +64,36 @@ Category.prototype.add = function() {
 Category.prototype.save = function() {
     this.operation = 'edit';
     var _self = this;
-    var data = {
-        "operation": _self.operation,
-        "type": _self.myaction,
-        "action": _self.ajaxponit,
-        'data': jQuery("#editForm").serialize()
-    };
-    // alert(JSON.stringify(data));
-    var edit_xhr = {
-        type: 'post',
-        async: true,
-        data: data,
-        url: ajaxurl,
-        dataType: 'JSON',
-        success: function(response) {
-            if (response.status == 200) {
-                // alert(response.msg);
-                window.location.href = '/wp-admin/admin.php?page=categories';
-            } else {
-                alert(response.msg);
+    var bool = _self.isEmpty(jQuery("#editForm"));
+    if (bool) {
+        var data = {
+            "operation": _self.operation,
+            "type": _self.myaction,
+            "action": _self.ajaxponit,
+            'data': jQuery("#editForm").serialize()
+        };
+        // alert(JSON.stringify(data));
+        var edit_xhr = {
+            type: 'post',
+            async: true,
+            data: data,
+            url: ajaxurl,
+            dataType: 'JSON',
+            success: function(response) {
+                if (response.status == 200) {
+                    // alert(response.msg);
+                    window.location.href = '/wp-admin/admin.php?page=categories';
+                } else {
+                    alert(response.msg);
+                }
+            },
+            error: function(response) {
+                alert(JSON.stringify(response));
             }
-        },
-        error: function(response) {
-            alert(JSON.stringify(response));
-        }
-    };
+        };
 
-    jQuery.ajax(edit_xhr);
+        jQuery.ajax(edit_xhr);
+    }
 };
 /**
  * Get popup window

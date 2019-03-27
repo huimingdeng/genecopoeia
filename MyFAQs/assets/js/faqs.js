@@ -46,33 +46,60 @@ Faqs.prototype.addPopup = function() {
 Faqs.prototype.add = function() {
     this.operation = 'add';
     var _self = this;
-    var data = {
-        "operation": _self.operation,
-        "type": _self.myaction,
-        "action": _self.ajaxponit,
-        'data': jQuery('#addForm').serialize()
-    };
+    
+    var bool = _self.isEmpty();
 
-    var add_xhr = {
-        type: 'post',
-        async: true, // false,
-        data: data,
-        url: ajaxurl,
-        dataType: 'JSON',
-        success: function(response) {
-            if (response.status == 200) {
-                window.location.href = '/wp-admin/admin.php?page=faqs';
-            } else {
-                alert(response.msg);
+    if (bool) {
+
+        var data = {
+            "operation": _self.operation,
+            "type": _self.myaction,
+            "action": _self.ajaxponit,
+            'data': jQuery('#addForm').serialize()
+        };
+
+        var add_xhr = {
+            type: 'post',
+            async: true, // false,
+            data: data,
+            url: ajaxurl,
+            dataType: 'JSON',
+            success: function(response) {
+                if (response.status == 200) {
+                    window.location.href = '/wp-admin/admin.php?page=faqs';
+                } else {
+                    alert(response.msg);
+                }
+            },
+            error: function(response) {
+                console.log(JSON.stringify(response));
             }
-        },
-        error: function(response) {
-            console.log(JSON.stringify(response));
-        }
-    };
+        };
 
-    jQuery.ajax(add_xhr);
+        jQuery.ajax(add_xhr);
+    }else{
+
+    }
+
 };
+/**
+ * Check all required fields
+ * @return Boolean 
+ */
+Faqs.prototype.isEmpty = function() {
+    var items = jQuery('#addForm').serializeArray();
+    jQuery.each(items, function(i,item){
+        if(item['value'] == '') {
+            flag = 1;
+            return false;
+        } else {
+            flag = 0;
+        }
+    });
+
+    return !flag; 
+};
+
 /**
  * Gets the modification information and displays it in the popover.
  * @param  Integer id 
@@ -193,9 +220,9 @@ Faqs.prototype.export = function() {
         url: ajaxurl,
         dataType: 'JSON',
         success: function(response) {
-            if(response.status == 200) {
+            if (response.status == 200) {
                 window.location = '/wp-admin/admin.php?page=faqs';
-            }else{
+            } else {
                 alert(response.msg);
             }
             // alert(JSON.stringify(response));
@@ -209,6 +236,6 @@ Faqs.prototype.export = function() {
 
 var Faqs = new Faqs();
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function($) {
     Faqs.init();
 });
