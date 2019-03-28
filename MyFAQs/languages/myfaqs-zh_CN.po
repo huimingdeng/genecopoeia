@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyFAQs\n"
-"POT-Creation-Date: 2019-03-28 11:10+0800\n"
-"PO-Revision-Date: 2019-03-28 11:11+0800\n"
+"POT-Creation-Date: 2019-03-28 11:29+0800\n"
+"PO-Revision-Date: 2019-03-28 11:29+0800\n"
 "Last-Translator: huimingdeng <huimingdeng@fulengen.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -106,11 +106,17 @@ msgstr "操作"
 msgid "Edit"
 msgstr "修改"
 
-#: views/categories.php:58 views/faqs.php:27
+#: views/categories.php:57
+msgid ""
+"Are you sure you want to delete it? \\nThis will delete all data under the "
+"category."
+msgstr "您确定要删除吗? \\n这将会删除分类下所有数据。"
+
+#: views/categories.php:57 views/faqs.php:27
 msgid "Delete"
 msgstr "删除"
 
-#: views/categories.php:63 views/faqs.php:33
+#: views/categories.php:62 views/faqs.php:33
 msgid "No data"
 msgstr "没有数据"
 
