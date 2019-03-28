@@ -30,7 +30,7 @@
                         }else{
                             ?>
                             <tr>
-                                <td colspan="4" align="center"><?php _e('No data', 'myfaqs');?>....</td>
+                                <td colspan="6" align="center"><?php _e('No data', 'myfaqs');?>....</td>
                             </tr>
                             <?php
                         }?>

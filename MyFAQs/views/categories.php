@@ -59,7 +59,7 @@
                     <?php  }
                         }else{ ?>
                         <tr>
-                            <td colspan="5" align="center"><?php _e('No data', 'myfaqs');?>....</td>
+                            <td colspan="7" align="center"><?php _e('No data', 'myfaqs');?>....</td>
                         </tr>
                     <?php  } ?>
                     </tbody>
