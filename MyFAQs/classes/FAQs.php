@@ -35,13 +35,35 @@ class FAQs
      */
     public function faqs_page($page = 1, $offset = 10){
         
+        $where1 = (!empty($_GET['cat']))?' q.category ='.$_GET['cat']:'';
+
+        $where2 = (!empty($_GET['s']))?" q.title LIKE'%".addslashes(htmlentities($_GET['s']))."%'":'';
+        if($where2!='' && $where1!=''){
+            $where = ' WHERE '. $where1. ' AND '. $where2;
+        }elseif($where1!=''||$where2!=''){
+            $where = ' WHERE '. $where1 . $where2;
+        }else{
+            $where = '';
+        }
         $start = ($page-1)*$offset;
-        $sql = "SELECT q.id,q.title,q.answer,c.name,q.editdate FROM _faq_question as q LEFT JOIN _faq_categories as c ON q.category=c.id LIMIT {$start},{$offset} ";
+        $sql = "SELECT q.id,q.title,q.answer,c.`name`,q.editdate FROM _faq_question as q LEFT JOIN _faq_categories as c ON q.category=c.id".$where;
+        // echo $sql;
+        $count = $this->faqs->getCount($sql);
+        $total = $count['total'];
+        // echo $total;
+        $sql .= ($total>$offset)?(" LIMIT {$start},{$offset} "):'';
+        // echo $sql;
         $data = $this->faqs->query($sql);
-        $total = $this->faqs->getCount();
-        $html = $this->faqs->getPage($page,$offset,$total['total'], '/wp-admin/admin.php?page=faqs');// Access to the paging
+        
+        // Assemble the URI
+        $uri = '/wp-admin/admin.php?page=faqs';
+        ($page>1)?$uri.= '&p='.$page:$uri;
+        (!empty($_GET['s']))?$uri.= '&s='.$_GET['s']:$uri;
+        (!empty($_GET['cat']))?$uri.= '&cat='.$_GET['cat']:$uri;
+
+        $html = $this->faqs->getPage($page,$offset,$total, $uri);// Access to the paging
         $categories = FaqCategories::getInstance()->getAllCategories();
-        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with('categories', $categories)->with('page',$html);
+        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with('categories', $categories)->with('pages',$html)->with('p',$page)->with('total', $total)->with('cat',$_GET['cat']);
     }
 
     /**

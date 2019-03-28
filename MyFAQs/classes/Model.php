@@ -57,10 +57,12 @@ class Model
 
     /**
      * Gets the total number of data rows.
+     * @param string $sql 
      * @return array
      */
-    public function getCount(){
-        $sql = "SELECT count(*) AS total FROM {$this->table} ";
+    public function getCount($sql=''){
+        $sql = ($sql!='')?preg_replace('/LIMIT \d+\,\d+/', '', preg_replace('/SELECT [\.\,a-z`\*]+ FROM/', 'SELECT count(*) AS total FROM',$sql)):"SELECT count(*) AS total FROM {$this->table} ";
+        // echo $sql;
         return $this->wpdb->get_row($sql, ARRAY_A);
     }
 
@@ -73,6 +75,7 @@ class Model
      */
     public function getPage($current_page = 1, $offset = 15, $total =0, $uri=''){
         $last_page = ceil($total/$offset);// Calculate the total page number
+        $uri = preg_replace('/\&p=\d+/','',$uri);
         $url = (!empty($uri))?$uri.'&p=':'javascript:void(0);';
 
         $html = "<nav aria-label=\"...\">\n";
@@ -202,6 +205,7 @@ class Model
      * @return mixed
      */
     public function query($sql = ''){
+        $this->sql = $sql;
         $data = $this->wpdb->get_results($sql, ARRAY_A);
         return $data;
     }
@@ -233,6 +237,7 @@ class Model
 
         return $constucture;
     }
+
 
     /**
      * Gets the concrete data type
