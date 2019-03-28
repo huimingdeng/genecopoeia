@@ -32,7 +32,7 @@ class Activate
                   `parent` int(10) DEFAULT NULL COMMENT '父级分类',
                   PRIMARY KEY (`id`),
                   UNIQUE KEY `name` (`name`)
-                ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;",
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
             'question' =>
                 "CREATE TABLE `question` (
                   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -45,7 +45,7 @@ class Activate
                   UNIQUE KEY `issue` (`title`),
                   KEY `catagory_id` (`category`),
                   CONSTRAINT `catagory_id` FOREIGN KEY (`category`) REFERENCES `_faq_categories` (`id`) ON DELETE CASCADE
-                ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;",
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8;",
             'shortcode' =>
                 "CREATE TABLE `shortcode` (
                   `id` int(11) NOT NULL AUTO_INCREMENT,
