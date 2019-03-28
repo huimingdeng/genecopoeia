@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyFAQs\n"
-"POT-Creation-Date: 2019-03-28 11:00+0800\n"
-"PO-Revision-Date: 2019-03-28 11:00+0800\n"
+"POT-Creation-Date: 2019-03-28 11:10+0800\n"
+"PO-Revision-Date: 2019-03-28 11:11+0800\n"
 "Last-Translator: huimingdeng <huimingdeng@fulengen.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -29,6 +29,14 @@ msgstr "生成JSON文件。"
 #: classes/FAQs.php:142
 msgid "Generate New Json File."
 msgstr "生成新JSON文件。"
+
+#: classes/FAQs.php:145
+msgid "The new json file cannot be generated; please regenerate it after "
+msgstr "无法生成新的JSON文件；请在"
+
+#: classes/FAQs.php:145
+msgid " seconds"
+msgstr "秒后重新生成"
 
 #: classes/Model.php:139
 msgid "Data added successfully"

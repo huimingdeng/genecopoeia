@@ -142,7 +142,7 @@ class FAQs
                 $msg = array("status" => 200, "msg" => __("Generate New Json File.", 'myfaqs') );
             }else{
                 $newtime = 1800 - ($time - $etime);
-                $msg = array( "status" => 500, "msg" => __("The new json file cannot be generated; please regenerate it after {$newtime} seconds.", 'myfaqs') );
+                $msg = array( "status" => 500, "msg" => __("The new json file cannot be generated; please regenerate it after ", 'myfaqs').$newtime. __(" seconds", "myfaqs") );
             }
         }
         return $msg;
