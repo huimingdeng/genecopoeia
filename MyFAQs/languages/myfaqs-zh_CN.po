@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyFAQs\n"
-"POT-Creation-Date: 2019-03-28 11:29+0800\n"
-"PO-Revision-Date: 2019-03-28 11:29+0800\n"
+"POT-Creation-Date: 2019-03-28 16:05+0800\n"
+"PO-Revision-Date: 2019-03-28 16:05+0800\n"
 "Last-Translator: huimingdeng <huimingdeng@fulengen.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -18,47 +18,47 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: classes/FAQs.php:80
+#: classes/FAQs.php:102
 msgid "The submitted information has not been modified."
 msgstr "提交的信息没有被修改。"
 
-#: classes/FAQs.php:132
+#: classes/FAQs.php:154
 msgid "Generate Json File."
 msgstr "生成JSON文件。"
 
-#: classes/FAQs.php:142
+#: classes/FAQs.php:164
 msgid "Generate New Json File."
 msgstr "生成新JSON文件。"
 
-#: classes/FAQs.php:145
+#: classes/FAQs.php:167
 msgid "The new json file cannot be generated; please regenerate it after "
 msgstr "无法生成新的JSON文件；请在"
 
-#: classes/FAQs.php:145
+#: classes/FAQs.php:167
 msgid " seconds"
 msgstr "秒后重新生成"
 
-#: classes/Model.php:139
+#: classes/Model.php:142
 msgid "Data added successfully"
 msgstr "数据添加成功"
 
-#: classes/Model.php:141
+#: classes/Model.php:144
 msgid "Data addition error."
 msgstr "数据添加错误。"
 
-#: classes/Model.php:177
+#: classes/Model.php:180
 msgid "Data modified successfully"
 msgstr "数据更新成功"
 
-#: classes/Model.php:179
+#: classes/Model.php:182
 msgid "Data modification error."
 msgstr "数据更新失败。"
 
-#: classes/Model.php:193
+#: classes/Model.php:196
 msgid "Data deleted successfully"
 msgstr "数据删除成功"
 
-#: classes/Model.php:195
+#: classes/Model.php:198
 msgid "Data deletion error."
 msgstr "数据删除失败。"
 
@@ -94,15 +94,15 @@ msgstr "统计"
 msgid "Parent"
 msgstr "父级"
 
-#: views/categories.php:43 views/faqs.php:14 views/shortcode.php:13
+#: views/categories.php:43 views/faqs.php:49 views/shortcode.php:13
 msgid "EditDate"
 msgstr "修改日期"
 
-#: views/categories.php:44 views/faqs.php:15 views/shortcode.php:14
+#: views/categories.php:44 views/faqs.php:50 views/shortcode.php:14
 msgid "Action"
 msgstr "操作"
 
-#: views/categories.php:57 views/catpopup.php:8 views/faqs.php:27
+#: views/categories.php:57 views/catpopup.php:8 views/faqs.php:64
 msgid "Edit"
 msgstr "修改"
 
@@ -112,11 +112,11 @@ msgid ""
 "category."
 msgstr "您确定要删除吗? \\n这将会删除分类下所有数据。"
 
-#: views/categories.php:57 views/faqs.php:27
+#: views/categories.php:57 views/faqs.php:64
 msgid "Delete"
 msgstr "删除"
 
-#: views/categories.php:62 views/faqs.php:33
+#: views/categories.php:62 views/faqs.php:70
 msgid "No data"
 msgstr "没有数据"
 
@@ -140,11 +140,11 @@ msgstr "修改常见问题"
 msgid "Add Faq"
 msgstr "新增常见问题"
 
-#: views/faqpopup.php:20 views/faqs.php:11 views/shortcode.php:10
+#: views/faqpopup.php:20 views/faqs.php:46 views/shortcode.php:10
 msgid "Title"
 msgstr "问题"
 
-#: views/faqpopup.php:24 views/faqs.php:12 views/shortcode.php:11
+#: views/faqpopup.php:24 views/faqs.php:47 views/shortcode.php:11
 msgid "Answer"
 msgstr "回答"
 
@@ -162,7 +162,7 @@ msgstr ""
 "href='http://www.w3cschool.cn/htmltags/ref-entities.html' target='_blank'>手"
 "册</a>。"
 
-#: views/faqpopup.php:29 views/faqs.php:13 views/shortcode.php:12
+#: views/faqpopup.php:29 views/faqs.php:48 views/shortcode.php:12
 msgid "Category"
 msgstr "分类"
 
@@ -178,6 +178,32 @@ msgstr "生成JSON文件"
 msgid "Download Json File"
 msgstr "下载JSON文件"
 
+#: views/faqs.php:11
+msgid "Search FAQs..."
+msgstr "查询常见问题"
+
+#: views/faqs.php:12
+msgid "Search"
+msgstr "搜索"
+
+#: views/faqs.php:20
+msgid "All Categories"
+msgstr "所有分类"
+
+#: views/faqs.php:31
+msgid "Filter"
+msgstr "筛选"
+
+#: views/faqs.php:36
+#, fuzzy
+msgid "item"
+msgid_plural "items"
+msgstr[0] "个项目"
+
+#: views/faqs.php:64
+msgid "Are you sure you want to delete it?"
+msgstr "您确定要删除它吗?"
+
 #: views/header.php:2
 msgid "Categories"
 msgstr "分类"
@@ -189,6 +215,18 @@ msgstr "常见问题"
 #: views/header.php:4
 msgid "Traces"
 msgstr "跟踪"
+
+#~ msgid "Bulk Action"
+#~ msgstr "批量操作"
+
+#~ msgid "Delete All"
+#~ msgstr "删除所有"
+
+#~ msgid "Apply"
+#~ msgstr "应用"
+
+#~ msgid "items"
+#~ msgstr "个项目"
 
 #~ msgid "Short Code Trace"
 #~ msgstr "短代码追踪"

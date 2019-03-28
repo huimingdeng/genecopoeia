@@ -5,6 +5,7 @@
         <form method="GET" action="<?php echo admin_url('admin.php'); ?>" class="form-inline">
             <div class="row">
                 <input type="hidden" name="page" value="faqs">
+                <!-- <input type="hidden" name="p" value="<?php echo $p; ?>"> -->
                 <div class="col-md-3 col-md-offset-9 pull-rignt">
                     <div class="form-group">
                         <input type="text" class="form-control" autocomplete="off" name="s" id="search" placeholder="<?php _e("Search FAQs...",'myfaqs'); ?>">
@@ -13,22 +14,26 @@
                 </div>
             </div>
             <div class="row" style="margin-bottom: 5px;">
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <select name="action" style="height: 34px;" class="form-control">
-                            <option value="-1"><?php _e("Bulk Action", 'myfaqs'); ?></option>
-                            <option value="trash"><?php _e("Delete All", 'myfaqs'); ?></option>
-                        </select>
-                        <input type="submit" class="btn btn-default" value="<?php _e("Apply", 'myfaqs'); ?>">
-                    </div>
-                </div>
-                <div class="col-md-2">
+                <div class="col-md-4">
                     <div class="form-group">
                         <select name="cat" style="height: 34px;" class="form-control">
                             <option value="0"><?php _e("All Categories", 'myfaqs'); ?></option>
-                            <option value="trash"><?php _e("Delete All", 'myfaqs'); ?></option>
+                            <?php foreach($categories as $category){ 
+                                if($cat == $category['id']){
+                                    ?>
+                                    <option selected = "selected" value = "<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
+                                    <?php
+                                }else{?>
+                                <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
+                            <?php }
+                            } ?>
                         </select>
                         <input type="submit" class="btn btn-default" value="<?php _e("Filter", 'myfaqs'); ?>">
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-offset-6 pull-rignt">
+                    <div class="pull-rignt" style="text-align: right;">
+                        <label><span class="text-muted"><?php echo $total . "&nbsp;". _n("item",'items', $total); ?></span></label>
                     </div>
                 </div>
             </div>
@@ -68,7 +73,7 @@
                             }?>
                         </tbody>
                     </table>
-                    <?php echo $page; ?>
+                    <?php echo $pages; ?>
                 </div>
             </div>
         </form>
