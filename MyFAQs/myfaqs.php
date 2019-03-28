@@ -132,7 +132,8 @@ class MyFAQs{
                 'title'=>'Enter Gene Symbol or Accession No.',
                 'width'=>300
             ),$atts);
-        
+        global $wpdb;
+        $faq = $wpdb->get_row("SELECT * FROM _faq_question", ARRAY_A);
         ob_start();
         include('views'.DIRECTORY_SEPARATOR.'shortcode.php');
         $output = ob_get_clean();

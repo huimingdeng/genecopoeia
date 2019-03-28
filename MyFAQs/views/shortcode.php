@@ -1,10 +1,9 @@
 <link rel="stylesheet" href="<?php echo dirname(plugin_dir_url(__FILE__)). '/assets/css/bootstrap.min.css';?>" type="text/css">
 <h1>hello</h1>
 <div class="wrap">
-	<?php global $wpdb;
-		$faq = $wpdb->get_row("SELECT * FROM _faq_question", ARRAY_A);
+	<?php 
 	 ?>
-	<table class="table table-striped">
+	<table class="table table-striped table-responsive" id="myfaqs-<?php echo $atts['class'];?>" title="<?php echo $atts['title']; ?>">
 		<thead>
 	        <tr>
 	            <th ><input type="checkbox" name="select"></th>
