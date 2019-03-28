@@ -137,7 +137,7 @@ Category.prototype.delete = function(id) {
         'data': id
     };
 
-    var bool = confirm("Delete the " + id + " ?");
+    // var bool = confirm("Delete the " + id + " ?");
 
     var del_xhr = {
         type: 'post',
@@ -156,7 +156,7 @@ Category.prototype.delete = function(id) {
 
         }
     };
-    if (bool)
+    // if (bool)
         jQuery.ajax(del_xhr);
 }
 
