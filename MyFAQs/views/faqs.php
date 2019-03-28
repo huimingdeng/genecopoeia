@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-md-2 col-md-offset-6 pull-rignt">
                     <div class="pull-rignt" style="text-align: right;">
-                        <label><span class="text-muted"><?php echo $total . "&nbsp;". _n("item",'items', $total); ?></span></label>
+                        <label><span class="text-muted"><?php echo sprintf(_n( '%s item', '%s items', $total), $total); ?></span></label>
                     </div>
                 </div>
             </div>

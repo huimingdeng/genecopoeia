@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyFAQs\n"
-"POT-Creation-Date: 2019-03-28 16:05+0800\n"
-"PO-Revision-Date: 2019-03-28 16:05+0800\n"
+"POT-Creation-Date: 2019-03-28 16:34+0800\n"
+"PO-Revision-Date: 2019-03-28 16:34+0800\n"
 "Last-Translator: huimingdeng <huimingdeng@fulengen.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -195,10 +195,10 @@ msgid "Filter"
 msgstr "筛选"
 
 #: views/faqs.php:36
-#, fuzzy
-msgid "item"
-msgid_plural "items"
-msgstr[0] "个项目"
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] "%s 个项目"
 
 #: views/faqs.php:64
 msgid "Are you sure you want to delete it?"
