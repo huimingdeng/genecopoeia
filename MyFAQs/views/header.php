@@ -5,7 +5,7 @@
 </ul>
 <script type="text/javascript">
     jQuery(document).ready(function($) {
-        $("input[name=select]").change(function(event) {
+        $("input.select").change(function(event) {
             $("input[name='ids[]']").prop('checked', $(this).is(':checked')?true:false);
         });
     });

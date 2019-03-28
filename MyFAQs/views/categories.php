@@ -35,7 +35,7 @@
                 <table class="table table-hover table-striped">
                     <thead>
                     <tr>
-                        <th><input type="checkbox" name="select"></th>
+                        <th><input type="checkbox" class="select"></th>
                         <th><?php _e('Name', 'myfaqs');?></th>
                         <th><?php _e('Slug', 'myfaqs');?></th>
                         <th><?php _e('Sum', 'myfaqs');?></th>

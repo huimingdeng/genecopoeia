@@ -4,7 +4,7 @@
  * Plugin URI: #
  * Description: FAQ 展示工具，后期将结合百度 AnyQ | RasaHQ 形成机器客服
  * Author: DHM(huimingdeng)
- * Version: 0.0.13
+ * Version: 0.0.14
  */
 namespace MyFAQs;
 
@@ -15,7 +15,7 @@ use MyFAQs\Install\Deactivate;
 
 class MyFAQs{
     private static $_instance = null;
-    const VERSION = '0.0.13';
+    const VERSION = '0.0.14';
     const PLUGIN_NAME = 'MyFAQs';
     /**
      * Register to load class files, 
@@ -74,17 +74,13 @@ class MyFAQs{
 
     /**
      * Converts serialized form data into arrays.
-     * @param string $str serialized from data
-     * @param string $sp Connection separator
-     * @param string $kv The key-value connection separator
+     * @param string $str serialized from data 
      * @return mixed
      */
-    public static function str2arr ($str,$sp="&",$kv="=")
+    public static function str2arr ($str)
     {
         $arr = array();
-        parse_str($str, $arr);
-        /*$arr = str_replace(array($kv,$sp),array('"=>"','","'),'array("'.$str.'")');
-        eval("\$arr"." = $arr;");*/
+        parse_str($str, $arr); 
         return $arr;
     }
 
