@@ -181,7 +181,7 @@ Faqs.prototype.delete = function(id) {
         'data': id
     };
 
-    var bool = confirm("Delete the " + id + " ?");
+    // var bool = confirm("Delete the " + id + " ?");
 
     var del_xhr = {
         type: 'post',
@@ -200,7 +200,7 @@ Faqs.prototype.delete = function(id) {
             alert(JSON.stringify(response));
         }
     };
-    if (bool)
+    // if (bool)
         jQuery.ajax(del_xhr);
 };
 
