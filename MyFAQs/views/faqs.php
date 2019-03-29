@@ -43,7 +43,12 @@
                         <thead>
                         <tr>
                             <th ><input type="checkbox" class="select"></th>
-                            <th width="15%"><?php _e('Title','myfaqs');?></th>
+                            <th width="15%">
+                                <a href="<?php echo $uri.'&orderby=title&order=asc'; ?>">
+                                    <span><?php _e('Title','myfaqs');?></span>
+                                    <span class="caret"></span>
+                                </a>
+                            </th>
                             <th width="40%"><?php _e('Answer', 'myfaqs');?></th>
                             <th><?php _e('Category', 'myfaqs');?></th>
                             <th><?php _e('EditDate', 'myfaqs');?></th>

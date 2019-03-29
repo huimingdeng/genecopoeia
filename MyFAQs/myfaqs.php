@@ -103,7 +103,7 @@ class MyFAQs{
      */
     public function plugins_loaded(){
         load_plugin_textdomain('myfaqs', FALSE, plugin_basename(dirname(__FILE__)) . '/languages');
-        do_action('myfaqs_init');//创建一个行为钩子
+        do_action('myfaqs_init');// Create a behavior hook
     }
 
     /**

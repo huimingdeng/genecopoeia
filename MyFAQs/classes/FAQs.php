@@ -45,9 +45,13 @@ class FAQs
         }else{
             $where = '';
         }
+
+
+        $orderby = ( !empty($_GET['orderby']) && !empty($_GET['order']) )?sprintf(' ORDER BY %s %s', $_GET['orderby'], $_GET['order']):'';
+
         $start = ($page-1)*$offset;
-        $sql = "SELECT q.id,q.title,q.answer,c.`name`,q.editdate FROM _faq_question as q LEFT JOIN _faq_categories as c ON q.category=c.id".$where;
-        // echo $sql;
+        $sql = "SELECT q.id,q.title,q.answer,c.`name`,q.editdate FROM _faq_question as q LEFT JOIN _faq_categories as c ON q.category=c.id".$where.$orderby;
+        echo $sql;
         $count = $this->faqs->getCount($sql);
         $total = $count['total'];
         // echo $total;
@@ -56,14 +60,15 @@ class FAQs
         $data = $this->faqs->query($sql);
         
         // Assemble the URI
-        $uri = '/wp-admin/admin.php?page=faqs';
+        $uri = admin_url('admin.php').'?page=faqs';
         ($page>1)?$uri.= '&p='.$page:$uri;
         (!empty($_GET['s']))?$uri.= '&s='.$_GET['s']:$uri;
         (!empty($_GET['cat']))?$uri.= '&cat='.$_GET['cat']:$uri;
 
         $html = $this->faqs->getPage($page,$offset,$total, $uri);// Access to the paging
         $categories = FaqCategories::getInstance()->getAllCategories();
-        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with('categories', $categories)->with('pages',$html)->with('p',$page)->with('total', $total)->with('cat',$_GET['cat']);
+        
+        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with('categories', $categories)->with('pages',$html)->with('p',$page)->with('total', $total)->with('cat',$_GET['cat'])->with('uri',$uri);
     }
 
     /**
