@@ -49,9 +49,24 @@
                                     <span class="caret"></span>
                                 </a>
                             </th>
-                            <th width="40%"><?php _e('Answer', 'myfaqs');?></th>
-                            <th><?php _e('Category', 'myfaqs');?></th>
-                            <th><?php _e('EditDate', 'myfaqs');?></th>
+                            <th width="40%">
+                                <a href="<?php echo $uri.'&orderby=answer&order=asc'; ?>">
+                                    <span><?php _e('Answer', 'myfaqs');?></span>
+                                    <span class="caret"></span>
+                                </a>
+                            </th>
+                            <th>
+                                <a href="<?php echo $uri.'&orderby=category&order=asc'; ?>">
+                                    <span><?php _e('Category', 'myfaqs');?></span>
+                                    <span class="caret"></span>
+                                </a>
+                            </th>
+                            <th>
+                                <a href="<?php echo $uri.'&orderby=editdate&order=asc'; ?>">
+                                    <span><?php _e('EditDate', 'myfaqs');?></span>
+                                    <span class="caret"></span>
+                                </a>
+                            </th>
                             <th><?php _e('Action', 'myfaqs'); ?></th>
                         </tr>
                         </thead>

@@ -51,7 +51,7 @@ class FAQs
 
         $start = ($page-1)*$offset;
         $sql = "SELECT q.id,q.title,q.answer,c.`name`,q.editdate FROM _faq_question as q LEFT JOIN _faq_categories as c ON q.category=c.id".$where.$orderby;
-        echo $sql;
+        // echo $sql;
         $count = $this->faqs->getCount($sql);
         $total = $count['total'];
         // echo $total;
