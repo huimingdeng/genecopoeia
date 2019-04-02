@@ -20,6 +20,7 @@ class Admin
     public function __construct()
     {
         add_action('admin_menu', array($this, 'add_admin_menu'));
+        add_action('add_meta_boxes',array($this, 'add_manage_metabox'));
         add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
     }
 
@@ -76,6 +77,23 @@ class Admin
      */
     public function getTracesPage(){
         return FaqManage::getInstance()->traces_page();
+    }
+
+    /**
+     *
+     */
+    public function add_manage_metabox(){
+        add_meta_box(
+            'myfaqsid',
+            'MyFAQs',
+            array($this,'metaBox'),
+            array('post','page')
+        );
+    }
+    public function metaBox(){
+        echo "<div id=\"\">\n";
+        echo __("MyFAQs ShortCode",'myfaqs');
+        echo "</div>\n";
     }
 
     /**
