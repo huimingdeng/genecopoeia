@@ -80,7 +80,7 @@ class Admin
     }
 
     /**
-     *
+     * Add meta box
      */
     public function add_manage_metabox(){
         add_meta_box(
@@ -90,10 +90,12 @@ class Admin
             array('post','page')
         );
     }
+
+    /**
+     * add_meta_box callback
+     */
     public function metaBox(){
-        echo "<div id=\"\">\n";
-        echo __("MyFAQs ShortCode",'myfaqs');
-        echo "</div>\n";
+        FaqManage::getInstance()->metaBox();
     }
 
     /**

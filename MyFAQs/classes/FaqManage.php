@@ -38,6 +38,13 @@ class FaqManage
     }
 
     /**
+     * Call the metabox template.
+     */
+    public function metaBox(){
+        echo $this->view->make('metabox');
+    }
+
+    /**
      * @return FaqCategories|null
      */
     public static function getInstance(){
