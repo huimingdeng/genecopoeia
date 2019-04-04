@@ -1,10 +1,11 @@
 <style type="text/css">
 	.metabox{width:100%; clear: both;}
-	.metabox ul.bd { width: 100%; border: 1px solid #ccc;}
+	.metabox ul.bd { width: 100%; border: 1px solid #ddd;}
 	.metabox ul li {width: 100%; padding: 2px 0px; list-style: none; display: block; line-height: 30px; height: 30px; overflow: hidden; margin-bottom: 0px;}
 	.metabox ul li span{ display: inline-block; margin-right: 5px; width:auto; text-align: center; height: 30px; overflow: hidden;}
-	.metabox ul li.meta-body{ border-top: 1px solid #ccc; }
-	.metabox ul li.meta-title>span:nth-child(1),.metabox ul li.meta-body>span:nth-child(1){ width:10%; }
+	.metabox ul li.meta-title{background: #f1f1f1; font-weight: bold;}
+	.metabox ul li.meta-body{ border-top: 1px solid #ddd; }
+	.metabox ul li.meta-title>span:nth-child(1),.metabox ul li.meta-body>span:nth-child(1){ width:10%; padding-left: 2px; }
 	.metabox ul li.meta-title>span:nth-child(2),.metabox ul li.meta-body>span:nth-child(2){ width:60%; }
 	.metabox ul li.meta-title>span:nth-last-child(1),.metabox ul li.meta-body>span:nth-last-child(1){ width:20%; }
 	.metabox ul li.meta-body>span:nth-child(2) {text-align: left; text-indent: 2em;  }
