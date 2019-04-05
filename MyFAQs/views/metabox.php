@@ -1,6 +1,8 @@
 <style type="text/css">
 	.metabox{width:100%; clear: both;}
-	.metabox ul.bd { width: 100%; border: 1px solid #ddd;}
+	.metabox .btn { border-radius: 3px; white-space: nowrap; padding: 0 10px 1px; cursor: pointer; border:1px solid #ccc; -webkit-appearance: none; display: inline-block; text-decoration: none; font-size: 13px; line-height: 26px; height: 28px; margin: 0; background: #fafafa;}
+	.metabox .btn:hover{    background: #fafafa; border-color: #999; color: #23282d;}
+	.metabox ul.bd { width: 100%; border: 1px solid #ddd; }
 	.metabox ul li {width: 100%; padding: 2px 0px; list-style: none; display: block; line-height: 30px; height: 30px; overflow: hidden; margin-bottom: 0px;}
 	.metabox ul li span{ display: inline-block; margin-right: 5px; width:auto; text-align: center; height: 30px; overflow: hidden;}
 	.metabox ul li.meta-title{background: #f1f1f1; font-weight: bold;}
@@ -21,6 +23,11 @@ $sql = "SELECT id,title FROM _faq_question order by editdate DESC limit 1,10;";
 $test = $wpdb->get_results($sql, ARRAY_A);
 ?>
 <div class="metabox">
+	<input type="button" class="btn" value="<?php _e('Add', 'myfaqs'); ?>">
+	<div class="metahtml">
+		<!-- ajax content list -->
+	</div>
+	<?php if(false){ ?><!-- return content -->
 	<ul class="bd">
 		<li class="meta-title"><span class="box"><input type="checkbox" class="select"></span><span class="tit"><?php _e('Title', 'myfaqs'); ?></span><span class="ac"><?php _e('Action', 'myfaqs'); ?></span></li>
 		<?php foreach($test as $tit){ ?>
@@ -32,6 +39,7 @@ $test = $wpdb->get_results($sql, ARRAY_A);
 		<?php } ?>
 	</ul>
 	<ul class="pg"><li><a href="javascript:void(0);">1</a><a href="javascript:void(0);">2</a><a href="javascript:void(0);">3</a></li></ul>
+	<?php } ?>
 </div>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
