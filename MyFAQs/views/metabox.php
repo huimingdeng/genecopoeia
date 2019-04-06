@@ -1,21 +1,3 @@
-<style type="text/css">
-	.metabox{width:100%; clear: both;}
-	.metabox .btn { border-radius: 3px; white-space: nowrap; padding: 0 10px 1px; cursor: pointer; border:1px solid #ccc; -webkit-appearance: none; display: inline-block; text-decoration: none; font-size: 13px; line-height: 26px; height: 28px; margin: 0; background: #fafafa;}
-	.metabox .btn:hover{    background: #fafafa; border-color: #999; color: #23282d;}
-	.metabox ul.bd { width: 100%; border: 1px solid #ddd; }
-	.metabox ul li {width: 100%; padding: 2px 0px; list-style: none; display: block; line-height: 30px; height: 30px; overflow: hidden; margin-bottom: 0px;}
-	.metabox ul li span{ display: inline-block; margin-right: 5px; width:auto; text-align: center; height: 30px; overflow: hidden;}
-	.metabox ul li.meta-title{background: #f1f1f1; font-weight: bold;}
-	.metabox ul li.meta-body{ border-top: 1px solid #ddd; }
-	.metabox ul li.meta-title>span:nth-child(1),.metabox ul li.meta-body>span:nth-child(1){ width:10%; padding-left: 2px; }
-	.metabox ul li.meta-title>span:nth-child(2),.metabox ul li.meta-body>span:nth-child(2){ width:60%; }
-	.metabox ul li.meta-title>span:nth-last-child(1),.metabox ul li.meta-body>span:nth-last-child(1){ width:20%; }
-	.metabox ul li.meta-body>span:nth-child(2) {text-align: left; text-indent: 2em;  }
-	/*分页样式*/
-	.metabox ul.pg { width: 100%; }
-	.metabox ul.pg li { padding-left: 5px; }
-	.metabox ul.pg a{display: inline-block; margin-right: 2px; padding: 2px;}
-</style>
 <?php 
 // 测试查询10条faq数据
 global $wpdb;
