@@ -110,7 +110,7 @@ class Admin
         wp_register_script('category', MyFAQs::get_asset('js/category.js'), array('jquery'), MyFAQs::VERSION);
         wp_register_script('faqsjs', MyFAQs::get_asset('js/faqs.js'), array('jquery'), MyFAQs::VERSION);
         wp_register_script('traced', MyFAQs::get_asset('js/traces.js'), array('jquery'), MyFAQs::VERSION);
-        print_r($screen->id);
+
         if($screen->id === 'myfaqs_page_faqs' || $screen->id === 'toplevel_page_categories' || $screen->id === 'myfaqs_page_traces'){
             wp_enqueue_style('myfaqdef');
             wp_enqueue_script('jq1123');
@@ -124,6 +124,9 @@ class Admin
             if($screen->id === 'myfaqs_page_traces'){
                 wp_enqueue_script('traced');
             }
+        }elseif($screen->id === 'post' || $screen->id === 'page'){
+            wp_enqueue_style('metabox');
+            wp_enqueue_script('traced');
         }
     }
 
