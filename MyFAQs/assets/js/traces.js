@@ -6,6 +6,7 @@ function Traces() {
     this.myaction = 'traces';
     this.operation = 'init';
     this.ajaxponit = 'myfaqs';
+    this.show = true;
 }
 // 用于查询当前类型的短代码数量并返回信息
 Traces.prototype.init = function() {
@@ -36,7 +37,16 @@ Traces.prototype.list = function() {
         }
     };
 
-    jQuery.ajax(init_xhr);
+    if(_self.show){
+        jQuery.ajax(init_xhr);
+        _self.show = false;
+    }
+};
+
+Traces.prototype.close = function() {
+    var _self = this;
+    _self.show = true;
+    jQuery('.metahtml').html('');
 };
 
 Traces.prototype.add = function() {
