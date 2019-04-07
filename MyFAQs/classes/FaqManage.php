@@ -44,6 +44,16 @@ class FaqManage
         echo $this->view->make('metabox');
     }
 
+    public function getPopup(){
+
+        // 测试查询10条faq数据
+        global $wpdb;
+        $sql = "SELECT id,title FROM _faq_question order by editdate DESC limit 1,10;";
+        $faqs = $wpdb->get_results($sql, ARRAY_A);
+
+        echo $this->view->make('faqlist')->with("faqs", $faqs);
+    }
+
     /**
      * @return FaqCategories|null
      */
