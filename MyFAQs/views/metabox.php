@@ -6,7 +6,7 @@
 </div>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
-        $("input.select").change(function(event) {
+        $("input.select").live('change',function(event) {
             $("input[name='ids[]']").prop('checked', $(this).is(':checked')?true:false);
         });
     });
