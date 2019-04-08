@@ -73,7 +73,7 @@ class Model
      * @param int $total The total number of records
      * @return string
      */
-    public function getPage($current_page = 1, $offset = 15, $total =0, $uri=''){
+    public function getPage($current_page = 1, $offset = 15, $total =0, $uri='', $adjacents=2){
         $last_page = ceil($total/$offset);// Calculate the total page number
         $uri = preg_replace('/\&p=\d+/','',$uri);
         $url = (!empty($uri))?$uri.'&p=':'javascript:void(0);';
@@ -88,7 +88,10 @@ class Model
             $html.=         "<li><a href=\"" . $url . ($current_page-1) ."\" aria-label=\"Previous\"><span aria-hidden=\"true\">&laquo;</span></a></li>\n";
         }
 
-        for ($page=1;$page<=$last_page;$page++){
+        $pmin = ($current_page > $adjacents) ? ($current_page-$adjacents) : 1;
+        $pmax = ($current_page < ($last_page - $adjacents)) ? ($current_page+$adjacents) : $last_page;
+
+        for ($page=$pmin; $page<=$pmax; $page++){
             if($current_page==$page){
                 $html.=         "<li class=\"active\"><a href=\"javascript:void(0);\">" . $page . "</a></li>\n";
             }elseif($page==1){
