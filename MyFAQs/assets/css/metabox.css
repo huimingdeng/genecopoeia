@@ -5,7 +5,7 @@
 .metabox .btn-close{ margin-right: 10px; }
 .metabox .btn-save{margin-right: 10px;}
 .metabox ul.bd { width: 100%; border: 1px solid #ddd; }
-.metabox ul li {width: 100%; padding: 2px 0px; list-style: none; display: block; line-height: 30px; height: 30px; overflow: hidden; margin-bottom: 0px;}
+.metabox ul.bd li {width: 100%; padding: 2px 0px; list-style: none; display: block; line-height: 30px; height: 30px; overflow: hidden; margin-bottom: 0px;}
 .metabox ul li span{ display: inline-block; margin-right: 5px; width:auto; text-align: center; height: 30px; overflow: hidden;}
 .metabox ul li.meta-title{background: #f1f1f1; font-weight: bold;}
 .metabox ul li.meta-body{ border-top: 1px solid #ddd; }
@@ -15,5 +15,8 @@
 .metabox ul li.meta-body>span:nth-child(2) {text-align: left; text-indent: 2em;  }
 /*分页样式*/
 .metabox ul.pg { width: 100%; }
-.metabox ul.pg li { padding-left: 5px; }
-.metabox ul.pg a{display: inline-block; margin-right: 2px; padding: 2px;}
+.metabox ul.pg li { display: inline;}
+.metabox ul.pg li:nth-child(1) a{ border-top-left-radius: 3px; border-bottom-left-radius: 3px; }
+.metabox ul.pg li:nth-last-child(1) a{ border-top-right-radius: 3px; border-bottom-right-radius: 3px; }
+.metabox ul.pg a{display: inline-block; margin-left: -1px; padding: 2px 4px; border:1px solid #ccc; text-decoration: none;}
+.metabox ul.pg li.active a{ background:z-index: 3; color: #fff; cursor: default; background-color: #337ab7; border-color: #337ab7;}
