@@ -20,7 +20,7 @@ Traces.prototype.list = function() {
         "operation": _self.operation,
         'type': _self.myaction,
         "action": _self.ajaxponit,
-        'data': 'init'
+        'data': 1
     };
 
     var init_xhr = {
@@ -32,15 +32,39 @@ Traces.prototype.list = function() {
         success: function(response) {
             jQuery('.metahtml').html(response);
         },
-        error: function(response) {
-                
-        }
+        error: function(response) { }
     };
 
     if(_self.show){
         jQuery.ajax(init_xhr);
         _self.show = false;
     }
+};
+
+Traces.prototype.page = function(p){
+    this.operation = 'popup';
+    var _self = this;
+    var data = {
+        "operation": _self.operation,
+        'type': _self.myaction,
+        "action": _self.ajaxponit,
+        'data': p
+    };
+
+    var page_xhr = {
+        type: 'post',
+        async: true,
+        url: ajaxurl,
+        dataType: 'HTML',
+        data: data,
+        success: function(response) {
+            jQuery('.metahtml').html(response);
+        },
+        error: function(response) { }
+    };
+
+    jQuery.ajax(page_xhr);
+
 };
 
 Traces.prototype.close = function() {

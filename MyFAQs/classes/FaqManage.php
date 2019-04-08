@@ -47,33 +47,42 @@ class FaqManage
 
     /**
      * 
-     * @param  [type] $data [description]
+     * @param  [type] $page [description]
      * @return [type]       [description]
      */
-    public function getPopup($data){
-
-        $sql = "SELECT id,title FROM _faq_question order by editdate DESC limit 1,10;";
-        $faqs = $this->shortcode->query($sql);
+    public function getPopup($page=1){
+        $offset = 10;
         $sql = "SELECT count(*) AS total FROM _faq_question order by editdate DESC";
         $total = $this->shortcode->getCount($sql);
-        $page = isset($data['p'])?$data['p']:1;
-        $html = $this->getSimPage($page, 10, $total['total']);
+        $start = ($page-1)*$offset;
+        $sql = "SELECT id,title FROM _faq_question order by editdate DESC limit {$start},{$offset};";
+        $faqs = $this->shortcode->query($sql);
+        $html = $this->getSimPage($page, $offset, $total['total']);
         echo $this->view->make('faqlist')->with("faqs", $faqs)->with("pght", $html);
     }
 
     /**/
-    private function getSimPage($current_page = 1, $offset = 10, $total =0){
+    private function getSimPage($current_page = 1, $offset = 10, $total =0, $show = 5, $adjacents = 3, $adjacents_offset = 2){
         $html = '';
         $last_page = ceil($total/$offset);
-        for ($page=1;$page<=$last_page;$page++){
+
+        $the_first = ($current_page==1)?"<li><a href=\"javascript:void(0);\">" . __('first', 'myfaqs') . "</a></li>":"<li><a href=\"javascript:void(0);\" onclick=\"Traces.page(". 1 .")\" >" . __('first', 'myfaqs') . "</a></li>";
+        $the_last = ($current_page == $last_page)?("<li><a href=\"javascript:void(0);\">" . __('last', 'myfaqs') . "</a></li>"):("<li><a href=\"javascript:void(0);\" onclick=\"Traces.page(". $last_page .")\" >" . __('last', 'myfaqs') . "</a></li>");
+
+        $pmin = ($current_page > $adjacents) ? ($current_page-$adjacents) : 1;
+        $pmax = ($current_page < ($last_page - $adjacents)) ? ($current_page+$adjacents) : $last_page;
+
+        for ($page=$pmin; $page<=$pmax; $page++){
             if($current_page==$page){
-                $html.=         "<li class=\"active\"><a href=\"javascript:void(0);\">" . $page . "</a></li>";
-            }elseif($page==1){
-                $html.=         "<li><a href=\"javascript:void(0);\" onclick=\"Traces.page(". $page .")\" >" . $page . "</a></li>";
+                $html.= "<li class=\"active\"><a href=\"javascript:void(0);\">" . $page . "</a></li>";
             }else{
-                $html.=         "<li><a href=\"javascript:void(0);\" onclick=\"Traces.page(". $page .")\" >" . $page . "</a></li>";
+                $html.= "<li><a href=\"javascript:void(0);\" onclick=\"Traces.page(". $page .")\" >" . $page . "</a></li>";
             }
         }
+
+        
+        $html = $the_first. $html .$the_last;
+        
         return $html;
     }
 
