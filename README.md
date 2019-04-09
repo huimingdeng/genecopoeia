@@ -17,12 +17,10 @@ LentiManager.zip 慢病毒管理插件的压缩包，用于WordPress下载安装
 Jan 17,2019: 需要修改，随机显示 pio 或 相似度内容，但 pio 的概率要提高。
 
 ## [BmnarsAudit](https://github.com/huimingdeng/genecopoeia/tree/master/BmnarsAudit) 《[生命的奥秘](http://www.lifeomics.com/)》爬虫管理插件 ##
-添加插件入口，设置入口管理列表。
+添加插件入口，设置入口管理列表。-- 后续不再根据，不再更新
 
 ## list_search_bar_plugs.zip genecopoeia 文章添加search3自定义查询插件 ##
 插件设置短代码应用于post中 [list_search_bar_plugs class="postid-number"] eg.[list_search_bar_plugs class="120-2"] ; 插件内附使用说明文档。-- 删除该压缩文件，以后下载请到 [list_search_bar_plugs](https://github.com/huimingdeng/genecopoeia/tree/master/list_search_bar_plugs) 目录
-## spider_porject 生命的奥秘网站爬虫项目脚本 ##
-BmnarsAudit 插件的数据源获取工具 Python爬虫获取目标网站数据。
 
 ## [list_search_bar_plugs](https://github.com/huimingdeng/genecopoeia/tree/master/list_search_bar_plugs) 插件 ##
 为 genecopoeia 公司的search3查询开发的一个小工具插件，利用短代码，在文章内容中设置特定的查询条件。<br>
@@ -31,7 +29,7 @@ BmnarsAudit 插件的数据源获取工具 Python爬虫获取目标网站数据�
 插件设置短代码应用于post中 [list_search_bar_plugs class="postid-number"] eg.[list_search_bar_plugs class="120-2"] ; 插件内附使用说明文档。
 
 ## [WP2WPQAQ](https://github.com/huimingdeng/genecopoeia/tree/master/WP2WPQAQ) WordPress同步插件 ##
-利用WordPress自身 xmlrpc.php 工具实现两个WordPress站点之间同步的功能。 改插件没有实现上传到非媒体库位置的上传功能。
+利用WordPress自身 xmlrpc.php 工具实现两个WordPress站点之间同步的功能。 改插件没有实现上传到非媒体库位置的上传功能。后续没有根据开发修改。
 
 从 [hello-world.git](https://github.com/huimingdeng/hello-world) 仓库迁移而来。-- Aug 28,2018
 
@@ -50,8 +48,6 @@ Jan 17,2019: 没有使用。
 ## [SearchMenuOptions](https://github.com/huimingdeng/genecopoeia/tree/master/SearchMenuOptions) 插件 ##
 genecopoeia 网站搜索页面的克隆产品筛选菜单管理插件。（尝试插件开发使用面向对象，摈弃前面list_search_bar_plugs等面向过程的形式）
 
-## pyfile spider_porject 的处理程序 ##
-针对 “生命的奥秘”数据处理脚本等。
 
 ## FAQ 插件 ##
 分析 Ultimate FAQ 和 Accordion FAQ 插件，学习重新开发 FAQ 插件，方便使用 Python 获取 FAQs 内容进行训练。
