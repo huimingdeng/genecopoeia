@@ -49,7 +49,8 @@
                         foreach ($data as $categories){?>
                             <tr>
                                 <td><input type="checkbox" name="ids[]" value="<?php echo $categories['id']; ?>"></td>
-                                <td><?php echo $categories['name'];?></td>
+                                <td><?php $str = ($categories['level']!=0)?'|'.str_repeat('--', $categories['level']).'&nbsp;':'';
+                                echo $str.$categories['name'];?></td>
                                 <td><?php echo $categories['slug'];?></td>
                                 <td><?php echo $categories['sumfaq'];?></td>
                                 <td><?php echo $categories['parent'];?></td>

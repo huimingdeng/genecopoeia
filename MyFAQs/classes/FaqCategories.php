@@ -17,6 +17,7 @@ class FaqCategories
     private $view;
     private $categories;
     private $allcategories;
+    static $list = array();
 
     /**
      * FaqCategories constructor.
@@ -44,9 +45,29 @@ class FaqCategories
         $data = $this->categories->getList();
         $total = $this->categories->getCount();
         $html = $this->categories->getPage($page,$offset,$total['total'],'/wp-admin/admin.php?page=categories');
+        $has_level_data = self::getTree($data);
+        if(empty($has_level_data)) $has_level_data = $data;
+        echo $this->view->make('categories')->with('title','Categories')->with('actived',strtolower(self::MENU_NAME))->with('data',$has_level_data)->with("page",$html);
 
-        echo $this->view->make('categories')->with('title','Categories')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with("page",$html);
-
+    }
+    /**
+     * Recursive classification tree
+     * @param  array  $array data
+     * @param  integer $pid   
+     * @param  integer $level 
+     * @return array
+     */
+    public static function getTree($array, $pid=0, $level=0){
+        
+        foreach ($array as $key => $value){
+            if ($value['parent'] == $pid){
+                $value['level'] = $level;
+                self::$list[] = $value;
+                unset($array[$key]);
+                self::getTree($array, $value['id'], $level+1);
+            }
+        }
+        return self::$list;
     }
 
     /**

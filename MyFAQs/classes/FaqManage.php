@@ -24,18 +24,11 @@ class FaqManage
 
 
     /**
-     *
+     * @return  string
      */
     public function traces_page(){
         echo $this->view->make('traces')->with('title','Traces')->with('actived',strtolower(self::MENU_NAME));
 
-    }
-
-    /**
-     * @param $atts
-     */
-    public function shortcode($atts){
-        echo $this->view->make('shortcode');
     }
 
     /**
@@ -46,9 +39,9 @@ class FaqManage
     }
 
     /**
-     * 
-     * @param  [type] $page [description]
-     * @return [type]       [description]
+     * FAQs list
+     * @param  integer $page current page
+     * @return string
      */
     public function getPopup($page=1){
         $offset = 10;
@@ -61,8 +54,17 @@ class FaqManage
         echo $this->view->make('faqlist')->with("faqs", $faqs)->with("pght", $html);
     }
 
-    /**/
-    private function getSimPage($current_page = 1, $offset = 10, $total =0, $show = 5, $adjacents = 3, $adjacents_offset = 2){
+    /**
+     * Simple paging
+     * @param  integer $current_page     current page
+     * @param  integer $offset           Page number offset
+     * @param  integer $total            The total number of data
+     * @param  integer $show             Number of pages displayed, not used
+     * @param  integer $adjacents        [description]
+     * @param  integer $adjacents_offset [description]
+     * @return string                    [description]
+     */
+    private function getSimPage($current_page = 1, $offset = 10, $total =0, $show = 5, $adjacents = 2, $adjacents_offset = 2){
         $html = '';
         $last_page = ceil($total/$offset);
 
@@ -80,6 +82,11 @@ class FaqManage
             }
         }
 
+        if($last_page>$pmax){
+            $html.= "<li><a href=\"javascript:void(0);\">...</a></li>";
+        }elseif($pmin >= 2){
+            $html = "<li><a href=\"javascript:void(0);\">...</a></li>" . $html;
+        }
         
         $html = $the_first. $html .$the_last;
         
