@@ -35,7 +35,8 @@ class FaqManage
      * Call the metabox template.
      */
     public function metaBox(){
-        echo $this->view->make('metabox');
+        $postid = get_the_ID();
+        echo $this->view->make('metabox')->with('postid', $postid);
     }
 
     /**
