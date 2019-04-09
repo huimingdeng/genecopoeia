@@ -32,8 +32,9 @@ class Admin
             MyFAQs::PLUGIN_NAME,
             MyFAQs::PLUGIN_NAME,
             'edit_pages',
-            strtolower(FaqCategories::MENU_NAME),
-            array($this,'getCategoryPage')
+            strtolower(FaqCategories::MENU_NAME),// menu_slug
+            array($this,'getCategoryPage'),
+            MyFAQs::get_asset('fonts/question-circle-fill.svg')
         );
         add_submenu_page(
             strtolower(FaqCategories::MENU_NAME),

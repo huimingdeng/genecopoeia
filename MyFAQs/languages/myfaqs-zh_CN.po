@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyFAQs\n"
-"POT-Creation-Date: 2019-03-28 16:34+0800\n"
-"PO-Revision-Date: 2019-03-28 16:34+0800\n"
+"POT-Creation-Date: 2019-04-09 13:55+0800\n"
+"PO-Revision-Date: 2019-04-09 14:02+0800\n"
 "Last-Translator: huimingdeng <huimingdeng@fulengen.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -18,47 +18,55 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: classes/FAQs.php:102
+#: classes/FAQs.php:107
 msgid "The submitted information has not been modified."
 msgstr "提交的信息没有被修改。"
 
-#: classes/FAQs.php:154
+#: classes/FAQs.php:159
 msgid "Generate Json File."
 msgstr "生成JSON文件。"
 
-#: classes/FAQs.php:164
+#: classes/FAQs.php:169
 msgid "Generate New Json File."
 msgstr "生成新JSON文件。"
 
-#: classes/FAQs.php:167
+#: classes/FAQs.php:172
 msgid "The new json file cannot be generated; please regenerate it after "
 msgstr "无法生成新的JSON文件；请在"
 
-#: classes/FAQs.php:167
+#: classes/FAQs.php:172
 msgid " seconds"
 msgstr "秒后重新生成"
 
-#: classes/Model.php:142
+#: classes/FaqManage.php:72
+msgid "first"
+msgstr "首页"
+
+#: classes/FaqManage.php:73
+msgid "last"
+msgstr "末页"
+
+#: classes/Model.php:145
 msgid "Data added successfully"
 msgstr "数据添加成功"
 
-#: classes/Model.php:144
+#: classes/Model.php:147
 msgid "Data addition error."
 msgstr "数据添加错误。"
 
-#: classes/Model.php:180
+#: classes/Model.php:183
 msgid "Data modified successfully"
 msgstr "数据更新成功"
 
-#: classes/Model.php:182
+#: classes/Model.php:185
 msgid "Data modification error."
 msgstr "数据更新失败。"
 
-#: classes/Model.php:196
+#: classes/Model.php:199
 msgid "Data deleted successfully"
 msgstr "数据删除成功"
 
-#: classes/Model.php:198
+#: classes/Model.php:201
 msgid "Data deletion error."
 msgstr "数据删除失败。"
 
@@ -94,29 +102,30 @@ msgstr "统计"
 msgid "Parent"
 msgstr "父级"
 
-#: views/categories.php:43 views/faqs.php:49 views/shortcode.php:13
+#: views/categories.php:43 views/faqs.php:66 views/shortcode.php:13
 msgid "EditDate"
 msgstr "修改日期"
 
-#: views/categories.php:44 views/faqs.php:50 views/shortcode.php:14
+#: views/categories.php:44 views/faqlist.php:7 views/faqs.php:70
+#: views/shortcode.php:14
 msgid "Action"
 msgstr "操作"
 
-#: views/categories.php:57 views/catpopup.php:8 views/faqs.php:64
+#: views/categories.php:58 views/catpopup.php:8 views/faqs.php:84
 msgid "Edit"
 msgstr "修改"
 
-#: views/categories.php:57
+#: views/categories.php:58
 msgid ""
 "Are you sure you want to delete it? \\nThis will delete all data under the "
 "category."
 msgstr "您确定要删除吗? \\n这将会删除分类下所有数据。"
 
-#: views/categories.php:57 views/faqs.php:64
+#: views/categories.php:58 views/faqs.php:84
 msgid "Delete"
 msgstr "删除"
 
-#: views/categories.php:62 views/faqs.php:70
+#: views/categories.php:63 views/faqs.php:90
 msgid "No data"
 msgstr "没有数据"
 
@@ -124,13 +133,26 @@ msgstr "没有数据"
 msgid "Parent for Category"
 msgstr "父级分类"
 
-#: views/catpopup.php:39 views/faqpopup.php:44
+#: views/catpopup.php:39 views/faqlist.php:3 views/faqpopup.php:44
 msgid "Save"
 msgstr "保存"
 
 #: views/catpopup.php:40 views/faqpopup.php:45
 msgid "Cancel"
 msgstr "取消"
+
+#: views/faqlist.php:4
+msgid "Close"
+msgstr "关闭"
+
+#: views/faqlist.php:7 views/faqpopup.php:20 views/faqs.php:48
+#: views/shortcode.php:10
+msgid "Title"
+msgstr "问题"
+
+#: views/faqlist.php:12
+msgid "setting"
+msgstr "设置"
 
 #: views/faqpopup.php:10
 msgid "Edit Faq"
@@ -140,11 +162,7 @@ msgstr "修改常见问题"
 msgid "Add Faq"
 msgstr "新增常见问题"
 
-#: views/faqpopup.php:20 views/faqs.php:46 views/shortcode.php:10
-msgid "Title"
-msgstr "问题"
-
-#: views/faqpopup.php:24 views/faqs.php:47 views/shortcode.php:11
+#: views/faqpopup.php:24 views/faqs.php:54 views/shortcode.php:11
 msgid "Answer"
 msgstr "回答"
 
@@ -162,7 +180,7 @@ msgstr ""
 "href='http://www.w3cschool.cn/htmltags/ref-entities.html' target='_blank'>手"
 "册</a>。"
 
-#: views/faqpopup.php:29 views/faqs.php:48 views/shortcode.php:12
+#: views/faqpopup.php:29 views/faqs.php:60 views/shortcode.php:12
 msgid "Category"
 msgstr "分类"
 
@@ -200,7 +218,7 @@ msgid "%s item"
 msgid_plural "%s items"
 msgstr[0] "%s 个项目"
 
-#: views/faqs.php:64
+#: views/faqs.php:84
 msgid "Are you sure you want to delete it?"
 msgstr "您确定要删除它吗?"
 
@@ -215,6 +233,10 @@ msgstr "常见问题"
 #: views/header.php:4
 msgid "Traces"
 msgstr "跟踪"
+
+#: views/metabox.php:2
+msgid "Add"
+msgstr "新增"
 
 #~ msgid "Bulk Action"
 #~ msgstr "批量操作"
