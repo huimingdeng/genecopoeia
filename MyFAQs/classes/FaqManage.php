@@ -93,6 +93,31 @@ class FaqManage
         
         return $html;
     }
+    /**
+     * 
+     * @param [type] $data [description]
+     */
+    public function add($data){
+        // print_r($data);
+        $save = array();
+        $is_save = false;
+        if(!empty($data['postid'])&&!empty($data['ids'])){
+            $save['location'] = $data['postid'];
+            $save['short_code'] = implode(',', $data['ids']);
+            $save['pubdate'] = $save['editdate'] = date('Y-m-d H:i:s',time());
+            $is_save = true;
+        }
+
+        if($is_save){
+            $msg = $this->shortcode->addOne($save);
+            if($msg['status']==200){
+                
+            }
+        }else{
+            $msg = array( 'status'=>500, 'msg'=>__('Data addition error.','myfaqs'));
+        }
+        return $msg;
+    }
 
     /**
      * @return FaqCategories|null
