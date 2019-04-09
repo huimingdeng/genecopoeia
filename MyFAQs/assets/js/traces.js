@@ -73,29 +73,7 @@ Traces.prototype.close = function() {
     jQuery('.metahtml').html('');
 };
 
-Traces.prototype.add = function() {
-    this.operation = 'add';
-    var _self = this;
-    var data = {
-        "operation": _self.operation,
-        "type": _self.myaction,
-        "action": _self.ajaxponit,
-        'data': 'add_data'
-    };
 
-    var add_xhr = {
-        "type": 'post',
-        "async": true, // false,
-        "data": data,
-        "url": ajaxurl,
-        "dataType": 'JSON',
-        "success": function(response) {
-
-        }
-    };
-
-    jQuery.ajax(add_xhr);
-};
 
 Traces.prototype.edit = function() {
     this.operation = 'edit';
