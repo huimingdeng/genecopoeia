@@ -8,7 +8,7 @@
 </style>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
-		$('.faq-toggle').click(function(event) {
+		$('#<?php echo $atts['class']; ?> .faq-toggle').click(function(event) {
 			$(this).siblings('ul').toggle(1000);
 		});
 	});
@@ -18,7 +18,7 @@
 		<h2><?php echo $atts['title']; ?></h2>
 	<?php endif ?>
 	<?php if(!empty($faqs)){ ?>
-		<ul>
+		<ul id="<?php echo $atts['class']; ?>">
 			<?php foreach($faqs as $faq) {?>
 				<li>
 					<a href="javascript:void(0);" class="faq-toggle"><?php echo $faq['title']; ?></a>

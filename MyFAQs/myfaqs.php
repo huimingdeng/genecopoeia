@@ -127,9 +127,14 @@ class MyFAQs{
                 'class'=>1,
                 'title'=>''
             ),$atts);
+        
         global $wpdb;
-        // $faq = $wpdb->get_row("SELECT * FROM _faq_question", ARRAY_A);
-        $faqs = $wpdb->get_results("SELECT title,answer FROM _faq_question LIMIT 0,5", ARRAY_A);
+
+        $sql = sprintf("SELECT code_value FROM _faq_shortcode WHERE short_code = '%s'",$atts['class']);
+        $code_value = $wpdb->get_row($sql, ARRAY_A);
+        // print_r($code_value);
+        $faq_sql = sprintf("SELECT title,answer FROM _faq_question WHERE id in(%s)", $code_value['code_value']);
+        $faqs = $wpdb->get_results($faq_sql, ARRAY_A);
         ob_start();
         include('views'.DIRECTORY_SEPARATOR.'shortcode.php');
         $output = ob_get_clean();
