@@ -16,32 +16,30 @@
 	<ul class="pg"><?php echo $pght; ?></ul>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
-			
 			$('.btn-save').click(function(event) {
-				// var set = new Array();
-
-				// $("input[name='ids[]']:checked").each(function(index, el) {
-				// 	set.push($(this).val());
-				// });
-
 				var data = {
 			        "operation": 'add',
 			        "type": Traces.myaction,
 			        "action": Traces.ajaxponit,
 			        'data': $("input[name='ids[]']:checked").serialize()+'&postid='+$('input[name=postid]').val()
 			    };
-
 			    var add_xhr = {
 			        type: 'post',
 			        async: true, // false,
 			        data: data,
 			        url: ajaxurl,
 			        dataType: 'JSON',
+			        beforeSend:function(){
+						$(".metabox .note").html(<?php __("Loading", "myfaqs"); ?>+"...");
+					},
 			        success: function(response) {
-			        	console.log(response);
+			        	if(response.status==200){
+			        		var code = response.code;
+			        		$('.metabox .note').append(code);
+			        		Traces.close();
+			        	}
 			        }
 			    };
-			    // console.log(data);
 			    jQuery.ajax(add_xhr);
 			}); 
 		});

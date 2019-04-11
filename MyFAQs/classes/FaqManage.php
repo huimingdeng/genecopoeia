@@ -98,12 +98,15 @@ class FaqManage
      * @param [type] $data [description]
      */
     public function add($data){
-        // print_r($data);
         $save = array();
         $is_save = false;
         if(!empty($data['postid'])&&!empty($data['ids'])){
+            $sql = sprintf("SELECT count(*) AS total FROM %s WHERE location = %s", $this->shortcode->getTable(), $data['postid']);
+            $total = $this->shortcode->getCount($sql);
+            $no = $total['total']+1;
             $save['location'] = $data['postid'];
-            $save['short_code'] = implode(',', $data['ids']);
+            $save['short_code'] = $data['postid'].'-'.$no;
+            $save['code_value'] = implode(',', $data['ids']);
             $save['pubdate'] = $save['editdate'] = date('Y-m-d H:i:s',time());
             $is_save = true;
         }
@@ -111,7 +114,7 @@ class FaqManage
         if($is_save){
             $msg = $this->shortcode->addOne($save);
             if($msg['status']==200){
-                
+                $msg['code'] = '[myfaqs class="'.$save['short_code'].'"]';
             }
         }else{
             $msg = array( 'status'=>500, 'msg'=>__('Data addition error.','myfaqs'));

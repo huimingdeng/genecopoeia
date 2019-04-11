@@ -319,6 +319,10 @@ class Model
         return $this->sql;
     }
 
+    public function getTable(){
+        return $this->table;
+    }
+
     /**
      *
      */
