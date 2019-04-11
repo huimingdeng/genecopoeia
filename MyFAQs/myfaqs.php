@@ -4,7 +4,7 @@
  * Plugin URI: #
  * Description: FAQ 展示工具，后期将结合百度 AnyQ | RasaHQ 形成机器客服
  * Author: DHM(huimingdeng)
- * Version: 0.1.0
+ * Version: 0.1.1
  */
 namespace MyFAQs;
 
@@ -15,7 +15,7 @@ use MyFAQs\Install\Deactivate;
 
 class MyFAQs{
     private static $_instance = null;
-    const VERSION = '0.1.0';
+    const VERSION = '0.1.1';
     const PLUGIN_NAME = 'MyFAQs';
     /**
      * Register to load class files, 
@@ -125,11 +125,11 @@ class MyFAQs{
         $atts = shortcode_atts(
             array(
                 'class'=>1,
-                'title'=>'Enter Gene Symbol or Accession No.',
-                'width'=>300
+                'title'=>''
             ),$atts);
         global $wpdb;
-        $faq = $wpdb->get_row("SELECT * FROM _faq_question", ARRAY_A);
+        // $faq = $wpdb->get_row("SELECT * FROM _faq_question", ARRAY_A);
+        $faqs = $wpdb->get_results("SELECT title,answer FROM _faq_question LIMIT 0,5", ARRAY_A);
         ob_start();
         include('views'.DIRECTORY_SEPARATOR.'shortcode.php');
         $output = ob_get_clean();
