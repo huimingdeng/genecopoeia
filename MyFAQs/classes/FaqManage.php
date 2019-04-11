@@ -141,7 +141,7 @@ class FaqManage
         if($is_save){
             $msg = $this->shortcode->addOne($save);
             if($msg['status']==200){
-                $msg['code'] = '[myfaqs class="'.$save['short_code'].'"]';
+                $msg['code'] = self::Buttons($save['short_code']);
             }
         }else{
             $msg = array( 'status'=>500, 'msg'=>__('Data addition error.','myfaqs'));

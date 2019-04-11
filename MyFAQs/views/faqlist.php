@@ -34,8 +34,9 @@
 					},
 			        success: function(response) {
 			        	if(response.status==200){
-			        		var code = response.code;
-			        		$('.metabox .note').append(code);
+			        		// var code = response.code;
+			        		// $('.metabox .note').prepend(code);
+			        		Traces.init();
 			        		Traces.close();
 			        	}
 			        }
