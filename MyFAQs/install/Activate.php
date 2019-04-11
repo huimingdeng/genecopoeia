@@ -50,6 +50,7 @@ class Activate
                 "CREATE TABLE `shortcode` (
                   `id` int(11) NOT NULL AUTO_INCREMENT,
                   `short_code` varchar(50) DEFAULT NULL,
+                  `code_value` varchar(100) DEFAULT NULL,
                   `location` varchar(100) DEFAULT NULL COMMENT '记录使用的wp_posts表的ID',
                   `pubdate` datetime NOT NULL,
                   `editdate` datetime NOT NULL,

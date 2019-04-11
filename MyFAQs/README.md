@@ -54,7 +54,8 @@ FAQ 数据表设置，使用 INNODB 引擎。
 	CREATE TABLE `_faq_shortcode` (
 		`id`  int NOT NULL AUTO_INCREMENT ,
 		`short_code`  varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
-		`location`  varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '记录使用的wp_posts表的ID' ,
+		`code_value`  varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL ,
+		`location`  varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '记录使用的wp_posts表的ID' ,
 		`pubdate`  datetime NULL ,
 		`editdate`  datetime NULL ,
 		PRIMARY KEY (`id`)
@@ -130,7 +131,7 @@ FAQ 数据表设置，使用 INNODB 引擎。
 	- v0.0.&lt;latest> : ... ...
 - ... ...
 - v0.1.x : 开发短代码使用问题 （Traces）
-	- v0.1.0 : 解决短代码不可用问题
+	- v0.1.0 : 修改数据表，增加字段 `code_value`
 	- v0.1.1 : 短代码效果实现 
 	- ... ...
 	- v0.1.&lt;latest> : 实现短代码使用兼容 WAP 端（非常重要）
