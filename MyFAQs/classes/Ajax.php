@@ -60,6 +60,12 @@ class Ajax extends Input
                 echo json_encode($msg);
                 exit(0);
                 break;
+            case 'init':
+                $obj = $this->getObject($type);
+                $msg = $obj->getShortCode($data);
+                echo json_encode($msg);
+                exit(0);
+                break;
             default:
                 
                 break;

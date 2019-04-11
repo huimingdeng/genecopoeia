@@ -31,6 +31,33 @@ class FaqManage
 
     }
 
+    public function getShortCode($postid){
+        if(!empty($postid)){
+            $sql = sprintf("SELECT short_code FROM %s WHERE location = %s ORDER BY short_code DESC", $this->shortcode->getTable(),$postid);
+            $info = $this->shortcode->query($sql);
+            if(!empty($info)){
+                $ht = array();
+                foreach($info as $short_code){
+                    $ht[] = self::Buttons($short_code['short_code']);
+                }
+                $msg = array(
+                    'status' => 200,
+                    'code' => implode("\n", $ht)
+                );
+            }
+
+        }else{
+            $msg = array('status'=>201);
+        }
+
+        return $msg;
+    }
+
+    public static function Buttons($name){
+        $button = "<a href=\"javascript:void(0);\" class=\"btn\" onclick=\"Traces.editList('{$name}')\">[myfaqs class='{$name}']</a>";
+        return $button;
+    }
+
     /**
      * Call the metabox template.
      */

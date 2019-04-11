@@ -4,7 +4,7 @@
  * Plugin URI: #
  * Description: FAQ 展示工具，后期将结合百度 AnyQ | RasaHQ 形成机器客服
  * Author: DHM(huimingdeng)
- * Version: 0.1.2
+ * Version: 0.1.3
  */
 namespace MyFAQs;
 
@@ -15,7 +15,7 @@ use MyFAQs\Install\Deactivate;
 
 class MyFAQs{
     private static $_instance = null;
-    const VERSION = '0.1.2';
+    const VERSION = '0.1.3';
     const PLUGIN_NAME = 'MyFAQs';
     /**
      * Register to load class files, 
@@ -29,7 +29,7 @@ class MyFAQs{
         register_activation_hook(__FILE__, array($this, 'activate'));
         add_action('wp_ajax_myfaqs', array($this, 'add_ajax_point')); // Add an ajax access endpoint
         add_action('plugins_loaded', array($this, 'plugins_loaded'), 1);
-        
+        add_action('wp_footer', array($this, 'forntCss'));
         if(is_admin()) {
             Admin::getInstance();
         }
@@ -139,6 +139,20 @@ class MyFAQs{
         include('views'.DIRECTORY_SEPARATOR.'shortcode.php');
         $output = ob_get_clean();
         return $output;
+    }
+    
+    /**
+     * Quote styles and scripts at post or page
+     * @return [type] [description]
+     */
+    public function forntCss(){
+        wp_register_style('myfaqs.css', self::get_asset('css/myfaqs.css'), array(), self::VERSION);
+        wp_register_script('myfaqs.js', self::get_asset('js/myfaqs.js'), array('jquery'), self::VERSION);
+        if (is_page() || is_single()) {
+            wp_enqueue_script('myfaqs.js');
+            wp_enqueue_style('myfaqs.css');
+        }
+           
     }
 
     /**
