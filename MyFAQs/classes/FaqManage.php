@@ -79,7 +79,7 @@ class FaqManage
         $sql = "SELECT id,title FROM _faq_question order by editdate DESC limit {$start},{$offset};";
         $faqs = $this->shortcode->query($sql);
         $html = $this->getSimPage($page, $offset, $total['total']);
-        echo $this->view->make('faqlist')->with("faqs", $faqs)->with("pght", $html);
+        echo $this->view->make('faqlist')->with("faqs", $faqs)->with("pght", $html)->with('operate','add');
     }
 
     /**

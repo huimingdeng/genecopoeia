@@ -96,7 +96,9 @@ Traces.prototype.close = function() {
     jQuery('.metahtml').html('');
 };
 
-
+Traces.prototype.editList = function(short_code){
+    
+};
 
 Traces.prototype.edit = function() {
     this.operation = 'edit';

@@ -1,5 +1,6 @@
 
 	<div class="btn-list">
+		<input type="button" class="btn btn-delete" value="<?php _e('Delete', 'myfaqs'); ?>">
 		<input type="button" class="btn btn-save" value="<?php _e('Save', 'myfaqs'); ?>">
 		<input type="button" class="btn btn-close" onclick="Traces.close();" value="<?php _e('Close', 'myfaqs'); ?>">
 	</div>
@@ -18,7 +19,7 @@
 		jQuery(document).ready(function($) {
 			$('.btn-save').click(function(event) {
 				var data = {
-			        "operation": 'add',
+			        "operation": '<?php echo $operate; ?>',
 			        "type": Traces.myaction,
 			        "action": Traces.ajaxponit,
 			        'data': $("input[name='ids[]']:checked").serialize()+'&postid='+$('input[name=postid]').val()
