@@ -68,7 +68,13 @@ class FAQs
         $html = $this->faqs->getPage($page,$offset,$total, $uri);// Access to the paging
         $categories = FaqCategories::getInstance()->getAllCategories();
         
-        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with('categories', $categories)->with('pages',$html)->with('p',$page)->with('total', $total)->with('cat',$_GET['cat'])->with('uri',$uri);
+        if( !empty($_GET['orderby']) && !empty($_GET['order']) ){
+            $order = array(
+                $_GET['orderby'],
+                $_GET['order']
+            );
+        }
+        echo $this->view->make('faqs')->with('title','Faqs')->with('actived',strtolower(self::MENU_NAME))->with('data',$data)->with('categories', $categories)->with('pages',$html)->with('p',$page)->with('total', $total)->with('cat',$_GET['cat'])->with('uri',$uri)->with('order',$order);
     }
 
     /**

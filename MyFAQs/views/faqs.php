@@ -44,27 +44,27 @@
                         <tr>
                             <th ><input type="checkbox" class="select"></th>
                             <th width="15%">
-                                <a href="<?php echo $uri.'&orderby=title&order=asc'; ?>">
+                                <a href="<?php echo $uri.'&orderby=title&order=asc'; ?>" aria-label='<?php if($order[0]=='title'&&$order[1]=='asc'){echo 'desc';}else{echo 'asc';} ?>' name="title" class="dropup">
                                     <span><?php _e('Title','myfaqs');?></span>
-                                    <span class="caret"></span>
+                                    <span class="<?php if($order[0]=='title') echo 'caret'; ?>"></span>
                                 </a>
                             </th>
                             <th width="40%">
-                                <a href="<?php echo $uri.'&orderby=answer&order=asc'; ?>">
+                                <a href="<?php echo $uri.'&orderby=answer&order=asc'; ?>" aria-label='<?php if($order[0]=='answer'&&$order[1]=='asc'){echo 'desc';}else{echo 'asc';} ?>' name="answer" class="dropup">
                                     <span><?php _e('Answer', 'myfaqs');?></span>
-                                    <span class="caret"></span>
+                                    <span class="<?php if($order[0]=='answer') echo 'caret'; ?>"></span>
                                 </a>
                             </th>
                             <th>
-                                <a href="<?php echo $uri.'&orderby=category&order=asc'; ?>">
+                                <a href="<?php echo $uri.'&orderby=category&order=asc'; ?>" aria-label='<?php if($order[0]=='category'&&$order[1]=='asc'){echo 'desc';}else{echo 'asc';} ?>' name="category" class="dropup">
                                     <span><?php _e('Category', 'myfaqs');?></span>
-                                    <span class="caret"></span>
+                                    <span class="<?php if($order[0]=='category') echo 'caret'; ?>"></span>
                                 </a>
                             </th>
                             <th>
-                                <a href="<?php echo $uri.'&orderby=editdate&order=asc'; ?>">
+                                <a href="<?php echo $uri.'&orderby=editdate&order=asc'; ?>" aria-label='<?php if($order[0]=='editdate'&&$order[1]=='asc'){echo 'desc';}else{echo 'asc';} ?>' name="editdate" class="dropup">
                                     <span><?php _e('EditDate', 'myfaqs');?></span>
-                                    <span class="caret"></span>
+                                    <span class="<?php if($order[0]=='editdate') echo 'caret'; ?>"></span>
                                 </a>
                             </th>
                             <th><?php _e('Action', 'myfaqs'); ?></th>
@@ -102,10 +102,26 @@
         jQuery(document).ready(function($) {
             $("#search").keydown(function(event) {
                 if (event.keyCode == 13) {
-                    // alert($(this).val());
                 }
             });
-            
+            var defult = '<?php echo $order[0];?>';
+            $('.table th>a').hover(function(){
+                var _self = this;
+                var url = $(_self).attr('href');
+                
+                var uri_v = $(_self).attr('aria-label');
+                url = url.replace(/(asc|desc)$/i, uri_v );
+                $(_self).attr('href',url);
+                $(_self).children('span:last-child').addClass('caret');
+                if(uri_v == 'desc'){$(_self).removeClass('dropup');}
+            },function(){
+                var _self = this;
+                var uri_k = $(_self).attr('name');
+                if(uri_k!=defult)
+                    $(this).children('span:last-child').removeClass('caret');
+            });
+
+
        
         });
     </script>
